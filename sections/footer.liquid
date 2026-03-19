@@ -1,0 +1,90 @@
+{% comment %} Footer de la tienda {% endcomment %}
+<footer class="footer" role="contentinfo">
+  <div class="footer__content page-width">
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'link_list' -%}
+          <div class="footer__block footer__block--menu" {{ block.shopify_attributes }}>
+            {%- if block.settings.heading != blank -%}
+              <h2 class="footer__heading">{{ block.settings.heading | escape }}</h2>
+            {%- endif -%}
+            {%- if block.settings.menu != blank -%}
+              <ul class="footer__nav-list list-unstyled" role="list">
+                {%- for link in linklists[block.settings.menu].links -%}
+                  <li class="footer__nav-item">
+                    <a href="{{ link.url }}" class="footer__nav-link">{{ link.title | escape }}</a>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
+          </div>
+
+        {%- when 'text' -%}
+          <div class="footer__block footer__block--text" {{ block.shopify_attributes }}>
+            {%- if block.settings.heading != blank -%}
+              <h2 class="footer__heading">{{ block.settings.heading | escape }}</h2>
+            {%- endif -%}
+            {%- if block.settings.subtext != blank -%}
+              <div class="footer__subtext rte">{{ block.settings.subtext }}</div>
+            {%- endif -%}
+          </div>
+      {%- endcase -%}
+    {%- endfor -%}
+  </div>
+
+  <div class="footer__bottom page-width">
+    <p class="footer__copyright">&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}</p>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "blocks": [
+    {
+      "type": "link_list",
+      "name": "Menú",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Navegación rápida",
+          "label": "Encabezado"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "default": "footer",
+          "label": "Menú"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Texto",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Sobre nosotros",
+          "label": "Encabezado"
+        },
+        {
+          "type": "richtext",
+          "id": "subtext",
+          "default": "<p>Escribe un texto corto sobre tu tienda.</p>",
+          "label": "Contenido"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_social",
+      "default": true,
+      "label": "Mostrar redes sociales"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,87 @@
+{% comment %} Sección Hero / Banner principal {% endcomment %}
+<section class="hero" style="background-color: {{ section.settings.background_color }}">
+  {%- if section.settings.image != blank -%}
+    <div class="hero__media">
+      <img
+        src="{{ section.settings.image | image_url: width: 1500 }}"
+        alt="{{ section.settings.image.alt | escape }}"
+        width="1500"
+        height="auto"
+        loading="lazy"
+        class="hero__image"
+      >
+    </div>
+  {%- endif -%}
+
+  <div class="hero__content page-width">
+    {%- if section.settings.subheading != blank -%}
+      <p class="hero__subheading">{{ section.settings.subheading | escape }}</p>
+    {%- endif -%}
+    {%- if section.settings.heading != blank -%}
+      <h1 class="hero__heading">{{ section.settings.heading | escape }}</h1>
+    {%- endif -%}
+    {%- if section.settings.text != blank -%}
+      <div class="hero__text rte">{{ section.settings.text }}</div>
+    {%- endif -%}
+    {%- if section.settings.button_label != blank -%}
+      <a href="{{ section.settings.button_link }}" class="btn">
+        {{ section.settings.button_label | escape }}
+      </a>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Banner héroe",
+  "tag": "section",
+  "class": "section-hero",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Imagen de fondo"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Color de fondo",
+      "default": "#f3f3f3"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subencabezado",
+      "default": "Bienvenido a"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Encabezado",
+      "default": "Nuestra tienda"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Descripción",
+      "default": "<p>Descubre nuestra colección.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Texto del botón",
+      "default": "Ver productos"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Enlace del botón"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner héroe"
+    }
+  ]
+}
+{% endschema %}

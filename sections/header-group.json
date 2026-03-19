@@ -1,0 +1,19 @@
+{
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "disabled": true,
+      "settings": {}
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_width": 100,
+        "menu": "main-menu",
+        "show_line_separator": true,
+        "sticky_header_type": "on-scroll-up"
+      }
+    }
+  },
+  "order": ["announcement-bar", "header"]
+}

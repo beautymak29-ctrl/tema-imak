@@ -1,0 +1,24 @@
+{
+  "sections": {
+    "hero-banner": {
+      "type": "hero-banner",
+      "settings": {
+        "subheading": "Bienvenido a",
+        "heading": "{{ shop.name }}",
+        "text": "<p>Descubre nuestra colección.</p>",
+        "button_label": "Ver productos",
+        "button_link": "/collections/all",
+        "background_color": "#f3f3f3"
+      }
+    },
+    "featured-collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Productos destacados",
+        "collection": "frontpage",
+        "products_to_show": 4
+      }
+    }
+  },
+  "order": ["hero-banner", "featured-collection"]
+}

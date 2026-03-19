@@ -1,0 +1,46 @@
+{
+  "general": {
+    "meta": {
+      "page": "Página {{ page }}"
+    },
+    "search": {
+      "search": "Buscar",
+      "results_with_count": {
+        "one": "{{ count }} resultado para \"{{ terms }}\"",
+        "other": "{{ count }} resultados para \"{{ terms }}\""
+      },
+      "no_results": "No se encontraron resultados para \"{{ terms }}\"."
+    }
+  },
+  "sections": {
+    "header": {
+      "cart_count": {
+        "one": "Carrito ({{ count }} artículo)",
+        "other": "Carrito ({{ count }} artículos)"
+      }
+    }
+  },
+  "customer": {
+    "account": {
+      "title": "Mi cuenta"
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Agregar al carrito",
+      "sold_out": "Agotado",
+      "unavailable": "No disponible",
+      "vendor": "Vendedor",
+      "quantity": {
+        "label": "Cantidad"
+      }
+    }
+  },
+  "cart": {
+    "general": {
+      "title": "Tu carrito",
+      "empty": "Tu carrito está vacío.",
+      "continue_browsing": "Seguir comprando"
+    }
+  }
+}

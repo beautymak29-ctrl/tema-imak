@@ -1,0 +1,13 @@
+# Shopify CLI
+.shopify/
+node_modules/
+.env
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/
+.idea/

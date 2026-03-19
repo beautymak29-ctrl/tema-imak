@@ -1,0 +1,46 @@
+{% comment %}
+  Renderiza una tarjeta de producto.
+  Acepta:
+  - product: objeto producto de Shopify
+  - show_vendor: boolean (opcional) mostrar vendedor
+{% endcomment %}
+
+{%- if product != blank -%}
+  <div class="card product-card">
+    <a href="{{ product.url }}" class="product-card__link" aria-label="{{ product.title | escape }}">
+      <div class="product-card__media">
+        {%- if product.featured_media -%}
+          <img
+            src="{{ product.featured_media | image_url: width: 400 }}"
+            alt="{{ product.featured_media.alt | escape }}"
+            width="400"
+            height="{{ 400 | divided_by: product.featured_media.aspect_ratio | ceil }}"
+            loading="lazy"
+            class="product-card__image"
+          >
+        {%- else -%}
+          {{ 'product-1' | placeholder_svg_tag: 'product-card__placeholder' }}
+        {%- endif -%}
+      </div>
+    </a>
+
+    <div class="product-card__info">
+      {%- if show_vendor and product.vendor != blank -%}
+        <p class="product-card__vendor">{{ product.vendor }}</p>
+      {%- endif -%}
+
+      <h3 class="product-card__title">
+        <a href="{{ product.url }}">{{ product.title }}</a>
+      </h3>
+
+      <div class="product-card__price">
+        {%- if product.compare_at_price > product.price -%}
+          <span class="price price--sale">{{ product.price | money }}</span>
+          <s class="price price--compare">{{ product.compare_at_price | money }}</s>
+        {%- else -%}
+          <span class="price">{{ product.price | money }}</span>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+{%- endif -%}
