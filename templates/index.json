@@ -4,7 +4,7 @@
       "type": "hero-banner",
       "settings": {
         "subheading": "Bienvenido a",
-        "heading": "{{ shop.name }}",
+        "heading": "Nuestra tienda",
         "text": "<p>Descubre nuestra colección.</p>",
         "button_label": "Ver productos",
         "button_link": "/collections/all",
