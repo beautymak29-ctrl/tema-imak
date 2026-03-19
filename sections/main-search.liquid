@@ -1,0 +1,58 @@
+<div class="search-page page-width section-padding">
+  <h1 class="search-page__title">{{ 'general.search.search' | t }}</h1>
+
+  <form action="{{ routes.search_url }}" method="get" role="search" class="search-form">
+    <div class="search-form__input-wrap">
+      <input
+        type="search"
+        name="q"
+        value="{{ search.terms | escape }}"
+        placeholder="{{ 'general.search.search' | t }}"
+        class="search-form__input"
+        aria-label="{{ 'general.search.search' | t }}"
+      >
+      <button type="submit" class="search-form__btn btn">Buscar</button>
+    </div>
+    <input type="hidden" name="type" value="product">
+  </form>
+
+  {%- if search.performed -%}
+    {%- if search.results_count > 0 -%}
+      <p class="search-page__count">
+        {{ 'general.search.results_with_count' | t: count: search.results_count, terms: search.terms }}
+      </p>
+      <ul class="product-grid product-grid--{{ section.settings.columns_desktop }}-col list-unstyled" role="list">
+        {%- for result in search.results -%}
+          {%- if result.object_type == 'product' -%}
+            <li class="product-grid__item">
+              {%- render 'product-card', product: result -%}
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    {%- else -%}
+      <p class="search-page__no-results">
+        {{ 'general.search.no_results' | t: terms: search.terms }}
+      </p>
+    {%- endif -%}
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Búsqueda",
+  "tag": "section",
+  "class": "section-main-search",
+  "settings": [
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 2,
+      "max": 5,
+      "step": 1,
+      "default": 4,
+      "label": "Columnas en escritorio"
+    }
+  ]
+}
+{% endschema %}

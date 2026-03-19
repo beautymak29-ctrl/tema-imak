@@ -1,0 +1,120 @@
+<div class="product-page page-width section-padding">
+  <div class="product-page__grid">
+
+    {%- comment -%} Galería {%- endcomment -%}
+    <div class="product-page__media">
+      {%- if product.featured_media -%}
+        <img
+          src="{{ product.featured_media | image_url: width: 800 }}"
+          alt="{{ product.featured_media.alt | escape }}"
+          width="800"
+          height="{{ 800 | divided_by: product.featured_media.aspect_ratio | ceil }}"
+          loading="eager"
+          class="product-page__main-image"
+        >
+      {%- else -%}
+        {{ 'product-1' | placeholder_svg_tag: 'product-page__placeholder' }}
+      {%- endif -%}
+
+      {%- if product.media.size > 1 -%}
+        <div class="product-page__thumbnails">
+          {%- for media in product.media -%}
+            <img
+              src="{{ media | image_url: width: 120 }}"
+              alt="{{ media.alt | escape }}"
+              width="120"
+              height="120"
+              loading="lazy"
+              class="product-page__thumb"
+            >
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%} Info {%- endcomment -%}
+    <div class="product-page__info">
+      {%- if section.settings.show_vendor and product.vendor != blank -%}
+        <p class="product-page__vendor">{{ product.vendor }}</p>
+      {%- endif -%}
+
+      <h1 class="product-page__title">{{ product.title }}</h1>
+
+      <div class="product-page__price">
+        {%- if product.compare_at_price > product.price -%}
+          <span class="price price--sale">{{ product.price | money }}</span>
+          <s class="price price--compare">{{ product.compare_at_price | money }}</s>
+        {%- else -%}
+          <span class="price">{{ product.price | money }}</span>
+        {%- endif -%}
+      </div>
+
+      {%- form 'product', product, id: 'product-form', class: 'product-form' -%}
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+
+        {%- if product.has_only_default_variant == false -%}
+          {%- for option in product.options_with_values -%}
+            <div class="product-form__option">
+              <label class="product-form__label">{{ option.name }}</label>
+              <select name="options[{{ option.name | escape }}]" class="product-form__select">
+                {%- for value in option.values -%}
+                  <option value="{{ value | escape }}"{% if option.selected_value == value %} selected{% endif %}>
+                    {{ value | escape }}
+                  </option>
+                {%- endfor -%}
+              </select>
+            </div>
+          {%- endfor -%}
+        {%- endif -%}
+
+        {%- if section.settings.show_quantity_selector -%}
+          <div class="product-form__quantity">
+            <label class="product-form__label" for="quantity">{{ 'products.product.quantity.label' | t }}</label>
+            <input type="number" id="quantity" name="quantity" value="1" min="1" class="product-form__qty-input">
+          </div>
+        {%- endif -%}
+
+        <button
+          type="submit"
+          class="btn product-form__submit"
+          {%- unless product.selected_or_first_available_variant.available %}disabled{% endunless -%}
+        >
+          {%- if product.selected_or_first_available_variant.available -%}
+            {{ 'products.product.add_to_cart' | t }}
+          {%- else -%}
+            {{ 'products.product.sold_out' | t }}
+          {%- endif -%}
+        </button>
+      {%- endform -%}
+
+      {%- if product.description != blank -%}
+        <div class="product-page__description rte">
+          {{ product.description }}
+        </div>
+      {%- endif -%}
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Producto",
+  "tag": "section",
+  "class": "section-main-product",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "default": true,
+      "label": "Mostrar vendedor"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_quantity_selector",
+      "default": true,
+      "label": "Mostrar selector de cantidad"
+    }
+  ]
+}
+{% endschema %}

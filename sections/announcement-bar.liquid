@@ -1,0 +1,33 @@
+{% if section.settings.text != blank %}
+  <div class="announcement-bar" style="background-color: {{ section.settings.color_background }}; color: {{ section.settings.color_text }};">
+    <div class="announcement-bar__message">
+      {{ section.settings.text }}
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Barra de anuncios",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Mensaje",
+      "default": "¡Bienvenidos a nuestra tienda!"
+    },
+    {
+      "type": "color",
+      "id": "color_background",
+      "label": "Color de fondo",
+      "default": "#121212"
+    },
+    {
+      "type": "color",
+      "id": "color_text",
+      "label": "Color de texto",
+      "default": "#ffffff"
+    }
+  ]
+}
+{% endschema %}
