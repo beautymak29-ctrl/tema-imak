@@ -232,7 +232,7 @@
         "id": "rtl_languages",
         "label": "Códigos de idioma RTL (separados por coma)",
         "info": "Ejemplo: ar,he,fa",
-        "default": ""
+        
       }
     ]
   }
