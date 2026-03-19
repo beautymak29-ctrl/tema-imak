@@ -388,6 +388,79 @@ ul.list-unstyled {
 .rte p { margin: 0 0 1.6rem; }
 .rte p:last-child { margin-bottom: 0; }
 
+/* ----- Blog ----- */
+.blog-grid {
+  display: grid;
+  gap: var(--grid-desktop-vertical-spacing) var(--grid-desktop-horizontal-spacing);
+}
+.blog-grid--3-col { grid-template-columns: repeat(3, 1fr); }
+.blog-grid--2-col { grid-template-columns: repeat(2, 1fr); }
+.blog-grid--1-col { grid-template-columns: 1fr; }
+.blog-grid--4-col { grid-template-columns: repeat(4, 1fr); }
+
+.article-card__media { display: block; overflow: hidden; aspect-ratio: 16/9; margin-bottom: 1.6rem; }
+.article-card__image { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+.article-card:hover .article-card__image { transform: scale(1.04); }
+.article-card__meta { font-size: 1.2rem; opacity: 0.6; margin: 0 0 0.8rem; }
+.article-card__author::before { content: ' — '; }
+.article-card__title { font-size: 1.8rem; margin: 0 0 0.8rem; }
+.article-card__excerpt { font-size: 1.4rem; margin: 0 0 1.2rem; }
+.article-card__read-more { font-size: 1.3rem; text-decoration: underline; }
+
+/* ----- Artículo ----- */
+.article-page { max-width: 78rem; margin: 0 auto; }
+.article-page__meta { font-size: 1.2rem; opacity: 0.6; margin: 0 0 1.2rem; }
+.article-page__author::before { content: ' — '; }
+.article-page__title { font-size: var(--h1-size, 4rem); margin: 0 0 3.2rem; }
+.article-page__hero { margin-bottom: 3.2rem; }
+.article-page__hero-image { width: 100%; border-radius: var(--border-radius-base); }
+.article-page__body { font-size: 1.7rem; line-height: 1.8; margin-bottom: 3.2rem; }
+.article-page__tags { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-bottom: 3.2rem; }
+.article-page__tag { padding: 0.4rem 1rem; border: 1px solid var(--color-border); border-radius: var(--border-radius-base); font-size: 1.2rem; }
+.article-page__share { display: flex; align-items: center; gap: 1.6rem; margin-bottom: 3.2rem; }
+.article-page__share-label { font-size: 1.3rem; font-weight: 600; }
+.article-page__share-link { font-size: 1.3rem; text-decoration: underline; }
+.article-page__nav { border-top: 1px solid var(--color-border); padding-top: 2.4rem; }
+.article-page__back { font-size: 1.4rem; }
+
+/* ----- Formularios de cliente ----- */
+.customer-form { max-width: 48rem; }
+.customer-form__field { margin-bottom: 1.6rem; }
+.customer-form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; }
+.customer-form__label { display: block; font-size: 1.3rem; font-weight: 600; margin-bottom: 0.6rem; }
+.customer-form__input {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-base);
+  font-size: 1.4rem;
+  font-family: var(--font-body-family);
+  background: transparent;
+  color: var(--color-text);
+}
+.customer-form__input:focus { outline: none; border-color: var(--color-primary); }
+.customer-form__footer { display: flex; align-items: center; gap: 2.4rem; margin-top: 2.4rem; }
+.customer-form__link { font-size: 1.3rem; text-decoration: underline; opacity: 0.7; }
+.customer-form__register { margin-top: 2.4rem; font-size: 1.4rem; border-top: 1px solid var(--color-border); padding-top: 2.4rem; }
+.customers-page__links { display: flex; flex-wrap: wrap; gap: 1.2rem; margin-bottom: 3.2rem; }
+
+.btn--outline {
+  background-color: transparent;
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+.btn--outline:hover { background-color: var(--color-text); color: var(--color-background); border-color: var(--color-text); }
+.btn--small { padding: 0.6rem 1.2rem; font-size: 1.2rem; }
+
+.form-error { padding: 1.2rem; background: #fff0f0; border: 1px solid #c00; border-radius: var(--border-radius-base); color: #c00; font-size: 1.4rem; margin-bottom: 1.6rem; }
+.form-success { padding: 1.2rem; background: #f0fff0; border: 1px solid #060; border-radius: var(--border-radius-base); color: #060; font-size: 1.4rem; margin-bottom: 1.6rem; }
+
+.address-card { padding: 2rem; border: 1px solid var(--color-border); border-radius: var(--border-radius-base); margin-bottom: 1.6rem; }
+.address-card__actions { display: flex; gap: 0.8rem; margin-top: 1.2rem; }
+.order-addresses { display: grid; grid-template-columns: 1fr 1fr; gap: 2.4rem; margin: 3.2rem 0; }
+.order-details { margin-bottom: 2.4rem; }
+.order-details p { margin: 0.4rem 0; font-size: 1.4rem; }
+
 /* ----- Página de contraseña ----- */
 .password-page {
   min-height: 100vh;

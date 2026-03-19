@@ -1,0 +1,41 @@
+{% layout 'theme' %}
+<div class="customers-page page-width section-padding">
+  <h1>{{ 'customer.account.title' | t }}</h1>
+
+  <div class="customers-page__links">
+    <a href="{{ routes.account_orders_url }}" class="btn btn--outline">{{ 'customer.orders.title' | t }}</a>
+    <a href="{{ routes.account_addresses_url }}" class="btn btn--outline">{{ 'customer.addresses.title' | t }}</a>
+    {{ 'customer.log_out' | t | customer_logout_link: class: 'btn btn--outline' }}
+  </div>
+
+  <h2>{{ 'customer.orders.title' | t }}</h2>
+
+  {%- if customer.orders.size > 0 -%}
+    <table class="cart-table customer-orders">
+      <thead class="cart-table__head">
+        <tr>
+          <th class="cart-table__cell">{{ 'customer.orders.order_number' | t }}</th>
+          <th class="cart-table__cell">{{ 'customer.orders.date' | t }}</th>
+          <th class="cart-table__cell">{{ 'customer.orders.payment_status' | t }}</th>
+          <th class="cart-table__cell">{{ 'customer.orders.fulfillment_status' | t }}</th>
+          <th class="cart-table__cell">{{ 'customer.orders.total' | t }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%- for order in customer.orders -%}
+          <tr class="cart-table__row">
+            <td class="cart-table__cell">
+              <a href="{{ order.customer_url }}">{{ order.name }}</a>
+            </td>
+            <td class="cart-table__cell">{{ order.created_at | date: format: 'abbreviated_date' }}</td>
+            <td class="cart-table__cell">{{ order.financial_status_label }}</td>
+            <td class="cart-table__cell">{{ order.fulfillment_status_label }}</td>
+            <td class="cart-table__cell">{{ order.total_price | money }}</td>
+          </tr>
+        {%- endfor -%}
+      </tbody>
+    </table>
+  {%- else -%}
+    <p class="section-empty">{{ 'customer.orders.none' | t }}</p>
+  {%- endif -%}
+</div>

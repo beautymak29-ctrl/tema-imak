@@ -1,0 +1,47 @@
+{% layout 'theme' %}
+<div class="customers-page page-width section-padding">
+  <h1>{{ 'customer.login.title' | t }}</h1>
+
+  {%- form 'customer_login', class: 'customer-form' -%}
+    {%- if form.errors -%}
+      <div class="form-error" role="alert">
+        {{ form.errors | default_errors }}
+      </div>
+    {%- endif -%}
+
+    <div class="customer-form__field">
+      <label for="CustomerEmail" class="customer-form__label">{{ 'customer.login.email' | t }}</label>
+      <input
+        type="email"
+        name="customer[email]"
+        id="CustomerEmail"
+        autocomplete="email"
+        autocorrect="off"
+        autocapitalize="off"
+        class="customer-form__input"
+        required
+      >
+    </div>
+
+    <div class="customer-form__field">
+      <label for="CustomerPassword" class="customer-form__label">{{ 'customer.login.password' | t }}</label>
+      <input
+        type="password"
+        name="customer[password]"
+        id="CustomerPassword"
+        autocomplete="current-password"
+        class="customer-form__input"
+        required
+      >
+    </div>
+
+    <div class="customer-form__footer">
+      <button type="submit" class="btn">{{ 'customer.login.sign_in' | t }}</button>
+      <a href="{{ routes.account_recover_url }}" class="customer-form__link">{{ 'customer.login.forgot_password' | t }}</a>
+    </div>
+  {%- endform -%}
+
+  <div class="customer-form__register">
+    <p>{{ 'customer.login.no_account_html' | t: link: routes.account_register_url }}</p>
+  </div>
+</div>

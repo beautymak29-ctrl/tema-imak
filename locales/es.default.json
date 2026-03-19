@@ -30,10 +30,74 @@
       }
     }
   },
+  "blogs": {
+    "article": {
+      "read_more": "Seguir leyendo",
+      "written_by": "Por {{ author }}",
+      "back_to_blog": "Volver a {{ title }}",
+      "no_articles": "No hay artículos publicados aun."
+    }
+  },
   "customer": {
     "account": {
       "title": "Mi cuenta"
-    }
+    },
+    "login": {
+      "title": "Iniciar sesión",
+      "email": "Correo electrónico",
+      "password": "Contraseña",
+      "sign_in": "Iniciar sesión",
+      "forgot_password": "¿Olvidaste tu contraseña?",
+      "no_account_html": "¿No tienes cuenta? <a href='{{ link }}'>Regístrate</a>",
+      "cancel": "Cancelar"
+    },
+    "register": {
+      "title": "Crear cuenta",
+      "first_name": "Nombre",
+      "last_name": "Apellido",
+      "email": "Correo electrónico",
+      "password": "Contraseña",
+      "submit": "Crear cuenta",
+      "have_account_html": "¿Ya tienes cuenta? <a href='{{ link }}'>Inicia sesión</a>"
+    },
+    "recover_password": {
+      "title": "Recuperar contraseña",
+      "subtext": "Te enviaremos un correo para restablecer tu contraseña.",
+      "submit": "Enviar",
+      "success": "Te hemos enviado un correo con las instrucciones."
+    },
+    "addresses": {
+      "title": "Mis direcciones",
+      "add_new": "Agregar dirección",
+      "add": "Guardar dirección",
+      "edit": "Editar",
+      "delete": "Eliminar",
+      "set_default": "Establecer como predeterminada",
+      "default": "Dirección predeterminada"
+    },
+    "orders": {
+      "title": "Mis pedidos",
+      "none": "No tienes pedidos todavía.",
+      "order_number": "Pedido",
+      "date": "Fecha",
+      "payment_status": "Pago",
+      "fulfillment_status": "Envío",
+      "total": "Total"
+    },
+    "order": {
+      "product": "Producto",
+      "sku": "SKU",
+      "price": "Precio",
+      "quantity": "Cantidad",
+      "total": "Total",
+      "subtotal": "Subtotal",
+      "discount": "Descuento",
+      "shipping": "Envío",
+      "tax": "Impuesto",
+      "shipping_address": "Dirección de envío",
+      "billing_address": "Dirección de facturación"
+    },
+    "log_out": "Cerrar sesión"
   },
   "products": {
     "product": {

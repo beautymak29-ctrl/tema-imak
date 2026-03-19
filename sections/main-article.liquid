@@ -1,0 +1,96 @@
+{% comment %} Artículo individual del blog {% endcomment %}
+<article class="article-page page-width section-padding">
+  <header class="article-page__header">
+    {%- if section.settings.show_date or section.settings.show_author -%}
+      <p class="article-page__meta">
+        {%- if section.settings.show_date -%}
+          <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">
+            {{ article.published_at | date: format: 'abbreviated_date' }}
+          </time>
+        {%- endif -%}
+        {%- if section.settings.show_author -%}
+          <span class="article-page__author">{{ 'blogs.article.written_by' | t: author: article.author }}</span>
+        {%- endif -%}
+      </p>
+    {%- endif -%}
+
+    <h1 class="article-page__title">{{ article.title }}</h1>
+
+    {%- if article.image -%}
+      <div class="article-page__hero">
+        <img
+          src="{{ article.image | image_url: width: 1200 }}"
+          alt="{{ article.image.alt | escape }}"
+          width="1200"
+          height="{{ 1200 | divided_by: article.image.aspect_ratio | ceil }}"
+          loading="eager"
+          class="article-page__hero-image"
+        >
+      </div>
+    {%- endif -%}
+  </header>
+
+  <div class="article-page__body rte">
+    {{ article.content }}
+  </div>
+
+  {%- if section.settings.show_tags and article.tags.size > 0 -%}
+    <div class="article-page__tags">
+      {%- for tag in article.tags -%}
+        <a href="{{ blog.url }}/tagged/{{ tag | handle }}" class="article-page__tag">{{ tag }}</a>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+
+  {%- if section.settings.show_share_buttons -%}
+    <div class="article-page__share">
+      <span class="article-page__share-label">{{ 'general.share.share' | t }}</span>
+      <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.origin | append: article.url }}"
+         target="_blank" rel="noopener noreferrer" class="article-page__share-link">
+        Facebook
+      </a>
+      <a href="https://twitter.com/intent/tweet?url={{ request.origin | append: article.url }}&text={{ article.title | url_encode }}"
+         target="_blank" rel="noopener noreferrer" class="article-page__share-link">
+        Twitter / X
+      </a>
+    </div>
+  {%- endif -%}
+
+  <div class="article-page__nav">
+    <a href="{{ blog.url }}" class="article-page__back">&larr; {{ 'blogs.article.back_to_blog' | t: title: blog.title }}</a>
+  </div>
+</article>
+
+{% schema %}
+{
+  "name": "Artículo",
+  "tag": "section",
+  "class": "section-main-article",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "default": true,
+      "label": "Mostrar fecha"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "default": true,
+      "label": "Mostrar autor"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_tags",
+      "default": true,
+      "label": "Mostrar etiquetas"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_share_buttons",
+      "default": true,
+      "label": "Mostrar botones de compartir"
+    }
+  ]
+}
+{% endschema %}

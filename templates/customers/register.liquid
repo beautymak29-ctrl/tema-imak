@@ -1,0 +1,39 @@
+{% layout 'theme' %}
+<div class="customers-page page-width section-padding">
+  <h1>{{ 'customer.register.title' | t }}</h1>
+
+  {%- form 'create_customer', class: 'customer-form' -%}
+    {%- if form.errors -%}
+      <div class="form-error" role="alert">
+        {{ form.errors | default_errors }}
+      </div>
+    {%- endif -%}
+
+    <div class="customer-form__row">
+      <div class="customer-form__field">
+        <label for="FirstName" class="customer-form__label">{{ 'customer.register.first_name' | t }}</label>
+        <input type="text" name="customer[first_name]" id="FirstName" autocomplete="given-name" class="customer-form__input">
+      </div>
+      <div class="customer-form__field">
+        <label for="LastName" class="customer-form__label">{{ 'customer.register.last_name' | t }}</label>
+        <input type="text" name="customer[last_name]" id="LastName" autocomplete="family-name" class="customer-form__input" required>
+      </div>
+    </div>
+
+    <div class="customer-form__field">
+      <label for="RegisterEmail" class="customer-form__label">{{ 'customer.register.email' | t }}</label>
+      <input type="email" name="customer[email]" id="RegisterEmail" autocomplete="email" autocorrect="off" autocapitalize="off" class="customer-form__input" required>
+    </div>
+
+    <div class="customer-form__field">
+      <label for="RegisterPassword" class="customer-form__label">{{ 'customer.register.password' | t }}</label>
+      <input type="password" name="customer[password]" id="RegisterPassword" autocomplete="new-password" class="customer-form__input" required>
+    </div>
+
+    <button type="submit" class="btn">{{ 'customer.register.submit' | t }}</button>
+  {%- endform -%}
+
+  <div class="customer-form__register">
+    <p>{{ 'customer.register.have_account_html' | t: link: routes.account_login_url }}</p>
+  </div>
+</div>

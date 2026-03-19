@@ -1,0 +1,88 @@
+{% layout 'theme' %}
+<div class="customers-page page-width section-padding">
+  <h1>{{ 'customer.orders.title' | t }}: {{ order.name }}</h1>
+
+  <div class="order-details">
+    <p><strong>{{ 'customer.orders.date' | t }}:</strong> {{ order.created_at | date: format: 'abbreviated_date' }}</p>
+    <p><strong>{{ 'customer.orders.payment_status' | t }}:</strong> {{ order.financial_status_label }}</p>
+    <p><strong>{{ 'customer.orders.fulfillment_status' | t }}:</strong> {{ order.fulfillment_status_label }}</p>
+  </div>
+
+  <table class="cart-table">
+    <thead class="cart-table__head">
+      <tr>
+        <th class="cart-table__cell">{{ 'customer.order.product' | t }}</th>
+        <th class="cart-table__cell">{{ 'customer.order.sku' | t }}</th>
+        <th class="cart-table__cell">{{ 'customer.order.price' | t }}</th>
+        <th class="cart-table__cell">{{ 'customer.order.quantity' | t }}</th>
+        <th class="cart-table__cell">{{ 'customer.order.total' | t }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%- for line_item in order.line_items -%}
+        <tr class="cart-table__row">
+          <td class="cart-table__cell">
+            <div class="cart-item">
+              {%- if line_item.image -%}
+                <img src="{{ line_item.image | image_url: width: 80 }}" alt="{{ line_item.image.alt | escape }}" width="80" height="80" loading="lazy" class="cart-item__image">
+              {%- endif -%}
+              <div>
+                {{ line_item.product.title }}
+                {%- if line_item.variant.title != 'Default Title' -%}
+                  <p class="cart-item__variant">{{ line_item.variant.title }}</p>
+                {%- endif -%}
+              </div>
+            </div>
+          </td>
+          <td class="cart-table__cell">{{ line_item.sku }}</td>
+          <td class="cart-table__cell">{{ line_item.price | money }}</td>
+          <td class="cart-table__cell">{{ line_item.quantity }}</td>
+          <td class="cart-table__cell">{{ line_item.final_line_price | money }}</td>
+        </tr>
+      {%- endfor -%}
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="4" class="cart-table__cell"><strong>{{ 'customer.order.subtotal' | t }}</strong></td>
+        <td class="cart-table__cell">{{ order.line_items_subtotal_price | money }}</td>
+      </tr>
+      {%- for discount in order.cart_level_discount_applications -%}
+        <tr>
+          <td colspan="4" class="cart-table__cell">{{ 'customer.order.discount' | t }} ({{ discount.title }})</td>
+          <td class="cart-table__cell">-{{ discount.total_allocated_amount | money }}</td>
+        </tr>
+      {%- endfor -%}
+      {%- for shipping_method in order.shipping_methods -%}
+        <tr>
+          <td colspan="4" class="cart-table__cell">{{ 'customer.order.shipping' | t }} ({{ shipping_method.title }})</td>
+          <td class="cart-table__cell">{{ shipping_method.price | money }}</td>
+        </tr>
+      {%- endfor -%}
+      {%- for tax_line in order.tax_lines -%}
+        <tr>
+          <td colspan="4" class="cart-table__cell">{{ 'customer.order.tax' | t }} ({{ tax_line.title }} {{ tax_line.rate | times: 100 }}%)</td>
+          <td class="cart-table__cell">{{ tax_line.price | money }}</td>
+        </tr>
+      {%- endfor -%}
+      <tr>
+        <td colspan="4" class="cart-table__cell"><strong>{{ 'customer.order.total' | t }}</strong></td>
+        <td class="cart-table__cell"><strong>{{ order.total_price | money }}</strong></td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <div class="order-addresses">
+    {%- if order.shipping_address -%}
+      <div>
+        <h3>{{ 'customer.order.shipping_address' | t }}</h3>
+        {{ order.shipping_address | format_address }}
+      </div>
+    {%- endif -%}
+    <div>
+      <h3>{{ 'customer.order.billing_address' | t }}</h3>
+      {{ order.billing_address | format_address }}
+    </div>
+  </div>
+
+  <a href="{{ routes.account_url }}" class="btn btn--outline">&larr; {{ 'customer.account.title' | t }}</a>
+</div>
