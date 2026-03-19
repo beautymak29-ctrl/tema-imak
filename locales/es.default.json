@@ -10,6 +10,16 @@
         "other": "{{ count }} resultados para \"{{ terms }}\""
       },
       "no_results": "No se encontraron resultados para \"{{ terms }}\"."
+    },
+    "password_page": {
+      "coming_soon": "Próximamente",
+      "newsletter_confirm_text": "¡Gracias! Te avisaremos cuando abramos.",
+      "admin_link_html": "¿Eres el dueño de la tienda? <a href='/password'>Inicia sesión aquí</a>"
+    }
+  },
+  "accessibility": {
+    "link_messages": {
+      "new_window": "Se abre en una ventana nueva"
     }
   },
   "sections": {

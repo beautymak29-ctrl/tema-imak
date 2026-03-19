@@ -10,6 +10,16 @@
         "other": "{{ count }} results for \"{{ terms }}\""
       },
       "no_results": "No results found for \"{{ terms }}\"."
+    },
+    "password_page": {
+      "coming_soon": "Coming Soon",
+      "newsletter_confirm_text": "Thanks! We'll let you know when we open.",
+      "admin_link_html": "Are you the store owner? <a href='/password'>Log in here</a>"
+    }
+  },
+  "accessibility": {
+    "link_messages": {
+      "new_window": "Opens in a new window"
     }
   },
   "sections": {

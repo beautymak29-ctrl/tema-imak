@@ -388,6 +388,86 @@ ul.list-unstyled {
 .rte p { margin: 0 0 1.6rem; }
 .rte p:last-child { margin-bottom: 0; }
 
+/* ----- Página de contraseña ----- */
+.password-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4.8rem 1.6rem;
+}
+
+.password-page__header {
+  margin-bottom: 4rem;
+}
+
+.password-page__logo {
+  font-family: var(--font-heading-family);
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.password-page__heading {
+  font-size: var(--h1-size, 4rem);
+  margin: 0 0 1.6rem;
+}
+
+.password-page__subheading {
+  font-size: 1.6rem;
+  opacity: 0.7;
+  margin: 0 0 3.2rem;
+  max-width: 52rem;
+}
+
+.password-page__newsletter-form {
+  width: 100%;
+  max-width: 44rem;
+  margin: 0 auto 2.4rem;
+}
+
+.password-page__newsletter-input-wrap {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.password-page__email-input {
+  flex: 1;
+  padding: 1.1rem 1.6rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-base);
+  font-size: 1.4rem;
+  background: var(--input-bg, transparent);
+  color: var(--color-text);
+  font-family: var(--font-body-family);
+}
+
+.password-page__email-input::placeholder {
+  color: var(--input-placeholder-color);
+}
+
+.password-page__email-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.password-page__success {
+  margin-top: 1.2rem;
+  font-size: 1.3rem;
+  color: var(--color-primary);
+}
+
+.password-page__admin-link {
+  font-size: 1.2rem;
+  opacity: 0.6;
+}
+
+.password-page__admin-link a {
+  text-decoration: underline;
+}
+
 /* ----- Responsive ----- */
 @media (max-width: 749px) {
   .header__nav {
