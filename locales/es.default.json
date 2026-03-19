@@ -15,6 +15,13 @@
       "coming_soon": "Próximamente",
       "newsletter_confirm_text": "¡Gracias! Te avisaremos cuando abramos.",
       "admin_link_html": "¿Eres el dueño de la tienda? <a href='/password'>Inicia sesión aquí</a>"
+    },
+    "share": {
+      "share": "Compartir"
+    },
+    "pagination": {
+      "previous": "Anterior",
+      "next": "Siguiente"
     }
   },
   "accessibility": {
@@ -73,7 +80,17 @@
       "edit": "Editar",
       "delete": "Eliminar",
       "set_default": "Establecer como predeterminada",
-      "default": "Dirección predeterminada"
+      "default": "Dirección predeterminada",
+      "first_name": "Nombre",
+      "last_name": "Apellido",
+      "company": "Empresa",
+      "address1": "Dirección",
+      "address2": "Apartamento, suite, etc.",
+      "country": "País",
+      "province": "Provincia / Estado",
+      "city": "Ciudad",
+      "zip": "Código postal",
+      "phone": "Teléfono"
     },
     "orders": {
       "title": "Mis pedidos",

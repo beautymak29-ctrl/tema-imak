@@ -15,6 +15,13 @@
       "coming_soon": "Coming Soon",
       "newsletter_confirm_text": "Thanks! We'll let you know when we open.",
       "admin_link_html": "Are you the store owner? <a href='/password'>Log in here</a>"
+    },
+    "share": {
+      "share": "Share"
+    },
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next"
     }
   },
   "accessibility": {
@@ -65,7 +72,17 @@
       "edit": "Edit",
       "delete": "Delete",
       "set_default": "Set as default",
-      "default": "Default address"
+      "default": "Default address",
+      "first_name": "First name",
+      "last_name": "Last name",
+      "company": "Company",
+      "address1": "Address",
+      "address2": "Apartment, suite, etc.",
+      "country": "Country",
+      "province": "Province / State",
+      "city": "City",
+      "zip": "Postal code",
+      "phone": "Phone"
     },
     "orders": {
       "title": "Orders",
@@ -107,6 +124,14 @@
       "title": "Your cart",
       "empty": "Your cart is currently empty.",
       "continue_browsing": "Continue shopping"
+    }
+  },
+  "blogs": {
+    "article": {
+      "read_more": "Read more",
+      "written_by": "By {{ author }}",
+      "back_to_blog": "Back to {{ title }}",
+      "no_articles": "No articles have been published yet."
     }
   }
 }
