@@ -2,43 +2,88 @@
   {
     "name": "theme_info",
     "theme_name": "Tema Imak",
-    "theme_version": "1.0.0",
+    "theme_version": "1.1.0",
     "theme_author": "Imak",
     "theme_documentation_url": "",
     "theme_support_url": ""
   },
   {
-    "name": "Colores",
+    "name": "Esquemas de color",
     "settings": [
       {
-        "type": "color",
-        "id": "colors_text",
-        "label": "Texto",
-        "default": "#121212"
+        "type": "color_scheme_group",
+        "id": "color_schemes",
+        "definition": [
+          {
+            "type": "color",
+            "id": "background",
+            "label": "Fondo",
+            "default": "#ffffff"
+          },
+          {
+            "type": "color_background",
+            "id": "background_gradient",
+            "label": "Degradado de fondo"
+          },
+          {
+            "type": "color",
+            "id": "text_color",
+            "label": "Texto",
+            "default": "#121212"
+          },
+          {
+            "type": "color",
+            "id": "heading_color",
+            "label": "Encabezados",
+            "default": "#121212"
+          },
+          {
+            "type": "color",
+            "id": "primary_color",
+            "label": "Color primario",
+            "default": "#121212"
+          },
+          {
+            "type": "color",
+            "id": "border_color",
+            "label": "Bordes",
+            "default": "#e5e5e5"
+          },
+          {
+            "type": "color",
+            "id": "btn_background",
+            "label": "Fondo del botón",
+            "default": "#121212"
+          },
+          {
+            "type": "color",
+            "id": "btn_color",
+            "label": "Texto del botón",
+            "default": "#ffffff"
+          },
+          {
+            "type": "color",
+            "id": "btn_background_hover",
+            "label": "Fondo del botón (hover)",
+            "default": "#333333"
+          },
+          {
+            "type": "color",
+            "id": "btn_color_hover",
+            "label": "Texto del botón (hover)",
+            "default": "#ffffff"
+          }
+        ],
+        "role": {
+          "background": "background",
+          "text": "text_color"
+        }
       },
       {
-        "type": "color",
-        "id": "colors_background_1",
-        "label": "Fondo principal",
-        "default": "#ffffff"
-      },
-      {
-        "type": "color",
-        "id": "colors_background_2",
-        "label": "Fondo secundario",
-        "default": "#f3f3f3"
-      },
-      {
-        "type": "color",
-        "id": "colors_accent_1",
-        "label": "Acento 1",
-        "default": "#121212"
-      },
-      {
-        "type": "color",
-        "id": "colors_accent_2",
-        "label": "Acento 2",
-        "default": "#6d6d6d"
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "default": "scheme-1",
+        "label": "Esquema de color"
       }
     ]
   },
@@ -56,6 +101,42 @@
         "id": "type_header_font",
         "label": "Fuente de encabezados",
         "default": "assistant_n4"
+      },
+      {
+        "type": "range",
+        "id": "heading_font_scale",
+        "min": 70,
+        "max": 150,
+        "step": 5,
+        "unit": "%",
+        "label": "Escala de encabezados",
+        "default": 100
+      }
+    ]
+  },
+  {
+    "name": "Botones",
+    "settings": [
+      {
+        "type": "range",
+        "id": "button_radius",
+        "min": 0,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "Radio del botón",
+        "default": 2
+      },
+      {
+        "type": "select",
+        "id": "btn_text_transform",
+        "label": "Transformación de texto",
+        "options": [
+          { "value": "none", "label": "Normal" },
+          { "value": "uppercase", "label": "MAYÚSCULAS" },
+          { "value": "capitalize", "label": "Capitalizado" }
+        ],
+        "default": "uppercase"
       }
     ]
   },
@@ -79,6 +160,16 @@
       },
       {
         "type": "range",
+        "id": "border_radius",
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "label": "Radio de bordes",
+        "default": 4
+      },
+      {
+        "type": "range",
         "id": "spacing_grid_vertical",
         "min": 0,
         "max": 36,
@@ -96,6 +187,44 @@
         "unit": "px",
         "label": "Espaciado horizontal de cuadrícula",
         "default": 8
+      },
+      {
+        "type": "range",
+        "id": "section_spacing_desktop",
+        "min": 20,
+        "max": 120,
+        "step": 4,
+        "unit": "px",
+        "label": "Espaciado de secciones (escritorio)",
+        "default": 64
+      },
+      {
+        "type": "range",
+        "id": "section_spacing_mobile",
+        "min": 16,
+        "max": 80,
+        "step": 4,
+        "unit": "px",
+        "label": "Espaciado de secciones (móvil)",
+        "default": 40
+      }
+    ]
+  },
+  {
+    "name": "Idioma y accesibilidad",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "rtl_enable",
+        "label": "Activar RTL (derecha a izquierda)",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "rtl_languages",
+        "label": "Códigos de idioma RTL (separados por coma)",
+        "info": "Ejemplo: ar,he,fa",
+        "default": ""
       }
     ]
   }

@@ -1,9 +1,20 @@
+{%- liquid
+  assign enable_rtl = settings.rtl_enable
+  assign iso_code = request.locale.iso_code
+  if settings.rtl_languages != blank
+    if settings.rtl_languages contains iso_code
+      assign enable_rtl = true
+    else
+      assign enable_rtl = false
+    endif
+  endif
+-%}
 <!doctype html>
-<html class="no-js" lang="{{ request.locale.iso_code }}">
+<html class="no-js" lang="{{ request.locale.iso_code }}"{% if enable_rtl %} dir="rtl"{% endif %}>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="">
 
     <link rel="canonical" href="{{ canonical_url }}">
@@ -12,7 +23,7 @@
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {%- endif -%}
 
-    {%- unless settings.type_header_font.system? -%}
+    {%- unless settings.type_body_font.system? and settings.type_header_font.system? -%}
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
 
@@ -23,62 +34,111 @@
       {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
     </title>
 
-    {% if page_description %}
+    {%- if page_description -%}
       <meta name="description" content="{{ page_description | escape }}">
-    {% endif %}
+    {%- endif -%}
 
-    {% render 'meta-tags' %}
+    {%- render 'meta-tags' -%}
 
     {{ content_for_header }}
 
-    {%- liquid
-      assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
-      assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
-      assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
-    %}
+    {%- render 'font-variables' -%}
 
-    {% style %}
-      {{ settings.type_body_font | font_face: font_display: 'swap' }}
-      {{ body_font_bold | font_face: font_display: 'swap' }}
-      {{ body_font_italic | font_face: font_display: 'swap' }}
-      {{ body_font_bold_italic | font_face: font_display: 'swap' }}
-      {{ settings.type_header_font | font_face: font_display: 'swap' }}
+    {%- style -%}
+      {%- for scheme in settings.color_schemes -%}
+        {%- assign scheme_classes = scheme_classes | append: ', .color-' | append: scheme.id -%}
+        {%- if forloop.index == 1 -%}:root,{%- endif -%}
+        .color-{{ scheme.id }} {
+          --color-background: {{ scheme.settings.background }};
+          {%- if scheme.settings.background_gradient != empty -%}
+            --gradient-background: {{ scheme.settings.background_gradient }};
+          {%- else -%}
+            --gradient-background: {{ scheme.settings.background }};
+          {%- endif -%}
+          --color-text: {{ scheme.settings.text_color }};
+          --color-text-rgb: {{ scheme.settings.text_color.red }}, {{ scheme.settings.text_color.green }}, {{ scheme.settings.text_color.blue }};
+          --color-heading: {{ scheme.settings.heading_color }};
+          --color-heading-rgb: {{ scheme.settings.heading_color.red }}, {{ scheme.settings.heading_color.green }}, {{ scheme.settings.heading_color.blue }};
+          --color-primary: {{ scheme.settings.primary_color }};
+          --color-primary-rgb: {{ scheme.settings.primary_color.red }}, {{ scheme.settings.primary_color.green }}, {{ scheme.settings.primary_color.blue }};
+          --color-border: {{ scheme.settings.border_color }};
+          --btn-primary-bg: {{ scheme.settings.btn_background }};
+          --btn-primary-color: {{ scheme.settings.btn_color }};
+          --btn-primary-bg-hover: {{ scheme.settings.btn_background_hover }};
+          --btn-primary-color-hover: {{ scheme.settings.btn_color_hover }};
+        }
+      {%- endfor -%}
+
+      {{ scheme_classes | prepend: 'body' }} {
+        color: var(--color-text);
+        background-color: var(--color-background);
+      }
 
       :root {
         --font-body-family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
         --font-body-style: {{ settings.type_body_font.style }};
         --font-body-weight: {{ settings.type_body_font.weight }};
-
         --font-heading-family: {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
         --font-heading-style: {{ settings.type_header_font.style }};
         --font-heading-weight: {{ settings.type_header_font.weight }};
-
-        --color-base-text: {{ settings.colors_text.red }}, {{ settings.colors_text.green }}, {{ settings.colors_text.blue }};
-        --color-base-background-1: {{ settings.colors_background_1.red }}, {{ settings.colors_background_1.green }}, {{ settings.colors_background_1.blue }};
-        --color-base-background-2: {{ settings.colors_background_2.red }}, {{ settings.colors_background_2.green }}, {{ settings.colors_background_2.blue }};
-        --color-base-accent-1: {{ settings.colors_accent_1.red }}, {{ settings.colors_accent_1.green }}, {{ settings.colors_accent_1.blue }};
-        --color-base-accent-2: {{ settings.colors_accent_2.red }}, {{ settings.colors_accent_2.green }}, {{ settings.colors_accent_2.blue }};
 
         --page-width: {{ settings.page_width | divided_by: 10 }}rem;
         --grid-desktop-vertical-spacing: {{ settings.spacing_grid_vertical }}px;
         --grid-desktop-horizontal-spacing: {{ settings.spacing_grid_horizontal }}px;
         --grid-mobile-vertical-spacing: {{ settings.spacing_grid_vertical | divided_by: 2 }}px;
         --grid-mobile-horizontal-spacing: {{ settings.spacing_grid_horizontal | divided_by: 2 }}px;
-      }
-    {% endstyle %}
 
-    {{ 'base.css' | asset_url | stylesheet_tag }}
+        --btn-radius: {{ settings.button_radius }}px;
+        --btn-text-transform: {{ settings.btn_text_transform }};
+
+        --section-spacing-desktop: {{ settings.section_spacing_desktop }}px;
+        --section-spacing-mobile: {{ settings.section_spacing_mobile }}px;
+
+        --heading-font-scale: {{ settings.heading_font_scale | divided_by: 100.0 }};
+        --h1-size: calc(var(--heading-font-scale) * 4rem);
+        --h2-size: calc(var(--heading-font-scale) * 3.2rem);
+        --h3-size: calc(var(--heading-font-scale) * 2.4rem);
+        --h4-size: calc(var(--heading-font-scale) * 2rem);
+        --h5-size: calc(var(--heading-font-scale) * 1.6rem);
+
+        --transition: 0.3s ease;
+        --overlay-bg: rgba(0, 0, 0, 0.5);
+        --border-radius-base: {{ settings.border_radius }}px;
+      }
+
+      @media (max-width: 749px) {
+        :root {
+          --section-spacing: var(--section-spacing-mobile);
+        }
+      }
+      @media (min-width: 750px) {
+        :root {
+          --section-spacing: var(--section-spacing-desktop);
+        }
+      }
+    {%- endstyle -%}
+
+    {{- 'base.css' | asset_url | stylesheet_tag -}}
+
+    {%- if request.design_mode -%}
+      <script>document.documentElement.classList.add('shopify-design-mode');</script>
+    {%- endif -%}
+
+    <script>
+      document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+    </script>
   </head>
 
-  <body class="gradient">
-    {% sections 'header-group' %}
+  <body class="gradient color-{{ settings.color_scheme }}{% if enable_rtl %} rtl{% endif %} {{ request.page_type }}">
+
+    {%- sections 'header-group' -%}
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
 
-    {% sections 'footer-group' %}
+    {%- sections 'footer-group' -%}
 
-    {{ 'global.js' | asset_url | script_tag }}
+    <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
   </body>
 </html>
