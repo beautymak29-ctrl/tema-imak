@@ -10,22 +10,21 @@
         <ul class="vr-gallery__list">
           {%- for block in section.blocks -%}
             <li class="vr-card" {{ block.shopify_attributes }}>
-              <div class="vr-card__inner">
-                {%- if block.settings.tiktok_id != blank -%}
-                  <iframe
-                    class="vr-card__iframe"
-                    src="https://www.tiktok.com/embed/v2/{{ block.settings.tiktok_id }}"
-                    allowfullscreen
-                    allow="encrypted-media; autoplay"
-                    loading="lazy"
-                  ></iframe>
-                {%- else -%}
-                  <div class="vr-card__placeholder">
-                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm-4 28V16l14 8-14 8z" fill="#86868b"/></svg>
-                    <p class="vr-card__placeholder-text">Agrega un ID de TikTok</p>
-                  </div>
-                {%- endif -%}
-              </div>
+              {%- if block.settings.tiktok_id != blank -%}
+                <blockquote
+                  class="tiktok-embed"
+                  cite="https://www.tiktok.com/video/{{ block.settings.tiktok_id }}"
+                  data-video-id="{{ block.settings.tiktok_id }}"
+                  style="max-width:325px;min-width:275px;"
+                >
+                  <section></section>
+                </blockquote>
+              {%- else -%}
+                <div class="vr-card__placeholder">
+                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm-4 28V16l14 8-14 8z" fill="#86868b"/></svg>
+                  <p class="vr-card__placeholder-text">Agrega un ID de TikTok</p>
+                </div>
+              {%- endif -%}
             </li>
           {%- endfor -%}
         </ul>
@@ -42,6 +41,7 @@
   </div>
 </section>
 
+<script async src="https://www.tiktok.com/embed.js"></script>
 <script>
 (function(){
   var sec = document.querySelector('.section-{{ section.id }}');
