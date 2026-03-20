@@ -1,41 +1,81 @@
-{% comment %} Footer de la tienda {% endcomment %}
-<footer class="footer" role="contentinfo">
-  <div class="footer__content page-width">
+{% comment %} Footer estilo Apple – ft-* {% endcomment %}
+<footer class="ft" role="contentinfo">
+  {%- comment -%} Notas legales superiores {%- endcomment -%}
+  {%- if section.settings.legal_notes != blank -%}
+    <div class="ft__notes page-width">
+      <div class="ft__notes-text rte">{{ section.settings.legal_notes }}</div>
+    </div>
+  {%- endif -%}
+
+  {%- comment -%} Columnas de links {%- endcomment -%}
+  <div class="ft__columns page-width">
     {%- for block in section.blocks -%}
       {%- case block.type -%}
         {%- when 'link_list' -%}
-          <div class="footer__block footer__block--menu" {{ block.shopify_attributes }}>
+          <div class="ft__col" {{ block.shopify_attributes }}>
             {%- if block.settings.heading != blank -%}
-              <h2 class="footer__heading">{{ block.settings.heading | escape }}</h2>
+              <button class="ft__col-toggle" aria-expanded="false">
+                <span class="ft__col-heading">{{ block.settings.heading | escape }}</span>
+                <svg class="ft__col-chevron" xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>
+              </button>
+              <h3 class="ft__col-heading ft__col-heading--desktop">{{ block.settings.heading | escape }}</h3>
             {%- endif -%}
             {%- if block.settings.menu != blank -%}
-              <ul class="footer__nav-list list-unstyled" role="list">
+              <ul class="ft__col-links" role="list">
                 {%- for link in linklists[block.settings.menu].links -%}
-                  <li class="footer__nav-item">
-                    <a href="{{ link.url }}" class="footer__nav-link">{{ link.title | escape }}</a>
-                  </li>
+                  <li><a href="{{ link.url }}" class="ft__link">{{ link.title | escape }}</a></li>
                 {%- endfor -%}
               </ul>
             {%- endif -%}
           </div>
 
         {%- when 'text' -%}
-          <div class="footer__block footer__block--text" {{ block.shopify_attributes }}>
+          <div class="ft__col" {{ block.shopify_attributes }}>
             {%- if block.settings.heading != blank -%}
-              <h2 class="footer__heading">{{ block.settings.heading | escape }}</h2>
+              <button class="ft__col-toggle" aria-expanded="false">
+                <span class="ft__col-heading">{{ block.settings.heading | escape }}</span>
+                <svg class="ft__col-chevron" xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>
+              </button>
+              <h3 class="ft__col-heading ft__col-heading--desktop">{{ block.settings.heading | escape }}</h3>
             {%- endif -%}
             {%- if block.settings.subtext != blank -%}
-              <div class="footer__subtext rte">{{ block.settings.subtext }}</div>
+              <div class="ft__col-links ft__col-text rte">{{ block.settings.subtext }}</div>
             {%- endif -%}
           </div>
       {%- endcase -%}
     {%- endfor -%}
   </div>
 
-  <div class="footer__bottom page-width">
-    <p class="footer__copyright">&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}</p>
+  {%- comment -%} Bottom bar {%- endcomment -%}
+  <div class="ft__bottom page-width">
+    <div class="ft__bottom-inner">
+      <p class="ft__copyright">Copyright &copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. Todos los derechos reservados.</p>
+      {%- if section.settings.bottom_menu != blank -%}
+        <nav class="ft__bottom-nav" aria-label="Legal">
+          <ul class="ft__bottom-list" role="list">
+            {%- for link in linklists[section.settings.bottom_menu].links -%}
+              <li><a href="{{ link.url }}" class="ft__bottom-link">{{ link.title | escape }}</a></li>
+            {%- endfor -%}
+          </ul>
+        </nav>
+      {%- endif -%}
+    </div>
   </div>
 </footer>
+
+<script>
+(function(){
+  var toggles = document.querySelectorAll('.ft__col-toggle');
+  toggles.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open));
+      var links = btn.parentElement.querySelector('.ft__col-links');
+      if (links) links.classList.toggle('ft__col-links--open');
+    });
+  });
+})();
+</script>
 
 {% schema %}
 {
@@ -48,7 +88,7 @@
         {
           "type": "text",
           "id": "heading",
-          "default": "Navegación rápida",
+          "default": "Comprar e informarte",
           "label": "Encabezado"
         },
         {
@@ -80,10 +120,16 @@
   ],
   "settings": [
     {
-      "type": "checkbox",
-      "id": "show_social",
-      "default": true,
-      "label": "Mostrar redes sociales"
+      "type": "richtext",
+      "id": "legal_notes",
+      "label": "Notas legales",
+      "default": "<p>◊ Los precios pueden variar. Aplican términos y condiciones.</p>"
+    },
+    {
+      "type": "link_list",
+      "id": "bottom_menu",
+      "label": "Menú inferior (legal)",
+      "info": "Política de privacidad, términos, etc."
     }
   ]
 }

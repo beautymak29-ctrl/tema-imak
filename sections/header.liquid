@@ -1,31 +1,30 @@
-{% comment %} Header principal de la tienda {% endcomment %}
-<header class="header" id="shopify-section-header">
-  <div class="header__inner page-width">
-    <div class="header__logo">
+{% comment %} Header estilo Apple – nav translucido oscuro {% endcomment %}
+<header class="hd" id="shopify-section-header" data-sticky="{{ section.settings.sticky_header_type }}">
+  <div class="hd__inner page-width">
+    {%- comment -%} Logo / Home icon {%- endcomment -%}
+    <a href="{{ routes.root_url }}" class="hd__logo" aria-label="{{ shop.name }}">
       {%- if settings.logo != blank -%}
-        <a href="{{ routes.root_url }}" class="header__logo-link">
-          <img
-            src="{{ settings.logo | image_url: width: settings.logo_width }}"
-            alt="{{ settings.logo.alt | default: shop.name | escape }}"
-            width="{{ settings.logo_width }}"
-            height="auto"
-            loading="lazy"
-          >
-        </a>
+        <img
+          src="{{ settings.logo | image_url: width: settings.logo_width }}"
+          alt="{{ settings.logo.alt | default: shop.name | escape }}"
+          width="{{ settings.logo_width }}"
+          height="auto"
+          loading="eager"
+          class="hd__logo-img"
+        >
       {%- else -%}
-        <a href="{{ routes.root_url }}" class="header__logo-link header__logo-text">
-          {{ shop.name }}
-        </a>
+        <svg class="hd__apple-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 48" width="14" height="44" aria-hidden="true"><path d="M15.5 24.076c-.028-3.17 2.584-4.692 2.7-4.763a5.877 5.877 0 0 0-4.632-2.504c-1.97-.2-3.848 1.16-4.85 1.16-1 0-2.546-1.13-4.184-1.1a6.158 6.158 0 0 0-5.183 3.161c-2.21 3.834-.566 9.515 1.588 12.627 1.053 1.524 2.31 3.235 3.96 3.174 1.588-.064 2.188-1.028 4.107-1.028 1.92 0 2.456 1.028 4.132.996 1.71-.028 2.8-1.553 3.838-3.083a12.696 12.696 0 0 0 1.74-3.567 5.573 5.573 0 0 1-3.216-5.073z" fill="currentColor"/></svg>
       {%- endif -%}
-    </div>
+    </a>
 
-    <nav class="header__nav" role="navigation">
-      <ul class="header__nav-list list-unstyled" role="list">
+    {%- comment -%} Nav principal {%- endcomment -%}
+    <nav class="hd__nav" role="navigation" aria-label="Principal">
+      <ul class="hd__nav-list" role="list">
         {%- for link in linklists[section.settings.menu].links -%}
-          <li class="header__nav-item">
+          <li class="hd__nav-item">
             <a
               href="{{ link.url }}"
-              class="header__nav-link{% if link.active %} header__nav-link--active{% endif %}"
+              class="hd__nav-link{% if link.active %} hd__nav-link--active{% endif %}"
               {% if link.current %}aria-current="page"{% endif %}
             >
               {{ link.title | escape }}
@@ -35,22 +34,74 @@
       </ul>
     </nav>
 
-    <div class="header__icons">
-      <a href="{{ routes.search_url }}" class="header__icon header__icon--search" aria-label="{{ 'general.search.search' | t }}">
-        {%- render 'icon-search' -%}
+    {%- comment -%} Iconos derecha {%- endcomment -%}
+    <div class="hd__actions">
+      <a href="{{ routes.search_url }}" class="hd__action" aria-label="Buscar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="44" viewBox="0 0 15 44"><path d="M14.298 27.202l-3.87-3.87c.837-1.132 1.335-2.532 1.335-4.05C11.763 15.53 8.733 12.5 5 12.5S-1.763 15.53-1.763 19.263s3.03 6.763 6.763 6.763c1.498 0 2.88-.49 4.002-1.31l3.88 3.88a.667.667 0 0 0 .943-.943zM5 24.763c-3.032 0-5.5-2.468-5.5-5.5S1.968 13.763 5 13.763s5.5 2.468 5.5 5.5-2.468 5.5-5.5 5.5z" fill="currentColor" transform="translate(2.5)"/></svg>
       </a>
-      <a href="{{ routes.account_url }}" class="header__icon header__icon--account" aria-label="{{ 'customer.account.title' | t }}">
-        {%- render 'icon-account' -%}
-      </a>
-      <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart" aria-label="{{ 'sections.header.cart_count' | t: count: cart.item_count }}">
-        {%- render 'icon-cart' -%}
+      <a href="{{ routes.cart_url }}" class="hd__action hd__action--cart" aria-label="Bolsa — {{ cart.item_count }} artículos">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="44" viewBox="0 0 14 44"><path d="M11.3 16h-1.05c-.25-2.725-2.1-4.5-4.25-4.5S1.95 13.275 1.7 16H.7c-.55 0-1 .525-1 1.1v9.8c0 .575.45 1.1 1 1.1h10.6c.55 0 1-.525 1-1.1v-9.8c0-.575-.45-1.1-1-1.1zM6 12.75c1.45 0 2.775 1.3 3 3.25H3c.225-1.95 1.55-3.25 3-3.25zM11 26.6c0 .2-.1.4-.3.4H1.3c-.2 0-.3-.2-.3-.4V17.4c0-.2.1-.4.3-.4h.4v1.075c0 .325.3.625.625.625.325 0 .625-.3.625-.625V17h6.1v1.075c0 .325.3.625.625.625.325 0 .625-.3.625-.625V17h.4c.2 0 .3.2.3.4v9.2z" fill="currentColor" transform="translate(1)"/></svg>
         {%- if cart.item_count > 0 -%}
-          <span class="header__cart-count">{{ cart.item_count }}</span>
+          <span class="hd__badge">{{ cart.item_count }}</span>
         {%- endif -%}
       </a>
+
+      {%- comment -%} Hamburguesa mobile {%- endcomment -%}
+      <button class="hd__burger" aria-label="Menú" aria-expanded="false" aria-controls="hd-mobile-nav">
+        <span class="hd__burger-line"></span>
+        <span class="hd__burger-line"></span>
+      </button>
     </div>
   </div>
+
+  {%- comment -%} Mobile nav panel {%- endcomment -%}
+  <div class="hd__mobile" id="hd-mobile-nav" aria-hidden="true">
+    <nav class="hd__mobile-inner page-width">
+      <ul class="hd__mobile-list" role="list">
+        {%- for link in linklists[section.settings.menu].links -%}
+          <li class="hd__mobile-item">
+            <a href="{{ link.url }}" class="hd__mobile-link{% if link.active %} hd__mobile-link--active{% endif %}">
+              {{ link.title | escape }}
+            </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </nav>
+  </div>
 </header>
+
+<script>
+(function(){
+  var hdr = document.querySelector('.hd');
+  var burger = hdr.querySelector('.hd__burger');
+  var panel = hdr.querySelector('.hd__mobile');
+  burger.addEventListener('click', function(){
+    var open = burger.getAttribute('aria-expanded') === 'true';
+    burger.setAttribute('aria-expanded', String(!open));
+    panel.setAttribute('aria-hidden', String(open));
+    burger.classList.toggle('hd__burger--open');
+    hdr.classList.toggle('hd--mobile-open');
+  });
+
+  /* Sticky on scroll up */
+  var sticky = hdr.dataset.sticky;
+  if (sticky === 'none') return;
+  var lastY = 0;
+  window.addEventListener('scroll', function(){
+    var y = window.pageYOffset;
+    if (sticky === 'always') {
+      hdr.classList.add('hd--stuck');
+    } else {
+      if (y < lastY && y > 44) {
+        hdr.classList.add('hd--stuck');
+      } else {
+        hdr.classList.remove('hd--stuck');
+      }
+    }
+    lastY = y;
+  }, {passive: true});
+})();
+</script>
 
 {% schema %}
 {
@@ -88,12 +139,6 @@
       ],
       "default": "on-scroll-up",
       "label": "Encabezado fijo"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_line_separator",
-      "default": true,
-      "label": "Mostrar línea separadora"
     }
   ]
 }
