@@ -27,60 +27,13 @@
       "type": "product-family",
       "settings": {
         "title": "Lo más destacado.",
+        "collection": "iphone",
+        "products_to_show": 4,
+        "button_label": "Más información",
+        "buy_label": "Comprar",
         "compare_label": "Comparar todos los modelos",
         "compare_link": "/pages/comparar"
-      },
-      "blocks": {
-        "pf-1": {
-          "type": "product_card",
-          "settings": {
-            "name": "iPhone 17 Pro Max",
-            "description": "El iPhone más poderoso. Cámara, chip y pantalla al máximo nivel.",
-            "swatch_colors": "#e87a5a, #1a2e40, #c8c8c8, #f5f5f0",
-            "button_label": "Más información",
-            "link": "/collections/iphone-17-pro-max",
-            "buy_label": "Comprar",
-            "buy_link": "/collections/iphone-17-pro-max"
-          }
-        },
-        "pf-2": {
-          "type": "product_card",
-          "settings": {
-            "name": "iPhone 17 Pro",
-            "description": "Un diseño innovador para una batería y un rendimiento sin precedentes.",
-            "swatch_colors": "#e87a5a, #1a2e40, #c8c8c8, #f5f5f0",
-            "button_label": "Más información",
-            "link": "/collections/iphone-17-pro",
-            "buy_label": "Comprar",
-            "buy_link": "/collections/iphone-17-pro"
-          }
-        },
-        "pf-3": {
-          "type": "product_card",
-          "settings": {
-            "name": "iPhone 17",
-            "description": "Aún más sorprendente. Aún más resistente.",
-            "swatch_colors": "#c8b8d8, #8fa885, #b0c8d8, #f5f5f5, #1a1a1a",
-            "button_label": "Más información",
-            "link": "/collections/iphone-17",
-            "buy_label": "Comprar",
-            "buy_link": "/collections/iphone-17"
-          }
-        },
-        "pf-4": {
-          "type": "product_card",
-          "settings": {
-            "name": "iPhone 16",
-            "description": "Un salto enorme. Diseñado para Apple Intelligence.",
-            "swatch_colors": "#4b6d8f, #f0e8c8, #e8d4e8, #f5f5f0, #1a1a1a",
-            "button_label": "Más información",
-            "link": "/collections/iphone-16",
-            "buy_label": "Comprar",
-            "buy_link": "/collections/iphone-16"
-          }
-        }
-      },
-      "blocks_order": ["pf-1", "pf-2", "pf-3", "pf-4"]
+      }
     },
     "features-grid": {
       "type": "features-grid",

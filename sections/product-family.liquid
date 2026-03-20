@@ -1,4 +1,6 @@
-{%- if section.blocks.size > 0 -%}
+{%- assign pf_collection = collections[section.settings.collection] -%}
+{%- assign pf_limit = section.settings.products_to_show -%}
+{%- if pf_collection != blank and pf_collection.products.size > 0 -%}
 <section class="pf-section section-{{ section.id }}" id="section-{{ section.id }}">
   <div class="page-width">
 
@@ -17,17 +19,17 @@
 
     <div class="pf-gallery">
       <ul class="pf-gallery__list" role="list">
-        {%- for block in section.blocks -%}
-          <li class="pf-tile" role="listitem" {{ block.shopify_attributes }}>
+        {%- for product in pf_collection.products limit: pf_limit -%}
+          <li class="pf-tile" role="listitem">
 
-            <a href="{{ block.settings.link }}" class="pf-tile__image-link" aria-label="{{ block.settings.name }}">
+            <a href="{{ product.url }}" class="pf-tile__image-link" aria-label="{{ product.title }}">
               <div class="pf-tile__image-wrap">
-                {%- if block.settings.image != blank -%}
-                  {{ block.settings.image | image_url: width: 680 | image_tag:
+                {%- if product.featured_image != blank -%}
+                  {{ product.featured_image | image_url: width: 680 | image_tag:
                     loading: 'lazy',
                     widths: '340, 500, 680',
                     class: 'pf-tile__image',
-                    alt: block.settings.image.alt | default: block.settings.name
+                    alt: product.featured_image.alt | default: product.title
                   }}
                 {%- else -%}
                   {{ 'product-1' | placeholder_svg_tag: 'pf-tile__image' }}
@@ -35,37 +37,35 @@
               </div>
             </a>
 
-            {%- if block.settings.swatch_colors != blank -%}
-              {%- assign swatches = block.settings.swatch_colors | split: ',' -%}
-              <div class="pf-tile__swatches" role="list" aria-label="Acabados disponibles">
-                {%- for swatch in swatches -%}
-                  <span class="pf-tile__swatch" role="listitem" style="background-color: {{ swatch | strip }};"></span>
+            {%- if product.variants.size > 1 -%}
+              <div class="pf-tile__swatches" role="list" aria-label="Variantes disponibles">
+                {%- for variant in product.variants limit: 5 -%}
+                  {%- if variant.option1 != blank -%}
+                    <span class="pf-tile__swatch pf-tile__swatch--img" role="listitem" title="{{ variant.option1 }}">
+                      {%- if variant.image != blank -%}
+                        {{ variant.image | image_url: width: 24 | image_tag: class: 'pf-tile__swatch-img', alt: variant.option1 }}
+                      {%- else -%}
+                        <span class="pf-tile__swatch-dot"></span>
+                      {%- endif -%}
+                    </span>
+                  {%- endif -%}
                 {%- endfor -%}
               </div>
             {%- endif -%}
 
-            <h3 class="pf-tile__name">
-              {%- if block.settings.show_badge -%}
-                <span class="pf-tile__badge">{{ block.settings.badge_text }}</span>
-              {%- endif -%}
-              {{ block.settings.name }}
-            </h3>
+            <h3 class="pf-tile__name">{{ product.title }}</h3>
 
-            {%- if block.settings.description != blank -%}
-              <p class="pf-tile__desc">{{ block.settings.description }}</p>
+            {%- if product.description != blank -%}
+              <p class="pf-tile__desc">{{ product.description | strip_html | truncate: 100 }}</p>
             {%- endif -%}
 
             <div class="pf-tile__ctas">
-              {%- if block.settings.button_label != blank -%}
-                <a href="{{ block.settings.link }}" class="pf-tile__btn-learn" aria-label="{{ block.settings.button_label }}, {{ block.settings.name }}">
-                  {{ block.settings.button_label }}
-                </a>
-              {%- endif -%}
-              {%- if block.settings.buy_label != blank and block.settings.buy_link != blank -%}
-                <a href="{{ block.settings.buy_link }}" class="pf-tile__btn-buy" aria-label="{{ block.settings.buy_label }}, {{ block.settings.name }}">
-                  {{ block.settings.buy_label }} <span aria-hidden="true">&rsaquo;</span>
-                </a>
-              {%- endif -%}
+              <a href="{{ product.url }}" class="pf-tile__btn-learn">
+                {{ section.settings.button_label }}
+              </a>
+              <a href="{{ product.url }}" class="pf-tile__btn-buy">
+                {{ section.settings.buy_label }} <span aria-hidden="true">&rsaquo;</span>
+              </a>
             </div>
 
           </li>
@@ -82,13 +82,38 @@
   "name": "Familia de productos",
   "tag": "section",
   "class": "section-product-family",
-  "max_blocks": 6,
   "settings": [
     {
       "type": "text",
       "id": "title",
-      "label": "T\u00edtulo",
-      "default": "Conoce a la familia."
+      "label": "Título",
+      "default": "Lo más destacado."
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Colección"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 2,
+      "max": 8,
+      "step": 1,
+      "default": 4,
+      "label": "Productos a mostrar"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Texto botón",
+      "default": "Más información"
+    },
+    {
+      "type": "text",
+      "id": "buy_label",
+      "label": "Texto comprar",
+      "default": "Comprar"
     },
     {
       "type": "text",
@@ -102,34 +127,9 @@
       "label": "Enlace comparar"
     }
   ],
-  "blocks": [
-    {
-      "type": "product_card",
-      "name": "Producto",
-      "settings": [
-        { "type": "image_picker", "id": "image", "label": "Imagen del producto" },
-        { "type": "text", "id": "name", "label": "Nombre", "default": "iPhone 17 Pro" },
-        { "type": "textarea", "id": "description", "label": "Descripci\u00f3n corta", "default": "Un dise\u00f1o innovador para una bater\u00eda y un rendimiento sin precedentes." },
-        { "type": "text", "id": "swatch_colors", "label": "Colores (separados por coma)", "info": "Ejemplo: #FF6B00, #1C2634, #FFFFFF", "default": "#FF6B00, #1C2634, #FFFFFF" },
-        { "type": "checkbox", "id": "show_badge", "label": "Mostrar badge", "default": false },
-        { "type": "text", "id": "badge_text", "label": "Texto del badge", "default": "Nuevo" },
-        { "type": "url", "id": "link", "label": "Enlace (M\u00e1s informaci\u00f3n)" },
-        { "type": "text", "id": "button_label", "label": "Texto bot\u00f3n", "default": "M\u00e1s informaci\u00f3n" },
-        { "type": "url", "id": "buy_link", "label": "Enlace Comprar" },
-        { "type": "text", "id": "buy_label", "label": "Texto Comprar", "default": "Comprar" }
-      ]
-    }
-  ],
   "presets": [
     {
-      "name": "Familia de productos",
-      "blocks": [
-        { "type": "product_card", "settings": { "name": "iPhone 17 Pro", "description": "Un dise\u00f1o innovador para una bater\u00eda y un rendimiento sin precedentes.", "swatch_colors": "#FF6B00, #1C2634, #FFFFFF", "button_label": "M\u00e1s informaci\u00f3n", "buy_label": "Comprar" } },
-        { "type": "product_card", "settings": { "name": "iPhone Air", "description": "El iPhone m\u00e1s delgado. El poder de un pro.", "swatch_colors": "#D4E8F5, #C8C8C8, #1C1C1C", "button_label": "M\u00e1s informaci\u00f3n", "buy_label": "Comprar" } },
-        { "type": "product_card", "settings": { "name": "iPhone 17", "description": "A\u00fan m\u00e1s sorprendente. A\u00fan m\u00e1s resistente.", "swatch_colors": "#D8C8E8, #8CAF6C, #7CA8C8, #1C1C1C", "button_label": "M\u00e1s informaci\u00f3n", "buy_label": "Comprar" } },
-        { "type": "product_card", "settings": { "name": "iPhone 17e", "description": "Trae de todo. Toda una oportunidad.", "show_badge": true, "swatch_colors": "#F5D0D0, #1C1C1C", "button_label": "M\u00e1s informaci\u00f3n" } },
-        { "type": "product_card", "settings": { "name": "iPhone 16", "description": "Rendimiento incre\u00edble. Dise\u00f1ado para durar.", "swatch_colors": "#3E66CF, #2d8a76, #f4b8c1, #FFFFFF, #1C1C1C", "button_label": "M\u00e1s informaci\u00f3n", "buy_label": "Comprar" } }
-      ]
+      "name": "Familia de productos"
     }
   ]
 }
