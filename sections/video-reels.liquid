@@ -14,12 +14,10 @@
                 {%- if block.settings.tiktok_id != blank -%}
                   <iframe
                     class="vr-card__iframe"
-                    src="https://www.tiktok.com/player/v1/{{ block.settings.tiktok_id }}?loop=1&autoplay=0&music_info=0&description=0"
+                    src="https://www.tiktok.com/embed/v2/{{ block.settings.tiktok_id }}"
                     allowfullscreen
-                    allow="encrypted-media"
+                    allow="encrypted-media; autoplay"
                     loading="lazy"
-                    referrerpolicy="no-referrer"
-                    sandbox="allow-scripts allow-same-origin allow-popups"
                   ></iframe>
                 {%- else -%}
                   <div class="vr-card__placeholder">
