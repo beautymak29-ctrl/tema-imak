@@ -1,0 +1,350 @@
+<section class="cmp-section section-{{ section.id }}">
+  <div class="page-width">
+
+    {%- if section.settings.title != blank -%}
+      <h2 class="cmp-title">{{ section.settings.title }}</h2>
+    {%- endif -%}
+
+    <div class="cmp-selectors">
+      <div class="cmp-selector">
+        <select id="cmp-select-a" class="cmp-select" aria-label="Modelo 1">
+          <option value="">Selecciona un modelo</option>
+        </select>
+      </div>
+      <div class="cmp-selector">
+        <select id="cmp-select-b" class="cmp-select" aria-label="Modelo 2">
+          <option value="">Selecciona un modelo</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="cmp-table" id="cmp-table">
+      <p class="cmp-empty">Selecciona dos modelos para comparar.</p>
+    </div>
+
+  </div>
+</section>
+
+<script>
+(function() {
+  var models = {
+    "iPhone 17 Pro Max": {
+      image: "",
+      colors: ["Naranja cósmico", "Azul profundo", "Color plata"],
+      colorHex: ["#e87a5a", "#1a2e40", "#c8c8c8"],
+      specs: [
+        { cat: "Resumen", rows: [
+          ["6.9″", "Pantalla Super Retina XDR\u00b9"],
+          ["Tecnología ProMotion"],
+          ["Pantalla siempre activa"],
+          ["Dynamic Island"],
+          ["Estructura de aluminio con diseño unibody"],
+          ["Botón de Acción"],
+          ["Control de la Cámara para acceder más rápido a las herramientas de fotos y videos"],
+          ["Frente de Ceramic Shield 2, 3 veces más resistente a los rayones\u00b2"],
+          ["Parte posterior de Ceramic Shield"],
+          ["Resistente al agua hasta por 30 min a 6 metros de profundidad\u00b3"]
+        ]},
+        { cat: "Chip y rendimiento", rows: [
+          ["Chip A19 Pro"],
+          ["CPU de 6 núcleos"],
+          ["GPU de 6 núcleos con Neural Accelerators"],
+          ["Neural Engine de 16 núcleos"],
+          ["Trazado de rayos acelerado por hardware"]
+        ]},
+        { cat: "Batería", rows: [
+          ["Hasta 37 horas de reproducción de video\u2074"]
+        ]},
+        { cat: "Cámara frontal", rows: [
+          ["Cámara frontal Center Stage de 18 MP"],
+          ["Toca para hacer zoom y girar"],
+          ["Encuadre Centrado para fotos"],
+          ["Video ultraestabilizado"],
+          ["Captura Dual"],
+          ["Encuadre Centrado para videollamadas"]
+        ]},
+        { cat: "Cámaras traseras", rows: [
+          ["Sistema de cámaras Pro Fusion de 48 MP"],
+          ["Fusion principal de 48 MP\nFusion ultra gran angular de 48 MP\nFusion teleobjetivo de 48 MP"],
+          ["Fotos en superalta resolución (24 MP y 48 MP)"],
+          ["Retratos de última generación con Control de Enfoque y Profundidad"],
+          ["Fotografía macro"],
+          ["Dolby Vision hasta 4K a 120 fps"],
+          ["Estilos Fotográficos de última generación"],
+          ["Zoom: 0.5x, 1x, 2x, 4x, 8x"],
+          ["Opciones de zoom óptico"]
+        ]},
+        { cat: "Apple Intelligence", rows: [
+          ["Apple Intelligence\u2075"]
+        ]},
+        { cat: "Seguridad", rows: [
+          ["Emergencia SOS"],
+          ["Detección de Choques\u2076"]
+        ]},
+        { cat: "Conectividad", rows: [
+          ["USB‑C — Compatible con USB 3 para transferencias hasta 20 veces más rápidas\u2077"]
+        ]},
+        { cat: "Carga", rows: [
+          ["Carga inalámbrica de hasta 25 W con MagSafe y adaptador de 30 W o más\u2078"],
+          ["Compatible con fundas, carteras, cargadores inalámbricos y accesorios MagSafe"]
+        ]},
+        { cat: "Capacidad", rows: [
+          ["256 GB"],
+          ["512 GB"],
+          ["1 TB"],
+          ["2 TB"]
+        ]}
+      ]
+    },
+    "iPhone 17 Pro": {
+      image: "",
+      colors: ["Naranja cósmico", "Azul profundo", "Color plata"],
+      colorHex: ["#e87a5a", "#1a2e40", "#c8c8c8"],
+      specs: [
+        { cat: "Resumen", rows: [
+          ["6.3″", "Pantalla Super Retina XDR\u00b9"],
+          ["Tecnología ProMotion"],
+          ["Pantalla siempre activa"],
+          ["Dynamic Island"],
+          ["Estructura de aluminio con diseño unibody"],
+          ["Botón de Acción"],
+          ["Control de la Cámara para acceder más rápido a las herramientas de fotos y videos"],
+          ["Frente de Ceramic Shield 2, 3 veces más resistente a los rayones\u00b2"],
+          ["Parte posterior de Ceramic Shield"],
+          ["Resistente al agua hasta por 30 min a 6 metros de profundidad\u00b3"]
+        ]},
+        { cat: "Chip y rendimiento", rows: [
+          ["Chip A19 Pro"],
+          ["CPU de 6 núcleos"],
+          ["GPU de 6 núcleos con Neural Accelerators"],
+          ["Neural Engine de 16 núcleos"],
+          ["Trazado de rayos acelerado por hardware"]
+        ]},
+        { cat: "Batería", rows: [
+          ["Hasta 31 horas de reproducción de video\u2074"]
+        ]},
+        { cat: "Cámara frontal", rows: [
+          ["Cámara frontal Center Stage de 18 MP"],
+          ["Toca para hacer zoom y girar"],
+          ["Encuadre Centrado para fotos"],
+          ["Video ultraestabilizado"],
+          ["Captura Dual"],
+          ["Encuadre Centrado para videollamadas"]
+        ]},
+        { cat: "Cámaras traseras", rows: [
+          ["Sistema de cámaras Pro Fusion de 48 MP"],
+          ["Fusion principal de 48 MP\nFusion ultra gran angular de 48 MP\nFusion teleobjetivo de 48 MP"],
+          ["Fotos en superalta resolución (24 MP y 48 MP)"],
+          ["Retratos de última generación con Control de Enfoque y Profundidad"],
+          ["Fotografía macro"],
+          ["Dolby Vision hasta 4K a 120 fps"],
+          ["Estilos Fotográficos de última generación"],
+          ["Zoom: 0.5x, 1x, 2x, 4x, 8x"],
+          ["Opciones de zoom óptico"]
+        ]},
+        { cat: "Apple Intelligence", rows: [
+          ["Apple Intelligence\u2075"]
+        ]},
+        { cat: "Seguridad", rows: [
+          ["Emergencia SOS"],
+          ["Detección de Choques\u2076"]
+        ]},
+        { cat: "Conectividad", rows: [
+          ["USB‑C — Compatible con USB 3 para transferencias hasta 20 veces más rápidas\u2077"]
+        ]},
+        { cat: "Carga", rows: [
+          ["Carga inalámbrica de hasta 25 W con MagSafe y adaptador de 30 W o más\u2078"],
+          ["Compatible con fundas, carteras, cargadores inalámbricos y accesorios MagSafe"]
+        ]},
+        { cat: "Capacidad", rows: [
+          ["256 GB"],
+          ["512 GB"],
+          ["1 TB"],
+          ["No disponible"]
+        ]}
+      ]
+    },
+    "iPhone 17": {
+      image: "",
+      colors: ["Lavanda", "Salvia", "Azul neblina", "Blanco", "Negro"],
+      colorHex: ["#c8b8d8", "#8fa885", "#b0c8d8", "#f5f5f5", "#1a1a1a"],
+      specs: [
+        { cat: "Resumen", rows: [
+          ["6.3″", "Pantalla Super Retina XDR\u00b9"],
+          ["Tecnología ProMotion"],
+          ["Pantalla siempre activa"],
+          ["Dynamic Island"],
+          ["Marco de aluminio"],
+          ["Botón de Acción"],
+          ["Control de la Cámara para acceder más rápido a las herramientas de fotos y videos"],
+          ["Frente de Ceramic Shield 2, 3 veces más resistente a los rayones\u00b2"],
+          ["No disponible"],
+          ["Resistente al agua hasta por 30 min a 6 metros de profundidad\u00b3"]
+        ]},
+        { cat: "Chip y rendimiento", rows: [
+          ["Chip A19"],
+          ["CPU de 6 núcleos"],
+          ["GPU de 5 núcleos con Neural Accelerators"],
+          ["Neural Engine de 16 núcleos"],
+          ["Trazado de rayos acelerado por hardware"]
+        ]},
+        { cat: "Batería", rows: [
+          ["Hasta 30 horas de reproducción de video\u2074"]
+        ]},
+        { cat: "Cámara frontal", rows: [
+          ["Cámara frontal Center Stage de 18 MP"],
+          ["Toca para hacer zoom y girar"],
+          ["Encuadre Centrado para fotos"],
+          ["Video ultraestabilizado"],
+          ["Captura Dual"],
+          ["Encuadre Centrado para videollamadas"]
+        ]},
+        { cat: "Cámaras traseras", rows: [
+          ["Sistema de dos cámaras Fusion de 48 MP"],
+          ["Fusion principal de 48 MP\nFusion ultra gran angular de 48 MP"],
+          ["Fotos en superalta resolución (24 MP y 48 MP)"],
+          ["Retratos de última generación con Control de Enfoque y Profundidad"],
+          ["Fotografía macro"],
+          ["Dolby Vision hasta 4K a 60 fps"],
+          ["Estilos Fotográficos de última generación"],
+          ["Zoom: 0.5x, 1x, 2x"],
+          ["Opciones de zoom óptico"]
+        ]},
+        { cat: "Apple Intelligence", rows: [
+          ["Apple Intelligence\u2075"]
+        ]},
+        { cat: "Seguridad", rows: [
+          ["Emergencia SOS"],
+          ["Detección de Choques\u2076"]
+        ]},
+        { cat: "Conectividad", rows: [
+          ["USB‑C — Compatible con USB 2"]
+        ]},
+        { cat: "Carga", rows: [
+          ["Carga inalámbrica de hasta 25 W con MagSafe y adaptador de 30 W o más\u2078"],
+          ["Compatible con fundas, carteras, cargadores inalámbricos y accesorios MagSafe"]
+        ]},
+        { cat: "Capacidad", rows: [
+          ["256 GB"],
+          ["512 GB"],
+          ["No disponible"],
+          ["No disponible"]
+        ]}
+      ]
+    }
+  };
+
+  var names = Object.keys(models);
+  var selA = document.getElementById('cmp-select-a');
+  var selB = document.getElementById('cmp-select-b');
+  var table = document.getElementById('cmp-table');
+
+  function populateOptions() {
+    var valA = selA.value;
+    var valB = selB.value;
+
+    selA.innerHTML = '<option value="">Selecciona un modelo</option>';
+    selB.innerHTML = '<option value="">Selecciona un modelo</option>';
+
+    names.forEach(function(n) {
+      if (n !== valB) {
+        var o = document.createElement('option');
+        o.value = n; o.textContent = n;
+        if (n === valA) o.selected = true;
+        selA.appendChild(o);
+      }
+      if (n !== valA) {
+        var o2 = document.createElement('option');
+        o2.value = n; o2.textContent = n;
+        if (n === valB) o2.selected = true;
+        selB.appendChild(o2);
+      }
+    });
+  }
+
+  function render() {
+    var a = selA.value;
+    var b = selB.value;
+
+    if (!a || !b) {
+      table.innerHTML = '<p class="cmp-empty">Selecciona dos modelos para comparar.</p>';
+      return;
+    }
+
+    var mA = models[a];
+    var mB = models[b];
+    var html = '';
+
+    /* Header con colores y botones */
+    html += '<div class="cmp-cols">';
+    html += buildHeader(a, mA);
+    html += buildHeader(b, mB);
+    html += '</div>';
+
+    /* Specs */
+    var numCats = mA.specs.length;
+    for (var c = 0; c < numCats; c++) {
+      var catA = mA.specs[c];
+      var catB = mB.specs[c];
+      html += '<div class="cmp-cat">';
+      html += '<h3 class="cmp-cat__title">' + catA.cat + '</h3>';
+      html += '<div class="cmp-cat__rows">';
+      var numRows = Math.max(catA.rows.length, catB.rows.length);
+      for (var r = 0; r < numRows; r++) {
+        var rA = catA.rows[r] || ["—"];
+        var rB = catB.rows[r] || ["—"];
+        var txtA = rA.join('<br>').replace(/\n/g, '<br>');
+        var txtB = rB.join('<br>').replace(/\n/g, '<br>');
+        var isNA_A = txtA === 'No disponible';
+        var isNA_B = txtB === 'No disponible';
+        html += '<div class="cmp-row">';
+        html += '<div class="cmp-cell' + (isNA_A ? ' cmp-cell--na' : '') + '">' + txtA + '</div>';
+        html += '<div class="cmp-cell' + (isNA_B ? ' cmp-cell--na' : '') + '">' + txtB + '</div>';
+        html += '</div>';
+      }
+      html += '</div></div>';
+    }
+
+    table.innerHTML = html;
+  }
+
+  function buildHeader(name, model) {
+    var h = '<div class="cmp-col-header">';
+    h += '<h3 class="cmp-col-header__name">' + name + '</h3>';
+    h += '<div class="cmp-col-header__colors">';
+    model.colors.forEach(function(c, i) {
+      h += '<span class="cmp-col-header__swatch" style="background:' + model.colorHex[i] + ';" title="' + c + '"></span>';
+    });
+    h += '</div>';
+    h += '<a href="#" class="cmp-col-header__btn">Más información</a>';
+    h += '</div>';
+    return h;
+  }
+
+  selA.addEventListener('change', function() { populateOptions(); render(); });
+  selB.addEventListener('change', function() { populateOptions(); render(); });
+
+  populateOptions();
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Comparar modelos",
+  "tag": "section",
+  "class": "section-compare-models",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título",
+      "default": "Compara los modelos de iPhone."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Comparar modelos"
+    }
+  ]
+}
+{% endschema %}

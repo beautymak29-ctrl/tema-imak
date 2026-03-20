@@ -141,12 +141,19 @@
         }
       },
       "blocks_order": ["et-1", "et-2", "et-3"]
+    },
+    "compare-models": {
+      "type": "compare-models",
+      "settings": {
+        "title": "Compara los modelos de iPhone."
+      }
     }
   },
   "order": [
     "hero-banner",
     "category-nav",
     "product-family",
+    "compare-models",
     "features-grid",
     "accessories-showcase",
     "ecosystem-tabs"
