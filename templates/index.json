@@ -154,10 +154,11 @@
       },
       "blocks_order": ["vr-1", "vr-2", "vr-3"]
     },
-    "compare-models": {
-      "type": "compare-models",
+    "compare-preview": {
+      "type": "compare-preview",
       "settings": {
-        "title": "Compara los modelos de iPhone."
+        "title": "Compara los modelos de iPhone.",
+        "compare_link": "/pages/comparar"
       }
     }
   },
@@ -166,7 +167,7 @@
     "category-nav",
     "product-family",
     "video-reels",
-    "compare-models",
+    "compare-preview",
     "features-grid",
     "accessories-showcase",
     "ecosystem-tabs"

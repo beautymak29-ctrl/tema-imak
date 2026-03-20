@@ -1,0 +1,153 @@
+<section class="cpv-section section-{{ section.id }}">
+  <div class="page-width">
+
+    {%- if section.settings.title != blank -%}
+      <h2 class="cpv-title">{{ section.settings.title }}</h2>
+    {%- endif -%}
+
+    <div class="cpv-grid">
+      <!-- iPhone 17 Pro Max -->
+      <div class="cpv-card">
+        <div class="cpv-card__image">
+          {%- if section.settings.image_a != blank -%}
+            <img src="{{ section.settings.image_a | image_url: width: 480 }}" alt="iPhone 17 Pro Max" loading="lazy" width="240" height="240">
+          {%- else -%}
+            <div class="cpv-card__placeholder-img"></div>
+          {%- endif -%}
+        </div>
+        <div class="cpv-card__colors">
+          <span class="cpv-swatch" style="background:#e87a5a;" title="Naranja cósmico"></span>
+          <span class="cpv-swatch" style="background:#1a2e40;" title="Azul profundo"></span>
+          <span class="cpv-swatch" style="background:#c8c8c8;" title="Color plata"></span>
+        </div>
+        <h3 class="cpv-card__name">iPhone 17 Pro Max</h3>
+        <a href="{{ section.settings.link_a | default: '#' }}" class="cpv-card__btn">Más información</a>
+      </div>
+
+      <!-- iPhone 17 Pro -->
+      <div class="cpv-card">
+        <div class="cpv-card__image">
+          {%- if section.settings.image_b != blank -%}
+            <img src="{{ section.settings.image_b | image_url: width: 480 }}" alt="iPhone 17 Pro" loading="lazy" width="240" height="240">
+          {%- else -%}
+            <div class="cpv-card__placeholder-img"></div>
+          {%- endif -%}
+        </div>
+        <div class="cpv-card__colors">
+          <span class="cpv-swatch" style="background:#e87a5a;" title="Naranja cósmico"></span>
+          <span class="cpv-swatch" style="background:#1a2e40;" title="Azul profundo"></span>
+          <span class="cpv-swatch" style="background:#c8c8c8;" title="Color plata"></span>
+        </div>
+        <h3 class="cpv-card__name">iPhone 17 Pro</h3>
+        <a href="{{ section.settings.link_b | default: '#' }}" class="cpv-card__btn">Más información</a>
+      </div>
+    </div>
+
+    <!-- Resumen -->
+    <div class="cpv-summary">
+      <h3 class="cpv-summary__title">Resumen</h3>
+      <div class="cpv-summary__table" id="cpv-table-{{ section.id }}">
+        <div class="cpv-summary__cols">
+          <div class="cpv-summary__col-head">iPhone 17 Pro Max</div>
+          <div class="cpv-summary__col-head">iPhone 17 Pro</div>
+        </div>
+
+        <div class="cpv-summary__row">
+          <div class="cpv-summary__cell">6.9″ Pantalla Super Retina XDR</div>
+          <div class="cpv-summary__cell">6.3″ Pantalla Super Retina XDR</div>
+        </div>
+        <div class="cpv-summary__row">
+          <div class="cpv-summary__cell">Tecnología ProMotion</div>
+          <div class="cpv-summary__cell">Tecnología ProMotion</div>
+        </div>
+        <div class="cpv-summary__row">
+          <div class="cpv-summary__cell">Pantalla siempre activa</div>
+          <div class="cpv-summary__cell">Pantalla siempre activa</div>
+        </div>
+        <div class="cpv-summary__row">
+          <div class="cpv-summary__cell">Dynamic Island</div>
+          <div class="cpv-summary__cell">Dynamic Island</div>
+        </div>
+        <div class="cpv-summary__row">
+          <div class="cpv-summary__cell">Estructura de aluminio con diseño unibody</div>
+          <div class="cpv-summary__cell">Estructura de aluminio con diseño unibody</div>
+        </div>
+        <div class="cpv-summary__row">
+          <div class="cpv-summary__cell">Botón de Acción</div>
+          <div class="cpv-summary__cell">Botón de Acción</div>
+        </div>
+        <div class="cpv-summary__row">
+          <div class="cpv-summary__cell">Control de la Cámara</div>
+          <div class="cpv-summary__cell">Control de la Cámara</div>
+        </div>
+        <div class="cpv-summary__row">
+          <div class="cpv-summary__cell">Ceramic Shield 2 frontal y posterior</div>
+          <div class="cpv-summary__cell">Ceramic Shield 2 frontal y posterior</div>
+        </div>
+        <div class="cpv-summary__row">
+          <div class="cpv-summary__cell">Resistente al agua (IP68)</div>
+          <div class="cpv-summary__cell">Resistente al agua (IP68)</div>
+        </div>
+        <div class="cpv-summary__row">
+          <div class="cpv-summary__cell">Chip A19 Pro</div>
+          <div class="cpv-summary__cell">Chip A19 Pro</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cpv-cta">
+      <a href="{{ section.settings.compare_link | default: '/pages/comparar' }}" class="cpv-cta__link">
+        Comparar todos los modelos
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 2l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Comparar (resumen)",
+  "tag": "section",
+  "class": "section-compare-preview",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título",
+      "default": "Compara los modelos de iPhone."
+    },
+    {
+      "type": "image_picker",
+      "id": "image_a",
+      "label": "Imagen iPhone 17 Pro Max"
+    },
+    {
+      "type": "url",
+      "id": "link_a",
+      "label": "Enlace iPhone 17 Pro Max"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_b",
+      "label": "Imagen iPhone 17 Pro"
+    },
+    {
+      "type": "url",
+      "id": "link_b",
+      "label": "Enlace iPhone 17 Pro"
+    },
+    {
+      "type": "url",
+      "id": "compare_link",
+      "label": "Enlace a página de comparación",
+      "default": "/pages/comparar"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Comparar (resumen)"
+    }
+  ]
+}
+{% endschema %}

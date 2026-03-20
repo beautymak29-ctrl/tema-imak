@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "compare-models": {
+      "type": "compare-models",
+      "settings": {
+        "title": "Compara los modelos de iPhone."
+      }
+    }
+  },
+  "order": ["compare-models"]
+}

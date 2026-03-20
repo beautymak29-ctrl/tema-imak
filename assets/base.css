@@ -855,6 +855,40 @@ body { padding-top: 4.4rem; }
 .cmp-cell { font-size: 1.5rem; line-height: 1.5; color: #1d1d1f; text-align: center; }
 .cmp-cell--na { color: #86868b; font-style: italic; }
 
+/* Compare Preview */
+.cpv-section { padding: 6rem 0; background: #f5f5f7; }
+.cpv-title { font-size: clamp(2.8rem, 5vw, 5.6rem); font-weight: 700; letter-spacing: -.02em; line-height: 1.05; color: #1d1d1f; margin: 0 0 4rem; text-align: center; }
+
+.cpv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; max-width: 72rem; margin: 0 auto 4rem; }
+.cpv-card { text-align: center; background: #fff; border-radius: 2rem; padding: 3.2rem 2rem; }
+.cpv-card__image { margin-bottom: 2rem; }
+.cpv-card__image img { max-width: 24rem; height: auto; }
+.cpv-card__placeholder-img { width: 24rem; height: 24rem; margin: 0 auto; background: #e8e8ed; border-radius: 1.6rem; }
+.cpv-card__colors { display: flex; gap: .6rem; justify-content: center; margin-bottom: 1.2rem; }
+.cpv-swatch { width: 1.6rem; height: 1.6rem; border-radius: 50%; border: 1px solid #d2d2d7; display: inline-block; }
+.cpv-card__name { font-size: 2.4rem; font-weight: 700; color: #1d1d1f; margin: 0 0 1.4rem; }
+.cpv-card__btn { display: inline-block; font-size: 1.5rem; font-weight: 500; color: #0071e3; text-decoration: none; }
+.cpv-card__btn:hover { text-decoration: underline; }
+
+.cpv-summary { max-width: 72rem; margin: 0 auto 3.2rem; }
+.cpv-summary__title { font-size: 1.4rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: #86868b; margin: 0 0 1.6rem; border-bottom: 1px solid #d2d2d7; padding-bottom: 1rem; }
+.cpv-summary__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: .8rem; }
+.cpv-summary__col-head { font-size: 1.5rem; font-weight: 600; color: #1d1d1f; text-align: center; }
+.cpv-summary__row { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; padding: .6rem 0; border-bottom: 1px solid #f0f0f0; }
+.cpv-summary__cell { font-size: 1.4rem; line-height: 1.5; color: #1d1d1f; text-align: center; }
+
+.cpv-cta { text-align: center; padding-top: 1rem; }
+.cpv-cta__link { font-size: 1.7rem; font-weight: 500; color: #0071e3; text-decoration: none; display: inline-flex; align-items: center; gap: .4rem; }
+.cpv-cta__link:hover { text-decoration: underline; }
+
+@media (max-width: 749px) {
+  .cpv-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .cpv-card { padding: 2.4rem 1.6rem; }
+  .cpv-card__name { font-size: 2rem; }
+  .cpv-summary__row, .cpv-summary__cols { gap: 1rem; }
+  .cpv-summary__cell { font-size: 1.3rem; }
+}
+
 @media (max-width: 749px) {
   .cmp-selectors { flex-direction: column; align-items: center; }
   .cmp-selector { flex: 0 1 100%; max-width: 32rem; }
