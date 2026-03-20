@@ -34,25 +34,25 @@
         "pf-1": {
           "type": "product_card",
           "settings": {
-            "name": "iPhone 17 Pro",
-            "description": "Un diseño innovador para una batería y un rendimiento sin precedentes.",
-            "swatch_colors": "#e87a5a, #1a2e40, #c8c8c8",
+            "name": "iPhone 17 Pro Max",
+            "description": "El iPhone más poderoso. Cámara, chip y pantalla al máximo nivel.",
+            "swatch_colors": "#e87a5a, #1a2e40, #c8c8c8, #f5f5f0",
             "button_label": "Más información",
-            "link": "/collections/iphone-17-pro",
+            "link": "/collections/iphone-17-pro-max",
             "buy_label": "Comprar",
-            "buy_link": "/collections/iphone-17-pro"
+            "buy_link": "/collections/iphone-17-pro-max"
           }
         },
         "pf-2": {
           "type": "product_card",
           "settings": {
-            "name": "iPhone Air",
-            "description": "El iPhone más delgado. El poder de un pro.",
-            "swatch_colors": "#a8c4e0, #f0e8c8, #f5f5f0, #1a1a1a",
+            "name": "iPhone 17 Pro",
+            "description": "Un diseño innovador para una batería y un rendimiento sin precedentes.",
+            "swatch_colors": "#e87a5a, #1a2e40, #c8c8c8, #f5f5f0",
             "button_label": "Más información",
-            "link": "/collections/iphone-air",
+            "link": "/collections/iphone-17-pro",
             "buy_label": "Comprar",
-            "buy_link": "/collections/iphone-air"
+            "buy_link": "/collections/iphone-17-pro"
           }
         },
         "pf-3": {
@@ -70,14 +70,13 @@
         "pf-4": {
           "type": "product_card",
           "settings": {
-            "name": "iPhone 17e",
-            "description": "Trae de todo. Toda una oportunidad.",
-            "show_badge": true,
-            "swatch_colors": "#f4c2c2, #f5f5f0, #1a1a1a",
+            "name": "iPhone 16",
+            "description": "Un salto enorme. Diseñado para Apple Intelligence.",
+            "swatch_colors": "#4b6d8f, #f0e8c8, #e8d4e8, #f5f5f0, #1a1a1a",
             "button_label": "Más información",
-            "link": "/collections/iphone-17e",
+            "link": "/collections/iphone-16",
             "buy_label": "Comprar",
-            "buy_link": "/collections/iphone-17e"
+            "buy_link": "/collections/iphone-16"
           }
         }
       },
