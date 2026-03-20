@@ -792,6 +792,41 @@ body { padding-top: 4.4rem; }
 }
 
 /* =====================================================
+   VIDEO REELS — vr-*
+   ===================================================== */
+.vr-section { padding: 6rem 0; background: #fff; }
+.vr-title { font-size: clamp(2.8rem, 5vw, 5.6rem); font-weight: 700; letter-spacing: -.02em; line-height: 1.05; color: #1d1d1f; margin: 0 0 3.2rem; }
+
+.vr-gallery { position: relative; }
+.vr-gallery__scroll { overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.vr-gallery__scroll::-webkit-scrollbar { display: none; }
+.vr-gallery__list { display: flex; gap: 1.6rem; list-style: none; margin: 0; padding: 0 0 1.6rem; }
+
+.vr-card { flex: 0 0 27rem; max-width: 27rem; }
+.vr-card__inner { position: relative; width: 100%; aspect-ratio: 9/16; border-radius: 2rem; overflow: hidden; background: #1d1d1f; cursor: pointer; }
+.vr-card__video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.vr-card__img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.vr-card__placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #2d2d2f; }
+.vr-card__placeholder svg { width: 6rem; height: 6rem; fill: #555; }
+
+.vr-card__play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 5.6rem; height: 5.6rem; border-radius: 50%; border: none; background: rgba(0,0,0,.55); color: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: opacity .25s, background .2s; z-index: 2; }
+.vr-card__play:hover { background: rgba(0,0,0,.75); }
+.vr-card__play--hidden { opacity: 0; pointer-events: none; }
+
+.vr-card__overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; background: linear-gradient(transparent, rgba(0,0,0,.6)); z-index: 1; }
+.vr-card__heading { font-size: 1.5rem; font-weight: 600; color: #fff; margin: 0; }
+
+.vr-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 3.6rem; height: 3.6rem; border-radius: 50%; border: none; background: rgba(0,0,0,.5); color: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 3; transition: background .2s; }
+.vr-arrow:hover { background: rgba(0,0,0,.7); }
+.vr-arrow--prev { left: -1.2rem; }
+.vr-arrow--next { right: -1.2rem; }
+
+@media (max-width: 749px) {
+  .vr-card { flex: 0 0 22rem; max-width: 22rem; }
+  .vr-arrow { display: none; }
+}
+
+/* =====================================================
    COMPARE MODELS — cmp-*
    ===================================================== */
 .cmp-section { padding: 6rem 0; background: #fff; }
