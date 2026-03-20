@@ -29,64 +29,144 @@
 (function() {
   var models = {
     "iPhone 17 Pro Max": {
-      image: "",
       colors: ["Naranja cósmico", "Azul profundo", "Color plata"],
       colorHex: ["#e87a5a", "#1a2e40", "#c8c8c8"],
       specs: [
         { cat: "Resumen", rows: [
-          ["6.9″", "Pantalla Super Retina XDR\u00b9"],
-          ["Tecnología ProMotion"],
+          ["6.9\u2033 Pantalla Super Retina XDR\u00b9"],
+          ["Tecnolog\u00eda ProMotion"],
           ["Pantalla siempre activa"],
           ["Dynamic Island"],
-          ["Estructura de aluminio con diseño unibody"],
-          ["Botón de Acción"],
-          ["Control de la Cámara para acceder más rápido a las herramientas de fotos y videos"],
-          ["Frente de Ceramic Shield 2, 3 veces más resistente a los rayones\u00b2"],
+          ["Estructura de aluminio con dise\u00f1o unibody"],
+          ["Bot\u00f3n de Acci\u00f3n"],
+          ["Control de la C\u00e1mara para acceder m\u00e1s r\u00e1pido a las herramientas de fotos y videos"],
+          ["Frente de Ceramic Shield 2, 3 veces m\u00e1s resistente a los rayones\u00b2"],
           ["Parte posterior de Ceramic Shield"],
           ["Resistente al agua hasta por 30 min a 6 metros de profundidad\u00b3"]
         ]},
-        { cat: "Chip y rendimiento", rows: [
+        { cat: "Pantalla", rows: [
+          ["Pantalla Super Retina XDR"],
+          ["Pantalla OLED de 6.9 pulgadas (diagonal) sin marco\u00b9"],
+          ["Dynamic Island"],
+          ["Tecnolog\u00eda ProMotion con frecuencias de actualizaci\u00f3n adaptativas de hasta 120 Hz"],
+          ["Pantalla siempre activa"],
+          ["Pantalla HDR"],
+          ["Resoluci\u00f3n de 2868 x 1320 pixeles a 460 ppi"],
+          ["Relaci\u00f3n de contraste 2,000,000:1 (normal)"],
+          ["Pantalla True Tone"],
+          ["Pantalla con amplia gama de colores (P3)"],
+          ["Toque con respuesta h\u00e1ptica"],
+          ["Brillo m\u00e1ximo de 1,000 nits (normal)"],
+          ["Pico de brillo de 1,600 nits (HDR)"],
+          ["Pico de brillo de 3,000 nits (en exteriores)"],
+          ["Brillo m\u00ednimo de 1 nit"]
+        ]},
+        { cat: "Tama\u00f1o y peso", rows: [
+          ["Alto: 163.4 mm"],
+          ["Ancho: 78 mm"],
+          ["Grosor: 8.75 mm"],
+          ["Peso: 231 g"],
+          ["Clasificaci\u00f3n IP68 (hasta 30 min a una profundidad m\u00e1xima de 6 metros) seg\u00fan la norma IEC 60529"]
+        ]},
+        { cat: "Chip", rows: [
           ["Chip A19 Pro"],
-          ["CPU de 6 núcleos"],
-          ["GPU de 6 núcleos con Neural Accelerators"],
-          ["Neural Engine de 16 núcleos"],
+          ["CPU de 6 n\u00facleos con 2 n\u00facleos de rendimiento y 4 de eficiencia"],
+          ["GPU de 6 n\u00facleos con Neural Accelerators"],
+          ["Neural Engine de 16 n\u00facleos"],
           ["Trazado de rayos acelerado por hardware"]
         ]},
-        { cat: "Batería", rows: [
-          ["Hasta 37 horas de reproducción de video\u2074"]
-        ]},
-        { cat: "Cámara frontal", rows: [
-          ["Cámara frontal Center Stage de 18 MP"],
-          ["Toca para hacer zoom y girar"],
-          ["Encuadre Centrado para fotos"],
-          ["Video ultraestabilizado"],
-          ["Captura Dual"],
-          ["Encuadre Centrado para videollamadas"]
-        ]},
-        { cat: "Cámaras traseras", rows: [
-          ["Sistema de cámaras Pro Fusion de 48 MP"],
+        { cat: "C\u00e1mara", rows: [
+          ["Sistema de c\u00e1maras Pro Fusion de 48 MP"],
           ["Fusion principal de 48 MP\nFusion ultra gran angular de 48 MP\nFusion teleobjetivo de 48 MP"],
-          ["Fotos en superalta resolución (24 MP y 48 MP)"],
-          ["Retratos de última generación con Control de Enfoque y Profundidad"],
-          ["Fotografía macro"],
-          ["Dolby Vision hasta 4K a 120 fps"],
-          ["Estilos Fotográficos de última generación"],
-          ["Zoom: 0.5x, 1x, 2x, 4x, 8x"],
-          ["Opciones de zoom óptico"]
+          ["Estabilizaci\u00f3n \u00f3ptica de imagen por desplazamiento de sensor de segunda generaci\u00f3n (Fusion principal)\nEstabilizaci\u00f3n \u00f3ptica de imagen 3D por desplazamiento de sensor (Fusion teleobjetivo)"],
+          ["Opciones de zoom \u00f3ptico: 0.5x, 1x, 2x, 4x, 8x"],
+          ["Flash True Tone adaptativo"],
+          ["Photonic Engine"],
+          ["Deep Fusion"],
+          ["HDR Inteligente 5 para fotos"],
+          ["Retratos de \u00faltima generaci\u00f3n con Control de Enfoque y Control de Profundidad"],
+          ["Iluminaci\u00f3n de Retrato con seis efectos"],
+          ["Modo Noche"],
+          ["Estilos Fotogr\u00e1ficos de \u00faltima generaci\u00f3n"],
+          ["Fotograf\u00eda macro"],
+          ["Fotos espaciales"],
+          ["ProRAW"],
+          ["Fotos en superalta resoluci\u00f3n (24 MP y 48 MP)"]
+        ]},
+        { cat: "Grabaci\u00f3n de video", rows: [
+          ["Grabaci\u00f3n de video 4K Dolby Vision hasta 120 fps (Fusion principal) y hasta 60 fps (Fusion ultra gran angular, Fusion teleobjetivo)"],
+          ["Modo Cine para grabar videos con baja profundidad de campo (hasta 4K Dolby Vision a 30 fps)"],
+          ["Captura Dual (hasta 4K Dolby Vision a 30 fps)"],
+          ["Modo Acci\u00f3n (hasta 2.8K Dolby Vision a 60 fps)"],
+          ["Grabaci\u00f3n de video espacial de 1080p a 30 fps"],
+          ["Grabaci\u00f3n de video ProRes hasta 4K a 120 fps con grabaci\u00f3n externa"],
+          ["ProRes RAW\u00b9\u00b9"],
+          ["Academy Color Encoding System (ACES)"],
+          ["Grabaci\u00f3n de video en formato Apple Log 2"],
+          ["Compatibilidad con Genlock\u00b9\u00b2"],
+          ["Grabaci\u00f3n de video macro, incluso en c\u00e1mara lenta y c\u00e1mara r\u00e1pida"],
+          ["Video en c\u00e1mara lenta de 1080p hasta 240 fps y 4K Dolby Vision hasta 120 fps (Fusion principal)"],
+          ["Grabaci\u00f3n est\u00e9reo y con Audio Espacial"],
+          ["Sistema de cuatro micr\u00f3fonos con calidad de estudio"],
+          ["Reducci\u00f3n de ruido del viento"],
+          ["Mezcla de Audio"]
+        ]},
+        { cat: "C\u00e1mara frontal", rows: [
+          ["C\u00e1mara frontal Center Stage de 18 MP"],
+          ["Fotos de 18 MP"],
+          ["Encuadre Centrado para fotos"],
+          ["Captura Dual"],
+          ["Encuadre Centrado para videollamadas"],
+          ["Video ultraestabilizado"],
+          ["Grabaci\u00f3n de video 4K Dolby Vision hasta 60 fps"],
+          ["Modo Cine hasta 4K Dolby Vision a 30 fps"],
+          ["Grabaci\u00f3n de video ProRes hasta 4K a 60 fps con grabaci\u00f3n externa"],
+          ["Video en c\u00e1mara lenta de 1080p a 120 fps"]
+        ]},
+        { cat: "Energ\u00eda y bater\u00eda", rows: [
+          ["Bater\u00eda de iones de litio recargable integrada"],
+          ["Carga inal\u00e1mbrica con cargadores MagSafe, Qi2 y Qi\u2078"],
+          ["Reproducci\u00f3n de video: Hasta 37 horas"],
+          ["Reproducci\u00f3n de video en streaming: Hasta 33 horas"],
+          ["Carga r\u00e1pida: Hasta un 50% de carga en 20 min\u00b9\u2074 con un adaptador de 40 W o m\u00e1s"],
+          ["Carga inal\u00e1mbrica de hasta 25 W con cargadores MagSafe y un adaptador de 30 W o m\u00e1s\u2078"],
+          ["Compatible con fundas, carteras, cargadores inal\u00e1mbricos y otros accesorios MagSafe"]
         ]},
         { cat: "Apple Intelligence", rows: [
           ["Apple Intelligence\u2075"]
         ]},
         { cat: "Seguridad", rows: [
           ["Emergencia SOS"],
-          ["Detección de Choques\u2076"]
+          ["Detecci\u00f3n de Choques\u2076"]
         ]},
-        { cat: "Conectividad", rows: [
-          ["USB‑C — Compatible con USB 3 para transferencias hasta 20 veces más rápidas\u2077"]
+        { cat: "Conexi\u00f3n celular e inal\u00e1mbrica", rows: [
+          ["5G (sub-6 GHz) con MIMO 4x4\u00b9\u2075"],
+          ["Gigabit LTE\u00b9\u2075"],
+          ["Wi\u2011Fi 7\u00b9\u2076"],
+          ["Bluetooth 6"],
+          ["Chip de banda ultraancha de segunda generaci\u00f3n de Apple\u00b9\u2077"],
+          ["Tecnolog\u00eda de red Thread"],
+          ["GPS de precisi\u00f3n y doble frecuencia (GPS, GLONASS, Galileo, QZSS, BeiDou y NavIC)"],
+          ["NFC con modo de lectura"]
         ]},
-        { cat: "Carga", rows: [
-          ["Carga inalámbrica de hasta 25 W con MagSafe y adaptador de 30 W o más\u2078"],
-          ["Compatible con fundas, carteras, cargadores inalámbricos y accesorios MagSafe"]
+        { cat: "Autenticaci\u00f3n segura", rows: [
+          ["Face ID"],
+          ["Reconocimiento facial mediante tecnolog\u00eda TrueDepth con la c\u00e1mara frontal Center Stage"]
+        ]},
+        { cat: "Sensores", rows: [
+          ["Esc\u00e1ner LiDAR"],
+          ["Gir\u00f3scopo de alto rango din\u00e1mico"],
+          ["Aceler\u00f3metro de alta fuerza g"],
+          ["Sensor de proximidad"],
+          ["Dos sensores de luz ambiental"],
+          ["Bar\u00f3metro"]
+        ]},
+        { cat: "Conector", rows: [
+          ["USB\u2011C Compatible con USB 3 (hasta 10 Gb/s)\u2077"]
+        ]},
+        { cat: "Tarjeta SIM", rows: [
+          ["Doble eSIM\u00b9\u2078"],
+          ["Dos eSIM activas, o una nano\u2011SIM y una eSIM; almacena ocho eSIM o m\u00e1s"]
         ]},
         { cat: "Capacidad", rows: [
           ["256 GB"],
@@ -97,64 +177,144 @@
       ]
     },
     "iPhone 17 Pro": {
-      image: "",
-      colors: ["Naranja cósmico", "Azul profundo", "Color plata"],
+      colors: ["Naranja c\u00f3smico", "Azul profundo", "Color plata"],
       colorHex: ["#e87a5a", "#1a2e40", "#c8c8c8"],
       specs: [
         { cat: "Resumen", rows: [
-          ["6.3″", "Pantalla Super Retina XDR\u00b9"],
-          ["Tecnología ProMotion"],
+          ["6.3\u2033 Pantalla Super Retina XDR\u00b9"],
+          ["Tecnolog\u00eda ProMotion"],
           ["Pantalla siempre activa"],
           ["Dynamic Island"],
-          ["Estructura de aluminio con diseño unibody"],
-          ["Botón de Acción"],
-          ["Control de la Cámara para acceder más rápido a las herramientas de fotos y videos"],
-          ["Frente de Ceramic Shield 2, 3 veces más resistente a los rayones\u00b2"],
+          ["Estructura de aluminio con dise\u00f1o unibody"],
+          ["Bot\u00f3n de Acci\u00f3n"],
+          ["Control de la C\u00e1mara para acceder m\u00e1s r\u00e1pido a las herramientas de fotos y videos"],
+          ["Frente de Ceramic Shield 2, 3 veces m\u00e1s resistente a los rayones\u00b2"],
           ["Parte posterior de Ceramic Shield"],
           ["Resistente al agua hasta por 30 min a 6 metros de profundidad\u00b3"]
         ]},
-        { cat: "Chip y rendimiento", rows: [
+        { cat: "Pantalla", rows: [
+          ["Pantalla Super Retina XDR"],
+          ["Pantalla OLED de 6.3 pulgadas (diagonal) sin marco\u00b9"],
+          ["Dynamic Island"],
+          ["Tecnolog\u00eda ProMotion con frecuencias de actualizaci\u00f3n adaptativas de hasta 120 Hz"],
+          ["Pantalla siempre activa"],
+          ["Pantalla HDR"],
+          ["Resoluci\u00f3n de 2622 x 1206 pixeles a 460 ppi"],
+          ["Relaci\u00f3n de contraste 2,000,000:1 (normal)"],
+          ["Pantalla True Tone"],
+          ["Pantalla con amplia gama de colores (P3)"],
+          ["Toque con respuesta h\u00e1ptica"],
+          ["Brillo m\u00e1ximo de 1,000 nits (normal)"],
+          ["Pico de brillo de 1,600 nits (HDR)"],
+          ["Pico de brillo de 3,000 nits (en exteriores)"],
+          ["Brillo m\u00ednimo de 1 nit"]
+        ]},
+        { cat: "Tama\u00f1o y peso", rows: [
+          ["Alto: 149.6 mm"],
+          ["Ancho: 71.5 mm"],
+          ["Grosor: 8.24 mm"],
+          ["Peso: 199 g"],
+          ["Clasificaci\u00f3n IP68 (hasta 30 min a una profundidad m\u00e1xima de 6 metros) seg\u00fan la norma IEC 60529"]
+        ]},
+        { cat: "Chip", rows: [
           ["Chip A19 Pro"],
-          ["CPU de 6 núcleos"],
-          ["GPU de 6 núcleos con Neural Accelerators"],
-          ["Neural Engine de 16 núcleos"],
+          ["CPU de 6 n\u00facleos con 2 n\u00facleos de rendimiento y 4 de eficiencia"],
+          ["GPU de 6 n\u00facleos con Neural Accelerators"],
+          ["Neural Engine de 16 n\u00facleos"],
           ["Trazado de rayos acelerado por hardware"]
         ]},
-        { cat: "Batería", rows: [
-          ["Hasta 31 horas de reproducción de video\u2074"]
-        ]},
-        { cat: "Cámara frontal", rows: [
-          ["Cámara frontal Center Stage de 18 MP"],
-          ["Toca para hacer zoom y girar"],
-          ["Encuadre Centrado para fotos"],
-          ["Video ultraestabilizado"],
-          ["Captura Dual"],
-          ["Encuadre Centrado para videollamadas"]
-        ]},
-        { cat: "Cámaras traseras", rows: [
-          ["Sistema de cámaras Pro Fusion de 48 MP"],
+        { cat: "C\u00e1mara", rows: [
+          ["Sistema de c\u00e1maras Pro Fusion de 48 MP"],
           ["Fusion principal de 48 MP\nFusion ultra gran angular de 48 MP\nFusion teleobjetivo de 48 MP"],
-          ["Fotos en superalta resolución (24 MP y 48 MP)"],
-          ["Retratos de última generación con Control de Enfoque y Profundidad"],
-          ["Fotografía macro"],
-          ["Dolby Vision hasta 4K a 120 fps"],
-          ["Estilos Fotográficos de última generación"],
-          ["Zoom: 0.5x, 1x, 2x, 4x, 8x"],
-          ["Opciones de zoom óptico"]
+          ["Estabilizaci\u00f3n \u00f3ptica de imagen por desplazamiento de sensor de segunda generaci\u00f3n (Fusion principal)\nEstabilizaci\u00f3n \u00f3ptica de imagen 3D por desplazamiento de sensor (Fusion teleobjetivo)"],
+          ["Opciones de zoom \u00f3ptico: 0.5x, 1x, 2x, 4x, 8x"],
+          ["Flash True Tone adaptativo"],
+          ["Photonic Engine"],
+          ["Deep Fusion"],
+          ["HDR Inteligente 5 para fotos"],
+          ["Retratos de \u00faltima generaci\u00f3n con Control de Enfoque y Control de Profundidad"],
+          ["Iluminaci\u00f3n de Retrato con seis efectos"],
+          ["Modo Noche"],
+          ["Estilos Fotogr\u00e1ficos de \u00faltima generaci\u00f3n"],
+          ["Fotograf\u00eda macro"],
+          ["Fotos espaciales"],
+          ["ProRAW"],
+          ["Fotos en superalta resoluci\u00f3n (24 MP y 48 MP)"]
+        ]},
+        { cat: "Grabaci\u00f3n de video", rows: [
+          ["Grabaci\u00f3n de video 4K Dolby Vision hasta 120 fps (Fusion principal) y hasta 60 fps (Fusion ultra gran angular, Fusion teleobjetivo)"],
+          ["Modo Cine para grabar videos con baja profundidad de campo (hasta 4K Dolby Vision a 30 fps)"],
+          ["Captura Dual (hasta 4K Dolby Vision a 30 fps)"],
+          ["Modo Acci\u00f3n (hasta 2.8K Dolby Vision a 60 fps)"],
+          ["Grabaci\u00f3n de video espacial de 1080p a 30 fps"],
+          ["Grabaci\u00f3n de video ProRes hasta 4K a 120 fps con grabaci\u00f3n externa"],
+          ["ProRes RAW\u00b9\u00b9"],
+          ["Academy Color Encoding System (ACES)"],
+          ["Grabaci\u00f3n de video en formato Apple Log 2"],
+          ["Compatibilidad con Genlock\u00b9\u00b2"],
+          ["Grabaci\u00f3n de video macro, incluso en c\u00e1mara lenta y c\u00e1mara r\u00e1pida"],
+          ["Video en c\u00e1mara lenta de 1080p hasta 240 fps y 4K Dolby Vision hasta 120 fps (Fusion principal)"],
+          ["Grabaci\u00f3n est\u00e9reo y con Audio Espacial"],
+          ["Sistema de cuatro micr\u00f3fonos con calidad de estudio"],
+          ["Reducci\u00f3n de ruido del viento"],
+          ["Mezcla de Audio"]
+        ]},
+        { cat: "C\u00e1mara frontal", rows: [
+          ["C\u00e1mara frontal Center Stage de 18 MP"],
+          ["Fotos de 18 MP"],
+          ["Encuadre Centrado para fotos"],
+          ["Captura Dual"],
+          ["Encuadre Centrado para videollamadas"],
+          ["Video ultraestabilizado"],
+          ["Grabaci\u00f3n de video 4K Dolby Vision hasta 60 fps"],
+          ["Modo Cine hasta 4K Dolby Vision a 30 fps"],
+          ["Grabaci\u00f3n de video ProRes hasta 4K a 60 fps con grabaci\u00f3n externa"],
+          ["Video en c\u00e1mara lenta de 1080p a 120 fps"]
+        ]},
+        { cat: "Energ\u00eda y bater\u00eda", rows: [
+          ["Bater\u00eda de iones de litio recargable integrada"],
+          ["Carga inal\u00e1mbrica con cargadores MagSafe, Qi2 y Qi\u2078"],
+          ["Reproducci\u00f3n de video: Hasta 31 horas"],
+          ["Reproducci\u00f3n de video en streaming: Hasta 27 horas"],
+          ["Carga r\u00e1pida: Hasta un 50% de carga en 20 min\u00b9\u2074 con un adaptador de 40 W o m\u00e1s"],
+          ["Carga inal\u00e1mbrica de hasta 25 W con cargadores MagSafe y un adaptador de 30 W o m\u00e1s\u2078"],
+          ["Compatible con fundas, carteras, cargadores inal\u00e1mbricos y otros accesorios MagSafe"]
         ]},
         { cat: "Apple Intelligence", rows: [
           ["Apple Intelligence\u2075"]
         ]},
         { cat: "Seguridad", rows: [
           ["Emergencia SOS"],
-          ["Detección de Choques\u2076"]
+          ["Detecci\u00f3n de Choques\u2076"]
         ]},
-        { cat: "Conectividad", rows: [
-          ["USB‑C — Compatible con USB 3 para transferencias hasta 20 veces más rápidas\u2077"]
+        { cat: "Conexi\u00f3n celular e inal\u00e1mbrica", rows: [
+          ["5G (sub-6 GHz) con MIMO 4x4\u00b9\u2075"],
+          ["Gigabit LTE\u00b9\u2075"],
+          ["Wi\u2011Fi 7\u00b9\u2076"],
+          ["Bluetooth 6"],
+          ["Chip de banda ultraancha de segunda generaci\u00f3n de Apple\u00b9\u2077"],
+          ["Tecnolog\u00eda de red Thread"],
+          ["GPS de precisi\u00f3n y doble frecuencia (GPS, GLONASS, Galileo, QZSS, BeiDou y NavIC)"],
+          ["NFC con modo de lectura"]
         ]},
-        { cat: "Carga", rows: [
-          ["Carga inalámbrica de hasta 25 W con MagSafe y adaptador de 30 W o más\u2078"],
-          ["Compatible con fundas, carteras, cargadores inalámbricos y accesorios MagSafe"]
+        { cat: "Autenticaci\u00f3n segura", rows: [
+          ["Face ID"],
+          ["Reconocimiento facial mediante tecnolog\u00eda TrueDepth con la c\u00e1mara frontal Center Stage"]
+        ]},
+        { cat: "Sensores", rows: [
+          ["Esc\u00e1ner LiDAR"],
+          ["Gir\u00f3scopo de alto rango din\u00e1mico"],
+          ["Aceler\u00f3metro de alta fuerza g"],
+          ["Sensor de proximidad"],
+          ["Dos sensores de luz ambiental"],
+          ["Bar\u00f3metro"]
+        ]},
+        { cat: "Conector", rows: [
+          ["USB\u2011C Compatible con USB 3 (hasta 10 Gb/s)\u2077"]
+        ]},
+        { cat: "Tarjeta SIM", rows: [
+          ["Doble eSIM\u00b9\u2078"],
+          ["Dos eSIM activas, o una nano\u2011SIM y una eSIM; almacena ocho eSIM o m\u00e1s"]
         ]},
         { cat: "Capacidad", rows: [
           ["256 GB"],
@@ -165,69 +325,297 @@
       ]
     },
     "iPhone 17": {
-      image: "",
       colors: ["Lavanda", "Salvia", "Azul neblina", "Blanco", "Negro"],
       colorHex: ["#c8b8d8", "#8fa885", "#b0c8d8", "#f5f5f5", "#1a1a1a"],
       specs: [
         { cat: "Resumen", rows: [
-          ["6.3″", "Pantalla Super Retina XDR\u00b9"],
-          ["Tecnología ProMotion"],
+          ["6.3\u2033 Pantalla Super Retina XDR\u00b9"],
+          ["Tecnolog\u00eda ProMotion"],
           ["Pantalla siempre activa"],
           ["Dynamic Island"],
           ["Marco de aluminio"],
-          ["Botón de Acción"],
-          ["Control de la Cámara para acceder más rápido a las herramientas de fotos y videos"],
-          ["Frente de Ceramic Shield 2, 3 veces más resistente a los rayones\u00b2"],
+          ["Bot\u00f3n de Acci\u00f3n"],
+          ["Control de la C\u00e1mara para acceder m\u00e1s r\u00e1pido a las herramientas de fotos y videos"],
+          ["Frente de Ceramic Shield 2, 3 veces m\u00e1s resistente a los rayones\u00b2"],
           ["No disponible"],
           ["Resistente al agua hasta por 30 min a 6 metros de profundidad\u00b3"]
         ]},
-        { cat: "Chip y rendimiento", rows: [
+        { cat: "Pantalla", rows: [
+          ["Pantalla Super Retina XDR"],
+          ["Pantalla OLED de 6.3 pulgadas (diagonal) sin marco\u00b9"],
+          ["Dynamic Island"],
+          ["Tecnolog\u00eda ProMotion con frecuencias de actualizaci\u00f3n adaptativas de hasta 120 Hz"],
+          ["Pantalla siempre activa"],
+          ["Pantalla HDR"],
+          ["Resoluci\u00f3n de 2622 x 1206 pixeles a 460 ppi"],
+          ["Relaci\u00f3n de contraste 2,000,000:1 (normal)"],
+          ["Pantalla True Tone"],
+          ["Pantalla con amplia gama de colores (P3)"],
+          ["Toque con respuesta h\u00e1ptica"],
+          ["Brillo m\u00e1ximo de 1,000 nits (normal)"],
+          ["Pico de brillo de 1,600 nits (HDR)"],
+          ["Pico de brillo de 3,000 nits (en exteriores)"],
+          ["Brillo m\u00ednimo de 1 nit"]
+        ]},
+        { cat: "Tama\u00f1o y peso", rows: [
+          ["Alto: 149.6 mm"],
+          ["Ancho: 71.5 mm"],
+          ["Grosor: 7.95 mm"],
+          ["Peso: 177 g"],
+          ["Clasificaci\u00f3n IP68 (hasta 30 min a una profundidad m\u00e1xima de 6 metros) seg\u00fan la norma IEC 60529"]
+        ]},
+        { cat: "Chip", rows: [
           ["Chip A19"],
-          ["CPU de 6 núcleos"],
-          ["GPU de 5 núcleos con Neural Accelerators"],
-          ["Neural Engine de 16 núcleos"],
+          ["CPU de 6 n\u00facleos con 2 n\u00facleos de rendimiento y 4 de eficiencia"],
+          ["GPU de 5 n\u00facleos con Neural Accelerators"],
+          ["Neural Engine de 16 n\u00facleos"],
           ["Trazado de rayos acelerado por hardware"]
         ]},
-        { cat: "Batería", rows: [
-          ["Hasta 30 horas de reproducción de video\u2074"]
-        ]},
-        { cat: "Cámara frontal", rows: [
-          ["Cámara frontal Center Stage de 18 MP"],
-          ["Toca para hacer zoom y girar"],
-          ["Encuadre Centrado para fotos"],
-          ["Video ultraestabilizado"],
-          ["Captura Dual"],
-          ["Encuadre Centrado para videollamadas"]
-        ]},
-        { cat: "Cámaras traseras", rows: [
-          ["Sistema de dos cámaras Fusion de 48 MP"],
+        { cat: "C\u00e1mara", rows: [
+          ["Sistema de dos c\u00e1maras Fusion de 48 MP"],
           ["Fusion principal de 48 MP\nFusion ultra gran angular de 48 MP"],
-          ["Fotos en superalta resolución (24 MP y 48 MP)"],
-          ["Retratos de última generación con Control de Enfoque y Profundidad"],
-          ["Fotografía macro"],
-          ["Dolby Vision hasta 4K a 60 fps"],
-          ["Estilos Fotográficos de última generación"],
-          ["Zoom: 0.5x, 1x, 2x"],
-          ["Opciones de zoom óptico"]
+          ["Estabilizaci\u00f3n \u00f3ptica de imagen por desplazamiento de sensor (Fusion principal)"],
+          ["Opciones de zoom \u00f3ptico: 0.5x, 1x, 2x"],
+          ["Flash True Tone"],
+          ["Photonic Engine"],
+          ["Deep Fusion"],
+          ["HDR Inteligente 5 para fotos"],
+          ["Retratos de \u00faltima generaci\u00f3n con Control de Enfoque y Control de Profundidad"],
+          ["Iluminaci\u00f3n de Retrato con seis efectos"],
+          ["Modo Noche"],
+          ["Estilos Fotogr\u00e1ficos de \u00faltima generaci\u00f3n"],
+          ["Fotograf\u00eda macro"],
+          ["Fotos espaciales"],
+          ["No disponible"],
+          ["Fotos en superalta resoluci\u00f3n (24 MP y 48 MP)"]
+        ]},
+        { cat: "Grabaci\u00f3n de video", rows: [
+          ["Grabaci\u00f3n de video 4K Dolby Vision hasta 60 fps"],
+          ["Modo Cine para grabar videos con baja profundidad de campo (hasta 4K Dolby Vision a 30 fps)"],
+          ["Captura Dual (hasta 4K Dolby Vision a 30 fps)"],
+          ["Modo Acci\u00f3n (hasta 2.8K Dolby Vision a 60 fps)"],
+          ["Grabaci\u00f3n de video espacial de 1080p a 30 fps"],
+          ["No disponible"],
+          ["No disponible"],
+          ["No disponible"],
+          ["No disponible"],
+          ["No disponible"],
+          ["Grabaci\u00f3n de video macro, incluso en c\u00e1mara lenta y c\u00e1mara r\u00e1pida"],
+          ["Video en c\u00e1mara lenta hasta 1080p a 240 fps"],
+          ["Grabaci\u00f3n est\u00e9reo y con Audio Espacial"],
+          ["No disponible"],
+          ["Reducci\u00f3n de ruido del viento"],
+          ["Mezcla de Audio"]
+        ]},
+        { cat: "C\u00e1mara frontal", rows: [
+          ["C\u00e1mara frontal Center Stage de 18 MP"],
+          ["Fotos de 18 MP"],
+          ["Encuadre Centrado para fotos"],
+          ["Captura Dual"],
+          ["Encuadre Centrado para videollamadas"],
+          ["Video ultraestabilizado"],
+          ["Grabaci\u00f3n de video 4K Dolby Vision hasta 60 fps"],
+          ["Modo Cine hasta 4K Dolby Vision a 30 fps"],
+          ["No disponible"],
+          ["Video en c\u00e1mara lenta de 1080p a 120 fps"]
+        ]},
+        { cat: "Energ\u00eda y bater\u00eda", rows: [
+          ["Bater\u00eda de iones de litio recargable integrada"],
+          ["Carga inal\u00e1mbrica con cargadores MagSafe, Qi2 y Qi\u2078"],
+          ["Reproducci\u00f3n de video: Hasta 30 horas"],
+          ["Reproducci\u00f3n de video en streaming: Hasta 27 horas"],
+          ["Carga r\u00e1pida: Hasta un 50% de carga en 20 min\u00b9\u2074 con un adaptador de 40 W o m\u00e1s"],
+          ["Carga inal\u00e1mbrica de hasta 25 W con cargadores MagSafe y un adaptador de 30 W o m\u00e1s\u2078"],
+          ["Compatible con fundas, carteras, cargadores inal\u00e1mbricos y otros accesorios MagSafe"]
         ]},
         { cat: "Apple Intelligence", rows: [
           ["Apple Intelligence\u2075"]
         ]},
         { cat: "Seguridad", rows: [
           ["Emergencia SOS"],
-          ["Detección de Choques\u2076"]
+          ["Detecci\u00f3n de Choques\u2076"]
         ]},
-        { cat: "Conectividad", rows: [
-          ["USB‑C — Compatible con USB 2"]
+        { cat: "Conexi\u00f3n celular e inal\u00e1mbrica", rows: [
+          ["5G (sub-6 GHz) con MIMO 4x4\u00b9\u2075"],
+          ["Gigabit LTE\u00b9\u2075"],
+          ["Wi\u2011Fi 7\u00b9\u2076"],
+          ["Bluetooth 6"],
+          ["Chip de banda ultraancha de segunda generaci\u00f3n de Apple\u00b9\u2077"],
+          ["Tecnolog\u00eda de red Thread"],
+          ["GPS de precisi\u00f3n y doble frecuencia (GPS, GLONASS, Galileo, QZSS, BeiDou y NavIC)"],
+          ["NFC con modo de lectura"]
         ]},
-        { cat: "Carga", rows: [
-          ["Carga inalámbrica de hasta 25 W con MagSafe y adaptador de 30 W o más\u2078"],
-          ["Compatible con fundas, carteras, cargadores inalámbricos y accesorios MagSafe"]
+        { cat: "Autenticaci\u00f3n segura", rows: [
+          ["Face ID"],
+          ["Reconocimiento facial mediante tecnolog\u00eda TrueDepth con la c\u00e1mara frontal Center Stage"]
+        ]},
+        { cat: "Sensores", rows: [
+          ["No disponible"],
+          ["Gir\u00f3scopo de alto rango din\u00e1mico"],
+          ["Aceler\u00f3metro de alta fuerza g"],
+          ["Sensor de proximidad"],
+          ["Dos sensores de luz ambiental"],
+          ["Bar\u00f3metro"]
+        ]},
+        { cat: "Conector", rows: [
+          ["USB\u2011C Compatible con USB 2"]
+        ]},
+        { cat: "Tarjeta SIM", rows: [
+          ["Doble eSIM\u00b9\u2078"],
+          ["Dos eSIM activas, o una nano\u2011SIM y una eSIM; almacena ocho eSIM o m\u00e1s"]
         ]},
         { cat: "Capacidad", rows: [
           ["256 GB"],
           ["512 GB"],
           ["No disponible"],
+          ["No disponible"]
+        ]}
+      ]
+    },
+    "iPhone 16": {
+      colors: ["Ultramarino", "Verde azulado", "Rosa", "Blanco", "Negro"],
+      colorHex: ["#3d5a99", "#4a8c7f", "#f4b8c8", "#f5f5f5", "#1a1a1a"],
+      specs: [
+        { cat: "Resumen", rows: [
+          ["6.1\u2033 Pantalla Super Retina XDR\u00b9"],
+          ["No disponible"],
+          ["No disponible"],
+          ["Dynamic Island"],
+          ["Marco de aluminio"],
+          ["Bot\u00f3n de Acci\u00f3n"],
+          ["Control de la C\u00e1mara para acceder m\u00e1s r\u00e1pido a las herramientas de fotos y videos"],
+          ["Frente de Ceramic Shield"],
+          ["No disponible"],
+          ["Resistente al agua hasta por 30 min a 6 metros de profundidad\u00b3"]
+        ]},
+        { cat: "Pantalla", rows: [
+          ["Pantalla Super Retina XDR"],
+          ["Pantalla OLED de 6.1 pulgadas (diagonal) sin marco\u00b9"],
+          ["Dynamic Island"],
+          ["No disponible"],
+          ["No disponible"],
+          ["Pantalla HDR"],
+          ["Resoluci\u00f3n de 2556 x 1179 pixeles a 460 ppi"],
+          ["Relaci\u00f3n de contraste 2,000,000:1 (normal)"],
+          ["Pantalla True Tone"],
+          ["Pantalla con amplia gama de colores (P3)"],
+          ["Toque con respuesta h\u00e1ptica"],
+          ["Brillo m\u00e1ximo de 1,000 nits (normal)"],
+          ["Pico de brillo de 1,600 nits (HDR)"],
+          ["Pico de brillo de 2,000 nits (en exteriores)"],
+          ["Brillo m\u00ednimo de 1 nit"]
+        ]},
+        { cat: "Tama\u00f1o y peso", rows: [
+          ["Alto: 147.6 mm"],
+          ["Ancho: 71.6 mm"],
+          ["Grosor: 7.80 mm"],
+          ["Peso: 170 g"],
+          ["Clasificaci\u00f3n IP68 (hasta 30 min a una profundidad m\u00e1xima de 6 metros) seg\u00fan la norma IEC 60529"]
+        ]},
+        { cat: "Chip", rows: [
+          ["Chip A18"],
+          ["CPU de 6 n\u00facleos con 2 n\u00facleos de rendimiento y 4 de eficiencia"],
+          ["GPU de 5 n\u00facleos"],
+          ["Neural Engine de 16 n\u00facleos"],
+          ["Trazado de rayos acelerado por hardware"]
+        ]},
+        { cat: "C\u00e1mara", rows: [
+          ["Sistema avanzado de dos c\u00e1maras"],
+          ["Fusion principal de 48 MP\nUltra gran angular de 12 MP"],
+          ["Estabilizaci\u00f3n \u00f3ptica de imagen por desplazamiento de sensor (Fusion principal)"],
+          ["Opciones de zoom \u00f3ptico: 0.5x, 1x, 2x"],
+          ["Flash True Tone"],
+          ["Photonic Engine"],
+          ["Deep Fusion"],
+          ["HDR Inteligente 5 para fotos"],
+          ["Retratos de \u00faltima generaci\u00f3n con Control de Enfoque y Control de Profundidad"],
+          ["Iluminaci\u00f3n de Retrato con seis efectos"],
+          ["Modo Noche"],
+          ["Estilos Fotogr\u00e1ficos de \u00faltima generaci\u00f3n"],
+          ["Fotograf\u00eda macro"],
+          ["Fotos espaciales"],
+          ["No disponible"],
+          ["Fotos en superalta resoluci\u00f3n (24 MP y 48 MP)"]
+        ]},
+        { cat: "Grabaci\u00f3n de video", rows: [
+          ["Grabaci\u00f3n de video 4K Dolby Vision hasta 60 fps"],
+          ["Modo Cine para grabar videos con baja profundidad de campo (hasta 4K Dolby Vision a 30 fps)"],
+          ["No disponible"],
+          ["Modo Acci\u00f3n (hasta 2.8K Dolby Vision a 60 fps)"],
+          ["Grabaci\u00f3n de video espacial de 1080p a 30 fps"],
+          ["No disponible"],
+          ["No disponible"],
+          ["No disponible"],
+          ["No disponible"],
+          ["No disponible"],
+          ["Grabaci\u00f3n de video macro, incluso en c\u00e1mara lenta y c\u00e1mara r\u00e1pida"],
+          ["Video en c\u00e1mara lenta hasta 1080p a 240 fps"],
+          ["Grabaci\u00f3n est\u00e9reo y con Audio Espacial"],
+          ["No disponible"],
+          ["Reducci\u00f3n de ruido del viento"],
+          ["Mezcla de Audio"]
+        ]},
+        { cat: "C\u00e1mara frontal", rows: [
+          ["C\u00e1mara frontal TrueDepth de 12 MP"],
+          ["Fotos de 12 MP"],
+          ["No disponible"],
+          ["No disponible"],
+          ["No disponible"],
+          ["No disponible"],
+          ["Grabaci\u00f3n de video 4K Dolby Vision hasta 60 fps"],
+          ["Modo Cine hasta 4K Dolby Vision a 30 fps"],
+          ["No disponible"],
+          ["Video en c\u00e1mara lenta de 1080p a 120 fps"]
+        ]},
+        { cat: "Energ\u00eda y bater\u00eda", rows: [
+          ["Bater\u00eda de iones de litio recargable integrada"],
+          ["Carga inal\u00e1mbrica con cargadores MagSafe, Qi2 y Qi\u2078"],
+          ["Reproducci\u00f3n de video: Hasta 22 horas"],
+          ["Reproducci\u00f3n de video en streaming: Hasta 18 horas"],
+          ["Carga r\u00e1pida: Hasta un 50% de carga en 30 min\u00b9\u2074 con un adaptador de 20 W o m\u00e1s"],
+          ["Carga inal\u00e1mbrica de hasta 22 W con cargadores MagSafe y un adaptador de 30 W o m\u00e1s\u2078"],
+          ["Compatible con fundas, carteras, cargadores inal\u00e1mbricos y otros accesorios MagSafe"]
+        ]},
+        { cat: "Apple Intelligence", rows: [
+          ["Apple Intelligence\u2075"]
+        ]},
+        { cat: "Seguridad", rows: [
+          ["Emergencia SOS"],
+          ["Detecci\u00f3n de Choques\u2076"]
+        ]},
+        { cat: "Conexi\u00f3n celular e inal\u00e1mbrica", rows: [
+          ["5G (sub-6 GHz) con MIMO 4x4\u00b9\u2075"],
+          ["Gigabit LTE\u00b9\u2075"],
+          ["Wi\u2011Fi 7\u00b9\u2076"],
+          ["Bluetooth 5.3"],
+          ["Chip de banda ultraancha de segunda generaci\u00f3n de Apple\u00b9\u2077"],
+          ["Tecnolog\u00eda de red Thread"],
+          ["GPS, GLONASS, Galileo, QZSS y BeiDou"],
+          ["NFC con modo de lectura"]
+        ]},
+        { cat: "Autenticaci\u00f3n segura", rows: [
+          ["Face ID"],
+          ["Reconocimiento facial por medio de la c\u00e1mara frontal TrueDepth"]
+        ]},
+        { cat: "Sensores", rows: [
+          ["No disponible"],
+          ["Gir\u00f3scopo de alto rango din\u00e1mico"],
+          ["Aceler\u00f3metro de alta fuerza g"],
+          ["Sensor de proximidad"],
+          ["Dos sensores de luz ambiental"],
+          ["Bar\u00f3metro"]
+        ]},
+        { cat: "Conector", rows: [
+          ["USB\u2011C Compatible con USB 2"]
+        ]},
+        { cat: "Tarjeta SIM", rows: [
+          ["Doble eSIM\u00b9\u2078"],
+          ["Dos eSIM activas, o una nano\u2011SIM y una eSIM; almacena ocho eSIM o m\u00e1s"]
+        ]},
+        { cat: "Capacidad", rows: [
+          ["128 GB"],
+          ["256 GB"],
+          ["512 GB"],
           ["No disponible"]
         ]}
       ]
