@@ -10,21 +10,48 @@
         <ul class="vr-gallery__list">
           {%- for block in section.blocks -%}
             <li class="vr-card" {{ block.shopify_attributes }}>
-              {%- if block.settings.tiktok_id != blank -%}
-                <blockquote
-                  class="tiktok-embed"
-                  cite="https://www.tiktok.com/video/{{ block.settings.tiktok_id }}"
-                  data-video-id="{{ block.settings.tiktok_id }}"
-                  style="max-width:325px;min-width:275px;"
-                >
-                  <section></section>
-                </blockquote>
-              {%- else -%}
-                <div class="vr-card__placeholder">
-                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm-4 28V16l14 8-14 8z" fill="#86868b"/></svg>
-                  <p class="vr-card__placeholder-text">Agrega un ID de TikTok</p>
-                </div>
-              {%- endif -%}
+              <div class="vr-card__inner">
+                {%- if block.settings.video != blank -%}
+                  {%- assign vid = block.settings.video -%}
+                  <video
+                    class="vr-card__video"
+                    playsinline
+                    loop
+                    muted
+                    preload="metadata"
+                    {%- if block.settings.poster != blank %}
+                    poster="{{ block.settings.poster | image_url: width: 540 }}"
+                    {%- endif %}
+                  >
+                    {%- for source in vid.sources -%}
+                      <source src="{{ source.url }}" type="{{ source.mime_type }}">
+                    {%- endfor -%}
+                  </video>
+                  <button class="vr-card__play" aria-label="Reproducir">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7L8 5z" fill="currentColor"/></svg>
+                  </button>
+                {%- elsif block.settings.poster != blank -%}
+                  <img
+                    class="vr-card__img"
+                    src="{{ block.settings.poster | image_url: width: 540 }}"
+                    alt="{{ block.settings.heading | escape }}"
+                    loading="lazy"
+                    width="270"
+                    height="480"
+                  >
+                {%- else -%}
+                  <div class="vr-card__placeholder">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm-4 28V16l14 8-14 8z" fill="#86868b"/></svg>
+                    <p class="vr-card__placeholder-text">Sube un video</p>
+                  </div>
+                {%- endif -%}
+
+                {%- if block.settings.heading != blank -%}
+                  <div class="vr-card__overlay">
+                    <p class="vr-card__heading">{{ block.settings.heading }}</p>
+                  </div>
+                {%- endif -%}
+              </div>
             </li>
           {%- endfor -%}
         </ul>
@@ -41,7 +68,6 @@
   </div>
 </section>
 
-<script async src="https://www.tiktok.com/embed.js"></script>
 <script>
 (function(){
   var sec = document.querySelector('.section-{{ section.id }}');
@@ -59,6 +85,28 @@
   });
   if (next) next.addEventListener('click', function() {
     scroll.scrollBy({ left: getStep(), behavior: 'smooth' });
+  });
+
+  sec.querySelectorAll('.vr-card__inner').forEach(function(inner) {
+    var video = inner.querySelector('video');
+    var btn = inner.querySelector('.vr-card__play');
+    if (!video || !btn) return;
+
+    btn.addEventListener('click', function() {
+      if (video.paused) {
+        video.play();
+        btn.classList.add('vr-card__play--hidden');
+      } else {
+        video.pause();
+        btn.classList.remove('vr-card__play--hidden');
+      }
+    });
+    video.addEventListener('click', function() {
+      if (!video.paused) {
+        video.pause();
+        btn.classList.remove('vr-card__play--hidden');
+      }
+    });
   });
 })();
 </script>
@@ -78,13 +126,22 @@
   "blocks": [
     {
       "type": "video",
-      "name": "Video TikTok",
+      "name": "Video",
       "settings": [
         {
+          "type": "video",
+          "id": "video",
+          "label": "Video"
+        },
+        {
+          "type": "image_picker",
+          "id": "poster",
+          "label": "Imagen de portada"
+        },
+        {
           "type": "text",
-          "id": "tiktok_id",
-          "label": "ID del video de TikTok",
-          "info": "El número largo al final de la URL. Ej: de tiktok.com/@usuario/video/7321827193351458053 copiar solo 7321827193351458053"
+          "id": "heading",
+          "label": "Texto superpuesto"
         }
       ]
     }
