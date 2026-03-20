@@ -1,0 +1,95 @@
+<div class="category-nav section-{{ section.id }}">
+  <div class="page-width">
+    <div class="category-nav__scroll-wrapper">
+      <ul class="category-nav__list">
+        {%- for block in section.blocks -%}
+          <li class="category-nav__item" {{ block.shopify_attributes }}>
+            <a href="{{ block.settings.link }}" class="category-nav__link">
+              <div class="category-nav__image-wrapper">
+                {%- if block.settings.image != blank -%}
+                  {{ block.settings.image | image_url: width: 120 | image_tag:
+                    loading: 'lazy',
+                    class: 'category-nav__image'
+                  }}
+                {%- else -%}
+                  {{ 'collection-1' | placeholder_svg_tag: 'category-nav__image category-nav__image--placeholder' }}
+                {%- endif -%}
+              </div>
+              <span class="category-nav__label">{{ block.settings.label }}</span>
+              {%- if block.settings.badge != blank -%}
+                <span class="category-nav__badge" style="color: {{ block.settings.badge_color }};">
+                  {{ block.settings.badge }}
+                </span>
+              {%- endif -%}
+            </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Navegación categorías",
+  "tag": "section",
+  "class": "section-category-nav",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Color de fondo",
+      "default": "#f5f5f7"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Categoría",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Imagen"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Nombre",
+          "default": "iPhone 17 Pro"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Enlace"
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Badge (ej: Nuevo)",
+          "default": ""
+        },
+        {
+          "type": "color",
+          "id": "badge_color",
+          "label": "Color del badge",
+          "default": "#FF9500"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Navegación categorías",
+      "blocks": [
+        { "type": "category", "settings": { "label": "iPhone 17 Pro" } },
+        { "type": "category", "settings": { "label": "iPhone Air" } },
+        { "type": "category", "settings": { "label": "iPhone 17" } },
+        { "type": "category", "settings": { "label": "iPhone 17e", "badge": "Nuevo" } },
+        { "type": "category", "settings": { "label": "iPhone 16" } },
+        { "type": "category", "settings": { "label": "Comparar" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
