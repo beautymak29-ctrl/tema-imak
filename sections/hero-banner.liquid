@@ -1,5 +1,9 @@
 {% comment %} Sección Hero / Banner principal {% endcomment %}
-<section class="hero" style="background-color: {{ section.settings.background_color }}">
+{%- assign is_dark = false -%}
+{%- if section.settings.background_color == '#000000' or section.settings.background_color == '#000' or section.settings.background_color == '#1d1d1f' or section.settings.background_color == '#111111' -%}
+  {%- assign is_dark = true -%}
+{%- endif -%}
+<section class="hero{% if is_dark %} hero--dark{% endif %}" style="background-color: {{ section.settings.background_color }}; color: {% if is_dark %}#f5f5f7{% else %}#1d1d1f{% endif %};">
   {%- if section.settings.image != blank -%}
     <div class="hero__media">
       <img

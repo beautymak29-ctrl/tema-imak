@@ -146,9 +146,10 @@ ul.list-unstyled {
 .hero {
   position: relative;
   overflow: hidden;
-  min-height: 48rem;
+  min-height: 56rem;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .hero__media {
@@ -165,7 +166,9 @@ ul.list-unstyled {
 .hero__content {
   position: relative;
   z-index: 1;
-  padding: 4.8rem 1.6rem;
+  padding: 8rem 1.6rem;
+  text-align: center;
+  width: 100%;
 }
 
 .hero__subheading {
@@ -173,16 +176,22 @@ ul.list-unstyled {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin: 0 0 0.8rem;
+  opacity: 0.7;
 }
 
 .hero__heading {
-  font-size: clamp(3.2rem, 5vw, 6rem);
+  font-size: clamp(5.6rem, 10vw, 12rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
   margin: 0 0 1.6rem;
 }
 
 .hero__text {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
+  line-height: 1.5;
   margin: 0 0 2.4rem;
+  opacity: 0.8;
 }
 
 /* ----- Product card ----- */
@@ -821,5 +830,429 @@ ul.list-unstyled {
 
   .category-nav__link {
     padding: 0.6rem 1.2rem;
+  }
+}
+
+/* ==========================================================================
+   FEATURES GRID — "Descubre el iPhone"
+   ========================================================================== */
+
+.features-grid {
+  padding: 8rem 0;
+  background: #f5f5f7;
+}
+
+.features-grid__title {
+  font-size: clamp(2.8rem, 5vw, 5.6rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: #1d1d1f;
+  margin-bottom: 4rem;
+}
+
+.features-grid__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.6rem;
+}
+
+/* full-width card spans both columns */
+.features-grid__card--full {
+  grid-column: 1 / -1;
+}
+
+/* ---- Base card ---- */
+.features-grid__card {
+  border-radius: 2rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-height: 46rem;
+}
+
+/* ---- Dark card ---- */
+.features-grid__card--dark {
+  background: #1d1d1f;
+  color: #f5f5f7;
+}
+
+.features-grid__card--dark .features-grid__category,
+.features-grid__card--dark .features-grid__heading,
+.features-grid__card--dark .features-grid__desc {
+  color: #f5f5f7;
+}
+
+.features-grid__card--dark .features-grid__link {
+  color: #2997ff;
+}
+
+/* ---- Light card ---- */
+.features-grid__card--light {
+  background: #ffffff;
+  color: #1d1d1f;
+}
+
+.features-grid__card--light .features-grid__link {
+  color: #0071e3;
+}
+
+/* ---- Gray card ---- */
+.features-grid__card--gray {
+  background: #e8e8ed;
+  color: #1d1d1f;
+}
+
+.features-grid__card--gray .features-grid__link {
+  color: #0071e3;
+}
+
+/* ---- Card text area ---- */
+.features-grid__card-text {
+  padding: 3.2rem 3.2rem 1.6rem;
+  z-index: 1;
+}
+
+.features-grid__category {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 0.8rem;
+}
+
+.features-grid__heading {
+  font-size: clamp(2rem, 2.8vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin: 0 0 1.2rem;
+}
+
+.features-grid__desc {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  opacity: 0.8;
+  margin-bottom: 1.2rem;
+}
+
+.features-grid__link {
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.features-grid__link:hover {
+  opacity: 0.75;
+}
+
+/* ---- Card media ---- */
+.features-grid__media {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0 2.4rem;
+}
+
+.features-grid__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
+}
+
+.features-grid__image--placeholder {
+  width: 100%;
+  height: 20rem;
+  opacity: 0.3;
+}
+
+@media (max-width: 899px) {
+  .features-grid__grid {
+    grid-template-columns: 1fr;
+  }
+  .features-grid__card--full {
+    grid-column: 1;
+  }
+  .features-grid__card {
+    min-height: 36rem;
+  }
+}
+
+@media (max-width: 749px) {
+  .features-grid {
+    padding: 5rem 0;
+  }
+  .features-grid__card-text {
+    padding: 2.4rem 2.4rem 1.2rem;
+  }
+  .features-grid__card {
+    min-height: 30rem;
+  }
+}
+
+/* ==========================================================================
+   ACCESSORIES SHOWCASE — "Consiente a tu iPhone"
+   ========================================================================== */
+
+.accessories-showcase {
+  padding: 8rem 0;
+  background: #ffffff;
+}
+
+.accessories-showcase__title {
+  font-size: clamp(2.8rem, 5vw, 5.6rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: #1d1d1f;
+  margin-bottom: 4rem;
+}
+
+.accessories-showcase__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+  gap: 1.6rem;
+}
+
+.accessories-showcase__card {
+  background: #f5f5f7;
+  border-radius: 2rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 40rem;
+}
+
+.accessories-showcase__info {
+  padding: 3.2rem 3.2rem 1.6rem;
+}
+
+.accessories-showcase__badge {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ff6900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+
+.accessories-showcase__name {
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #1d1d1f;
+  margin: 0 0 0.8rem;
+}
+
+.accessories-showcase__desc {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: #6e6e73;
+  margin-bottom: 1.2rem;
+}
+
+.accessories-showcase__link {
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #0071e3;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.accessories-showcase__link:hover {
+  opacity: 0.75;
+}
+
+.accessories-showcase__media {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0 2.4rem;
+}
+
+.accessories-showcase__image {
+  width: 100%;
+  object-fit: contain;
+  display: block;
+  max-height: 24rem;
+}
+
+.accessories-showcase__image--placeholder {
+  width: 100%;
+  height: 18rem;
+  opacity: 0.3;
+}
+
+@media (max-width: 749px) {
+  .accessories-showcase {
+    padding: 5rem 0;
+  }
+  .accessories-showcase__info {
+    padding: 2.4rem 2.4rem 1.2rem;
+  }
+  .accessories-showcase__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   ECOSYSTEM TABS — "Siempre bien acompañado"
+   ========================================================================== */
+
+.ecosystem-tabs {
+  padding: 8rem 0;
+  background: #f5f5f7;
+}
+
+.ecosystem-tabs__title {
+  font-size: clamp(2.8rem, 5vw, 5.6rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: #1d1d1f;
+  margin-bottom: 3.2rem;
+}
+
+/* ---- Tab navigation ---- */
+.ecosystem-tabs__nav {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid #d2d2d7;
+  overflow-x: auto;
+  scrollbar-width: none;
+  margin-bottom: 3.2rem;
+}
+
+.ecosystem-tabs__nav::-webkit-scrollbar {
+  display: none;
+}
+
+.ecosystem-tabs__tab {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 1.2rem 2.4rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #6e6e73;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.2s, border-color 0.2s;
+  margin-bottom: -1px;
+}
+
+.ecosystem-tabs__tab:hover {
+  color: #1d1d1f;
+}
+
+.ecosystem-tabs__tab.is-active {
+  color: #1d1d1f;
+  border-bottom-color: #1d1d1f;
+}
+
+/* ---- Tab panels ---- */
+.ecosystem-tabs__panel {
+  display: none;
+}
+
+.ecosystem-tabs__panel.is-active {
+  display: block;
+}
+
+.ecosystem-tabs__panel-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 2rem;
+  overflow: hidden;
+  padding: 4.8rem;
+  min-height: 40rem;
+}
+
+.ecosystem-tabs__panel-heading {
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #1d1d1f;
+  margin: 0 0 1.6rem;
+}
+
+.ecosystem-tabs__panel-desc {
+  font-size: 1.7rem;
+  line-height: 1.6;
+  color: #1d1d1f;
+}
+
+.ecosystem-tabs__panel-link {
+  display: inline-block;
+  margin-top: 1.6rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #0071e3;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.ecosystem-tabs__panel-link:hover {
+  opacity: 0.75;
+}
+
+.ecosystem-tabs__panel-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ecosystem-tabs__panel-image {
+  width: 100%;
+  max-width: 48rem;
+  height: auto;
+  object-fit: contain;
+  border-radius: 1.2rem;
+  display: block;
+}
+
+.ecosystem-tabs__panel-image--placeholder {
+  width: 100%;
+  height: 28rem;
+  opacity: 0.3;
+}
+
+@media (max-width: 899px) {
+  .ecosystem-tabs__panel-inner {
+    grid-template-columns: 1fr;
+    padding: 3.2rem;
+    min-height: unset;
+  }
+}
+
+@media (max-width: 749px) {
+  .ecosystem-tabs {
+    padding: 5rem 0;
+  }
+  .ecosystem-tabs__tab {
+    padding: 1rem 1.6rem;
+    font-size: 1.4rem;
+  }
+  .ecosystem-tabs__panel-inner {
+    padding: 2.4rem;
+  }
+  .ecosystem-tabs__panel-desc {
+    font-size: 1.5rem;
   }
 }

@@ -1,0 +1,188 @@
+<section class="ecosystem-tabs section-{{ section.id }}" id="section-{{ section.id }}">
+  <div class="page-width">
+
+    {%- if section.settings.title != blank -%}
+      <h2 class="ecosystem-tabs__title">{{ section.settings.title }}</h2>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <nav class="ecosystem-tabs__nav" role="tablist" aria-label="{{ section.settings.title | escape }}">
+        {%- for block in section.blocks -%}
+          <button
+            class="ecosystem-tabs__tab{% if forloop.first %} is-active{% endif %}"
+            role="tab"
+            aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+            aria-controls="eco-panel-{{ block.id }}"
+            data-tab-id="{{ block.id }}"
+            id="eco-tab-{{ block.id }}"
+            {{ block.shopify_attributes }}
+          >
+            {{ block.settings.tab_label }}
+          </button>
+        {%- endfor -%}
+      </nav>
+
+      <div class="ecosystem-tabs__panels">
+        {%- for block in section.blocks -%}
+          <div
+            class="ecosystem-tabs__panel{% if forloop.first %} is-active{% endif %}"
+            role="tabpanel"
+            id="eco-panel-{{ block.id }}"
+            aria-labelledby="eco-tab-{{ block.id }}"
+            data-panel-id="{{ block.id }}"
+          >
+            <div class="ecosystem-tabs__panel-inner">
+              <div class="ecosystem-tabs__panel-text">
+                {%- if block.settings.heading != blank -%}
+                  <h3 class="ecosystem-tabs__panel-heading">{{ block.settings.heading }}</h3>
+                {%- endif -%}
+                {%- if block.settings.text != blank -%}
+                  <p class="ecosystem-tabs__panel-desc">{{ block.settings.text }}</p>
+                {%- endif -%}
+                {%- if block.settings.link != blank and block.settings.link_label != blank -%}
+                  <a href="{{ block.settings.link }}" class="ecosystem-tabs__panel-link">
+                    {{ block.settings.link_label }} &rsaquo;
+                  </a>
+                {%- endif -%}
+              </div>
+
+              <div class="ecosystem-tabs__panel-media">
+                {%- if block.settings.image != blank -%}
+                  {{ block.settings.image | image_url: width: 900 | image_tag:
+                    loading: 'lazy',
+                    widths: '450, 700, 900',
+                    class: 'ecosystem-tabs__panel-image'
+                  }}
+                {%- else -%}
+                  {{ 'lifestyle-2' | placeholder_svg_tag: 'ecosystem-tabs__panel-image ecosystem-tabs__panel-image--placeholder' }}
+                {%- endif -%}
+              </div>
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+  </div>
+</section>
+
+<script>
+  (function () {
+    var section = document.getElementById('section-{{ section.id }}');
+    if (!section) return;
+    var tabs   = section.querySelectorAll('.ecosystem-tabs__tab');
+    var panels = section.querySelectorAll('.ecosystem-tabs__panel');
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        var targetId = this.getAttribute('data-tab-id');
+
+        tabs.forEach(function (t) {
+          t.classList.remove('is-active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        panels.forEach(function (p) {
+          p.classList.remove('is-active');
+        });
+
+        this.classList.add('is-active');
+        this.setAttribute('aria-selected', 'true');
+        var panel = section.querySelector('.ecosystem-tabs__panel[data-panel-id="' + targetId + '"]');
+        if (panel) panel.classList.add('is-active');
+      });
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Tabs ecosistema",
+  "tag": "section",
+  "class": "section-ecosystem-tabs",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título de la sección",
+      "default": "Siempre bien acompañado."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tab",
+      "name": "Tab",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab_label",
+          "label": "Etiqueta del tab",
+          "default": "iPhone y Mac"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Título del panel",
+          "default": "iPhone y Mac"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Texto del panel",
+          "default": "Con Duplicación del iPhone puedes ver la pantalla de tu teléfono en la Mac y controlarlo a distancia."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Imagen"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Enlace"
+        },
+        {
+          "type": "text",
+          "id": "link_label",
+          "label": "Texto del enlace",
+          "default": "Más información"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Tabs ecosistema",
+      "blocks": [
+        {
+          "type": "tab",
+          "settings": {
+            "tab_label": "iPhone y Mac",
+            "heading": "iPhone y Mac",
+            "text": "Con Duplicación del iPhone puedes ver la pantalla de tu teléfono en la Mac y controlarlo a distancia. Las funcionalidades de Continuidad te permiten contestar llamadas y mensajes directamente desde la Mac. Incluso puedes copiar imágenes, videos o texto del iPhone y pegar todo en otra app de la Mac.",
+            "link_label": "Más información"
+          }
+        },
+        {
+          "type": "tab",
+          "settings": {
+            "tab_label": "iPhone y Apple Watch",
+            "heading": "iPhone y Apple Watch",
+            "text": "Con el Apple Watch y el iPhone trabajando juntos, puedes cuidar tu salud, hacer seguimiento de tu actividad y mantener todo sincronizado. Desbloquea el Mac, paga con Apple Pay y más.",
+            "link_label": "Más información"
+          }
+        },
+        {
+          "type": "tab",
+          "settings": {
+            "tab_label": "iPhone y AirPods",
+            "heading": "iPhone y AirPods",
+            "text": "Los AirPods se conectan al instante con tu iPhone. Disfruta de cancelación activa de ruido, audio espacial y llamadas cristalinas, dondequiera que vayas.",
+            "link_label": "Más información"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
