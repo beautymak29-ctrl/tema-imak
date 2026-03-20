@@ -17,7 +17,7 @@
         "cat-1": { "type": "category", "settings": { "label": "iPhone 17 Pro", "link": "/collections/iphone-17-pro" } },
         "cat-2": { "type": "category", "settings": { "label": "iPhone Air",    "link": "/collections/iphone-air" } },
         "cat-3": { "type": "category", "settings": { "label": "iPhone 17",     "link": "/collections/iphone-17" } },
-        "cat-4": { "type": "category", "settings": { "label": "iPhone 17e",    "link": "/collections/iphone-17e", "badge": "Nuevo" } },
+        "cat-4": { "type": "category", "settings": { "label": "iPhone 17e",    "link": "/collections/iphone-17e", "show_badge": true } },
         "cat-5": { "type": "category", "settings": { "label": "iPhone 16",     "link": "/collections/iphone-16" } },
         "cat-6": { "type": "category", "settings": { "label": "Comparar",      "link": "/pages/comparar" } }
       },
@@ -66,7 +66,7 @@
           "settings": {
             "name": "iPhone 17e",
             "description": "Trae de todo. Toda una oportunidad.",
-            "badge": "Nuevo",
+            "show_badge": true,
             "swatch_colors": "#f4c2c2, #f5f5f0, #1a1a1a",
             "button_label": "Más información",
             "link": "/collections/iphone-17e"
@@ -85,54 +85,42 @@
           "type": "feature",
           "settings": {
             "category": "Innovación",
-            "heading": "Diseñado para durar. Y enamorar.",
-            "link_label": "Más información",
-            "bg_style": "dark"
+            "heading": "Diseñado para durar. Y enamorar."
           }
         },
         "fg-2": {
           "type": "feature",
           "settings": {
             "category": "Cámaras de última generación",
-            "heading": "Haz fotos soñadas y videos de película.",
-            "link_label": "Más información",
-            "bg_style": "light"
+            "heading": "Haz fotos soñadas y videos de película."
           }
         },
         "fg-3": {
           "type": "feature",
           "settings": {
             "category": "Chip y batería",
-            "heading": "Velocidad para rato.",
-            "link_label": "Más información",
-            "bg_style": "light"
+            "heading": "Velocidad para rato."
           }
         },
         "fg-4": {
           "type": "feature",
           "settings": {
             "category": "iOS y Apple Intelligence",
-            "heading": "Estrenando look. Derrochando magia.",
-            "link_label": "Más información",
-            "bg_style": "dark"
+            "heading": "Estrenando look. Derrochando magia."
           }
         },
         "fg-5": {
           "type": "feature",
           "settings": {
             "category": "Medio ambiente",
-            "heading": "Diseñado pensando en el planeta.",
-            "link_label": "Más información",
-            "bg_style": "gray"
+            "heading": "Diseñado pensando en el planeta."
           }
         },
         "fg-6": {
           "type": "feature",
           "settings": {
             "category": "Privacidad",
-            "heading": "Tus datos siempre bajo tu control.",
-            "link_label": "Más información",
-            "bg_style": "gray"
+            "heading": "Tus datos siempre bajo tu control."
           }
         }
       },
@@ -155,7 +143,8 @@
         "ac-2": {
           "type": "accessory",
           "settings": {
-            "badge": "Nuevo",
+            "show_badge": true,
+            "badge_text": "Nuevo",
             "name": "AirTag",
             "description": "Con su bocina más potente y el rango de Rastreo Preciso mejorado, es más fácil que nunca localizar todo lo que te importa.",
             "link_label": "Más información"
@@ -174,27 +163,21 @@
           "type": "tab",
           "settings": {
             "tab_label": "iPhone y Mac",
-            "heading": "iPhone y Mac",
-            "text": "Con Duplicación del iPhone puedes ver la pantalla de tu teléfono en la Mac y controlarlo a distancia. Las funcionalidades de Continuidad te permiten contestar llamadas y mensajes directamente desde la Mac.",
-            "link_label": "Más información"
+            "text": "Con Duplicación del iPhone puedes ver la pantalla de tu teléfono en la Mac y controlarlo a distancia. Las funcionalidades de Continuidad te permiten contestar llamadas y mensajes directamente desde la Mac."
           }
         },
         "et-2": {
           "type": "tab",
           "settings": {
             "tab_label": "iPhone y Apple Watch",
-            "heading": "iPhone y Apple Watch",
-            "text": "Con el Apple Watch y el iPhone trabajando juntos, puedes cuidar tu salud, hacer seguimiento de tu actividad y mantener todo sincronizado.",
-            "link_label": "Más información"
+            "text": "Con el Apple Watch y el iPhone trabajando juntos, puedes cuidar tu salud, hacer seguimiento de tu actividad y mantener todo sincronizado."
           }
         },
         "et-3": {
           "type": "tab",
           "settings": {
             "tab_label": "iPhone y AirPods",
-            "heading": "iPhone y AirPods",
-            "text": "Los AirPods se conectan al instante con tu iPhone. Disfruta de cancelación activa de ruido, audio espacial y llamadas cristalinas.",
-            "link_label": "Más información"
+            "text": "Los AirPods se conectan al instante con tu iPhone. Disfruta de cancelación activa de ruido, audio espacial y llamadas cristalinas."
           }
         }
       },

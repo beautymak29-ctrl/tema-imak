@@ -1,47 +1,62 @@
 {%- if section.blocks.size > 0 -%}
-<section class="accessories-showcase section-{{ section.id }}" id="section-{{ section.id }}">
+<section class="ess-section section-{{ section.id }}" id="section-{{ section.id }}">
+
   <div class="page-width">
-
-    {%- if section.settings.title != blank -%}
-      <h2 class="accessories-showcase__title">{{ section.settings.title }}</h2>
-    {%- endif -%}
-
-    <div class="accessories-showcase__grid">
-      {%- for block in section.blocks -%}
-        <article class="accessories-showcase__card" {{ block.shopify_attributes }}>
-
-          <div class="accessories-showcase__info">
-            {%- if block.settings.badge != blank -%}
-              <span class="accessories-showcase__badge">{{ block.settings.badge }}</span>
-            {%- endif -%}
-            <h3 class="accessories-showcase__name">{{ block.settings.name }}</h3>
-            {%- if block.settings.description != blank -%}
-              <p class="accessories-showcase__desc">{{ block.settings.description }}</p>
-            {%- endif -%}
-            {%- if block.settings.link != blank and block.settings.link_label != blank -%}
-              <a href="{{ block.settings.link }}" class="accessories-showcase__link">
-                {{ block.settings.link_label }} &rsaquo;
-              </a>
-            {%- endif -%}
-          </div>
-
-          <div class="accessories-showcase__media">
-            {%- if block.settings.image != blank -%}
-              {{ block.settings.image | image_url: width: 700 | image_tag:
-                loading: 'lazy',
-                widths: '350, 550, 700',
-                class: 'accessories-showcase__image'
-              }}
-            {%- else -%}
-              {{ 'product-2' | placeholder_svg_tag: 'accessories-showcase__image accessories-showcase__image--placeholder' }}
-            {%- endif -%}
-          </div>
-
-        </article>
-      {%- endfor -%}
-    </div>
-
+    <header class="ess-section__header">
+      {%- if section.settings.title != blank -%}
+        <h2 class="ess-section__title">{{ section.settings.title }}</h2>
+      {%- endif -%}
+    </header>
   </div>
+
+  <div class="ess-gallery" id="ess-gallery-{{ section.id }}">
+    <div class="ess-gallery__scroll" id="ess-scroll-{{ section.id }}">
+      <ul class="ess-gallery__list" role="list">
+        {%- for block in section.blocks -%}
+          <li class="ess-banner{% if forloop.first %} ess-banner--current{% endif %}" role="listitem" {{ block.shopify_attributes }}>
+            <div class="ess-banner__inner">
+              <a href="{{ block.settings.link | default: '#' }}" class="ess-banner__active-area" aria-hidden="true" tabindex="-1"></a>
+              <div class="ess-banner__row">
+                <div class="ess-banner__copy">
+                  <h3 class="ess-banner__header">
+                    {%- if block.settings.show_badge -%}
+                      <span class="ess-banner__badge">{{ block.settings.badge_text }}</span>
+                    {%- endif -%}
+                    <span class="ess-banner__headline">{{ block.settings.name }}</span>
+                  </h3>
+                  {%- if block.settings.description != blank -%}
+                    <div class="ess-banner__text">
+                      <p>{{ block.settings.description }}</p>
+                    </div>
+                  {%- endif -%}
+                  {%- if block.settings.link != blank and block.settings.link_label != blank -%}
+                    <div class="ess-banner__ctas">
+                      <a href="{{ block.settings.link }}" class="ess-banner__link" aria-label="{{ block.settings.link_label }}, {{ block.settings.name }}">
+                        {{ block.settings.link_label }} <span aria-hidden="true">&rsaquo;</span>
+                      </a>
+                    </div>
+                  {%- endif -%}
+                </div>
+                <div class="ess-banner__asset">
+                  {%- if block.settings.image != blank -%}
+                    {{ block.settings.image | image_url: width: 700 | image_tag:
+                      loading: 'lazy',
+                      widths: '350, 550, 700',
+                      class: 'ess-banner__image',
+                      alt: block.settings.image.alt | default: block.settings.name
+                    }}
+                  {%- else -%}
+                    {{ 'product-2' | placeholder_svg_tag: 'ess-banner__image' }}
+                  {%- endif -%}
+                </div>
+              </div>
+            </div>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  </div>
+
 </section>
 {%- endif -%}
 
@@ -51,51 +66,20 @@
   "tag": "section",
   "class": "section-accessories-showcase",
   "settings": [
-    {
-      "type": "text",
-      "id": "title",
-      "label": "Título de la sección",
-      "default": "Consiente a tu iPhone."
-    }
+    { "type": "text", "id": "title", "label": "Titulo de la seccion", "default": "Consiente a tu iPhone." }
   ],
   "blocks": [
     {
       "type": "accessory",
       "name": "Accesorio",
       "settings": [
-        {
-          "type": "text",
-          "id": "badge",
-          "label": "Badge (ej: Nuevo)"
-        },
-        {
-          "type": "text",
-          "id": "name",
-          "label": "Nombre del accesorio",
-          "default": "AirPods"
-        },
-        {
-          "type": "text",
-          "id": "description",
-          "label": "Descripción",
-          "default": "Descubre todos los modelos de AirPods y elige tus favoritos."
-        },
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Imagen"
-        },
-        {
-          "type": "url",
-          "id": "link",
-          "label": "Enlace"
-        },
-        {
-          "type": "text",
-          "id": "link_label",
-          "label": "Texto del enlace",
-          "default": "Más información"
-        }
+        { "type": "checkbox", "id": "show_badge", "label": "Mostrar badge", "default": false },
+        { "type": "text", "id": "badge_text", "label": "Texto del badge", "default": "Nuevo" },
+        { "type": "text", "id": "name", "label": "Nombre del accesorio", "default": "AirPods" },
+        { "type": "text", "id": "description", "label": "Descripcion", "default": "Descubre todos los modelos de AirPods y elige tus favoritos." },
+        { "type": "image_picker", "id": "image", "label": "Imagen" },
+        { "type": "url", "id": "link", "label": "Enlace" },
+        { "type": "text", "id": "link_label", "label": "Texto del enlace", "default": "Mas informacion" }
       ]
     }
   ],
@@ -109,15 +93,15 @@
           "settings": {
             "name": "AirPods",
             "description": "Descubre todos los modelos de AirPods y elige tus favoritos.",
-            "link_label": "Más información"
+            "link_label": "Mas informacion"
           }
         },
         {
           "type": "accessory",
           "settings": {
-            "badge": "Nuevo",
+            "show_badge": true,
             "name": "AirTag",
-            "description": "Con su bocina más potente y el rango de Rastreo Preciso mejorado, es más fácil que nunca localizar todo lo que te importa.",
+            "description": "Con su bocina mas potente y el rango de Rastreo Preciso mejorado, es mas facil que nunca localizar todo lo que te importa.",
             "link_label": "Más información"
           }
         }

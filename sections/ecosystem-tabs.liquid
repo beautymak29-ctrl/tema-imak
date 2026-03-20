@@ -1,186 +1,160 @@
-<section class="ecosystem-tabs section-{{ section.id }}" id="section-{{ section.id }}">
+{%- if section.blocks.size > 0 -%}
+<section class="eco-section section-{{ section.id }}" id="section-{{ section.id }}">
   <div class="page-width">
 
     {%- if section.settings.title != blank -%}
-      <h2 class="ecosystem-tabs__title">{{ section.settings.title }}</h2>
+      <header class="eco-section__header">
+        <h2 class="eco-section__title">{{ section.settings.title }}</h2>
+      </header>
     {%- endif -%}
 
-    {%- if section.blocks.size > 0 -%}
-      <nav class="ecosystem-tabs__nav" role="tablist" aria-label="{{ section.settings.title | escape }}">
-        {%- for block in section.blocks -%}
-          <button
-            class="ecosystem-tabs__tab{% if forloop.first %} is-active{% endif %}"
-            role="tab"
-            aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
-            aria-controls="eco-panel-{{ block.id }}"
-            data-tab-id="{{ block.id }}"
-            id="eco-tab-{{ block.id }}"
-            {{ block.shopify_attributes }}
-          >
-            {{ block.settings.tab_label }}
-          </button>
-        {%- endfor -%}
-      </nav>
-
-      <div class="ecosystem-tabs__panels">
-        {%- for block in section.blocks -%}
-          <div
-            class="ecosystem-tabs__panel{% if forloop.first %} is-active{% endif %}"
-            role="tabpanel"
-            id="eco-panel-{{ block.id }}"
-            aria-labelledby="eco-tab-{{ block.id }}"
-            data-panel-id="{{ block.id }}"
-          >
-            <div class="ecosystem-tabs__panel-inner">
-              <div class="ecosystem-tabs__panel-text">
-                {%- if block.settings.heading != blank -%}
-                  <h3 class="ecosystem-tabs__panel-heading">{{ block.settings.heading }}</h3>
-                {%- endif -%}
-                {%- if block.settings.text != blank -%}
-                  <p class="ecosystem-tabs__panel-desc">{{ block.settings.text }}</p>
-                {%- endif -%}
-                {%- if block.settings.link != blank and block.settings.link_label != blank -%}
-                  <a href="{{ block.settings.link }}" class="ecosystem-tabs__panel-link">
-                    {{ block.settings.link_label }} &rsaquo;
-                  </a>
-                {%- endif -%}
+    <div class="eco-accordion" id="eco-accordion-{{ section.id }}">
+      <div class="eco-accordion__items">
+        <ul class="eco-accordion__list" role="list">
+          {%- for block in section.blocks -%}
+            <li class="eco-accordion__item{% if forloop.first %} eco-accordion__item--expanded{% else %} eco-accordion__item--collapsed{% endif %}" {{ block.shopify_attributes }}>
+              <h3 class="eco-accordion__title">
+                <button
+                  class="eco-accordion__button"
+                  aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}"
+                  aria-controls="eco-tray-{{ block.id }}"
+                  id="eco-btn-{{ block.id }}"
+                  data-eco-trigger
+                >
+                  <span class="eco-accordion__title-text">{{ block.settings.tab_label }}</span>
+                  <span class="eco-accordion__icon" aria-hidden="true">
+                    <svg viewBox="0 0 17 8.85">
+                      <polyline stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" fill="none" points="{% if forloop.first %}15 7.72 8.5 1.13 2 7.72{% else %}15 1.13 8.5 7.72 2 1.13{% endif %}"/>
+                    </svg>
+                  </span>
+                </button>
+              </h3>
+              <div
+                class="eco-accordion__tray"
+                id="eco-tray-{{ block.id }}"
+                aria-labelledby="eco-btn-{{ block.id }}"
+                role="region"
+                {% if forloop.first %}{% else %}aria-hidden="true" style="height:0;overflow:hidden"{% endif %}
+              >
+                <div class="eco-accordion__content">
+                  <div class="eco-accordion__copy">
+                    {%- if block.settings.text != blank -%}
+                      <p class="eco-accordion__text">{{ block.settings.text }}</p>
+                    {%- endif -%}
+                  </div>
+                  <div class="eco-accordion__image-container">
+                    {%- if block.settings.image != blank -%}
+                      {{ block.settings.image | image_url: width: 900 | image_tag:
+                        loading: 'lazy',
+                        widths: '450, 700, 900',
+                        class: 'eco-accordion__image',
+                        alt: block.settings.image.alt | default: block.settings.tab_label
+                      }}
+                    {%- else -%}
+                      {{ 'lifestyle-2' | placeholder_svg_tag: 'eco-accordion__image' }}
+                    {%- endif -%}
+                  </div>
+                </div>
               </div>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </div>
 
-              <div class="ecosystem-tabs__panel-media">
-                {%- if block.settings.image != blank -%}
-                  {{ block.settings.image | image_url: width: 900 | image_tag:
-                    loading: 'lazy',
-                    widths: '450, 700, 900',
-                    class: 'ecosystem-tabs__panel-image'
-                  }}
-                {%- else -%}
-                  {{ 'lifestyle-2' | placeholder_svg_tag: 'ecosystem-tabs__panel-image ecosystem-tabs__panel-image--placeholder' }}
-                {%- endif -%}
-              </div>
-            </div>
+      <div class="eco-accordion__image-large" aria-hidden="true">
+        {%- for block in section.blocks -%}
+          <div class="eco-accordion__large-img{% if forloop.first %} eco-accordion__large-img--visible{% endif %}" data-eco-large="{{ block.id }}">
+            {%- if block.settings.image != blank -%}
+              {{ block.settings.image | image_url: width: 900 | image_tag:
+                loading: 'lazy',
+                widths: '450, 700, 900',
+                class: 'eco-accordion__image',
+                alt: block.settings.image.alt | default: block.settings.tab_label
+              }}
+            {%- else -%}
+              {{ 'lifestyle-2' | placeholder_svg_tag: 'eco-accordion__image' }}
+            {%- endif -%}
           </div>
         {%- endfor -%}
       </div>
-    {%- endif -%}
+    </div>
 
   </div>
 </section>
+{%- endif -%}
 
 <script>
-  (function () {
-    var section = document.getElementById('section-{{ section.id }}');
-    if (!section) return;
-    var tabs   = section.querySelectorAll('.ecosystem-tabs__tab');
-    var panels = section.querySelectorAll('.ecosystem-tabs__panel');
+(function() {
+  var sId = '{{ section.id }}';
+  var wrap = document.getElementById('eco-accordion-' + sId);
+  if (!wrap) return;
+  var items = wrap.querySelectorAll('.eco-accordion__item');
+  var largeImgs = wrap.querySelectorAll('.eco-accordion__large-img');
 
-    tabs.forEach(function (tab) {
-      tab.addEventListener('click', function () {
-        var targetId = this.getAttribute('data-tab-id');
+  wrap.addEventListener('click', function(e) {
+    var btn = e.target.closest('[data-eco-trigger]');
+    if (!btn) return;
+    var li = btn.closest('.eco-accordion__item');
+    if (!li || li.classList.contains('eco-accordion__item--expanded')) return;
 
-        tabs.forEach(function (t) {
-          t.classList.remove('is-active');
-          t.setAttribute('aria-selected', 'false');
-        });
-        panels.forEach(function (p) {
-          p.classList.remove('is-active');
-        });
-
-        this.classList.add('is-active');
-        this.setAttribute('aria-selected', 'true');
-        var panel = section.querySelector('.ecosystem-tabs__panel[data-panel-id="' + targetId + '"]');
-        if (panel) panel.classList.add('is-active');
-      });
+    items.forEach(function(item) {
+      var tray = item.querySelector('.eco-accordion__tray');
+      var b = item.querySelector('[data-eco-trigger]');
+      if (item === li) {
+        item.classList.remove('eco-accordion__item--collapsed');
+        item.classList.add('eco-accordion__item--expanded');
+        b.setAttribute('aria-expanded', 'true');
+        tray.removeAttribute('aria-hidden');
+        tray.style.height = tray.scrollHeight + 'px';
+        setTimeout(function() { tray.style.height = 'auto'; }, 350);
+      } else {
+        if (item.classList.contains('eco-accordion__item--expanded')) {
+          tray.style.height = tray.scrollHeight + 'px';
+          tray.offsetHeight;
+          tray.style.height = '0';
+        }
+        item.classList.remove('eco-accordion__item--expanded');
+        item.classList.add('eco-accordion__item--collapsed');
+        b.setAttribute('aria-expanded', 'false');
+        tray.setAttribute('aria-hidden', 'true');
+      }
     });
-  })();
+
+    var blockId = btn.getAttribute('aria-controls').replace('eco-tray-', '');
+    largeImgs.forEach(function(img) {
+      img.classList.toggle('eco-accordion__large-img--visible', img.getAttribute('data-eco-large') === blockId);
+    });
+  });
+})();
 </script>
 
 {% schema %}
 {
-  "name": "Tabs ecosistema",
+  "name": "Acordeon ecosistema",
   "tag": "section",
-  "class": "section-ecosystem-tabs",
+  "class": "section-ecosystem-accordion",
   "settings": [
-    {
-      "type": "text",
-      "id": "title",
-      "label": "Título de la sección",
-      "default": "Siempre bien acompañado."
-    }
+    { "type": "text", "id": "title", "label": "Titulo", "default": "Siempre bien acompanado." }
   ],
   "blocks": [
     {
       "type": "tab",
-      "name": "Tab",
+      "name": "Elemento",
       "settings": [
-        {
-          "type": "text",
-          "id": "tab_label",
-          "label": "Etiqueta del tab",
-          "default": "iPhone y Mac"
-        },
-        {
-          "type": "text",
-          "id": "heading",
-          "label": "Título del panel",
-          "default": "iPhone y Mac"
-        },
-        {
-          "type": "textarea",
-          "id": "text",
-          "label": "Texto del panel",
-          "default": "Con Duplicación del iPhone puedes ver la pantalla de tu teléfono en la Mac y controlarlo a distancia."
-        },
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Imagen"
-        },
-        {
-          "type": "url",
-          "id": "link",
-          "label": "Enlace"
-        },
-        {
-          "type": "text",
-          "id": "link_label",
-          "label": "Texto del enlace",
-          "default": "Más información"
-        }
+        { "type": "text", "id": "tab_label", "label": "Titulo del acordeon", "default": "iPhone y Mac" },
+        { "type": "textarea", "id": "text", "label": "Texto", "default": "Con Duplicacion del iPhone puedes ver la pantalla de tu telefono en la Mac y controlarlo a distancia." },
+        { "type": "image_picker", "id": "image", "label": "Imagen" }
       ]
     }
   ],
   "max_blocks": 6,
   "presets": [
     {
-      "name": "Tabs ecosistema",
+      "name": "Acordeon ecosistema",
       "blocks": [
-        {
-          "type": "tab",
-          "settings": {
-            "tab_label": "iPhone y Mac",
-            "heading": "iPhone y Mac",
-            "text": "Con Duplicación del iPhone puedes ver la pantalla de tu teléfono en la Mac y controlarlo a distancia. Las funcionalidades de Continuidad te permiten contestar llamadas y mensajes directamente desde la Mac. Incluso puedes copiar imágenes, videos o texto del iPhone y pegar todo en otra app de la Mac.",
-            "link_label": "Más información"
-          }
-        },
-        {
-          "type": "tab",
-          "settings": {
-            "tab_label": "iPhone y Apple Watch",
-            "heading": "iPhone y Apple Watch",
-            "text": "Con el Apple Watch y el iPhone trabajando juntos, puedes cuidar tu salud, hacer seguimiento de tu actividad y mantener todo sincronizado. Desbloquea el Mac, paga con Apple Pay y más.",
-            "link_label": "Más información"
-          }
-        },
-        {
-          "type": "tab",
-          "settings": {
-            "tab_label": "iPhone y AirPods",
-            "heading": "iPhone y AirPods",
-            "text": "Los AirPods se conectan al instante con tu iPhone. Disfruta de cancelación activa de ruido, audio espacial y llamadas cristalinas, dondequiera que vayas.",
-            "link_label": "Más información"
-          }
-        }
+        { "type": "tab", "settings": { "tab_label": "iPhone y Mac", "text": "Con Duplicacion del iPhone puedes ver la pantalla de tu telefono en la Mac y controlarlo a distancia. Las funcionalidades de Continuidad te permiten contestar llamadas y mensajes directamente desde la Mac." } },
+        { "type": "tab", "settings": { "tab_label": "iPhone y Apple Watch", "text": "Con el Apple Watch y el iPhone trabajando juntos, puedes cuidar tu salud, hacer seguimiento de tu actividad y mantener todo sincronizado." } },
+        { "type": "tab", "settings": { "tab_label": "iPhone y AirPods", "text": "Configura tus AirPods en el iPhone con un simple toque. Y disfruta el Audio Adaptativo, que regula automaticamente el control de ruido." } }
       ]
     }
   ]
