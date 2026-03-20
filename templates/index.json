@@ -26,7 +26,7 @@
     "product-family": {
       "type": "product-family",
       "settings": {
-        "title": "Conoce a la familia.",
+        "title": "Lo más destacado.",
         "compare_label": "Comparar todos los modelos",
         "compare_link": "/pages/comparar"
       },
@@ -38,7 +38,9 @@
             "description": "Un diseño innovador para una batería y un rendimiento sin precedentes.",
             "swatch_colors": "#e87a5a, #1a2e40, #c8c8c8",
             "button_label": "Más información",
-            "link": "/collections/iphone-17-pro"
+            "link": "/collections/iphone-17-pro",
+            "buy_label": "Comprar",
+            "buy_link": "/collections/iphone-17-pro"
           }
         },
         "pf-2": {
@@ -48,7 +50,9 @@
             "description": "El iPhone más delgado. El poder de un pro.",
             "swatch_colors": "#a8c4e0, #f0e8c8, #f5f5f0, #1a1a1a",
             "button_label": "Más información",
-            "link": "/collections/iphone-air"
+            "link": "/collections/iphone-air",
+            "buy_label": "Comprar",
+            "buy_link": "/collections/iphone-air"
           }
         },
         "pf-3": {
@@ -58,7 +62,9 @@
             "description": "Aún más sorprendente. Aún más resistente.",
             "swatch_colors": "#c8b8d8, #8fa885, #b0c8d8, #f5f5f5, #1a1a1a",
             "button_label": "Más información",
-            "link": "/collections/iphone-17"
+            "link": "/collections/iphone-17",
+            "buy_label": "Comprar",
+            "buy_link": "/collections/iphone-17"
           }
         },
         "pf-4": {
@@ -69,7 +75,9 @@
             "show_badge": true,
             "swatch_colors": "#f4c2c2, #f5f5f0, #1a1a1a",
             "button_label": "Más información",
-            "link": "/collections/iphone-17e"
+            "link": "/collections/iphone-17e",
+            "buy_label": "Comprar",
+            "buy_link": "/collections/iphone-17e"
           }
         }
       },
