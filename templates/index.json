@@ -153,13 +153,6 @@
         "vr-3": { "type": "video", "settings": {} }
       },
       "blocks_order": ["vr-1", "vr-2", "vr-3"]
-    },
-    "compare-preview": {
-      "type": "compare-preview",
-      "settings": {
-        "title": "Compara los modelos de iPhone.",
-        "compare_link": "/pages/comparar"
-      }
     }
   },
   "order": [
@@ -167,7 +160,6 @@
     "category-nav",
     "product-family",
     "video-reels",
-    "compare-preview",
     "features-grid",
     "accessories-showcase",
     "ecosystem-tabs"
