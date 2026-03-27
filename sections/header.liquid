@@ -3,11 +3,11 @@
   <div class="hd__inner page-width">
     {%- comment -%} Logo / Home icon {%- endcomment -%}
     <a href="{{ routes.root_url }}" class="hd__logo" aria-label="{{ shop.name }}">
-      {%- if settings.logo != blank -%}
+      {%- if section.settings.logo != blank -%}
         <img
-          src="{{ settings.logo | image_url: width: settings.logo_width }}"
-          alt="{{ settings.logo.alt | default: shop.name | escape }}"
-          width="{{ settings.logo_width }}"
+          src="{{ section.settings.logo | image_url: width: section.settings.logo_width }}"
+          alt="{{ section.settings.logo.alt | default: shop.name | escape }}"
+          width="{{ section.settings.logo_width }}"
           height="auto"
           loading="eager"
           class="hd__logo-img"

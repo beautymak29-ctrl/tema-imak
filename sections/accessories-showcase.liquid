@@ -2,9 +2,9 @@
 <section class="ess-section section-{{ section.id }}" id="section-{{ section.id }}">
 
   <div class="page-width">
-    <header class="ess-section__header">
+    <header class="ess-header">
       {%- if section.settings.title != blank -%}
-        <h2 class="ess-section__title">{{ section.settings.title }}</h2>
+        <h2 class="ess-title">{{ section.settings.title }}</h2>
       {%- endif -%}
     </header>
   </div>
@@ -20,18 +20,18 @@
                 <div class="ess-banner__copy">
                   <h3 class="ess-banner__header">
                     {%- if block.settings.show_badge -%}
-                      <span class="ess-banner__badge">{{ block.settings.badge_text }}</span>
+                      <span class="ess-badge">{{ block.settings.badge_text }}</span>
                     {%- endif -%}
-                    <span class="ess-banner__headline">{{ block.settings.name }}</span>
+                    <span class="ess-name">{{ block.settings.name }}</span>
                   </h3>
                   {%- if block.settings.description != blank -%}
-                    <div class="ess-banner__text">
+                    <div class="ess-desc">
                       <p>{{ block.settings.description }}</p>
                     </div>
                   {%- endif -%}
                   {%- if block.settings.link != blank and block.settings.link_label != blank -%}
                     <div class="ess-banner__ctas">
-                      <a href="{{ block.settings.link }}" class="ess-banner__link" aria-label="{{ block.settings.link_label }}, {{ block.settings.name }}">
+                      <a href="{{ block.settings.link }}" class="ess-cta" aria-label="{{ block.settings.link_label }}, {{ block.settings.name }}">
                         {{ block.settings.link_label }} <span aria-hidden="true">&rsaquo;</span>
                       </a>
                     </div>
@@ -42,11 +42,11 @@
                     {{ block.settings.image | image_url: width: 700 | image_tag:
                       loading: 'lazy',
                       widths: '350, 550, 700',
-                      class: 'ess-banner__image',
+                      class: 'ess-banner__img',
                       alt: block.settings.image.alt | default: block.settings.name
                     }}
                   {%- else -%}
-                    {{ 'product-2' | placeholder_svg_tag: 'ess-banner__image' }}
+                    {{ 'product-2' | placeholder_svg_tag: 'ess-banner__img' }}
                   {%- endif -%}
                 </div>
               </div>

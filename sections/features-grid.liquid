@@ -2,9 +2,9 @@
 <section class="fg-section section-{{ section.id }}" id="section-{{ section.id }}">
 
   <div class="page-width">
-    <header class="fg-section__header">
+    <header class="fg-header">
       {%- if section.settings.title != blank -%}
-        <h2 class="fg-section__title">{{ section.settings.title }}</h2>
+        <h2 class="fg-title">{{ section.settings.title }}</h2>
       {%- endif -%}
     </header>
   </div>
@@ -15,29 +15,29 @@
         {%- for block in section.blocks -%}
           <li class="fg-card{% if forloop.first %} fg-card--current{% endif %}" role="listitem" {{ block.shopify_attributes }}>
             <div class="fg-card__inner">
-              <div class="fg-card__copy">
+              <div class="fg-card__text">
                 {%- if block.settings.category != blank -%}
-                  <h3 class="fg-card__label">{{ block.settings.category }}</h3>
+                  <h3 class="fg-card__cat">{{ block.settings.category }}</h3>
                 {%- endif -%}
                 {%- if block.settings.heading != blank -%}
-                  <p class="fg-card__headline">{{ block.settings.heading }}</p>
+                  <p class="fg-card__heading">{{ block.settings.heading }}</p>
                 {%- endif -%}
               </div>
-              <figure class="fg-card__figure">
+              <figure class="fg-card__media">
                 {%- if block.settings.image != blank -%}
                   {{ block.settings.image | image_url: width: 600 | image_tag:
                     loading: 'lazy',
                     widths: '300, 450, 600',
-                    class: 'fg-card__image',
+                    class: 'fg-card__img',
                     alt: block.settings.image.alt | default: block.settings.category
                   }}
                 {%- else -%}
-                  {{ 'lifestyle-1' | placeholder_svg_tag: 'fg-card__image' }}
+                  {{ 'lifestyle-1' | placeholder_svg_tag: 'fg-card__img' }}
                 {%- endif -%}
               </figure>
             </div>
             {%- if block.settings.link != blank -%}
-              <a href="{{ block.settings.link }}" class="fg-card__more-btn" aria-label="{{ block.settings.link_label | default: 'Mas informacion' }}, {{ block.settings.category }}">
+              <a href="{{ block.settings.link }}" class="fg-card__plus" aria-label="{{ block.settings.link_label | default: 'Mas informacion' }}, {{ block.settings.category }}">
                 <span class="fg-card__plus-icon" aria-hidden="true">
                   <svg viewBox="0 0 36 36">
                     <path d="m24 16.5h-4.5v-4.5c0-.8286-.6719-1.5-1.5-1.5s-1.5.6714-1.5 1.5v4.5h-4.5c-.8281 0-1.5.6714-1.5 1.5s.6719 1.5 1.5 1.5h4.5v4.5c0 .8286.6719 1.5 1.5 1.5s1.5-.6714 1.5-1.5v-4.5h4.5c.8281 0 1.5-.6714 1.5-1.5s-.6719-1.5-1.5-1.5z"/>
