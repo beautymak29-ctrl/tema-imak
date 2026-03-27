@@ -21,7 +21,7 @@
         "cat-5": { "type": "category", "settings": { "label": "iPhone 16",     "link": "/collections/iphone-16" } },
         "cat-6": { "type": "category", "settings": { "label": "Comparar",      "link": "/pages/comparar" } }
       },
-      "blocks_order": ["cat-1", "cat-2", "cat-3", "cat-4", "cat-5", "cat-6"]
+      "block_order": ["cat-1", "cat-2", "cat-3", "cat-4", "cat-5", "cat-6"]
     },
     "product-family": {
       "type": "product-family",
@@ -83,7 +83,7 @@
           }
         }
       },
-      "blocks_order": ["fg-1", "fg-2", "fg-3", "fg-4", "fg-5", "fg-6"]
+      "block_order": ["fg-1", "fg-2", "fg-3", "fg-4", "fg-5", "fg-6"]
     },
     "accessories-showcase": {
       "type": "accessories-showcase",
@@ -110,7 +110,7 @@
           }
         }
       },
-      "blocks_order": ["ac-1", "ac-2"]
+      "block_order": ["ac-1", "ac-2"]
     },
     "ecosystem-tabs": {
       "type": "ecosystem-tabs",
@@ -140,7 +140,7 @@
           }
         }
       },
-      "blocks_order": ["et-1", "et-2", "et-3"]
+      "block_order": ["et-1", "et-2", "et-3"]
     },
     "video-reels": {
       "type": "video-reels",
@@ -152,7 +152,7 @@
         "vr-2": { "type": "video", "settings": {} },
         "vr-3": { "type": "video", "settings": {} }
       },
-      "blocks_order": ["vr-1", "vr-2", "vr-3"]
+      "block_order": ["vr-1", "vr-2", "vr-3"]
     }
   },
   "order": [
