@@ -60,9 +60,9 @@
             {%- endif -%}
 
             <div class="pf-tile__ctas">
-              <a href="{{ product.url }}" class="pf-tile__btn-learn">
+              <button type="button" class="pf-tile__btn-learn" data-pf-open="{{ product.id }}">
                 {{ section.settings.button_label }}
-              </a>
+              </button>
             </div>
 
           </li>
@@ -71,6 +71,71 @@
     </div>
 
   </div>
+
+  {%- comment -%} ── Modal de producto ── {%- endcomment -%}
+  <div class="fg-modal" id="pf-modal-{{ section.id }}" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Información del producto">
+    <div class="fg-modal__overlay" data-pf-close></div>
+    <div class="fg-modal__dialog">
+      <button class="fg-modal__close" type="button" data-pf-close aria-label="Cerrar">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1 1l14 14M15 1L1 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <div class="fg-modal__body">
+        {%- for product in pf_collection.products limit: pf_limit -%}
+          <div class="fg-modal__content" id="pf-modal-content-{{ product.id }}" hidden>
+            <h2 class="fg-modal__heading">{{ product.title | escape }}</h2>
+            {%- if product.images.size > 0 -%}
+              <div class="fg-modal__images">
+                {%- for img in product.images limit: 3 -%}
+                  {{ img | image_url: width: 900 | image_tag: loading: 'lazy', class: 'fg-modal__img', alt: img.alt | default: product.title }}
+                {%- endfor -%}
+              </div>
+            {%- endif -%}
+            {%- if product.description != blank -%}
+              <div class="fg-modal__text rte">{{ product.description }}</div>
+            {%- endif -%}
+            <a href="{{ product.url }}" class="btn fg-modal__cta">Ver producto</a>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (function() {
+    var sId = '{{ section.id }}';
+    var sectionEl = document.getElementById('section-' + sId);
+    var modal = document.getElementById('pf-modal-' + sId);
+    if (!sectionEl || !modal) return;
+
+    function openModal(productId) {
+      modal.querySelectorAll('.fg-modal__content').forEach(function(c) { c.hidden = true; });
+      var content = document.getElementById('pf-modal-content-' + productId);
+      if (content) content.hidden = false;
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    sectionEl.querySelectorAll('[data-pf-open]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        openModal(this.getAttribute('data-pf-open'));
+      });
+    });
+
+    modal.querySelectorAll('[data-pf-close]').forEach(function(el) {
+      el.addEventListener('click', closeModal);
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') closeModal();
+    });
+  })();
+  </script>
+
 </section>
 {%- endif -%}
 
