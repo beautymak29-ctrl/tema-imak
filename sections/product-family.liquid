@@ -1,6 +1,4 @@
-{%- assign pf_collection = collections[section.settings.collection] -%}
-{%- assign pf_limit = section.settings.products_to_show -%}
-{%- if pf_collection != blank and pf_collection.products.size > 0 -%}
+{%- if section.blocks.size > 0 -%}
 <section class="pf-section section-{{ section.id }}" id="section-{{ section.id }}">
   <div class="page-width">
 
@@ -19,48 +17,58 @@
 
     <div class="pf-gallery">
       <ul class="pf-gallery__list" role="list">
-        {%- for product in pf_collection.products limit: pf_limit -%}
-          <li class="pf-tile" role="listitem">
+        {%- for block in section.blocks -%}
+          {%- assign pf_product = block.settings.product -%}
+          <li class="pf-tile" role="listitem" {{ block.shopify_attributes }}>
 
-            <a href="{{ product.url }}" class="pf-tile__image-link" aria-label="{{ product.title }}">
+            {%- if pf_product != blank -%}
+              <a href="{{ pf_product.url }}" class="pf-tile__image-link" aria-label="{{ pf_product.title }}">
+            {%- else -%}
+              <div class="pf-tile__image-link">
+            {%- endif -%}
               <div class="pf-tile__image-wrap">
-                {%- if product.featured_image != blank -%}
-                  {{ product.featured_image | image_url: width: 680 | image_tag:
+                {%- if block.settings.card_image != blank -%}
+                  {{ block.settings.card_image | image_url: width: 680 | image_tag:
                     loading: 'lazy',
                     widths: '340, 500, 680',
                     class: 'pf-tile__image',
-                    alt: product.featured_image.alt | default: product.title
+                    alt: block.settings.card_image.alt | default: block.settings.card_title
+                  }}
+                {%- elsif pf_product != blank and pf_product.featured_image != blank -%}
+                  {{ pf_product.featured_image | image_url: width: 680 | image_tag:
+                    loading: 'lazy',
+                    widths: '340, 500, 680',
+                    class: 'pf-tile__image',
+                    alt: pf_product.featured_image.alt | default: pf_product.title
                   }}
                 {%- else -%}
                   {{ 'product-1' | placeholder_svg_tag: 'pf-tile__image' }}
                 {%- endif -%}
               </div>
-            </a>
-
-            {%- if product.variants.size > 1 -%}
-              <div class="pf-tile__swatches" role="list" aria-label="Variantes disponibles">
-                {%- for variant in product.variants limit: 5 -%}
-                  {%- if variant.option1 != blank -%}
-                    <span class="pf-tile__swatch pf-tile__swatch--img" role="listitem" title="{{ variant.option1 }}">
-                      {%- if variant.image != blank -%}
-                        {{ variant.image | image_url: width: 24 | image_tag: class: 'pf-tile__swatch-img', alt: variant.option1 }}
-                      {%- else -%}
-                        <span class="pf-tile__swatch-dot"></span>
-                      {%- endif -%}
-                    </span>
-                  {%- endif -%}
-                {%- endfor -%}
+            {%- if pf_product != blank -%}
+              </a>
+            {%- else -%}
               </div>
             {%- endif -%}
 
-            <h3 class="pf-tile__name">{{ product.title }}</h3>
+            <h3 class="pf-tile__name">
+              {%- if block.settings.card_title != blank -%}
+                {{ block.settings.card_title | escape }}
+              {%- elsif pf_product != blank -%}
+                {{ pf_product.title }}
+              {%- endif -%}
+            </h3>
 
-            {%- if product.description != blank -%}
-              <p class="pf-tile__desc">{{ product.description | strip_html | truncate: 100 }}</p>
+            {%- assign pf_desc = block.settings.card_description -%}
+            {%- if pf_desc == blank and pf_product != blank -%}
+              {%- assign pf_desc = pf_product.description | strip_html | truncate: 100 -%}
+            {%- endif -%}
+            {%- if pf_desc != blank -%}
+              <p class="pf-tile__desc">{{ pf_desc }}</p>
             {%- endif -%}
 
             <div class="pf-tile__ctas">
-              <button type="button" class="pf-tile__btn-learn" data-pf-open="{{ product.id }}">
+              <button type="button" class="pf-tile__btn-learn" data-pf-open="{{ block.id }}">
                 {{ section.settings.button_label }}
               </button>
             </div>
@@ -72,7 +80,7 @@
 
   </div>
 
-  {%- comment -%} ── Modal de producto ── {%- endcomment -%}
+  {%- comment -%} ── Modal por bloque ── {%- endcomment -%}
   <div class="fg-modal" id="pf-modal-{{ section.id }}" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Información del producto">
     <div class="fg-modal__overlay" data-pf-close></div>
     <div class="fg-modal__dialog">
@@ -80,20 +88,59 @@
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1 1l14 14M15 1L1 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </button>
       <div class="fg-modal__body">
-        {%- for product in pf_collection.products limit: pf_limit -%}
-          <div class="fg-modal__content" id="pf-modal-content-{{ product.id }}" hidden>
-            <h2 class="fg-modal__heading">{{ product.title | escape }}</h2>
-            {%- if product.images.size > 0 -%}
+        {%- for block in section.blocks -%}
+          {%- assign pf_product = block.settings.product -%}
+          <div class="fg-modal__content" id="pf-modal-content-{{ block.id }}" hidden>
+
+            {%- if block.settings.modal_heading != blank -%}
+              <h2 class="fg-modal__heading">{{ block.settings.modal_heading | escape }}</h2>
+            {%- elsif pf_product != blank -%}
+              <h2 class="fg-modal__heading">{{ pf_product.title | escape }}</h2>
+            {%- elsif block.settings.card_title != blank -%}
+              <h2 class="fg-modal__heading">{{ block.settings.card_title | escape }}</h2>
+            {%- endif -%}
+
+            {%- assign has_modal_img = false -%}
+            {%- if block.settings.modal_image_1 != blank or block.settings.modal_image_2 != blank or block.settings.modal_image_3 != blank -%}
+              {%- assign has_modal_img = true -%}
+            {%- endif -%}
+
+            {%- if has_modal_img -%}
               <div class="fg-modal__images">
-                {%- for img in product.images limit: 3 -%}
-                  {{ img | image_url: width: 900 | image_tag: loading: 'lazy', class: 'fg-modal__img', alt: img.alt | default: product.title }}
+                {%- if block.settings.modal_image_1 != blank -%}
+                  {{ block.settings.modal_image_1 | image_url: width: 900 | image_tag: loading: 'lazy', class: 'fg-modal__img', alt: block.settings.modal_image_1.alt | default: block.settings.modal_heading }}
+                {%- endif -%}
+                {%- if block.settings.modal_image_2 != blank -%}
+                  {{ block.settings.modal_image_2 | image_url: width: 900 | image_tag: loading: 'lazy', class: 'fg-modal__img', alt: block.settings.modal_image_2.alt | default: block.settings.modal_heading }}
+                {%- endif -%}
+                {%- if block.settings.modal_image_3 != blank -%}
+                  {{ block.settings.modal_image_3 | image_url: width: 900 | image_tag: loading: 'lazy', class: 'fg-modal__img', alt: block.settings.modal_image_3.alt | default: block.settings.modal_heading }}
+                {%- endif -%}
+              </div>
+            {%- elsif pf_product != blank and pf_product.images.size > 0 -%}
+              <div class="fg-modal__images">
+                {%- for img in pf_product.images limit: 3 -%}
+                  {{ img | image_url: width: 900 | image_tag: loading: 'lazy', class: 'fg-modal__img', alt: img.alt | default: pf_product.title }}
                 {%- endfor -%}
               </div>
             {%- endif -%}
-            {%- if product.description != blank -%}
-              <div class="fg-modal__text rte">{{ product.description }}</div>
+
+            {%- if block.settings.modal_description != blank -%}
+              <div class="fg-modal__text rte">{{ block.settings.modal_description }}</div>
+            {%- elsif pf_product != blank and pf_product.description != blank -%}
+              <div class="fg-modal__text rte">{{ pf_product.description }}</div>
             {%- endif -%}
-            <a href="{{ product.url }}" class="btn fg-modal__cta">Ver producto</a>
+
+            {%- assign modal_link = block.settings.modal_link -%}
+            {%- if modal_link == blank and pf_product != blank -%}
+              {%- assign modal_link = pf_product.url -%}
+            {%- endif -%}
+            {%- if modal_link != blank -%}
+              <a href="{{ modal_link }}" class="btn fg-modal__cta">
+                {{ block.settings.modal_link_label | default: 'Ver producto' | escape }}
+              </a>
+            {%- endif -%}
+
           </div>
         {%- endfor -%}
       </div>
@@ -107,9 +154,9 @@
     var modal = document.getElementById('pf-modal-' + sId);
     if (!sectionEl || !modal) return;
 
-    function openModal(productId) {
+    function openModal(blockId) {
       modal.querySelectorAll('.fg-modal__content').forEach(function(c) { c.hidden = true; });
-      var content = document.getElementById('pf-modal-content-' + productId);
+      var content = document.getElementById('pf-modal-content-' + blockId);
       if (content) content.hidden = false;
       modal.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
@@ -152,23 +199,9 @@
       "default": "Lo más destacado."
     },
     {
-      "type": "collection",
-      "id": "collection",
-      "label": "Colección"
-    },
-    {
-      "type": "range",
-      "id": "products_to_show",
-      "min": 2,
-      "max": 8,
-      "step": 1,
-      "default": 4,
-      "label": "Productos a mostrar"
-    },
-    {
       "type": "text",
       "id": "button_label",
-      "label": "Texto botón",
+      "label": "Texto botón 'Más información'",
       "default": "Más información"
     },
     {
@@ -183,9 +216,87 @@
       "label": "Enlace comparar"
     }
   ],
+  "blocks": [
+    {
+      "type": "product_card",
+      "name": "Tarjeta de producto",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Producto (opcional)"
+        },
+        {
+          "type": "header",
+          "content": "Tarjeta"
+        },
+        {
+          "type": "image_picker",
+          "id": "card_image",
+          "label": "Imagen de la tarjeta"
+        },
+        {
+          "type": "text",
+          "id": "card_title",
+          "label": "Título de la tarjeta"
+        },
+        {
+          "type": "text",
+          "id": "card_description",
+          "label": "Descripción corta (tarjeta)"
+        },
+        {
+          "type": "header",
+          "content": "Modal — Más información"
+        },
+        {
+          "type": "text",
+          "id": "modal_heading",
+          "label": "Título del modal"
+        },
+        {
+          "type": "richtext",
+          "id": "modal_description",
+          "label": "Descripción del modal"
+        },
+        {
+          "type": "image_picker",
+          "id": "modal_image_1",
+          "label": "Imagen del modal 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "modal_image_2",
+          "label": "Imagen del modal 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "modal_image_3",
+          "label": "Imagen del modal 3"
+        },
+        {
+          "type": "url",
+          "id": "modal_link",
+          "label": "Enlace del botón (modal)"
+        },
+        {
+          "type": "text",
+          "id": "modal_link_label",
+          "label": "Texto del botón (modal)",
+          "default": "Ver producto"
+        }
+      ]
+    }
+  ],
   "presets": [
     {
-      "name": "Familia de productos"
+      "name": "Familia de productos",
+      "blocks": [
+        { "type": "product_card" },
+        { "type": "product_card" },
+        { "type": "product_card" },
+        { "type": "product_card" }
+      ]
     }
   ]
 }

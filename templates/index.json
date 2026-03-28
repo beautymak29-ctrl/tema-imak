@@ -15,12 +15,17 @@
       "type": "product-family",
       "settings": {
         "title": "Lo más destacado.",
-        "collection": "iphone",
-        "products_to_show": 4,
         "button_label": "Más información",
         "compare_label": "Comparar todos los modelos",
         "compare_link": "/pages/comparar"
-      }
+      },
+      "blocks": {
+        "pf-1": { "type": "product_card", "settings": {} },
+        "pf-2": { "type": "product_card", "settings": {} },
+        "pf-3": { "type": "product_card", "settings": {} },
+        "pf-4": { "type": "product_card", "settings": {} }
+      },
+      "block_order": ["pf-1", "pf-2", "pf-3", "pf-4"]
     },
     "features-grid": {
       "type": "features-grid",
