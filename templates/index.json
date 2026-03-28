@@ -55,23 +55,9 @@
             "category": "iOS y Apple Intelligence",
             "heading": "Estrenando look. Derrochando magia."
           }
-        },
-        "fg-5": {
-          "type": "feature",
-          "settings": {
-            "category": "Medio ambiente",
-            "heading": "Diseñado pensando en el planeta."
-          }
-        },
-        "fg-6": {
-          "type": "feature",
-          "settings": {
-            "category": "Privacidad",
-            "heading": "Tus datos siempre bajo tu control."
-          }
         }
       },
-      "block_order": ["fg-1", "fg-2", "fg-3", "fg-4", "fg-5", "fg-6"]
+      "block_order": ["fg-1", "fg-2", "fg-3", "fg-4"]
     },
     "accessories-showcase": {
       "type": "accessories-showcase",
