@@ -712,6 +712,31 @@ body { padding-top: 4.4rem; }
 }
 
 /* =====================================================
+   FEATURES GRID MODAL — fg-modal-*
+   ===================================================== */
+.fg-modal { position: fixed; inset: 0; z-index: 99999; display: flex; align-items: center; justify-content: center; }
+.fg-modal[aria-hidden="true"] { pointer-events: none; visibility: hidden; }
+.fg-modal[aria-hidden="false"] { pointer-events: auto; visibility: visible; }
+.fg-modal__overlay { position: absolute; inset: 0; background: rgba(0,0,0,.55); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+.fg-modal__dialog { position: relative; background: #fff; border-radius: 2rem; width: 90%; max-width: 72rem; max-height: 90vh; overflow-y: auto; z-index: 1; padding: 4.8rem 4rem 4rem; }
+.fg-modal[aria-hidden="false"] .fg-modal__dialog { animation: fg-modal-in .25s ease; }
+@keyframes fg-modal-in { from { opacity: 0; transform: translateY(2rem) scale(.97); } to { opacity: 1; transform: translateY(0) scale(1); } }
+.fg-modal__close { position: absolute; top: 2rem; right: 2rem; width: 3.2rem; height: 3.2rem; border-radius: 50%; border: none; background: #f5f5f7; color: #1d1d1f; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background .2s; flex-shrink: 0; }
+.fg-modal__close:hover { background: #e8e8ed; }
+.fg-modal__heading { font-size: clamp(2.4rem, 4vw, 3.6rem); font-weight: 700; letter-spacing: -.02em; color: #1d1d1f; margin: 0 0 2.4rem; padding-right: 4rem; line-height: 1.1; }
+.fg-modal__images { display: flex; gap: 1.2rem; flex-wrap: wrap; margin-bottom: 2.4rem; }
+.fg-modal__img { flex: 1 1 28rem; max-height: 32rem; width: 100%; object-fit: cover; border-radius: 1.2rem; display: block; }
+.fg-modal__text { font-size: 1.6rem; line-height: 1.7; color: #424245; margin-bottom: 2.4rem; }
+.fg-modal__text p { margin: 0 0 1.2rem; }
+.fg-modal__text p:last-child { margin-bottom: 0; }
+.fg-modal__cta { display: inline-block; margin-top: 0.8rem; }
+
+@media (max-width: 749px) {
+  .fg-modal__dialog { padding: 4rem 2rem 2.4rem; width: 95%; }
+  .fg-modal__img { flex: 1 1 100%; }
+}
+
+/* =====================================================
    ACCESSORIES SHOWCASE — ess-* (banner cards)
    ===================================================== */
 .ess-section { padding: 6rem 0; background: #fff; }
