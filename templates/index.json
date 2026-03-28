@@ -11,18 +11,6 @@
         "background_color": "#000000"
       }
     },
-    "category-nav": {
-      "type": "category-nav",
-      "blocks": {
-        "cat-1": { "type": "category", "settings": { "label": "iPhone 17 Pro", "link": "/collections/iphone-17-pro" } },
-        "cat-2": { "type": "category", "settings": { "label": "iPhone Air",    "link": "/collections/iphone-air" } },
-        "cat-3": { "type": "category", "settings": { "label": "iPhone 17",     "link": "/collections/iphone-17" } },
-        "cat-4": { "type": "category", "settings": { "label": "iPhone 17e",    "link": "/collections/iphone-17e", "show_badge": true } },
-        "cat-5": { "type": "category", "settings": { "label": "iPhone 16",     "link": "/collections/iphone-16" } },
-        "cat-6": { "type": "category", "settings": { "label": "Comparar",      "link": "/pages/comparar" } }
-      },
-      "block_order": ["cat-1", "cat-2", "cat-3", "cat-4", "cat-5", "cat-6"]
-    },
     "product-family": {
       "type": "product-family",
       "settings": {
@@ -142,24 +130,10 @@
       },
       "block_order": ["et-1", "et-2", "et-3"]
     },
-    "video-reels": {
-      "type": "video-reels",
-      "settings": {
-        "title": ""
-      },
-      "blocks": {
-        "vr-1": { "type": "video", "settings": {} },
-        "vr-2": { "type": "video", "settings": {} },
-        "vr-3": { "type": "video", "settings": {} }
-      },
-      "block_order": ["vr-1", "vr-2", "vr-3"]
-    }
   },
   "order": [
     "hero-banner",
-    "category-nav",
     "product-family",
-    "video-reels",
     "features-grid",
     "accessories-showcase",
     "ecosystem-tabs"
