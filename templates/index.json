@@ -32,6 +32,7 @@
             "card_description": " \"El iPhone más poderoso. Cámara, chip y pantalla al máximo nivel.\"",
             "modal_heading": "IPhone 17 pro max",
             "modal_description": "<p><strong>Estructura unibody.La innovación hace la fuerza.</strong></p><p>Presentamos el iPhone 17 Pro y el iPhone 17 Pro Max. Diseñados de adentro hacia fuera para ser los modelos de iPhone más poderosos que existen. La base del nuevo diseño es una estructura unibody de aluminio forjado en caliente que lleva la resistencia, el rendimiento y la batería a nuevas dimensiones.</p>",
+            "modal_image_1": "shopify://shop_images/222.jpg",
             "modal_link": "",
             "modal_link_label": "Ver producto"
           }
@@ -45,6 +46,7 @@
             "card_description": "\"Un diseño innovador para una batería y un rendimiento sin precedentes.\"",
             "modal_heading": "",
             "modal_description": "",
+            "modal_image_1": "shopify://shop_images/4.jpg",
             "modal_link": "",
             "modal_link_label": "Ver producto"
           }
