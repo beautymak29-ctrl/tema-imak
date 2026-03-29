@@ -1,80 +1,163 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero-banner": {
       "type": "hero-banner",
       "settings": {
+        "background_color": "#000000",
         "subheading": "",
         "heading": "iPhone",
         "text": "",
         "button_label": "",
-        "button_link": "",
-        "background_color": "#000000"
+        "button_link": ""
       }
     },
     "product-family": {
       "type": "product-family",
+      "blocks": {
+        "product_card_gVQ3yg": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "card_image": "shopify://shop_images/D_NQ_NP_2X_756377-MLA96435683774_102025-F.webp",
+            "card_title": "Iphone 17 pro max",
+            "card_description": "",
+            "modal_heading": "",
+            "modal_description": "",
+            "modal_link": "",
+            "modal_link_label": "Ver producto"
+          }
+        },
+        "product_card_NyDxtM": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "card_image": "shopify://shop_images/D_NQ_NP_2X_829168-MPE109108136525_032026-F-apple-iphone-17-pro-max-256-gb-naranja-cosmico.webp",
+            "card_title": "Iphone 17 pro",
+            "card_description": "",
+            "modal_heading": "",
+            "modal_description": "",
+            "modal_link": "",
+            "modal_link_label": "Ver producto"
+          }
+        },
+        "product_card_4fgyTH": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "card_image": "shopify://shop_images/D_NQ_NP_2X_765368-MLA96425288827_102025-F.webp",
+            "card_title": "Iphone 17",
+            "card_description": "",
+            "modal_heading": "",
+            "modal_description": "",
+            "modal_link": "",
+            "modal_link_label": "Ver producto"
+          }
+        },
+        "product_card_QPCTFN": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "card_image": "shopify://shop_images/D_NQ_NP_2X_800312-MLA96869283817_102025-F.webp",
+            "card_title": "Iphone 16",
+            "card_description": "",
+            "modal_heading": "",
+            "modal_description": "",
+            "modal_link": "",
+            "modal_link_label": "Ver producto"
+          }
+        }
+      },
+      "block_order": [
+        "product_card_gVQ3yg",
+        "product_card_NyDxtM",
+        "product_card_4fgyTH",
+        "product_card_QPCTFN"
+      ],
       "settings": {
         "title": "Lo más destacado.",
         "button_label": "Más información",
         "compare_label": "Comparar todos los modelos",
         "compare_link": "/pages/comparar"
-      },
-      "blocks": {
-        "pf-1": { "type": "product_card", "settings": {} },
-        "pf-2": { "type": "product_card", "settings": {} },
-        "pf-3": { "type": "product_card", "settings": {} },
-        "pf-4": { "type": "product_card", "settings": {} }
-      },
-      "block_order": ["pf-1", "pf-2", "pf-3", "pf-4"]
+      }
     },
     "features-grid": {
       "type": "features-grid",
-      "settings": {
-        "title": "Descubre el iPhone."
-      },
       "blocks": {
         "fg-1": {
           "type": "feature",
           "settings": {
             "category": "Innovación",
-            "heading": "Diseñado para durar. Y enamorar."
+            "heading": "Diseñado para durar. Y enamorar.",
+            "modal_heading": "",
+            "modal_description": "",
+            "link": "",
+            "link_label": "Mas informacion"
           }
         },
         "fg-2": {
           "type": "feature",
           "settings": {
             "category": "Cámaras de última generación",
-            "heading": "Haz fotos soñadas y videos de película."
+            "heading": "Haz fotos soñadas y videos de película.",
+            "modal_heading": "",
+            "modal_description": "",
+            "link": "",
+            "link_label": "Mas informacion"
           }
         },
         "fg-3": {
           "type": "feature",
           "settings": {
             "category": "Chip y batería",
-            "heading": "Velocidad para rato."
+            "heading": "Velocidad para rato.",
+            "modal_heading": "",
+            "modal_description": "",
+            "link": "",
+            "link_label": "Mas informacion"
           }
         },
         "fg-4": {
           "type": "feature",
           "settings": {
             "category": "iOS y Apple Intelligence",
-            "heading": "Estrenando look. Derrochando magia."
+            "heading": "Estrenando look. Derrochando magia.",
+            "modal_heading": "",
+            "modal_description": "",
+            "link": "",
+            "link_label": "Mas informacion"
           }
         }
       },
-      "block_order": ["fg-1", "fg-2", "fg-3", "fg-4"]
+      "block_order": [
+        "fg-1",
+        "fg-2",
+        "fg-3",
+        "fg-4"
+      ],
+      "settings": {
+        "title": "Descubre el iPhone."
+      }
     },
     "accessories-showcase": {
       "type": "accessories-showcase",
-      "settings": {
-        "title": "Consiente a tu iPhone."
-      },
       "blocks": {
         "ac-1": {
           "type": "accessory",
           "settings": {
+            "show_badge": false,
+            "badge_text": "Nuevo",
             "name": "AirPods",
             "description": "Descubre todos los modelos de AirPods y elige tus favoritos.",
+            "link": "",
             "link_label": "Más información"
           }
         },
@@ -85,17 +168,21 @@
             "badge_text": "Nuevo",
             "name": "AirTag",
             "description": "Con su bocina más potente y el rango de Rastreo Preciso mejorado, es más fácil que nunca localizar todo lo que te importa.",
+            "link": "",
             "link_label": "Más información"
           }
         }
       },
-      "block_order": ["ac-1", "ac-2"]
+      "block_order": [
+        "ac-1",
+        "ac-2"
+      ],
+      "settings": {
+        "title": "Consiente a tu iPhone."
+      }
     },
     "ecosystem-tabs": {
       "type": "ecosystem-tabs",
-      "settings": {
-        "title": "Siempre bien acompañado."
-      },
       "blocks": {
         "et-1": {
           "type": "tab",
@@ -119,8 +206,15 @@
           }
         }
       },
-      "block_order": ["et-1", "et-2", "et-3"]
-    },
+      "block_order": [
+        "et-1",
+        "et-2",
+        "et-3"
+      ],
+      "settings": {
+        "title": "Siempre bien acompañado."
+      }
+    }
   },
   "order": [
     "hero-banner",
