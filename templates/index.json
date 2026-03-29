@@ -42,10 +42,10 @@
           "settings": {
             "product": "",
             "card_image": "shopify://shop_images/D_NQ_NP_2X_829168-MPE109108136525_032026-F-apple-iphone-17-pro-max-256-gb-naranja-cosmico.webp",
-            "card_title": "IPhone 17 pro",
+            "card_title": "IPhone 17 Pro",
             "card_description": "\"Un diseño innovador para una batería y un rendimiento sin precedentes.\"",
-            "modal_heading": "",
-            "modal_description": "",
+            "modal_heading": "IPhone 17 Pro",
+            "modal_description": "<p><strong>Estructura unibody.<br/>La innovación hace la fuerza.</strong></p><p>Presentamos el iPhone 17 Pro y el iPhone 17 Pro Max. Diseñados de adentro hacia fuera para ser los modelos de iPhone más poderosos que existen. La base del nuevo diseño es una estructura unibody de aluminio forjado en caliente que lleva la resistencia, el rendimiento y la batería a nuevas dimensiones.</p>",
             "modal_image_1": "shopify://shop_images/4.jpg",
             "modal_link": "",
             "modal_link_label": "Ver producto"
