@@ -154,9 +154,12 @@
             "heading": "Velocidad para rato.",
             "image": "shopify://shop_images/best-phone-best-chip-v0-wpkdew9zglpg1.jpg",
             "modal_heading": "Chip y batería",
-            "modal_description": "",
-            "modal_description_2": "",
-            "modal_description_3": "",
+            "modal_description": "<p><strong>Chips de Apple. Superbrillantes y superrápidos. </strong>Los chips A19 y A19 Pro son increíblemente eficientes y ofrecen una asombrosa duración de batería para todo el día. También son el motor detrás de Apple Intelligence y te permiten disfrutar juegos AAA y funcionalidades avanzadas de cámara. Además, aceleran los flujos de trabajo de IA con los Neural Accelerators en el GPU.</p>",
+            "modal_image_1": "shopify://shop_images/1_1d7c305b-6ed4-4240-b320-5564c81654c3.jpg",
+            "modal_description_2": "<p><strong>Una batería que siempre da el 100%. </strong>Nuestros hardware y software se combinan con eficiencia para que hagas mucho más con una sola carga. Como ver hasta 31 horas de video seguidas en el iPhone 17 Pro y hasta 37 horas en el iPhone 17 Pro Max.9</p>",
+            "modal_image_2": "shopify://shop_images/2_fe10d761-102e-498d-8f18-98867cc50a42.jpg",
+            "modal_description_3": "<p><strong>Carga rápido. Y a la carga. </strong>Acopla un cargador MagSafe para obtener una carga inalámbrica más rápida.11 O conecta un adaptador de corriente USB-C. Y como el iPhone tiene puerto USB-C, puedes cargarlo con el mismo cable que usas para la Mac y el iPad.</p>",
+            "modal_image_3": "shopify://shop_images/3_c242a3f7-a1b7-46fb-b0c5-beede6d26df5.jpg",
             "link": "",
             "link_label": "Mas informacion"
           }
@@ -166,12 +169,13 @@
           "settings": {
             "category": "iOS y Apple Intelligence",
             "heading": "Estrenando look. Derrochando magia.",
+            "image": "shopify://shop_images/ios__8z58j1o80yqi_large_bce2d3b5-1326-4fd2-bda8-e4796683e1d8.jpg",
             "modal_heading": "Estrenando look. Derrochando magia.",
-            "modal_description": "<p><strong>Chips de Apple. Superbrillantes y superrápidos. </strong>Los chips A19 y A19 Pro son increíblemente eficientes y ofrecen una asombrosa duración de batería para todo el día. También son el motor detrás de Apple Intelligence y te permiten disfrutar juegos AAA y funcionalidades avanzadas de cámara. Además, aceleran los flujos de trabajo de IA con los Neural Accelerators en el GPU.</p>",
+            "modal_description": "",
             "modal_image_1": "shopify://shop_images/1_1d7c305b-6ed4-4240-b320-5564c81654c3.jpg",
-            "modal_description_2": "<p><strong>Una batería que siempre da el 100%. </strong>Nuestros hardware y software se combinan con eficiencia para que hagas mucho más con una sola carga. Como ver hasta 31 horas de video seguidas en el iPhone 17 Pro y hasta 37 horas en el iPhone 17 Pro Max.9</p>",
+            "modal_description_2": "",
             "modal_image_2": "shopify://shop_images/2_fe10d761-102e-498d-8f18-98867cc50a42.jpg",
-            "modal_description_3": "<p><strong>Carga rápido. Y a la carga. </strong>Acopla un cargador MagSafe para obtener una carga inalámbrica más rápida.11 O conecta un adaptador de corriente USB-C. Y como el iPhone tiene puerto USB-C, puedes cargarlo con el mismo cable que usas para la Mac y el iPad.</p>",
+            "modal_description_3": "",
             "modal_image_3": "shopify://shop_images/3_c242a3f7-a1b7-46fb-b0c5-beede6d26df5.jpg",
             "link": "",
             "link_label": "Mas informacion"
