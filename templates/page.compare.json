@@ -12,6 +12,23 @@
     "compare-models": {
       "type": "compare-models",
       "blocks": {
+        "model_KzJdKT": {
+          "type": "model",
+          "settings": {
+            "model_key": "iPhone 16",
+            "color_1_name": "Ultramarino",
+            "color_1_hex": "#b0c8d8",
+            "color_1_image": "shopify://shop_images/D_NQ_NP_2X_851087-MLA95710709174_102025-F.webp",
+            "color_2_name": "Verde azulado",
+            "color_2_hex": "",
+            "color_3_name": "",
+            "color_3_hex": "",
+            "color_4_name": "",
+            "color_4_hex": "",
+            "color_5_name": "",
+            "color_5_hex": ""
+          }
+        },
         "model_C8LbHY": {
           "type": "model",
           "settings": {
@@ -73,6 +90,7 @@
         }
       },
       "block_order": [
+        "model_KzJdKT",
         "model_C8LbHY",
         "model_tdHQYn",
         "model_dmcGNR"
