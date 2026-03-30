@@ -31,6 +31,12 @@
             "card_image": "shopify://shop_images/D_NQ_NP_2X_756377-MLA96435683774_102025-F.webp",
             "card_title": "IPhone 17 pro max",
             "card_description": " \"El iPhone más poderoso. Cámara, chip y pantalla al máximo nivel.\"",
+            "modal_title_1": "",
+            "modal_desc_1": "",
+            "modal_title_2": "",
+            "modal_desc_2": "",
+            "modal_title_3": "",
+            "modal_desc_3": "",
             "modal_link": "",
             "modal_link_label": "Ver producto"
           }
@@ -42,6 +48,12 @@
             "card_image": "shopify://shop_images/D_NQ_NP_2X_829168-MPE109108136525_032026-F-apple-iphone-17-pro-max-256-gb-naranja-cosmico.webp",
             "card_title": "IPhone 17 Pro",
             "card_description": "\"Un diseño innovador para una batería y un rendimiento sin precedentes.\"",
+            "modal_title_1": "",
+            "modal_desc_1": "",
+            "modal_title_2": "",
+            "modal_desc_2": "",
+            "modal_title_3": "",
+            "modal_desc_3": "",
             "modal_link": "",
             "modal_link_label": "Ver producto"
           }
@@ -53,6 +65,12 @@
             "card_image": "shopify://shop_images/D_NQ_NP_2X_765368-MLA96425288827_102025-F.webp",
             "card_title": "IPhone 17",
             "card_description": "\"Aún más sorprendente. Aún más resistente.\"",
+            "modal_title_1": "",
+            "modal_desc_1": "",
+            "modal_title_2": "",
+            "modal_desc_2": "",
+            "modal_title_3": "",
+            "modal_desc_3": "",
             "modal_link": "",
             "modal_link_label": "Ver producto"
           }
@@ -64,6 +82,12 @@
             "card_image": "shopify://shop_images/D_NQ_NP_2X_800312-MLA96869283817_102025-F.webp",
             "card_title": "IPhone 16",
             "card_description": "\"Rendimiento increíble, Diseñado para durar.\"",
+            "modal_title_1": "",
+            "modal_desc_1": "",
+            "modal_title_2": "",
+            "modal_desc_2": "",
+            "modal_title_3": "",
+            "modal_desc_3": "",
             "modal_link": "",
             "modal_link_label": "Ver producto"
           }
@@ -92,8 +116,8 @@
             "heading": "Diseñado para durar. Y enamorar.",
             "image": "shopify://shop_images/1.jpg",
             "modal_heading": "",
-            "modal_description": "",
-            "modal_image_1": "shopify://shop_images/1.jpg",
+            "modal_description": "<h4>Único e inigualable.</h4><p>El iPhone es conocido por su diseño icónico y sus materiales de primera calidad, como los del iPhone 17 Pro, cuya estructura de aluminio forjado en caliente ofrece un rendimiento superior. Y el iPhone Air, nuestro iPhone más delgado hasta ahora. Además, el hardware y el software se diseñan en conjunto para ofrecer funcionalidades únicas como la Dynamic Island, el Control de la Cámara y el Botón de Acción.</p>",
+            "modal_image_1": "shopify://shop_images/1_e2d4329e-647f-4d99-bc0c-20b97e2b2eea.jpg",
             "link": "",
             "link_label": "Mas informacion"
           }
