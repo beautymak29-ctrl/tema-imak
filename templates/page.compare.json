@@ -15,17 +15,22 @@
         "model_C8LbHY": {
           "type": "model",
           "settings": {
-            "model_key": "iPhone 17 Pro Max",
-            "color_1_name": "",
-            "color_1_hex": "",
-            "color_2_name": "",
-            "color_2_hex": "",
-            "color_3_name": "",
-            "color_3_hex": "",
-            "color_4_name": "",
-            "color_4_hex": "",
-            "color_5_name": "",
-            "color_5_hex": ""
+            "model_key": "iPhone 17",
+            "color_1_name": "Lavanda",
+            "color_1_hex": "#c8b8d8",
+            "color_1_image": "shopify://shop_images/D_NQ_NP_2X_891008-MLA96224831496_102025-F.webp",
+            "color_2_name": "Salvia",
+            "color_2_hex": "#8fa885",
+            "color_2_image": "shopify://shop_images/D_NQ_NP_2X_794352-MLA96429300478_102025-F.webp",
+            "color_3_name": "SalviaAzul neblina",
+            "color_3_hex": "#b0c8d8",
+            "color_3_image": "shopify://shop_images/D_NQ_NP_2X_765368-MLA96425288827_102025-F.webp",
+            "color_4_name": "Blanco",
+            "color_4_hex": "#f5f5f5",
+            "color_4_image": "shopify://shop_images/D_NQ_NP_2X_889845-MLA95136883794_102025-F.webp",
+            "color_5_name": "Negro",
+            "color_5_hex": "#1a1a1a",
+            "color_5_image": "shopify://shop_images/D_NQ_NP_2X_861760-MLA95528941712_102025-F.webp"
           }
         },
         "model_tdHQYn": {
