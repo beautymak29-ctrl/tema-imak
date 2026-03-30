@@ -122,6 +122,10 @@
             "modal_heading": "",
             "modal_description": "<h4>Único e inigualable.</h4><p>El iPhone es conocido por su diseño icónico y sus materiales de primera calidad, como los del iPhone 17 Pro, cuya estructura de aluminio forjado en caliente ofrece un rendimiento superior. Y el iPhone Air, nuestro iPhone más delgado hasta ahora. Además, el hardware y el software se diseñan en conjunto para ofrecer funcionalidades únicas como la Dynamic Island, el Control de la Cámara y el Botón de Acción.</p>",
             "modal_image_1": "shopify://shop_images/1_e2d4329e-647f-4d99-bc0c-20b97e2b2eea.jpg",
+            "modal_description_2": "<h4>Hay teléfono para rato.</h4><p>El iPhone está protegido por el Ceramic Shield, que es más resistente que cualquier vidrio o vitrocerámica de smartphone. Los últimos modelos de iPhone vienen con Ceramic Shield 2 en la parte delantera, que ofrece 3 veces más resistencia a los rayones.1 Además, el iPhone 17 Pro y el iPhone Air traen Ceramic Shield en la parte posterior para una mayor durabilidad. ¿Volcaste un vaso sin querer? Que no cunda el pánico. El iPhone aguanta sin problema salpicaduras de líquidos como agua, café o refrescos.2</p>",
+            "modal_image_2": "shopify://shop_images/2.jpg",
+            "modal_description_3": "<h4>Te la hace fácil.Diseñamos nuestro software y hardware como un todo para que disfrutes una experiencia mágica. Puedes compartir tu información de contacto acercando tu iPhone al de otra persona o configurar tus AirPods nuevos con un simple toque. Y gracias a las actualizaciones periódicas de iOS, tu iPhone funciona como el primer día.</h4>",
+            "modal_image_3": "shopify://shop_images/3.jpg",
             "link": "",
             "link_label": "Mas informacion"
           }
@@ -134,6 +138,8 @@
             "image": "shopify://shop_images/77fe4aaa7f01f4502058c8b5fe0ea324.jpg",
             "modal_heading": "",
             "modal_description": "",
+            "modal_description_2": "",
+            "modal_description_3": "",
             "link": "",
             "link_label": "Mas informacion"
           }
@@ -145,6 +151,8 @@
             "heading": "Velocidad para rato.",
             "modal_heading": "",
             "modal_description": "",
+            "modal_description_2": "",
+            "modal_description_3": "",
             "link": "",
             "link_label": "Mas informacion"
           }
@@ -156,6 +164,8 @@
             "heading": "Estrenando look. Derrochando magia.",
             "modal_heading": "",
             "modal_description": "",
+            "modal_description_2": "",
+            "modal_description_3": "",
             "link": "",
             "link_label": "Mas informacion"
           }
