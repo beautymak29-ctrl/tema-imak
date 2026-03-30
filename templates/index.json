@@ -12,6 +12,7 @@
     "hero-banner": {
       "type": "hero-banner",
       "settings": {
+        "image": "shopify://shop_images/4.jpg",
         "background_color": "#000000",
         "subheading": "",
         "heading": "iPhone",
