@@ -12,6 +12,22 @@
     "compare-models": {
       "type": "compare-models",
       "blocks": {
+        "model_C8LbHY": {
+          "type": "model",
+          "settings": {
+            "model_key": "iPhone 17 Pro Max",
+            "color_1_name": "",
+            "color_1_hex": "",
+            "color_2_name": "",
+            "color_2_hex": "",
+            "color_3_name": "",
+            "color_3_hex": "",
+            "color_4_name": "",
+            "color_4_hex": "",
+            "color_5_name": "",
+            "color_5_hex": ""
+          }
+        },
         "model_tdHQYn": {
           "type": "model",
           "settings": {
@@ -34,13 +50,16 @@
         "model_dmcGNR": {
           "type": "model",
           "settings": {
-            "model_key": "iPhone 17 Pro Max",
-            "color_1_name": "",
+            "model_key": "iPhone 17 Pro",
+            "color_1_name": "Azul profundo",
             "color_1_hex": "",
-            "color_2_name": "",
+            "color_1_image": "shopify://shop_images/D_NQ_NP_2X_756377-MLA96435683774_102025-F.webp",
+            "color_2_name": "Naranja cósmico",
             "color_2_hex": "",
-            "color_3_name": "",
+            "color_2_image": "shopify://shop_images/D_NQ_NP_2X_829168-MPE109108136525_032026-F-apple-iphone-17-pro-max-256-gb-naranja-cosmico.webp",
+            "color_3_name": "Plata",
             "color_3_hex": "",
+            "color_3_image": "shopify://shop_images/D_NQ_NP_2X_676394-MLA95399066890_102025-F.webp",
             "color_4_name": "",
             "color_4_hex": "",
             "color_5_name": "",
@@ -49,6 +68,7 @@
         }
       },
       "block_order": [
+        "model_C8LbHY",
         "model_tdHQYn",
         "model_dmcGNR"
       ],
