@@ -20,7 +20,7 @@
         "phone": "+51 961 905 778",
         "email": "hola@imak.mx",
         "hours": "Lunes a Sábado: 10:00 – 20:00",
-        "show_map": true,
+        "show_map": false,
         "map_embed_url": "",
         "success_message": "¡Gracias por tu mensaje! Te responderemos pronto."
       }
