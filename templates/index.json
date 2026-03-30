@@ -14,7 +14,7 @@
       "settings": {
         "background_color": "#000000",
         "subheading": "",
-        "heading": "IPhone",
+        "heading": "iPhone",
         "text": "",
         "button_label": "",
         "button_link": ""
@@ -58,8 +58,9 @@
             "card_image": "shopify://shop_images/D_NQ_NP_2X_765368-MLA96425288827_102025-F.webp",
             "card_title": "IPhone 17",
             "card_description": "\"Aún más sorprendente. Aún más resistente.\"",
-            "modal_heading": "",
-            "modal_description": "",
+            "modal_heading": "IPhone 17",
+            "modal_description": "<p><strong>Aún más sorprendente.Aún más resistente.</strong></p><p>Sus bordes redondeados, el marco más delgado y materiales resistentes como el Ceramic Shield 2 en la parte frontalhacen de su belleza una fortaleza. Podrás ver y hacer lo que más te gusta, todo en una pantalla Super Retina XDR de 6.3 pulgadas.5Prepárate para disfrutar unanavegación más fluida y juegos más inmersivos gracias a la tecnología ProMotion, con una frecuencia de actualización adaptativa de hasta 120 Hz. Descúbrelo en acción.</p>",
+            "modal_image_1": "shopify://shop_images/17.png",
             "modal_link": "",
             "modal_link_label": "Ver producto"
           }
@@ -87,20 +88,12 @@
       "settings": {
         "title": "Lo más destacado.",
         "button_label": "Más información",
+        "compare_label": "Comparar todos los modelos",
         "compare_link": "/pages/comparar"
       }
     },
     "features-grid": {
       "type": "features-grid",
-<<<<<<< HEAD
-<<<<<<< HEAD
-      "settings": {
-        "title": "Descubre el IPhone."
-      },
-=======
->>>>>>> 8e1ae7e7a720934ed8fed6e7af5f78fa20f54a4f
-=======
->>>>>>> 8e1ae7e7a720934ed8fed6e7af5f78fa20f54a4f
       "blocks": {
         "fg-1": {
           "type": "feature",
@@ -197,22 +190,22 @@
         "et-1": {
           "type": "tab",
           "settings": {
-            "tab_label": "IPhone y Mac",
-            "text": "Con Duplicación del IPhone puedes ver la pantalla de tu teléfono en la Mac y controlarlo a distancia. Las funcionalidades de Continuidad te permiten contestar llamadas y mensajes directamente desde la Mac."
+            "tab_label": "iPhone y Mac",
+            "text": "Con Duplicación del iPhone puedes ver la pantalla de tu teléfono en la Mac y controlarlo a distancia. Las funcionalidades de Continuidad te permiten contestar llamadas y mensajes directamente desde la Mac."
           }
         },
         "et-2": {
           "type": "tab",
           "settings": {
-            "tab_label": "IPhone y Apple Watch",
-            "text": "Con el Apple Watch y el IPhone trabajando juntos, puedes cuidar tu salud, hacer seguimiento de tu actividad y mantener todo sincronizado."
+            "tab_label": "iPhone y Apple Watch",
+            "text": "Con el Apple Watch y el iPhone trabajando juntos, puedes cuidar tu salud, hacer seguimiento de tu actividad y mantener todo sincronizado."
           }
         },
         "et-3": {
           "type": "tab",
           "settings": {
-            "tab_label": "IPhone y AirPods",
-            "text": "Los AirPods se conectan al instante con tu IPhone. Disfruta de cancelación activa de ruido, audio espacial y llamadas cristalinas."
+            "tab_label": "iPhone y AirPods",
+            "text": "Los AirPods se conectan al instante con tu iPhone. Disfruta de cancelación activa de ruido, audio espacial y llamadas cristalinas."
           }
         }
       },
