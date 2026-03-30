@@ -221,6 +221,7 @@
         "ac-1",
         "ac-2"
       ],
+      "disabled": true,
       "settings": {
         "title": "Consiente a tu iPhone."
       }
@@ -255,6 +256,7 @@
         "et-2",
         "et-3"
       ],
+      "disabled": true,
       "settings": {
         "title": "Siempre bien acompañado."
       }
