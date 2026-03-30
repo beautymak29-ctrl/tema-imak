@@ -31,9 +31,6 @@
             "card_image": "shopify://shop_images/D_NQ_NP_2X_756377-MLA96435683774_102025-F.webp",
             "card_title": "IPhone 17 pro max",
             "card_description": " \"El iPhone más poderoso. Cámara, chip y pantalla al máximo nivel.\"",
-            "modal_heading": "IPhone 17 pro max",
-            "modal_description": "<p><strong>Estructura unibody.La innovación hace la fuerza.</strong></p><p>Presentamos el iPhone 17 Pro y el iPhone 17 Pro Max. Diseñados de adentro hacia fuera para ser los modelos de iPhone más poderosos que existen. La base del nuevo diseño es una estructura unibody de aluminio forjado en caliente que lleva la resistencia, el rendimiento y la batería a nuevas dimensiones.</p>",
-            "modal_image_1": "shopify://shop_images/222.jpg",
             "modal_link": "",
             "modal_link_label": "Ver producto"
           }
@@ -45,9 +42,6 @@
             "card_image": "shopify://shop_images/D_NQ_NP_2X_829168-MPE109108136525_032026-F-apple-iphone-17-pro-max-256-gb-naranja-cosmico.webp",
             "card_title": "IPhone 17 Pro",
             "card_description": "\"Un diseño innovador para una batería y un rendimiento sin precedentes.\"",
-            "modal_heading": "IPhone 17 Pro",
-            "modal_description": "<p><strong>Estructura unibody. La innovación hace la fuerza.</strong></p><p>Presentamos el iPhone 17 Pro y el iPhone 17 Pro Max. Diseñados de adentro hacia fuera para ser los modelos de iPhone más poderosos que existen. La base del nuevo diseño es una estructura unibody de aluminio forjado en caliente que lleva la resistencia, el rendimiento y la batería a nuevas dimensiones.</p>",
-            "modal_image_1": "shopify://shop_images/4.jpg",
             "modal_link": "",
             "modal_link_label": "Ver producto"
           }
@@ -59,9 +53,6 @@
             "card_image": "shopify://shop_images/D_NQ_NP_2X_765368-MLA96425288827_102025-F.webp",
             "card_title": "IPhone 17",
             "card_description": "\"Aún más sorprendente. Aún más resistente.\"",
-            "modal_heading": "IPhone 17",
-            "modal_description": "<p><strong>Aún más sorprendente.Aún más resistente.</strong></p><p>Sus bordes redondeados, el marco más delgado y materiales resistentes como el Ceramic Shield 2 en la parte frontalhacen de su belleza una fortaleza. Podrás ver y hacer lo que más te gusta, todo en una pantalla Super Retina XDR de 6.3 pulgadas.5Prepárate para disfrutar unanavegación más fluida y juegos más inmersivos gracias a la tecnología ProMotion, con una frecuencia de actualización adaptativa de hasta 120 Hz. Descúbrelo en acción.</p>",
-            "modal_image_1": "shopify://shop_images/17.png",
             "modal_link": "",
             "modal_link_label": "Ver producto"
           }
@@ -73,9 +64,6 @@
             "card_image": "shopify://shop_images/D_NQ_NP_2X_800312-MLA96869283817_102025-F.webp",
             "card_title": "IPhone 16",
             "card_description": "\"Rendimiento increíble, Diseñado para durar.\"",
-            "modal_heading": "IPhone 16",
-            "modal_description": "<p><strong>Rendimiento increíble. Diseñado para durar.</strong></p><p>Con la potencia del chip A18 Pro y diseñada para Apple Intelligence, la línea Pro trae pantallas más grandes, Control de la Cámara, funcionalidades innovadoras para las cámaras Pro y un salto enorme en duración de batería</p>",
-            "modal_image_1": "shopify://shop_images/1200_800.jpg",
             "modal_link": "",
             "modal_link_label": "Ver producto"
           }
@@ -102,8 +90,10 @@
           "settings": {
             "category": "Innovación",
             "heading": "Diseñado para durar. Y enamorar.",
+            "image": "shopify://shop_images/1.jpg",
             "modal_heading": "",
             "modal_description": "",
+            "modal_image_1": "shopify://shop_images/1.jpg",
             "link": "",
             "link_label": "Mas informacion"
           }
