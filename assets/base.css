@@ -614,8 +614,34 @@ body { padding-top: 4.4rem; }
 .pf-section__header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 3.2rem; gap: 2rem; }
 .pf-section__title { font-size: clamp(2.8rem, 5vw, 4.8rem); font-weight: 700; letter-spacing: -0.02em; margin: 0; color: #1d1d1f; line-height: 1.1; }
 .pf-section__compare-wrap { display: flex; justify-content: center; margin-top: 4rem; }
-.pf-section__compare-btn { display: inline-block; padding: 1.4rem 3.6rem; border-radius: 98rem; background: #0071e3; color: #fff; font-size: 1.7rem; font-weight: 500; text-decoration: none; transition: background .2s, transform .15s; }
-.pf-section__compare-btn:hover { background: #0077ed; transform: scale(1.02); }
+.pf-section__compare-btn {
+  display: inline-block;
+  padding: 1.4rem 3.6rem;
+  border-radius: 98rem;
+  background: linear-gradient(135deg, #7b2ff7 0%, #9d50f5 50%, #b06ef7 100%);
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: .01em;
+  box-shadow: 0 4px 24px rgba(123,47,247,.45), inset 0 1px 0 rgba(255,255,255,.18);
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+  position: relative;
+  overflow: hidden;
+}
+.pf-section__compare-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(255,255,255,.22) 0%, rgba(255,255,255,0) 60%);
+  border-radius: inherit;
+  pointer-events: none;
+}
+.pf-section__compare-btn:hover {
+  transform: scale(1.04) translateY(-1px);
+  box-shadow: 0 8px 32px rgba(123,47,247,.6), inset 0 1px 0 rgba(255,255,255,.22);
+  filter: brightness(1.08);
+}
 
 .pf-gallery { position: relative; }
 .pf-gallery__scroll { overflow: visible; }
