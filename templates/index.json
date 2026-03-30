@@ -73,7 +73,8 @@
             "card_title": "IPhone 16",
             "card_description": "\"Rendimiento increíble, Diseñado para durar.\"",
             "modal_heading": "IPhone 16",
-            "modal_description": "",
+            "modal_description": "<p><strong>Rendimiento increíble. Diseñado para durar.</strong></p><p>Con la potencia del chip A18 Pro y diseñada para Apple Intelligence, la línea Pro trae pantallas más grandes, Control de la Cámara, funcionalidades innovadoras para las cámaras Pro y un salto enorme en duración de batería</p>",
+            "modal_image_1": "shopify://shop_images/1200_800.jpg",
             "modal_link": "",
             "modal_link_label": "Ver producto"
           }
