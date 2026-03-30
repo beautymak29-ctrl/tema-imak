@@ -44,6 +44,14 @@
     {%- endfor -%}
   </div>
 
+  {%- comment -%} Preload primera imagen de cada modelo configurado {%- endcomment -%}
+  {%- for block in section.blocks -%}
+    {%- assign first_img_setting = 'color_1_image' -%}
+    {%- if block.settings[first_img_setting] != blank -%}
+      <link rel="preload" as="image" href="{{ block.settings[first_img_setting] | image_url: width: 800 }}">
+    {%- endif -%}
+  {%- endfor -%}
+
 </section>
 
 <script>
@@ -741,7 +749,7 @@
     var h = '<div class="cmp-col-header">';
     h += '<div class="cmp-col-header__img-wrap">';
     if (firstImg) {
-      h += '<img class="cmp-col-header__img" src="' + firstImg + '" alt="' + escAttr(name) + '" loading="lazy">';
+      h += '<img class="cmp-col-header__img" src="' + firstImg + '" alt="' + escAttr(name) + '" loading="eager" fetchpriority="high">';
     }
     h += '</div>';
     h += '<h3 class="cmp-col-header__name">' + name + '</h3>';
@@ -787,7 +795,7 @@
           newImg.className = 'cmp-col-header__img';
           newImg.src = newSrc;
           newImg.alt = (header.querySelector('.cmp-col-header__name') || {}).textContent || '';
-          newImg.loading = 'lazy';
+          newImg.loading = 'eager';
           wrap.appendChild(newImg);
         }
       }
