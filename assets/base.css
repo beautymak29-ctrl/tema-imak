@@ -613,8 +613,9 @@ body { padding-top: 4.4rem; }
 .pf-section { padding: 6rem 0; background: #fff; }
 .pf-section__header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 3.2rem; gap: 2rem; }
 .pf-section__title { font-size: clamp(2.8rem, 5vw, 4.8rem); font-weight: 700; letter-spacing: -0.02em; margin: 0; color: #1d1d1f; line-height: 1.1; }
-.pf-section__compare-link { font-size: 1.7rem; color: #0071e3; white-space: nowrap; flex-shrink: 0; text-decoration: none; }
-.pf-section__compare-link:hover { text-decoration: underline; }
+.pf-section__compare-wrap { display: flex; justify-content: center; margin-top: 4rem; }
+.pf-section__compare-btn { display: inline-block; padding: 1.4rem 3.6rem; border-radius: 98rem; background: #0071e3; color: #fff; font-size: 1.7rem; font-weight: 500; text-decoration: none; transition: background .2s, transform .15s; }
+.pf-section__compare-btn:hover { background: #0077ed; transform: scale(1.02); }
 
 .pf-gallery { position: relative; }
 .pf-gallery__scroll { overflow: visible; }
@@ -654,7 +655,7 @@ body { padding-top: 4.4rem; }
 
 @media (max-width: 749px) {
   .pf-gallery__list { grid-template-columns: 1fr; max-width: 32rem; margin: 0 auto; }
-  .pf-section__header { flex-direction: column; gap: .8rem; }
+  .pf-section__compare-btn { font-size: 1.5rem; padding: 1.2rem 2.8rem; }
   .pf-paddle, .fg-paddle, .ess-paddle, .cn-paddle { display: none; }
 }
 

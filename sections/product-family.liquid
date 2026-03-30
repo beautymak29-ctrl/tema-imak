@@ -6,13 +6,6 @@
       {%- if section.settings.title != blank -%}
         <h2 class="pf-section__title">{{ section.settings.title }}</h2>
       {%- endif -%}
-      {%- if section.settings.compare_link != blank and section.settings.compare_label != blank -%}
-        <div class="pf-section__cta">
-          <a href="{{ section.settings.compare_link }}" class="pf-section__compare-link">
-            {{ section.settings.compare_label }} <span aria-hidden="true">&rsaquo;</span>
-          </a>
-        </div>
-      {%- endif -%}
     </header>
 
     <div class="pf-gallery">
@@ -77,6 +70,14 @@
         {%- endfor -%}
       </ul>
     </div>
+
+    {%- if section.settings.compare_link != blank and section.settings.compare_label != blank -%}
+      <div class="pf-section__compare-wrap">
+        <a href="{{ section.settings.compare_link }}" class="pf-section__compare-btn">
+          {{ section.settings.compare_label }}
+        </a>
+      </div>
+    {%- endif -%}
 
   </div>
 

@@ -14,7 +14,7 @@
       "settings": {
         "background_color": "#000000",
         "subheading": "",
-        "heading": "iPhone",
+        "heading": "IPhone",
         "text": "",
         "button_label": "",
         "button_link": ""
@@ -87,12 +87,20 @@
       "settings": {
         "title": "Lo más destacado.",
         "button_label": "Más información",
-        "compare_label": "Comparar todos los modelos",
         "compare_link": "/pages/comparar"
       }
     },
     "features-grid": {
       "type": "features-grid",
+<<<<<<< HEAD
+<<<<<<< HEAD
+      "settings": {
+        "title": "Descubre el IPhone."
+      },
+=======
+>>>>>>> 8e1ae7e7a720934ed8fed6e7af5f78fa20f54a4f
+=======
+>>>>>>> 8e1ae7e7a720934ed8fed6e7af5f78fa20f54a4f
       "blocks": {
         "fg-1": {
           "type": "feature",
@@ -189,22 +197,22 @@
         "et-1": {
           "type": "tab",
           "settings": {
-            "tab_label": "iPhone y Mac",
-            "text": "Con Duplicación del iPhone puedes ver la pantalla de tu teléfono en la Mac y controlarlo a distancia. Las funcionalidades de Continuidad te permiten contestar llamadas y mensajes directamente desde la Mac."
+            "tab_label": "IPhone y Mac",
+            "text": "Con Duplicación del IPhone puedes ver la pantalla de tu teléfono en la Mac y controlarlo a distancia. Las funcionalidades de Continuidad te permiten contestar llamadas y mensajes directamente desde la Mac."
           }
         },
         "et-2": {
           "type": "tab",
           "settings": {
-            "tab_label": "iPhone y Apple Watch",
-            "text": "Con el Apple Watch y el iPhone trabajando juntos, puedes cuidar tu salud, hacer seguimiento de tu actividad y mantener todo sincronizado."
+            "tab_label": "IPhone y Apple Watch",
+            "text": "Con el Apple Watch y el IPhone trabajando juntos, puedes cuidar tu salud, hacer seguimiento de tu actividad y mantener todo sincronizado."
           }
         },
         "et-3": {
           "type": "tab",
           "settings": {
-            "tab_label": "iPhone y AirPods",
-            "text": "Los AirPods se conectan al instante con tu iPhone. Disfruta de cancelación activa de ruido, audio espacial y llamadas cristalinas."
+            "tab_label": "IPhone y AirPods",
+            "text": "Los AirPods se conectan al instante con tu IPhone. Disfruta de cancelación activa de ruido, audio espacial y llamadas cristalinas."
           }
         }
       },
