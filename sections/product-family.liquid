@@ -95,6 +95,10 @@
           {%- assign pf_product = block.settings.product -%}
           <div class="fg-modal__content" id="pf-modal-content-{{ block.id }}" hidden>
 
+            {%- if block.settings.modal_heading != blank -%}
+              <h2 class="fg-modal__heading">{{ block.settings.modal_heading | escape }}</h2>
+            {%- endif -%}
+
             {%- comment -%} Grupo 1 {%- endcomment -%}
             {%- if block.settings.modal_title_1 != blank or block.settings.modal_desc_1 != blank or block.settings.modal_img_1 != blank -%}
               <div class="pf-modal__group">
@@ -259,6 +263,16 @@
           "type": "text",
           "id": "card_description",
           "label": "Descripción corta (tarjeta)"
+        },
+        {
+          "type": "header",
+          "content": "Modal — General"
+        },
+        {
+          "type": "text",
+          "id": "modal_heading",
+          "label": "Título general del modal",
+          "info": "Ej: Innovación"
         },
         {
           "type": "header",
