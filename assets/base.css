@@ -726,7 +726,7 @@ body { padding-top: 4.4rem; }
 .fg-card__text { position: absolute; top: 0; left: 0; right: 0; padding: 3.2rem 3.2rem 1.6rem; z-index: 2; }
 .fg-card__cat { display: block; font-size: 1.2rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; opacity: .85; margin-bottom: .6rem; }
 .fg-card__heading { font-size: clamp(2rem, 2.8vw, 2.8rem); font-weight: 700; letter-spacing: -.02em; line-height: 1.15; margin: 0; }
-.fg-card__media { position: absolute; inset: 0; overflow: hidden; z-index: 0; }
+.fg-card__media { position: absolute; inset: 0; overflow: hidden; z-index: 0; margin: 0; padding: 0; }
 .fg-card__img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .fg-card__img--placeholder { width: 100%; height: 100%; opacity: .4; }
 
@@ -757,6 +757,13 @@ body { padding-top: 4.4rem; }
 .fg-modal__text p { margin: 0 0 1.2rem; }
 .fg-modal__text p:last-child { margin-bottom: 0; }
 .fg-modal__cta { display: inline-block; margin-top: 0.8rem; }
+
+/* Pares descripción + imagen dentro del modal */
+.fg-modal__pair { padding: 2rem 0; border-bottom: 1px solid #e8e8ed; }
+.fg-modal__pair:first-of-type { padding-top: 0; }
+.fg-modal__pair:last-of-type { border-bottom: none; padding-bottom: .4rem; }
+.fg-modal__pair-img-wrap { border-radius: 1.2rem; overflow: hidden; margin-top: .8rem; }
+.fg-modal__pair-img { width: 100%; height: auto; display: block; object-fit: cover; }
 
 @media (max-width: 749px) {
   .fg-modal__dialog { padding: 4rem 2rem 2.4rem; width: 95%; }

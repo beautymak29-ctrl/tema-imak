@@ -75,21 +75,46 @@
           {%- else -%}
             <h2 class="fg-modal__heading">{{ block.settings.heading | escape }}</h2>
           {%- endif -%}
-          {%- if block.settings.modal_image_1 != blank or block.settings.modal_image_2 != blank or block.settings.modal_image_3 != blank -%}
-            <div class="fg-modal__images">
+          {%- comment -%} Par 1: descripción + imagen {%- endcomment -%}
+          {%- if block.settings.modal_description != blank or block.settings.modal_image_1 != blank -%}
+            <div class="fg-modal__pair">
+              {%- if block.settings.modal_description != blank -%}
+                <div class="fg-modal__text rte">{{ block.settings.modal_description }}</div>
+              {%- endif -%}
               {%- if block.settings.modal_image_1 != blank -%}
-                {{ block.settings.modal_image_1 | image_url: width: 900 | image_tag: loading: 'lazy', class: 'fg-modal__img', alt: block.settings.modal_image_1.alt | default: block.settings.heading }}
-              {%- endif -%}
-              {%- if block.settings.modal_image_2 != blank -%}
-                {{ block.settings.modal_image_2 | image_url: width: 900 | image_tag: loading: 'lazy', class: 'fg-modal__img', alt: block.settings.modal_image_2.alt | default: block.settings.heading }}
-              {%- endif -%}
-              {%- if block.settings.modal_image_3 != blank -%}
-                {{ block.settings.modal_image_3 | image_url: width: 900 | image_tag: loading: 'lazy', class: 'fg-modal__img', alt: block.settings.modal_image_3.alt | default: block.settings.heading }}
+                <div class="fg-modal__pair-img-wrap">
+                  {{ block.settings.modal_image_1 | image_url: width: 900 | image_tag: loading: 'lazy', class: 'fg-modal__pair-img', alt: block.settings.modal_image_1.alt | default: block.settings.heading }}
+                </div>
               {%- endif -%}
             </div>
           {%- endif -%}
-          {%- if block.settings.modal_description != blank -%}
-            <div class="fg-modal__text rte">{{ block.settings.modal_description }}</div>
+
+          {%- comment -%} Par 2: descripción + imagen {%- endcomment -%}
+          {%- if block.settings.modal_description_2 != blank or block.settings.modal_image_2 != blank -%}
+            <div class="fg-modal__pair">
+              {%- if block.settings.modal_description_2 != blank -%}
+                <div class="fg-modal__text rte">{{ block.settings.modal_description_2 }}</div>
+              {%- endif -%}
+              {%- if block.settings.modal_image_2 != blank -%}
+                <div class="fg-modal__pair-img-wrap">
+                  {{ block.settings.modal_image_2 | image_url: width: 900 | image_tag: loading: 'lazy', class: 'fg-modal__pair-img', alt: block.settings.modal_image_2.alt | default: block.settings.heading }}
+                </div>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+
+          {%- comment -%} Par 3: descripción + imagen {%- endcomment -%}
+          {%- if block.settings.modal_description_3 != blank or block.settings.modal_image_3 != blank -%}
+            <div class="fg-modal__pair">
+              {%- if block.settings.modal_description_3 != blank -%}
+                <div class="fg-modal__text rte">{{ block.settings.modal_description_3 }}</div>
+              {%- endif -%}
+              {%- if block.settings.modal_image_3 != blank -%}
+                <div class="fg-modal__pair-img-wrap">
+                  {{ block.settings.modal_image_3 | image_url: width: 900 | image_tag: loading: 'lazy', class: 'fg-modal__pair-img', alt: block.settings.modal_image_3.alt | default: block.settings.heading }}
+                </div>
+              {%- endif -%}
+            </div>
           {%- endif -%}
           {%- if block.settings.link != blank -%}
             <a href="{{ block.settings.link }}" class="btn fg-modal__cta">{{ block.settings.link_label | default: 'Más información' | escape }}</a>
@@ -174,9 +199,13 @@
         { "type": "image_picker", "id": "image", "label": "Imagen de la tarjeta" },
         { "type": "header", "content": "Modal - Mas informacion" },
         { "type": "text", "id": "modal_heading", "label": "Titulo del modal (deja vacio para usar el titulo de la tarjeta)" },
-        { "type": "richtext", "id": "modal_description", "label": "Descripcion" },
+        { "type": "richtext", "id": "modal_description", "label": "Descripcion 1" },
         { "type": "image_picker", "id": "modal_image_1", "label": "Imagen 1" },
+        { "type": "header", "content": "Par 2" },
+        { "type": "richtext", "id": "modal_description_2", "label": "Descripcion 2" },
         { "type": "image_picker", "id": "modal_image_2", "label": "Imagen 2" },
+        { "type": "header", "content": "Par 3" },
+        { "type": "richtext", "id": "modal_description_3", "label": "Descripcion 3" },
         { "type": "image_picker", "id": "modal_image_3", "label": "Imagen 3" },
         { "type": "url", "id": "link", "label": "Enlace del boton" },
         { "type": "text", "id": "link_label", "label": "Texto del boton", "default": "Mas informacion" }
