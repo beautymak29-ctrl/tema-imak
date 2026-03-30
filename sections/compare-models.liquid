@@ -23,6 +23,27 @@
     </div>
 
   </div>
+
+  {%- comment -%} Datos de imágenes por color — configurables desde el editor de tema {%- endcomment -%}
+  <div id="cmp-model-imgs-{{ section.id }}" hidden>
+    {%- for block in section.blocks -%}
+      <div data-model="{{ block.settings.model_key | escape }}" {{ block.shopify_attributes }}>
+        {%- for i in (1..5) -%}
+          {%- assign cn = 'color_' | append: i | append: '_name' -%}
+          {%- assign ch = 'color_' | append: i | append: '_hex' -%}
+          {%- assign ci = 'color_' | append: i | append: '_image' -%}
+          {%- if block.settings[cn] != blank -%}
+            <span
+              data-cname="{{ block.settings[cn] | escape }}"
+              data-chex="{{ block.settings[ch] | default: '#86868b' | escape }}"
+              data-cimg="{%- if block.settings[ci] != blank -%}{{ block.settings[ci] | image_url: width: 800 }}{%- endif -%}"
+            ></span>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- endfor -%}
+  </div>
+
 </section>
 
 <script>
@@ -627,6 +648,25 @@
   var selB = document.getElementById('cmp-select-b');
   var table = document.getElementById('cmp-table');
 
+  // Lee imágenes y colores configurados en el editor de tema y los fusiona con los datos hardcoded
+  document.querySelectorAll('#cmp-model-imgs-{{ section.id }} [data-model]').forEach(function(el) {
+    var modelName = el.getAttribute('data-model');
+    if (!models[modelName]) return;
+    var colors = [], colorHex = [], colorImgs = [];
+    el.querySelectorAll('[data-cname]').forEach(function(s) {
+      colors.push(s.getAttribute('data-cname'));
+      colorHex.push(s.getAttribute('data-chex') || '#86868b');
+      colorImgs.push(s.getAttribute('data-cimg') || '');
+    });
+    if (colors.length > 0) {
+      models[modelName].colors    = colors;
+      models[modelName].colorHex  = colorHex;
+      models[modelName].colorImgs = colorImgs;
+    }
+  });
+
+  function escAttr(str) { return String(str).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;'); }
+
   function populateOptions() {
     var valA = selA.value;
     var valB = selB.value;
@@ -697,20 +737,65 @@
   }
 
   function buildHeader(name, model) {
+    var firstImg = model.colorImgs && model.colorImgs[0] ? model.colorImgs[0] : '';
     var h = '<div class="cmp-col-header">';
+    h += '<div class="cmp-col-header__img-wrap">';
+    if (firstImg) {
+      h += '<img class="cmp-col-header__img" src="' + firstImg + '" alt="' + escAttr(name) + '" loading="lazy">';
+    }
+    h += '</div>';
     h += '<h3 class="cmp-col-header__name">' + name + '</h3>';
     h += '<div class="cmp-col-header__colors">';
     model.colors.forEach(function(c, i) {
-      h += '<span class="cmp-col-header__swatch" style="background:' + model.colorHex[i] + ';" title="' + c + '"></span>';
+      var img = model.colorImgs && model.colorImgs[i] ? model.colorImgs[i] : '';
+      h += '<button type="button" class="cmp-col-header__swatch' + (i === 0 ? ' is-active' : '') + '"'
+        + ' style="background:' + model.colorHex[i] + ';"'
+        + ' title="' + escAttr(c) + '"'
+        + ' data-img="' + escAttr(img) + '"'
+        + ' data-color-name="' + escAttr(c) + '"'
+        + '></button>';
     });
     h += '</div>';
-    h += '<a href="#" class="cmp-col-header__btn">Más información</a>';
+    h += '<p class="cmp-col-header__color-label">' + escAttr(model.colors[0] || '') + '</p>';
     h += '</div>';
     return h;
   }
 
   selA.addEventListener('change', function() { populateOptions(); render(); });
   selB.addEventListener('change', function() { populateOptions(); render(); });
+
+  table.addEventListener('click', function(e) {
+    var swatch = e.target.closest && e.target.closest('.cmp-col-header__swatch');
+    if (!swatch) return;
+    var header = swatch.closest('.cmp-col-header');
+    if (!header) return;
+    // Actualizar swatch activo
+    header.querySelectorAll('.cmp-col-header__swatch').forEach(function(s) { s.classList.remove('is-active'); });
+    swatch.classList.add('is-active');
+    // Cambiar imagen
+    var newSrc = swatch.getAttribute('data-img');
+    if (newSrc) {
+      var imgEl = header.querySelector('.cmp-col-header__img');
+      if (imgEl) {
+        imgEl.style.opacity = '0';
+        imgEl.src = newSrc;
+        imgEl.onload = function() { imgEl.style.opacity = '1'; };
+      } else {
+        var wrap = header.querySelector('.cmp-col-header__img-wrap');
+        if (wrap) {
+          var newImg = document.createElement('img');
+          newImg.className = 'cmp-col-header__img';
+          newImg.src = newSrc;
+          newImg.alt = (header.querySelector('.cmp-col-header__name') || {}).textContent || '';
+          newImg.loading = 'lazy';
+          wrap.appendChild(newImg);
+        }
+      }
+    }
+    // Actualizar etiqueta de color
+    var label = header.querySelector('.cmp-col-header__color-label');
+    if (label) label.textContent = swatch.getAttribute('data-color-name') || '';
+  });
 
   populateOptions();
 })();
@@ -729,9 +814,55 @@
       "default": "Compara los modelos de iPhone."
     }
   ],
+  "blocks": [
+    {
+      "type": "model",
+      "name": "Modelo",
+      "settings": [
+        {
+          "type": "select",
+          "id": "model_key",
+          "label": "Modelo",
+          "options": [
+            { "value": "iPhone 17 Pro Max", "label": "iPhone 17 Pro Max" },
+            { "value": "iPhone 17 Pro",     "label": "iPhone 17 Pro" },
+            { "value": "iPhone 17",         "label": "iPhone 17" },
+            { "value": "iPhone 16",         "label": "iPhone 16" }
+          ],
+          "default": "iPhone 17 Pro Max"
+        },
+        { "type": "header", "content": "Color 1" },
+        { "type": "text",         "id": "color_1_name",  "label": "Nombre" },
+        { "type": "text",         "id": "color_1_hex",   "label": "Hex del color (ej. #e87a5a)" },
+        { "type": "image_picker", "id": "color_1_image", "label": "Imagen" },
+        { "type": "header", "content": "Color 2" },
+        { "type": "text",         "id": "color_2_name",  "label": "Nombre" },
+        { "type": "text",         "id": "color_2_hex",   "label": "Hex del color" },
+        { "type": "image_picker", "id": "color_2_image", "label": "Imagen" },
+        { "type": "header", "content": "Color 3" },
+        { "type": "text",         "id": "color_3_name",  "label": "Nombre" },
+        { "type": "text",         "id": "color_3_hex",   "label": "Hex del color" },
+        { "type": "image_picker", "id": "color_3_image", "label": "Imagen" },
+        { "type": "header", "content": "Color 4" },
+        { "type": "text",         "id": "color_4_name",  "label": "Nombre" },
+        { "type": "text",         "id": "color_4_hex",   "label": "Hex del color" },
+        { "type": "image_picker", "id": "color_4_image", "label": "Imagen" },
+        { "type": "header", "content": "Color 5" },
+        { "type": "text",         "id": "color_5_name",  "label": "Nombre" },
+        { "type": "text",         "id": "color_5_hex",   "label": "Hex del color" },
+        { "type": "image_picker", "id": "color_5_image", "label": "Imagen" }
+      ]
+    }
+  ],
   "presets": [
     {
-      "name": "Comparar modelos"
+      "name": "Comparar modelos",
+      "blocks": [
+        { "type": "model" },
+        { "type": "model" },
+        { "type": "model" },
+        { "type": "model" }
+      ]
     }
   ]
 }
