@@ -1,0 +1,21 @@
+{
+  "sections": {
+    "main-contact": {
+      "type": "main-contact",
+      "settings": {
+        "title": "Contáctanos",
+        "subtitle": "Estamos aquí para ayudarte. Escríbenos y te respondemos a la brevedad.",
+        "show_info": true,
+        "info_heading": "Información de contacto",
+        "address": "Av. Reforma 123, Ciudad de México, México",
+        "phone": "+52 55 1234 5678",
+        "email": "hola@imak.mx",
+        "hours": "Lunes a viernes: 9:00 – 18:00\nSábado: 10:00 – 14:00",
+        "show_map": false,
+        "map_embed_url": "",
+        "success_message": "¡Gracias por tu mensaje! Te responderemos pronto."
+      }
+    }
+  },
+  "order": ["main-contact"]
+}

@@ -1,0 +1,277 @@
+<section class="ct-section section-{{ section.id }}">
+  <div class="page-width">
+
+    {%- if section.settings.title != blank -%}
+      <header class="ct-header">
+        <h1 class="ct-header__title">{{ section.settings.title | escape }}</h1>
+        {%- if section.settings.subtitle != blank -%}
+          <p class="ct-header__subtitle">{{ section.settings.subtitle | escape }}</p>
+        {%- endif -%}
+      </header>
+    {%- endif -%}
+
+    <div class="ct-body{% unless section.settings.show_info %} ct-body--form-only{% endunless %}">
+
+      {%- comment -%} ── Información de contacto ── {%- endcomment -%}
+      {%- if section.settings.show_info -%}
+        <aside class="ct-info">
+          {%- if section.settings.info_heading != blank -%}
+            <h2 class="ct-info__heading">{{ section.settings.info_heading | escape }}</h2>
+          {%- endif -%}
+
+          <ul class="ct-info__list">
+
+            {%- if section.settings.address != blank -%}
+              <li class="ct-info__item">
+                <span class="ct-info__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2a6 6 0 0 1 6 6c0 4-6 10-6 10S4 12 4 8a6 6 0 0 1 6-6zm0 2a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm0 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z" fill="currentColor"/></svg>
+                </span>
+                <div class="ct-info__text">
+                  <span class="ct-info__label">Dirección</span>
+                  <span class="ct-info__value">{{ section.settings.address | escape | newline_to_br }}</span>
+                </div>
+              </li>
+            {%- endif -%}
+
+            {%- if section.settings.phone != blank -%}
+              <li class="ct-info__item">
+                <span class="ct-info__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 3h3l1.5 4-2 1.5a10 10 0 0 0 5 5L13 11.5l4 1.5v3a1 1 0 0 1-1 1C6.5 17 3 9.5 3 4a1 1 0 0 1 1-1z" fill="currentColor"/></svg>
+                </span>
+                <div class="ct-info__text">
+                  <span class="ct-info__label">Teléfono</span>
+                  <a class="ct-info__value ct-info__value--link" href="tel:{{ section.settings.phone | remove: ' ' }}">{{ section.settings.phone | escape }}</a>
+                </div>
+              </li>
+            {%- endif -%}
+
+            {%- if section.settings.email != blank -%}
+              <li class="ct-info__item">
+                <span class="ct-info__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5zm2 0v.01L10 11 15 5H5zm0 2.35V15h10V7.35l-5 4.35-5-4.35z" fill="currentColor"/></svg>
+                </span>
+                <div class="ct-info__text">
+                  <span class="ct-info__label">Correo</span>
+                  <a class="ct-info__value ct-info__value--link" href="mailto:{{ section.settings.email | escape }}">{{ section.settings.email | escape }}</a>
+                </div>
+              </li>
+            {%- endif -%}
+
+            {%- if section.settings.hours != blank -%}
+              <li class="ct-info__item">
+                <span class="ct-info__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="2"/><path d="M10 6v4l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </span>
+                <div class="ct-info__text">
+                  <span class="ct-info__label">Horario</span>
+                  <span class="ct-info__value">{{ section.settings.hours | escape | newline_to_br }}</span>
+                </div>
+              </li>
+            {%- endif -%}
+
+          </ul>
+
+          {%- if section.settings.show_map and section.settings.map_embed_url != blank -%}
+            <div class="ct-map">
+              <iframe
+                src="{{ section.settings.map_embed_url | escape }}"
+                width="100%"
+                height="240"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Ubicación"
+              ></iframe>
+            </div>
+          {%- endif -%}
+
+        </aside>
+      {%- endif -%}
+
+      {%- comment -%} ── Formulario de contacto ── {%- endcomment -%}
+      <div class="ct-form-wrap">
+        {%- form 'contact' -%}
+
+          {%- if form.posted_successfully? -%}
+            <div class="ct-form__success" role="alert">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#34c759"/><path d="M7 12l4 4 6-7" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <p>{{ section.settings.success_message | escape }}</p>
+            </div>
+          {%- else -%}
+
+            {%- if form.errors -%}
+              <div class="ct-form__errors" role="alert">
+                <p>{{ form.errors | default_errors }}</p>
+              </div>
+            {%- endif -%}
+
+            <div class="ct-form__row ct-form__row--half">
+              <div class="ct-form__field">
+                <label for="ct-name-{{ section.id }}" class="ct-form__label">Nombre</label>
+                <input
+                  type="text"
+                  id="ct-name-{{ section.id }}"
+                  name="contact[name]"
+                  value="{{ form.name }}"
+                  autocomplete="name"
+                  class="ct-form__input"
+                  placeholder="Tu nombre"
+                  required
+                >
+              </div>
+              <div class="ct-form__field">
+                <label for="ct-email-{{ section.id }}" class="ct-form__label">Correo electrónico</label>
+                <input
+                  type="email"
+                  id="ct-email-{{ section.id }}"
+                  name="contact[email]"
+                  value="{{ form.email }}"
+                  autocomplete="email"
+                  class="ct-form__input"
+                  placeholder="tu@correo.com"
+                  required
+                >
+              </div>
+            </div>
+
+            <div class="ct-form__field">
+              <label for="ct-phone-{{ section.id }}" class="ct-form__label">Teléfono <span class="ct-form__optional">(opcional)</span></label>
+              <input
+                type="tel"
+                id="ct-phone-{{ section.id }}"
+                name="contact[phone]"
+                autocomplete="tel"
+                class="ct-form__input"
+                placeholder="+52 55 0000 0000"
+              >
+            </div>
+
+            <div class="ct-form__field">
+              <label for="ct-subject-{{ section.id }}" class="ct-form__label">Asunto</label>
+              <select id="ct-subject-{{ section.id }}" name="contact[subject]" class="ct-form__select">
+                <option value="">Selecciona un tema</option>
+                <option value="Compra">Compra o pedido</option>
+                <option value="Garantia">Garantía o devolución</option>
+                <option value="Soporte">Soporte técnico</option>
+                <option value="Otro">Otro</option>
+              </select>
+            </div>
+
+            <div class="ct-form__field">
+              <label for="ct-message-{{ section.id }}" class="ct-form__label">Mensaje</label>
+              <textarea
+                id="ct-message-{{ section.id }}"
+                name="contact[body]"
+                rows="6"
+                class="ct-form__textarea"
+                placeholder="¿En qué podemos ayudarte?"
+                required
+              >{{ form.body }}</textarea>
+            </div>
+
+            <div class="ct-form__actions">
+              <button type="submit" class="btn ct-form__submit">Enviar mensaje</button>
+            </div>
+
+          {%- endif -%}
+        {%- endform -%}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Página de contacto",
+  "tag": "section",
+  "class": "section-main-contact",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Encabezado"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título",
+      "default": "Contáctanos"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtítulo",
+      "default": "Estamos aquí para ayudarte. Escríbenos y te respondemos a la brevedad."
+    },
+    {
+      "type": "header",
+      "content": "Información de contacto"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_info",
+      "label": "Mostrar información de contacto",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "info_heading",
+      "label": "Título del bloque de info",
+      "default": "Información de contacto"
+    },
+    {
+      "type": "text",
+      "id": "address",
+      "label": "Dirección"
+    },
+    {
+      "type": "text",
+      "id": "phone",
+      "label": "Teléfono"
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Correo electrónico"
+    },
+    {
+      "type": "textarea",
+      "id": "hours",
+      "label": "Horario de atención",
+      "default": "Lunes a viernes: 9:00 – 18:00\nSábado: 10:00 – 14:00"
+    },
+    {
+      "type": "header",
+      "content": "Mapa"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_map",
+      "label": "Mostrar mapa",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "map_embed_url",
+      "label": "URL del iframe de Google Maps",
+      "info": "En Google Maps → Compartir → Insertar un mapa → copia solo la URL del src"
+    },
+    {
+      "type": "header",
+      "content": "Formulario"
+    },
+    {
+      "type": "text",
+      "id": "success_message",
+      "label": "Mensaje de éxito",
+      "default": "¡Gracias por tu mensaje! Te responderemos pronto."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Página de contacto"
+    }
+  ]
+}
+{% endschema %}

@@ -95,43 +95,55 @@
           {%- assign pf_product = block.settings.product -%}
           <div class="fg-modal__content" id="pf-modal-content-{{ block.id }}" hidden>
 
-            {%- if block.settings.modal_heading != blank -%}
-              <h2 class="fg-modal__heading">{{ block.settings.modal_heading | escape }}</h2>
-            {%- elsif pf_product != blank -%}
-              <h2 class="fg-modal__heading">{{ pf_product.title | escape }}</h2>
-            {%- elsif block.settings.card_title != blank -%}
-              <h2 class="fg-modal__heading">{{ block.settings.card_title | escape }}</h2>
-            {%- endif -%}
-
-            {%- assign has_modal_img = false -%}
-            {%- if block.settings.modal_image_1 != blank or block.settings.modal_image_2 != blank or block.settings.modal_image_3 != blank -%}
-              {%- assign has_modal_img = true -%}
-            {%- endif -%}
-
-            {%- if has_modal_img -%}
-              <div class="fg-modal__images">
-                {%- if block.settings.modal_image_1 != blank -%}
-                  {{ block.settings.modal_image_1 | image_url: width: 900 | image_tag: loading: 'lazy', class: 'fg-modal__img', alt: block.settings.modal_image_1.alt | default: block.settings.modal_heading }}
+            {%- comment -%} Grupo 1 {%- endcomment -%}
+            {%- if block.settings.modal_title_1 != blank or block.settings.modal_desc_1 != blank or block.settings.modal_img_1 != blank -%}
+              <div class="pf-modal__group">
+                {%- if block.settings.modal_title_1 != blank -%}
+                  <h3 class="pf-modal__group-title">{{ block.settings.modal_title_1 | escape }}</h3>
                 {%- endif -%}
-                {%- if block.settings.modal_image_2 != blank -%}
-                  {{ block.settings.modal_image_2 | image_url: width: 900 | image_tag: loading: 'lazy', class: 'fg-modal__img', alt: block.settings.modal_image_2.alt | default: block.settings.modal_heading }}
+                {%- if block.settings.modal_desc_1 != blank -%}
+                  <div class="pf-modal__group-desc rte">{{ block.settings.modal_desc_1 }}</div>
                 {%- endif -%}
-                {%- if block.settings.modal_image_3 != blank -%}
-                  {{ block.settings.modal_image_3 | image_url: width: 900 | image_tag: loading: 'lazy', class: 'fg-modal__img', alt: block.settings.modal_image_3.alt | default: block.settings.modal_heading }}
+                {%- if block.settings.modal_img_1 != blank -%}
+                  <div class="pf-modal__group-img-wrap">
+                    {{ block.settings.modal_img_1 | image_url: width: 900 | image_tag: loading: 'lazy', class: 'pf-modal__group-img', alt: block.settings.modal_img_1.alt | default: block.settings.modal_title_1 }}
+                  </div>
                 {%- endif -%}
               </div>
-            {%- elsif pf_product != blank and pf_product.images.size > 0 -%}
-              <div class="fg-modal__images">
-                {%- for img in pf_product.images limit: 3 -%}
-                  {{ img | image_url: width: 900 | image_tag: loading: 'lazy', class: 'fg-modal__img', alt: img.alt | default: pf_product.title }}
-                {%- endfor -%}
+            {%- endif -%}
+
+            {%- comment -%} Grupo 2 {%- endcomment -%}
+            {%- if block.settings.modal_title_2 != blank or block.settings.modal_desc_2 != blank or block.settings.modal_img_2 != blank -%}
+              <div class="pf-modal__group">
+                {%- if block.settings.modal_title_2 != blank -%}
+                  <h3 class="pf-modal__group-title">{{ block.settings.modal_title_2 | escape }}</h3>
+                {%- endif -%}
+                {%- if block.settings.modal_desc_2 != blank -%}
+                  <div class="pf-modal__group-desc rte">{{ block.settings.modal_desc_2 }}</div>
+                {%- endif -%}
+                {%- if block.settings.modal_img_2 != blank -%}
+                  <div class="pf-modal__group-img-wrap">
+                    {{ block.settings.modal_img_2 | image_url: width: 900 | image_tag: loading: 'lazy', class: 'pf-modal__group-img', alt: block.settings.modal_img_2.alt | default: block.settings.modal_title_2 }}
+                  </div>
+                {%- endif -%}
               </div>
             {%- endif -%}
 
-            {%- if block.settings.modal_description != blank -%}
-              <div class="fg-modal__text rte">{{ block.settings.modal_description }}</div>
-            {%- elsif pf_product != blank and pf_product.description != blank -%}
-              <div class="fg-modal__text rte">{{ pf_product.description }}</div>
+            {%- comment -%} Grupo 3 {%- endcomment -%}
+            {%- if block.settings.modal_title_3 != blank or block.settings.modal_desc_3 != blank or block.settings.modal_img_3 != blank -%}
+              <div class="pf-modal__group">
+                {%- if block.settings.modal_title_3 != blank -%}
+                  <h3 class="pf-modal__group-title">{{ block.settings.modal_title_3 | escape }}</h3>
+                {%- endif -%}
+                {%- if block.settings.modal_desc_3 != blank -%}
+                  <div class="pf-modal__group-desc rte">{{ block.settings.modal_desc_3 }}</div>
+                {%- endif -%}
+                {%- if block.settings.modal_img_3 != blank -%}
+                  <div class="pf-modal__group-img-wrap">
+                    {{ block.settings.modal_img_3 | image_url: width: 900 | image_tag: loading: 'lazy', class: 'pf-modal__group-img', alt: block.settings.modal_img_3.alt | default: block.settings.modal_title_3 }}
+                  </div>
+                {%- endif -%}
+              </div>
             {%- endif -%}
 
             {%- assign modal_link = block.settings.modal_link -%}
@@ -250,32 +262,64 @@
         },
         {
           "type": "header",
-          "content": "Modal — Más información"
+          "content": "Modal — Sección 1"
         },
         {
           "type": "text",
-          "id": "modal_heading",
-          "label": "Título del modal"
+          "id": "modal_title_1",
+          "label": "Título sección 1"
         },
         {
           "type": "richtext",
-          "id": "modal_description",
-          "label": "Descripción del modal"
+          "id": "modal_desc_1",
+          "label": "Descripción sección 1"
         },
         {
           "type": "image_picker",
-          "id": "modal_image_1",
-          "label": "Imagen del modal 1"
+          "id": "modal_img_1",
+          "label": "Imagen sección 1"
+        },
+        {
+          "type": "header",
+          "content": "Modal — Sección 2"
+        },
+        {
+          "type": "text",
+          "id": "modal_title_2",
+          "label": "Título sección 2"
+        },
+        {
+          "type": "richtext",
+          "id": "modal_desc_2",
+          "label": "Descripción sección 2"
         },
         {
           "type": "image_picker",
-          "id": "modal_image_2",
-          "label": "Imagen del modal 2"
+          "id": "modal_img_2",
+          "label": "Imagen sección 2"
+        },
+        {
+          "type": "header",
+          "content": "Modal — Sección 3"
+        },
+        {
+          "type": "text",
+          "id": "modal_title_3",
+          "label": "Título sección 3"
+        },
+        {
+          "type": "richtext",
+          "id": "modal_desc_3",
+          "label": "Descripción sección 3"
         },
         {
           "type": "image_picker",
-          "id": "modal_image_3",
-          "label": "Imagen del modal 3"
+          "id": "modal_img_3",
+          "label": "Imagen sección 3"
+        },
+        {
+          "type": "header",
+          "content": "Botón del modal"
         },
         {
           "type": "url",
