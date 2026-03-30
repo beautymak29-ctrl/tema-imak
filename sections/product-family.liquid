@@ -24,6 +24,7 @@
                   {{ block.settings.card_image | image_url: width: 680 | image_tag:
                     loading: 'lazy',
                     widths: '340, 500, 680',
+                    sizes: '(max-width: 749px) 100vw, (max-width: 989px) 50vw, 25vw',
                     class: 'pf-tile__image',
                     alt: block.settings.card_image.alt | default: block.settings.card_title
                   }}
@@ -31,6 +32,7 @@
                   {{ pf_product.featured_image | image_url: width: 680 | image_tag:
                     loading: 'lazy',
                     widths: '340, 500, 680',
+                    sizes: '(max-width: 749px) 100vw, (max-width: 989px) 50vw, 25vw',
                     class: 'pf-tile__image',
                     alt: pf_product.featured_image.alt | default: pf_product.title
                   }}

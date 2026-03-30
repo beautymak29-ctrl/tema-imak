@@ -40,6 +40,22 @@
 
     {%- render 'meta-tags' -%}
 
+    {%- comment -%} Preload de la imagen hero para reducir LCP {%- endcomment -%}
+    {%- if request.page_type == 'index' -%}
+      {%- for section_id in template.sections -%}
+        {%- assign s = sections[section_id] -%}
+        {%- if s.type == 'hero-banner' and s.settings.image != blank -%}
+          <link rel="preload" as="image"
+            href="{{ s.settings.image | image_url: width: 1500 }}"
+            imagesrcset="{{ s.settings.image | image_url: width: 750 }} 750w,
+                         {{ s.settings.image | image_url: width: 1100 }} 1100w,
+                         {{ s.settings.image | image_url: width: 1500 }} 1500w"
+            imagesizes="100vw"
+          >
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
+
     {{ content_for_header }}
 
     {%- render 'font-variables' -%}

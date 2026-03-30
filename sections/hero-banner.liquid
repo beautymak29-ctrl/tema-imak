@@ -7,11 +7,17 @@
   {%- if section.settings.image != blank -%}
     <div class="hero__media">
       <img
+        srcset="{{ section.settings.image | image_url: width: 750 }} 750w,
+                {{ section.settings.image | image_url: width: 1100 }} 1100w,
+                {{ section.settings.image | image_url: width: 1500 }} 1500w,
+                {{ section.settings.image | image_url: width: 1800 }} 1800w"
+        sizes="100vw"
         src="{{ section.settings.image | image_url: width: 1500 }}"
         alt="{{ section.settings.image.alt | escape }}"
-        width="1500"
-        height="auto"
-        loading="lazy"
+        width="{{ section.settings.image.width }}"
+        height="{{ section.settings.image.height }}"
+        loading="eager"
+        fetchpriority="high"
         class="hero__image"
       >
     </div>
