@@ -49,8 +49,8 @@
         "mac_card_3": {
           "type": "product_card",
           "settings": {
-            "product": "",
-            "card_title": "iMac",
+            "product": "macbook-neo",
+            "card_title": "MacBook Neo",
             "card_description": "",
             "modal_heading": "",
             "modal_title_1": "",
