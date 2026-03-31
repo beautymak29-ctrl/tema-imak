@@ -1,0 +1,239 @@
+{
+  "sections": {
+    "product-family": {
+      "type": "product-family",
+      "blocks": {
+        "watch_card_1": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "card_image": "",
+            "card_title": "Apple Watch Ultra 2",
+            "card_description": "",
+            "modal_heading": "",
+            "modal_title_1": "",
+            "modal_desc_1": "",
+            "modal_img_1": "",
+            "modal_title_2": "",
+            "modal_desc_2": "",
+            "modal_img_2": "",
+            "modal_title_3": "",
+            "modal_desc_3": "",
+            "modal_img_3": "",
+            "modal_link": "",
+            "modal_link_label": "Ver producto"
+          }
+        },
+        "watch_card_2": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "card_image": "",
+            "card_title": "Apple Watch Series 10",
+            "card_description": "",
+            "modal_heading": "",
+            "modal_title_1": "",
+            "modal_desc_1": "",
+            "modal_img_1": "",
+            "modal_title_2": "",
+            "modal_desc_2": "",
+            "modal_img_2": "",
+            "modal_title_3": "",
+            "modal_desc_3": "",
+            "modal_img_3": "",
+            "modal_link": "",
+            "modal_link_label": "Ver producto"
+          }
+        },
+        "watch_card_3": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "card_image": "",
+            "card_title": "Apple Watch SE",
+            "card_description": "",
+            "modal_heading": "",
+            "modal_title_1": "",
+            "modal_desc_1": "",
+            "modal_img_1": "",
+            "modal_title_2": "",
+            "modal_desc_2": "",
+            "modal_img_2": "",
+            "modal_title_3": "",
+            "modal_desc_3": "",
+            "modal_img_3": "",
+            "modal_link": "",
+            "modal_link_label": "Ver producto"
+          }
+        }
+      },
+      "block_order": [
+        "watch_card_1",
+        "watch_card_2",
+        "watch_card_3"
+      ],
+      "settings": {
+        "title": "Lo más destacado.",
+        "button_label": "Más información",
+        "compare_label": "",
+        "compare_link": ""
+      }
+    },
+    "features-grid": {
+      "type": "features-grid",
+      "blocks": {
+        "watch_fg_1": {
+          "type": "feature",
+          "settings": {
+            "category": "Salud",
+            "heading": "Tu salud, en tu muñeca.",
+            "image": "",
+            "modal_heading": "",
+            "modal_description": "",
+            "modal_image_1": "",
+            "modal_description_2": "",
+            "modal_image_2": "",
+            "modal_description_3": "",
+            "modal_image_3": "",
+            "link": "",
+            "link_label": "Más información"
+          }
+        },
+        "watch_fg_2": {
+          "type": "feature",
+          "settings": {
+            "category": "Actividad física",
+            "heading": "Entrena más. Descansa mejor.",
+            "image": "",
+            "modal_heading": "",
+            "modal_description": "",
+            "modal_image_1": "",
+            "modal_description_2": "",
+            "modal_image_2": "",
+            "modal_description_3": "",
+            "modal_image_3": "",
+            "link": "",
+            "link_label": "Más información"
+          }
+        },
+        "watch_fg_3": {
+          "type": "feature",
+          "settings": {
+            "category": "Seguridad",
+            "heading": "Siempre contigo cuando más importa.",
+            "image": "",
+            "modal_heading": "",
+            "modal_description": "",
+            "modal_image_1": "",
+            "modal_description_2": "",
+            "modal_image_2": "",
+            "modal_description_3": "",
+            "modal_image_3": "",
+            "link": "",
+            "link_label": "Más información"
+          }
+        },
+        "watch_fg_4": {
+          "type": "feature",
+          "settings": {
+            "category": "Diseño",
+            "heading": "Un reloj tan único como tú.",
+            "image": "",
+            "modal_heading": "",
+            "modal_description": "",
+            "modal_image_1": "",
+            "modal_description_2": "",
+            "modal_image_2": "",
+            "modal_description_3": "",
+            "modal_image_3": "",
+            "link": "",
+            "link_label": "Más información"
+          }
+        }
+      },
+      "block_order": [
+        "watch_fg_1",
+        "watch_fg_2",
+        "watch_fg_3",
+        "watch_fg_4"
+      ],
+      "settings": {
+        "title": "Descubre el Apple Watch."
+      }
+    },
+    "accessories-showcase": {
+      "type": "accessories-showcase",
+      "blocks": {
+        "watch_ac_1": {
+          "type": "accessory",
+          "settings": {
+            "show_badge": false,
+            "badge_text": "Nuevo",
+            "name": "Correas Apple Watch",
+            "description": "Personaliza tu Apple Watch con correas de todos los estilos y materiales.",
+            "link": "",
+            "link_label": "Más información"
+          }
+        },
+        "watch_ac_2": {
+          "type": "accessory",
+          "settings": {
+            "show_badge": false,
+            "badge_text": "Nuevo",
+            "name": "Cargador MagSafe",
+            "description": "Carga tu Apple Watch de forma rápida y sencilla con el cargador magnético.",
+            "link": "",
+            "link_label": "Más información"
+          }
+        }
+      },
+      "block_order": [
+        "watch_ac_1",
+        "watch_ac_2"
+      ],
+      "settings": {
+        "title": "Personaliza tu Watch."
+      }
+    },
+    "ecosystem-tabs": {
+      "type": "ecosystem-tabs",
+      "blocks": {
+        "watch_et_1": {
+          "type": "tab",
+          "settings": {
+            "tab_label": "Watch e iPhone",
+            "text": "El Apple Watch y el iPhone trabajan juntos para mantenerte conectado, activo y saludable. Recibe notificaciones, contesta llamadas y controla tu música desde la muñeca."
+          }
+        },
+        "watch_et_2": {
+          "type": "tab",
+          "settings": {
+            "tab_label": "Watch y AirPods",
+            "text": "Controla tu música y tus llamadas directamente desde el Apple Watch sin sacar el iPhone del bolsillo."
+          }
+        },
+        "watch_et_3": {
+          "type": "tab",
+          "settings": {
+            "tab_label": "Watch y Apple Fitness+",
+            "text": "Con Apple Fitness+ y tu Apple Watch, accede a miles de entrenamientos guiados y ve tus métricas en tiempo real en pantalla."
+          }
+        }
+      },
+      "block_order": [
+        "watch_et_1",
+        "watch_et_2",
+        "watch_et_3"
+      ],
+      "settings": {
+        "title": "Siempre bien acompañado."
+      }
+    }
+  },
+  "order": [
+    "product-family",
+    "features-grid",
+    "accessories-showcase",
+    "ecosystem-tabs"
+  ]
+}

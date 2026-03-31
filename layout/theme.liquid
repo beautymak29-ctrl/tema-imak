@@ -41,7 +41,7 @@
     {%- render 'meta-tags' -%}
 
     {%- comment -%} Preload de la imagen hero para reducir LCP {%- endcomment -%}
-    {%- if template.name == 'index' or template.suffix == 'ipad' or template.suffix == 'mac' -%}
+    {%- if template.name == 'index' or template.suffix == 'ipad' or template.suffix == 'mac' or template.suffix == 'watch' -%}
       {%- assign hero_s = sections['hero-banner'] -%}
       {%- if hero_s.settings.image != blank -%}
         <link rel="preload" as="image"
@@ -148,7 +148,7 @@
     {%- sections 'header-group' -%}
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
-      {%- if template.name == 'index' or template.suffix == 'ipad' or template.suffix == 'mac' -%}
+      {%- if template.name == 'index' or template.suffix == 'ipad' or template.suffix == 'mac' or template.suffix == 'watch' -%}
         {%- section 'hero-banner' -%}
       {%- endif -%}
       {{ content_for_layout }}
