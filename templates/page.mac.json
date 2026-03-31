@@ -103,10 +103,14 @@
           "settings": {
             "category": "Chip Apple Silicon",
             "heading": "Potencia que no conoce límites.",
-            "modal_heading": "",
-            "modal_description": "",
-            "modal_description_2": "",
-            "modal_description_3": "",
+            "image": "shopify://shop_images/1_ffdf8422-8f4e-4818-81f5-2732460ac89f.jpg",
+            "modal_heading": "Rápido, pero sin prisas.",
+            "modal_description": "<p><strong>Los superpoderes de los chips de Apple. </strong>Brindan una potencia y una velocidad increíbles a la Mac. Integran CPU, GPU y Neural Engine en un único chip con una increíble eficiencia energética que acelera todo lo que haces. Y hacen posible que el excepcional rendimiento de la inteligencia artificial en la Mac potencie tu creatividad y tu productividad.</p>",
+            "modal_image_1": "shopify://shop_images/2_79bb6079-012e-42f0-932f-f95bbf775116.jpg",
+            "modal_description_2": "<p><strong>Todo el día con una sola carga. </strong>Gracias a la eficiencia de los chips de Apple, las laptops Mac ofrecen hasta 24 horas de batería con un rendimiento fuera de serie, aunque no estén conectadas a la corriente.</p>",
+            "modal_image_2": "shopify://shop_images/3_1593a5f3-83db-4fe4-ac8a-5e194d408862.jpg",
+            "modal_description_3": "<p><strong>Haz más. Hazlo mejor.</strong> <strong>Y más rápido. </strong>Desde presentaciones espectaculares para la universidad hasta sorprendentes hojas de cálculo para el trabajo, con la Mac puedes hacer todo más rápido que nunca.</p>",
+            "modal_image_3": "shopify://shop_images/4_ac20ea8e-d892-4298-aaf2-d7488026c507.jpg",
             "link": "",
             "link_label": "Más información"
           }
