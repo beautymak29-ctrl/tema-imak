@@ -9,7 +9,7 @@
     </header>
 
     <div class="pf-gallery">
-      <ul class="pf-gallery__list" role="list">
+      <ul class="pf-gallery__list pf-gallery__list--{{ section.settings.card_shape }}" role="list">
         {%- for block in section.blocks -%}
           {%- assign pf_product = block.settings.product -%}
           <li class="pf-tile" role="listitem" {{ block.shopify_attributes }}>
@@ -211,6 +211,17 @@
   "tag": "section",
   "class": "section-product-family",
   "settings": [
+    {
+      "type": "select",
+      "id": "card_shape",
+      "label": "Forma de las tarjetas",
+      "options": [
+        { "value": "portrait", "label": "Rectangular (3:4)" },
+        { "value": "square", "label": "Cuadrado (1:1)" },
+        { "value": "landscape", "label": "Horizontal (4:3)" }
+      ],
+      "default": "portrait"
+    },
     {
       "type": "text",
       "id": "title",
