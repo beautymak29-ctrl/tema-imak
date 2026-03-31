@@ -1,0 +1,274 @@
+{
+  "sections": {
+    "hero-banner": {
+      "type": "hero-banner",
+      "settings": {
+        "image": "",
+        "background_color": "#000000",
+        "subheading": "",
+        "heading": "Mac",
+        "text": "",
+        "button_label": "",
+        "button_link": ""
+      }
+    },
+    "product-family": {
+      "type": "product-family",
+      "blocks": {
+        "mac_card_1": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "card_image": "",
+            "card_title": "MacBook Air",
+            "card_description": "",
+            "modal_heading": "",
+            "modal_title_1": "",
+            "modal_desc_1": "",
+            "modal_img_1": "",
+            "modal_title_2": "",
+            "modal_desc_2": "",
+            "modal_img_2": "",
+            "modal_title_3": "",
+            "modal_desc_3": "",
+            "modal_img_3": "",
+            "modal_link": "",
+            "modal_link_label": "Ver producto"
+          }
+        },
+        "mac_card_2": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "card_image": "",
+            "card_title": "MacBook Pro",
+            "card_description": "",
+            "modal_heading": "",
+            "modal_title_1": "",
+            "modal_desc_1": "",
+            "modal_img_1": "",
+            "modal_title_2": "",
+            "modal_desc_2": "",
+            "modal_img_2": "",
+            "modal_title_3": "",
+            "modal_desc_3": "",
+            "modal_img_3": "",
+            "modal_link": "",
+            "modal_link_label": "Ver producto"
+          }
+        },
+        "mac_card_3": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "card_image": "",
+            "card_title": "iMac",
+            "card_description": "",
+            "modal_heading": "",
+            "modal_title_1": "",
+            "modal_desc_1": "",
+            "modal_img_1": "",
+            "modal_title_2": "",
+            "modal_desc_2": "",
+            "modal_img_2": "",
+            "modal_title_3": "",
+            "modal_desc_3": "",
+            "modal_img_3": "",
+            "modal_link": "",
+            "modal_link_label": "Ver producto"
+          }
+        },
+        "mac_card_4": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "card_image": "",
+            "card_title": "Mac mini",
+            "card_description": "",
+            "modal_heading": "",
+            "modal_title_1": "",
+            "modal_desc_1": "",
+            "modal_img_1": "",
+            "modal_title_2": "",
+            "modal_desc_2": "",
+            "modal_img_2": "",
+            "modal_title_3": "",
+            "modal_desc_3": "",
+            "modal_img_3": "",
+            "modal_link": "",
+            "modal_link_label": "Ver producto"
+          }
+        }
+      },
+      "block_order": [
+        "mac_card_1",
+        "mac_card_2",
+        "mac_card_3",
+        "mac_card_4"
+      ],
+      "settings": {
+        "title": "Lo más destacado.",
+        "button_label": "Más información",
+        "compare_label": "",
+        "compare_link": ""
+      }
+    },
+    "features-grid": {
+      "type": "features-grid",
+      "blocks": {
+        "mac_fg_1": {
+          "type": "feature",
+          "settings": {
+            "category": "Chip Apple Silicon",
+            "heading": "Potencia que no conoce límites.",
+            "image": "",
+            "modal_heading": "",
+            "modal_description": "",
+            "modal_image_1": "",
+            "modal_description_2": "",
+            "modal_image_2": "",
+            "modal_description_3": "",
+            "modal_image_3": "",
+            "link": "",
+            "link_label": "Más información"
+          }
+        },
+        "mac_fg_2": {
+          "type": "feature",
+          "settings": {
+            "category": "Pantalla",
+            "heading": "Cada pixel, una obra de arte.",
+            "image": "",
+            "modal_heading": "",
+            "modal_description": "",
+            "modal_image_1": "",
+            "modal_description_2": "",
+            "modal_image_2": "",
+            "modal_description_3": "",
+            "modal_image_3": "",
+            "link": "",
+            "link_label": "Más información"
+          }
+        },
+        "mac_fg_3": {
+          "type": "feature",
+          "settings": {
+            "category": "Batería",
+            "heading": "Todo el día. Y más.",
+            "image": "",
+            "modal_heading": "",
+            "modal_description": "",
+            "modal_image_1": "",
+            "modal_description_2": "",
+            "modal_image_2": "",
+            "modal_description_3": "",
+            "modal_image_3": "",
+            "link": "",
+            "link_label": "Más información"
+          }
+        },
+        "mac_fg_4": {
+          "type": "feature",
+          "settings": {
+            "category": "macOS y Apple Intelligence",
+            "heading": "El sistema operativo más avanzado.",
+            "image": "",
+            "modal_heading": "",
+            "modal_description": "",
+            "modal_image_1": "",
+            "modal_description_2": "",
+            "modal_image_2": "",
+            "modal_description_3": "",
+            "modal_image_3": "",
+            "link": "",
+            "link_label": "Más información"
+          }
+        }
+      },
+      "block_order": [
+        "mac_fg_1",
+        "mac_fg_2",
+        "mac_fg_3",
+        "mac_fg_4"
+      ],
+      "settings": {
+        "title": "Descubre la Mac."
+      }
+    },
+    "accessories-showcase": {
+      "type": "accessories-showcase",
+      "blocks": {
+        "mac_ac_1": {
+          "type": "accessory",
+          "settings": {
+            "show_badge": false,
+            "badge_text": "Nuevo",
+            "name": "Magic Keyboard",
+            "description": "El teclado perfecto para tu Mac. Con Touch ID integrado.",
+            "link": "",
+            "link_label": "Más información"
+          }
+        },
+        "mac_ac_2": {
+          "type": "accessory",
+          "settings": {
+            "show_badge": false,
+            "badge_text": "Nuevo",
+            "name": "Magic Mouse",
+            "description": "Diseño elegante y superficie Multi-Touch para navegar con fluidez.",
+            "link": "",
+            "link_label": "Más información"
+          }
+        }
+      },
+      "block_order": [
+        "mac_ac_1",
+        "mac_ac_2"
+      ],
+      "settings": {
+        "title": "Consiente a tu Mac."
+      }
+    },
+    "ecosystem-tabs": {
+      "type": "ecosystem-tabs",
+      "blocks": {
+        "mac_et_1": {
+          "type": "tab",
+          "settings": {
+            "tab_label": "Mac e iPhone",
+            "text": "Con Duplicación del iPhone puedes ver y controlar tu iPhone desde la Mac. Continuidad te permite copiar en un dispositivo y pegar en el otro al instante."
+          }
+        },
+        "mac_et_2": {
+          "type": "tab",
+          "settings": {
+            "tab_label": "Mac e iPad",
+            "text": "Con Sidecar convierte tu iPad en una segunda pantalla para tu Mac, de forma inalámbrica o con cable."
+          }
+        },
+        "mac_et_3": {
+          "type": "tab",
+          "settings": {
+            "tab_label": "Mac y AirPods",
+            "text": "Los AirPods se conectan automáticamente a tu Mac cuando los necesitas. Audio espacial y cancelación de ruido incluidos."
+          }
+        }
+      },
+      "block_order": [
+        "mac_et_1",
+        "mac_et_2",
+        "mac_et_3"
+      ],
+      "settings": {
+        "title": "Siempre bien acompañado."
+      }
+    }
+  },
+  "order": [
+    "hero-banner",
+    "product-family",
+    "features-grid",
+    "accessories-showcase",
+    "ecosystem-tabs"
+  ]
+}
