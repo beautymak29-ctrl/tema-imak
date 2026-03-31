@@ -153,11 +153,15 @@
           "type": "feature",
           "settings": {
             "category": "macOS y Apple Intelligence",
-            "heading": "El sistema operativo más avanzado.",
-            "modal_heading": "",
-            "modal_description": "",
-            "modal_description_2": "",
-            "modal_description_3": "",
+            "heading": "Trabajan increíblemente en equipo.",
+            "image": "shopify://shop_images/Captura_de_pantalla_2026-03-31_a_la_s_6.26.45_p._m..png",
+            "modal_heading": "Trabajan increíblemente en equipo.",
+            "modal_description": "<p><strong>Usa tu iPhone desde tu Mac. </strong>Duplicación de iPhone te permite ver y controlar el contenido de tu iPhone desde tu Mac.Footnote 55 Y ahora también puedes ver las Actividades en Vivo del iPhone en la Mac. Ya no necesitas estar todo el día al lado de tu teléfono para estar al tanto de lo que pasa.</p>",
+            "modal_image_1": "shopify://shop_images/2_f6569193-f348-4de8-9a07-d0e473a1f4ce.jpg",
+            "modal_description_2": "<p>Llama y envía mensajes desde tu Mac. Con la app Teléfono, puedes hacer o contestar llamadas directamente desde tu Mac. Y los mensajes que aparecen en tu iPhone también aparecen en la Mac. Así podrás ver tus conversaciones en todos tus dispositivos.</p>",
+            "modal_image_2": "shopify://shop_images/3_b9d62ccb-c171-4927-b79a-b42a8d0c59c3.jpg",
+            "modal_description_3": "<p><strong>Empieza aquí. Termina allá. </strong>Empieza a escribir un email en tu iPhone y termínalo en la Mac. Cuando tu Mac y tu iPhone están cerca, puedes transferir automáticamente lo que estás haciendo de un dispositivo a otro con Handoff.Footnote 77</p>",
+            "modal_image_3": "shopify://shop_images/4_3bfd722e-0e8f-4320-ba49-4690ffd48654.jpg",
             "link": "",
             "link_label": "Más información"
           }
