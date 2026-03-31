@@ -1,0 +1,274 @@
+{
+  "sections": {
+    "hero-banner": {
+      "type": "hero-banner",
+      "settings": {
+        "image": "",
+        "background_color": "#000000",
+        "subheading": "",
+        "heading": "iPad",
+        "text": "",
+        "button_label": "",
+        "button_link": ""
+      }
+    },
+    "product-family": {
+      "type": "product-family",
+      "blocks": {
+        "ipad_card_1": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "card_image": "",
+            "card_title": "iPad Pro",
+            "card_description": "",
+            "modal_heading": "",
+            "modal_title_1": "",
+            "modal_desc_1": "",
+            "modal_img_1": "",
+            "modal_title_2": "",
+            "modal_desc_2": "",
+            "modal_img_2": "",
+            "modal_title_3": "",
+            "modal_desc_3": "",
+            "modal_img_3": "",
+            "modal_link": "",
+            "modal_link_label": "Ver producto"
+          }
+        },
+        "ipad_card_2": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "card_image": "",
+            "card_title": "iPad Air",
+            "card_description": "",
+            "modal_heading": "",
+            "modal_title_1": "",
+            "modal_desc_1": "",
+            "modal_img_1": "",
+            "modal_title_2": "",
+            "modal_desc_2": "",
+            "modal_img_2": "",
+            "modal_title_3": "",
+            "modal_desc_3": "",
+            "modal_img_3": "",
+            "modal_link": "",
+            "modal_link_label": "Ver producto"
+          }
+        },
+        "ipad_card_3": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "card_image": "",
+            "card_title": "iPad",
+            "card_description": "",
+            "modal_heading": "",
+            "modal_title_1": "",
+            "modal_desc_1": "",
+            "modal_img_1": "",
+            "modal_title_2": "",
+            "modal_desc_2": "",
+            "modal_img_2": "",
+            "modal_title_3": "",
+            "modal_desc_3": "",
+            "modal_img_3": "",
+            "modal_link": "",
+            "modal_link_label": "Ver producto"
+          }
+        },
+        "ipad_card_4": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "card_image": "",
+            "card_title": "iPad mini",
+            "card_description": "",
+            "modal_heading": "",
+            "modal_title_1": "",
+            "modal_desc_1": "",
+            "modal_img_1": "",
+            "modal_title_2": "",
+            "modal_desc_2": "",
+            "modal_img_2": "",
+            "modal_title_3": "",
+            "modal_desc_3": "",
+            "modal_img_3": "",
+            "modal_link": "",
+            "modal_link_label": "Ver producto"
+          }
+        }
+      },
+      "block_order": [
+        "ipad_card_1",
+        "ipad_card_2",
+        "ipad_card_3",
+        "ipad_card_4"
+      ],
+      "settings": {
+        "title": "Lo más destacado.",
+        "button_label": "Más información",
+        "compare_label": "",
+        "compare_link": ""
+      }
+    },
+    "features-grid": {
+      "type": "features-grid",
+      "blocks": {
+        "ipad_fg_1": {
+          "type": "feature",
+          "settings": {
+            "category": "Diseño",
+            "heading": "Beautifully thin. Incredibly capable.",
+            "image": "",
+            "modal_heading": "",
+            "modal_description": "",
+            "modal_image_1": "",
+            "modal_description_2": "",
+            "modal_image_2": "",
+            "modal_description_3": "",
+            "modal_image_3": "",
+            "link": "",
+            "link_label": "Más información"
+          }
+        },
+        "ipad_fg_2": {
+          "type": "feature",
+          "settings": {
+            "category": "Pantalla",
+            "heading": "Una pantalla que lo dice todo.",
+            "image": "",
+            "modal_heading": "",
+            "modal_description": "",
+            "modal_image_1": "",
+            "modal_description_2": "",
+            "modal_image_2": "",
+            "modal_description_3": "",
+            "modal_image_3": "",
+            "link": "",
+            "link_label": "Más información"
+          }
+        },
+        "ipad_fg_3": {
+          "type": "feature",
+          "settings": {
+            "category": "Chip y rendimiento",
+            "heading": "Potencia de Mac. En un iPad.",
+            "image": "",
+            "modal_heading": "",
+            "modal_description": "",
+            "modal_image_1": "",
+            "modal_description_2": "",
+            "modal_image_2": "",
+            "modal_description_3": "",
+            "modal_image_3": "",
+            "link": "",
+            "link_label": "Más información"
+          }
+        },
+        "ipad_fg_4": {
+          "type": "feature",
+          "settings": {
+            "category": "iPadOS y Apple Intelligence",
+            "heading": "El sistema que lo hace todo posible.",
+            "image": "",
+            "modal_heading": "",
+            "modal_description": "",
+            "modal_image_1": "",
+            "modal_description_2": "",
+            "modal_image_2": "",
+            "modal_description_3": "",
+            "modal_image_3": "",
+            "link": "",
+            "link_label": "Más información"
+          }
+        }
+      },
+      "block_order": [
+        "ipad_fg_1",
+        "ipad_fg_2",
+        "ipad_fg_3",
+        "ipad_fg_4"
+      ],
+      "settings": {
+        "title": "Descubre el iPad."
+      }
+    },
+    "accessories-showcase": {
+      "type": "accessories-showcase",
+      "blocks": {
+        "ipad_ac_1": {
+          "type": "accessory",
+          "settings": {
+            "show_badge": false,
+            "badge_text": "Nuevo",
+            "name": "Apple Pencil",
+            "description": "Escribe, dibuja y anota con precisión pixel a pixel.",
+            "link": "",
+            "link_label": "Más información"
+          }
+        },
+        "ipad_ac_2": {
+          "type": "accessory",
+          "settings": {
+            "show_badge": false,
+            "badge_text": "Nuevo",
+            "name": "Magic Keyboard",
+            "description": "Convierte tu iPad en una estación de trabajo completa.",
+            "link": "",
+            "link_label": "Más información"
+          }
+        }
+      },
+      "block_order": [
+        "ipad_ac_1",
+        "ipad_ac_2"
+      ],
+      "settings": {
+        "title": "Consiente a tu iPad."
+      }
+    },
+    "ecosystem-tabs": {
+      "type": "ecosystem-tabs",
+      "blocks": {
+        "ipad_et_1": {
+          "type": "tab",
+          "settings": {
+            "tab_label": "iPad y Mac",
+            "text": "Con Sidecar puedes usar tu iPad como segunda pantalla de tu Mac, de forma inalámbrica o con cable."
+          }
+        },
+        "ipad_et_2": {
+          "type": "tab",
+          "settings": {
+            "tab_label": "iPad y iPhone",
+            "text": "Continuidad te permite empezar algo en tu iPhone y retomarlo en el iPad sin perder ni un segundo."
+          }
+        },
+        "ipad_et_3": {
+          "type": "tab",
+          "settings": {
+            "tab_label": "iPad y AirPods",
+            "text": "Los AirPods se conectan al instante con tu iPad para una experiencia de audio inmersiva."
+          }
+        }
+      },
+      "block_order": [
+        "ipad_et_1",
+        "ipad_et_2",
+        "ipad_et_3"
+      ],
+      "settings": {
+        "title": "Siempre bien acompañado."
+      }
+    }
+  },
+  "order": [
+    "hero-banner",
+    "product-family",
+    "features-grid",
+    "accessories-showcase",
+    "ecosystem-tabs"
+  ]
+}
