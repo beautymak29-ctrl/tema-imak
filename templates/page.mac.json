@@ -88,6 +88,7 @@
         "mac_card_4"
       ],
       "settings": {
+        "card_shape": "square",
         "title": "Lo más destacado.",
         "button_label": "Más información",
         "compare_label": "",
