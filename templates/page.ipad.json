@@ -1,17 +1,5 @@
 {
   "sections": {
-    "hero-banner": {
-      "type": "hero-banner",
-      "settings": {
-        "image": "",
-        "background_color": "#000000",
-        "subheading": "",
-        "heading": "iPad",
-        "text": "",
-        "button_label": "",
-        "button_link": ""
-      }
-    },
     "product-family": {
       "type": "product-family",
       "blocks": {
@@ -265,7 +253,6 @@
     }
   },
   "order": [
-    "hero-banner",
     "product-family",
     "features-grid",
     "accessories-showcase",

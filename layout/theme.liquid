@@ -41,19 +41,17 @@
     {%- render 'meta-tags' -%}
 
     {%- comment -%} Preload de la imagen hero para reducir LCP {%- endcomment -%}
-    {%- if request.page_type == 'index' -%}
-      {%- for section_id in template.sections -%}
-        {%- assign s = sections[section_id] -%}
-        {%- if s.type == 'hero-banner' and s.settings.image != blank -%}
-          <link rel="preload" as="image"
-            href="{{ s.settings.image | image_url: width: 1500 }}"
-            imagesrcset="{{ s.settings.image | image_url: width: 750 }} 750w,
-                         {{ s.settings.image | image_url: width: 1100 }} 1100w,
-                         {{ s.settings.image | image_url: width: 1500 }} 1500w"
-            imagesizes="100vw"
-          >
-        {%- endif -%}
-      {%- endfor -%}
+    {%- if template.name == 'index' or template.suffix == 'ipad' or template.suffix == 'mac' -%}
+      {%- assign hero_s = sections['hero-banner'] -%}
+      {%- if hero_s.settings.image != blank -%}
+        <link rel="preload" as="image"
+          href="{{ hero_s.settings.image | image_url: width: 1500 }}"
+          imagesrcset="{{ hero_s.settings.image | image_url: width: 750 }} 750w,
+                       {{ hero_s.settings.image | image_url: width: 1100 }} 1100w,
+                       {{ hero_s.settings.image | image_url: width: 1500 }} 1500w"
+          imagesizes="100vw"
+        >
+      {%- endif -%}
     {%- endif -%}
 
     {{ content_for_header }}
@@ -150,6 +148,9 @@
     {%- sections 'header-group' -%}
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+      {%- if template.name == 'index' or template.suffix == 'ipad' or template.suffix == 'mac' -%}
+        {%- section 'hero-banner' -%}
+      {%- endif -%}
       {{ content_for_layout }}
     </main>
 
