@@ -15,20 +15,16 @@
         "mac_card_1": {
           "type": "product_card",
           "settings": {
-            "product": "",
-            "card_image": "",
+            "product": "macbook-air",
             "card_title": "MacBook Air",
             "card_description": "",
             "modal_heading": "",
             "modal_title_1": "",
             "modal_desc_1": "",
-            "modal_img_1": "",
             "modal_title_2": "",
             "modal_desc_2": "",
-            "modal_img_2": "",
             "modal_title_3": "",
             "modal_desc_3": "",
-            "modal_img_3": "",
             "modal_link": "",
             "modal_link_label": "Ver producto"
           }
@@ -36,20 +32,16 @@
         "mac_card_2": {
           "type": "product_card",
           "settings": {
-            "product": "",
-            "card_image": "",
+            "product": "macbook-pro",
             "card_title": "MacBook Pro",
             "card_description": "",
             "modal_heading": "",
             "modal_title_1": "",
             "modal_desc_1": "",
-            "modal_img_1": "",
             "modal_title_2": "",
             "modal_desc_2": "",
-            "modal_img_2": "",
             "modal_title_3": "",
             "modal_desc_3": "",
-            "modal_img_3": "",
             "modal_link": "",
             "modal_link_label": "Ver producto"
           }
@@ -58,19 +50,15 @@
           "type": "product_card",
           "settings": {
             "product": "",
-            "card_image": "",
             "card_title": "iMac",
             "card_description": "",
             "modal_heading": "",
             "modal_title_1": "",
             "modal_desc_1": "",
-            "modal_img_1": "",
             "modal_title_2": "",
             "modal_desc_2": "",
-            "modal_img_2": "",
             "modal_title_3": "",
             "modal_desc_3": "",
-            "modal_img_3": "",
             "modal_link": "",
             "modal_link_label": "Ver producto"
           }
@@ -79,19 +67,15 @@
           "type": "product_card",
           "settings": {
             "product": "",
-            "card_image": "",
             "card_title": "Mac mini",
             "card_description": "",
             "modal_heading": "",
             "modal_title_1": "",
             "modal_desc_1": "",
-            "modal_img_1": "",
             "modal_title_2": "",
             "modal_desc_2": "",
-            "modal_img_2": "",
             "modal_title_3": "",
             "modal_desc_3": "",
-            "modal_img_3": "",
             "modal_link": "",
             "modal_link_label": "Ver producto"
           }
@@ -118,14 +102,10 @@
           "settings": {
             "category": "Chip Apple Silicon",
             "heading": "Potencia que no conoce límites.",
-            "image": "",
             "modal_heading": "",
             "modal_description": "",
-            "modal_image_1": "",
             "modal_description_2": "",
-            "modal_image_2": "",
             "modal_description_3": "",
-            "modal_image_3": "",
             "link": "",
             "link_label": "Más información"
           }
@@ -135,14 +115,10 @@
           "settings": {
             "category": "Pantalla",
             "heading": "Cada pixel, una obra de arte.",
-            "image": "",
             "modal_heading": "",
             "modal_description": "",
-            "modal_image_1": "",
             "modal_description_2": "",
-            "modal_image_2": "",
             "modal_description_3": "",
-            "modal_image_3": "",
             "link": "",
             "link_label": "Más información"
           }
@@ -152,14 +128,10 @@
           "settings": {
             "category": "Batería",
             "heading": "Todo el día. Y más.",
-            "image": "",
             "modal_heading": "",
             "modal_description": "",
-            "modal_image_1": "",
             "modal_description_2": "",
-            "modal_image_2": "",
             "modal_description_3": "",
-            "modal_image_3": "",
             "link": "",
             "link_label": "Más información"
           }
@@ -169,14 +141,10 @@
           "settings": {
             "category": "macOS y Apple Intelligence",
             "heading": "El sistema operativo más avanzado.",
-            "image": "",
             "modal_heading": "",
             "modal_description": "",
-            "modal_image_1": "",
             "modal_description_2": "",
-            "modal_image_2": "",
             "modal_description_3": "",
-            "modal_image_3": "",
             "link": "",
             "link_label": "Más información"
           }
