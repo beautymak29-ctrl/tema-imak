@@ -120,10 +120,14 @@
           "settings": {
             "category": "Pantalla",
             "heading": "Cada pixel, una obra de arte.",
-            "modal_heading": "",
-            "modal_description": "",
-            "modal_description_2": "",
-            "modal_description_3": "",
+            "image": "shopify://shop_images/1_71356796-4f01-4897-8420-e0d042f43742.jpg",
+            "modal_heading": "Inteligencia y seguridad puertas adentro.",
+            "modal_description": "<p><strong>La IA está en su ADN. </strong>Los chips de Apple y todos los componentes principales que los impulsan están diseñados para la IA, desde el CPU y el GPU con Neural Accelerators dedicados hasta el Neural Engine y la memoria unificada. La Mac combina el diseño inteligente del hardware con un software totalmente integrado, entornos para desarrolladores y un ecosistema completo de apps para ofrecer una plataforma poderosa, ideal para la IA.</p>",
+            "modal_image_1": "shopify://shop_images/2_5470c390-54eb-4b43-8bc7-9571210f69a7.jpg",
+            "modal_description_2": "<p><strong>Sólido ecosistema de apps. </strong>Con una gran selección de apps compatibles y herramientas de IA de código abierto optimizadas para el chip de Apple, la IA en la Mac es tan accesible como potente. Miles de apps aprovechan los entornos de IA integrados en macOS para ofrecer funcionalidades inteligentes en las apps que usas todos los días.</p>",
+            "modal_image_2": "shopify://shop_images/3_6b4b82e8-a450-4958-adc5-1b5511cbefde.jpg",
+            "modal_description_3": "<p><strong>Diseñada para el procesamiento en el dispositivo. </strong>Los desarrolladores externos pueden aprovechar los entornos creados por Apple para procesar la IA en el dispositivo. Así, todo es posible, desde realizar tareas cotidianas hasta entrenar modelos de transformación locales, sin que tus datos personales salgan de tu Mac.</p>",
+            "modal_image_3": "shopify://shop_images/4_ffe9cd2b-5399-405c-9b51-9e9ad05d04f5.jpg",
             "link": "",
             "link_label": "Más información"
           }
