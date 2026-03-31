@@ -136,11 +136,15 @@
           "type": "feature",
           "settings": {
             "category": "Batería",
-            "heading": "Todo el día. Y más.",
-            "modal_heading": "",
-            "modal_description": "",
-            "modal_description_2": "",
-            "modal_description_3": "",
+            "heading": "Tan fáciles de usar como de disfrutar.",
+            "image": "shopify://shop_images/1_fe7b5117-da95-4b6e-94b1-f6f2a0bc1f2a.jpg",
+            "modal_heading": "Tan fáciles de usar como de disfrutar.",
+            "modal_description": "<p><strong>Sácale partido a macOS Tahoe.</strong> Con el espectacular nuevo diseño con Liquid Glass, las herramientas de productividad intuitivas y la potencia de Apple Intelligence integrada hasta la raíz, macOS Tahoe se siente novedoso y a la vez familiar.</p>",
+            "modal_image_1": "shopify://shop_images/2_5011bcb0-fd21-4114-b818-2a66c9f4bd76.jpg",
+            "modal_description_2": "<p><strong>Diseñada para Apple Intelligence. </strong>Apple Intelligence es un sistema de inteligencia personal que te ayuda a escribir, expresarte y hacer de todo con mucha facilidad. Y las avanzadas protecciones de privacidad te dan la tranquilidad de saber que nadie más podrá acceder a tus datos. Ni siquiera Apple.</p>",
+            "modal_image_2": "shopify://shop_images/3_1a6a3b05-2ab4-4d4a-8411-e38be3cb8555.jpg",
+            "modal_description_3": "<p><strong>Tan familiar como el iPhone. </strong>Usar la Mac te será muy sencillo, ya que tiene muchas de las apps que ya disfrutas en tu iPhone, como Mensajes, Fotos, Notas y FaceTime.</p>",
+            "modal_image_3": "shopify://shop_images/4_f359e9c6-7e99-4890-8333-c5ec53002eb9.jpg",
             "link": "",
             "link_label": "Más información"
           }
