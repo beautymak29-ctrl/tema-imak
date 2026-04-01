@@ -33,7 +33,7 @@
         "product_card_NyDxtM": {
           "type": "product_card",
           "settings": {
-            "product": "",
+            "product": "iphone-17-pro",
             "card_image": "shopify://shop_images/D_NQ_NP_2X_829168-MPE109108136525_032026-F-apple-iphone-17-pro-max-256-gb-naranja-cosmico.webp",
             "card_title": "IPhone 17 Pro",
             "card_description": "\"Un diseño innovador para una batería y un rendimiento sin precedentes.\"",
@@ -51,7 +51,7 @@
         "product_card_4fgyTH": {
           "type": "product_card",
           "settings": {
-            "product": "",
+            "product": "iphone-17",
             "card_image": "shopify://shop_images/D_NQ_NP_2X_765368-MLA96425288827_102025-F.webp",
             "card_title": "IPhone 17",
             "card_description": "\"Aún más sorprendente. Aún más resistente.\"",
@@ -69,7 +69,7 @@
         "product_card_QPCTFN": {
           "type": "product_card",
           "settings": {
-            "product": "",
+            "product": "iphone-16",
             "card_image": "shopify://shop_images/D_NQ_NP_2X_800312-MLA96869283817_102025-F.webp",
             "card_title": "IPhone 16",
             "card_description": "\"Rendimiento increíble, Diseñado para durar.\"",
