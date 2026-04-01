@@ -15,7 +15,7 @@
         "product_card_gVQ3yg": {
           "type": "product_card",
           "settings": {
-            "product": "",
+            "product": "iphone-17-pro-max",
             "card_image": "shopify://shop_images/D_NQ_NP_2X_756377-MLA96435683774_102025-F.webp",
             "card_title": "IPhone 17 pro max",
             "card_description": " \"El iPhone más poderoso. Cámara, chip y pantalla al máximo nivel.\"",
@@ -92,6 +92,9 @@
         "product_card_QPCTFN"
       ],
       "settings": {
+        "whatsapp_number": "",
+        "quote_label": "Cotizar",
+        "card_shape": "portrait",
         "title": "Lo más destacado.",
         "button_label": "Más información",
         "compare_label": "Comparar todos los modelos",
