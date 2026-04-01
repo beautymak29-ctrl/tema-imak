@@ -1,0 +1,95 @@
+<section class="ptb-section section-{{ section.id }}">
+  <div class="page-width">
+    {%- if section.settings.title != blank -%}
+      <h2 class="ptb-title">{{ section.settings.title | escape }}</h2>
+    {%- endif -%}
+    <ul class="ptb-list" role="list">
+      {%- for block in section.blocks -%}
+        <li class="ptb-item" {{ block.shopify_attributes }}>
+          <div class="ptb-item__icon-wrap" aria-hidden="true">
+            {%- case block.settings.icon -%}
+              {%- when 'card' -%}
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+              {%- when 'percent' -%}
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+              {%- when 'savings' -%}
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              {%- when 'pin' -%}
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              {%- when 'star' -%}
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              {%- when 'shield' -%}
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              {%- else -%}
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 8 12 12 14 14"/></svg>
+            {%- endcase -%}
+          </div>
+          <strong class="ptb-item__title">{{ block.settings.title | escape }}</strong>
+          {%- if block.settings.description != blank -%}
+            <p class="ptb-item__desc">{{ block.settings.description | escape }}</p>
+          {%- endif -%}
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Barra de beneficios",
+  "tag": "section",
+  "class": "section-product-trust-bar",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "T\u00edtulo de la secci\u00f3n (opcional)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Beneficio",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "\u00cdcono",
+          "options": [
+            { "value": "card",    "label": "Tarjeta / Convenio" },
+            { "value": "percent", "label": "Porcentaje / Sin intereses" },
+            { "value": "savings", "label": "Dinero / Plan ahorro" },
+            { "value": "pin",     "label": "Ubicaci\u00f3n / Vis\u00edtanos" },
+            { "value": "star",    "label": "Estrella / Destacado" },
+            { "value": "shield",  "label": "Escudo / Garant\u00eda" }
+          ],
+          "default": "card"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "T\u00edtulo",
+          "default": "Beneficio"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Descripci\u00f3n (opcional)"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Barra de beneficios",
+      "blocks": [
+        { "type": "benefit", "settings": { "icon": "card",    "title": "Convenios con efectiva", "description": "Pag\u00e1 con tu tarjeta efectiva" } },
+        { "type": "benefit", "settings": { "icon": "percent", "title": "Sin intereses",           "description": "Cuotas sin recargo" } },
+        { "type": "benefit", "settings": { "icon": "savings", "title": "Plan Ahorro",              "description": "Ahorr\u00e1 y llev\u00e1te tu equipo" } },
+        { "type": "benefit", "settings": { "icon": "pin",     "title": "Visit\u00e1nos",             "description": "Atenci\u00f3n personalizada en tienda" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

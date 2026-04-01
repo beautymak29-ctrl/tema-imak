@@ -1,0 +1,85 @@
+{
+  "sections": {
+    "product-info": {
+      "type": "product-info",
+      "blocks": {
+        "pi_text_1": {
+          "type": "text",
+          "settings": {
+            "heading": "",
+            "content": ""
+          }
+        },
+        "pi_it_1": {
+          "type": "image_text",
+          "settings": {
+            "heading": "",
+            "content": "",
+            "reverse": false
+          }
+        },
+        "pi_video_1": {
+          "type": "video",
+          "settings": {
+            "heading": "",
+            "video_url": "",
+            "caption": ""
+          }
+        },
+        "pi_gallery_1": {
+          "type": "gallery",
+          "settings": {
+            "heading": ""
+          }
+        }
+      },
+      "block_order": ["pi_text_1", "pi_it_1", "pi_video_1", "pi_gallery_1"],
+      "settings": {
+        "title": "",
+        "subtitle": ""
+      }
+    },
+    "product-trust-bar": {
+      "type": "product-trust-bar",
+      "blocks": {
+        "ptb_1": {
+          "type": "benefit",
+          "settings": {
+            "icon": "card",
+            "title": "Convenios con efectiva",
+            "description": "Pag\u00e1 con tu tarjeta efectiva"
+          }
+        },
+        "ptb_2": {
+          "type": "benefit",
+          "settings": {
+            "icon": "percent",
+            "title": "Sin intereses",
+            "description": "Cuotas sin recargo"
+          }
+        },
+        "ptb_3": {
+          "type": "benefit",
+          "settings": {
+            "icon": "savings",
+            "title": "Plan Ahorro",
+            "description": "Ahorr\u00e1 y llev\u00e1te tu equipo"
+          }
+        },
+        "ptb_4": {
+          "type": "benefit",
+          "settings": {
+            "icon": "pin",
+            "title": "Visit\u00e1nos",
+            "description": "Atenci\u00f3n personalizada en tienda"
+          }
+        }
+      },
+      "block_order": ["ptb_1", "ptb_2", "ptb_3", "ptb_4"],
+      "settings": {
+        "title": ""
+      }
+    }
+  },
+  "order": ["product-info", "product-trust-bar"]
+}

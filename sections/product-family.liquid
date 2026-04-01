@@ -62,11 +62,27 @@
               <p class="pf-tile__desc">{{ pf_desc }}</p>
             {%- endif -%}
 
+            {%- assign pf_product_name = '' -%}
+            {%- if block.settings.card_title != blank -%}
+              {%- assign pf_product_name = block.settings.card_title -%}
+            {%- elsif pf_product != blank -%}
+              {%- assign pf_product_name = pf_product.title -%}
+            {%- endif -%}
+
             <div class="pf-tile__ctas">
-              <button type="button" class="pf-tile__btn-learn" data-pf-quote
-                data-product-name="{%- if block.settings.card_title != blank -%}{{ block.settings.card_title | escape }}{%- elsif pf_product != blank -%}{{ pf_product.title | escape }}{%- endif -%}">
-                {{ section.settings.button_label }}
-              </button>
+              {%- if block.settings.info_page_link != blank -%}
+                <a href="{{ block.settings.info_page_link }}" class="pf-tile__btn-learn">
+                  {{ section.settings.button_label }}
+                </a>
+              {%- else -%}
+                <span class="pf-tile__btn-learn pf-tile__btn-learn--no-link">{{ section.settings.button_label }}</span>
+              {%- endif -%}
+              {%- if section.settings.whatsapp_number != blank -%}
+                <button type="button" class="pf-tile__btn-buy" data-pf-quote
+                  data-product-name="{{ pf_product_name | escape }}">
+                  {{ section.settings.quote_label | default: 'Cotizar' }}
+                </button>
+              {%- endif -%}
             </div>
 
           </li>
@@ -194,8 +210,12 @@
       "label": "Número de WhatsApp",
       "info": "Incluye el código de país sin +. Ej: 5491122334455"
     },
-    {
-      "type": "select",
+    {      "type": "text",
+      "id": "quote_label",
+      "label": "Texto del bot\u00f3n cotizar",
+      "default": "Cotizar"
+    },
+    {      "type": "select",
       "id": "card_shape",
       "label": "Forma de las tarjetas",
       "options": [
@@ -258,8 +278,12 @@
           "id": "card_description",
           "label": "Descripción corta (tarjeta)"
         },
-        {
-          "type": "header",
+        {          "type": "url",
+          "id": "info_page_link",
+          "label": "Enlace 'M\u00e1s informaci\u00f3n'",
+          "info": "Apunta a la p\u00e1gina informativa del producto (template page.product-info)"
+        },
+        {          "type": "header",
           "content": "Modal — General"
         },
         {
