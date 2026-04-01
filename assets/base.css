@@ -1026,3 +1026,12 @@ body { padding-top: 4.4rem; }
   .ct-header { margin-bottom: 4rem; }
   .ct-info { padding: 2.4rem; }
 }
+
+/* =====================================================
+   QUOTE MODAL — pf-quote-*
+   ===================================================== */
+.pf-quote__product-label { font-size: 1.2rem; text-transform: uppercase; letter-spacing: .06em; color: #86868b; font-weight: 600; margin: 0 0 .4rem; }
+.pf-quote__product-name { font-size: 1.8rem; font-weight: 700; color: #1d1d1f; margin: 0 0 2.8rem; line-height: 1.2; }
+.pf-quote__submit { display: inline-flex; align-items: center; gap: .8rem; padding: 1.4rem 3rem; font-size: 1.6rem; border-radius: 98rem; background: #25d366; color: #fff; border: none; cursor: pointer; font-weight: 600; transition: background .2s, transform .15s; font-family: inherit; }
+.pf-quote__submit:hover { background: #1ebe5d; transform: scale(1.02); }
+.pf-quote__submit svg { flex-shrink: 0; }

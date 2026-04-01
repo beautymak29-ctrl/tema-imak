@@ -63,7 +63,8 @@
             {%- endif -%}
 
             <div class="pf-tile__ctas">
-              <button type="button" class="pf-tile__btn-learn" data-pf-open="{{ block.id }}">
+              <button type="button" class="pf-tile__btn-learn" data-pf-quote
+                data-product-name="{%- if block.settings.card_title != blank -%}{{ block.settings.card_title | escape }}{%- elsif pf_product != blank -%}{{ pf_product.title | escape }}{%- endif -%}">
                 {{ section.settings.button_label }}
               </button>
             </div>
@@ -83,122 +84,98 @@
 
   </div>
 
-  {%- comment -%} ── Modal por bloque ── {%- endcomment -%}
-  <div class="fg-modal" id="pf-modal-{{ section.id }}" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Información del producto">
-    <div class="fg-modal__overlay" data-pf-close></div>
+  {%- comment -%} ── Modal de cotización ── {%- endcomment -%}
+  <div class="fg-modal pf-quote-modal" id="pf-quote-modal-{{ section.id }}" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="pf-quote-title-{{ section.id }}">
+    <div class="fg-modal__overlay" data-pf-quote-close></div>
     <div class="fg-modal__dialog">
-      <button class="fg-modal__close" type="button" data-pf-close aria-label="Cerrar">
+      <button class="fg-modal__close" type="button" data-pf-quote-close aria-label="Cerrar">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1 1l14 14M15 1L1 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </button>
-      <div class="fg-modal__body">
-        {%- for block in section.blocks -%}
-          {%- assign pf_product = block.settings.product -%}
-          <div class="fg-modal__content" id="pf-modal-content-{{ block.id }}" hidden>
 
-            {%- if block.settings.modal_heading != blank -%}
-              <h2 class="fg-modal__heading">{{ block.settings.modal_heading | escape }}</h2>
-            {%- endif -%}
+      <p class="pf-quote__product-label">Solicitando información sobre:</p>
+      <p class="pf-quote__product-name" id="pf-quote-product-{{ section.id }}"></p>
 
-            {%- comment -%} Grupo 1 {%- endcomment -%}
-            {%- if block.settings.modal_title_1 != blank or block.settings.modal_desc_1 != blank or block.settings.modal_img_1 != blank -%}
-              <div class="pf-modal__group">
-                {%- if block.settings.modal_title_1 != blank -%}
-                  <h3 class="pf-modal__group-title">{{ block.settings.modal_title_1 | escape }}</h3>
-                {%- endif -%}
-                {%- if block.settings.modal_desc_1 != blank -%}
-                  <div class="pf-modal__group-desc rte">{{ block.settings.modal_desc_1 }}</div>
-                {%- endif -%}
-                {%- if block.settings.modal_img_1 != blank -%}
-                  <div class="pf-modal__group-img-wrap">
-                    {{ block.settings.modal_img_1 | image_url: width: 900 | image_tag: loading: 'lazy', class: 'pf-modal__group-img', alt: block.settings.modal_img_1.alt | default: block.settings.modal_title_1 }}
-                  </div>
-                {%- endif -%}
-              </div>
-            {%- endif -%}
+      <h2 class="fg-modal__heading" id="pf-quote-title-{{ section.id }}">Ingrese sus datos para evaluarlo</h2>
 
-            {%- comment -%} Grupo 2 {%- endcomment -%}
-            {%- if block.settings.modal_title_2 != blank or block.settings.modal_desc_2 != blank or block.settings.modal_img_2 != blank -%}
-              <div class="pf-modal__group">
-                {%- if block.settings.modal_title_2 != blank -%}
-                  <h3 class="pf-modal__group-title">{{ block.settings.modal_title_2 | escape }}</h3>
-                {%- endif -%}
-                {%- if block.settings.modal_desc_2 != blank -%}
-                  <div class="pf-modal__group-desc rte">{{ block.settings.modal_desc_2 }}</div>
-                {%- endif -%}
-                {%- if block.settings.modal_img_2 != blank -%}
-                  <div class="pf-modal__group-img-wrap">
-                    {{ block.settings.modal_img_2 | image_url: width: 900 | image_tag: loading: 'lazy', class: 'pf-modal__group-img', alt: block.settings.modal_img_2.alt | default: block.settings.modal_title_2 }}
-                  </div>
-                {%- endif -%}
-              </div>
-            {%- endif -%}
-
-            {%- comment -%} Grupo 3 {%- endcomment -%}
-            {%- if block.settings.modal_title_3 != blank or block.settings.modal_desc_3 != blank or block.settings.modal_img_3 != blank -%}
-              <div class="pf-modal__group">
-                {%- if block.settings.modal_title_3 != blank -%}
-                  <h3 class="pf-modal__group-title">{{ block.settings.modal_title_3 | escape }}</h3>
-                {%- endif -%}
-                {%- if block.settings.modal_desc_3 != blank -%}
-                  <div class="pf-modal__group-desc rte">{{ block.settings.modal_desc_3 }}</div>
-                {%- endif -%}
-                {%- if block.settings.modal_img_3 != blank -%}
-                  <div class="pf-modal__group-img-wrap">
-                    {{ block.settings.modal_img_3 | image_url: width: 900 | image_tag: loading: 'lazy', class: 'pf-modal__group-img', alt: block.settings.modal_img_3.alt | default: block.settings.modal_title_3 }}
-                  </div>
-                {%- endif -%}
-              </div>
-            {%- endif -%}
-
-            {%- assign modal_link = block.settings.modal_link -%}
-            {%- if modal_link == blank and pf_product != blank -%}
-              {%- assign modal_link = pf_product.url -%}
-            {%- endif -%}
-            {%- if modal_link != blank -%}
-              <a href="{{ modal_link }}" class="btn fg-modal__cta">
-                {{ block.settings.modal_link_label | default: 'Ver producto' | escape }}
-              </a>
-            {%- endif -%}
-
-          </div>
-        {%- endfor -%}
-      </div>
+      <form class="pf-quote__form" id="pf-quote-form-{{ section.id }}" novalidate>
+        <div class="ct-form__field">
+          <label class="ct-form__label" for="pf-quote-name-{{ section.id }}">Nombre completo</label>
+          <input class="ct-form__input" type="text" id="pf-quote-name-{{ section.id }}" name="name" required placeholder="Ej: Juan Pérez">
+        </div>
+        <div class="ct-form__field">
+          <label class="ct-form__label" for="pf-quote-dni-{{ section.id }}">DNI</label>
+          <input class="ct-form__input" type="text" id="pf-quote-dni-{{ section.id }}" name="dni" required placeholder="Ej: 12345678" pattern="[0-9]{6,12}" inputmode="numeric">
+        </div>
+        <div class="ct-form__field">
+          <label class="ct-form__label" for="pf-quote-email-{{ section.id }}">Correo electrónico</label>
+          <input class="ct-form__input" type="email" id="pf-quote-email-{{ section.id }}" name="email" required placeholder="Ej: juan@correo.com">
+        </div>
+        <div class="ct-form__actions">
+          <button type="submit" class="pf-quote__submit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.553 4.112 1.524 5.842L.057 23.457a.75.75 0 0 0 .921.921l5.618-1.467A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.678-.493-5.22-1.357l-.374-.213-3.882 1.014 1.015-3.72-.235-.385A9.944 9.944 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+            Enviar por WhatsApp
+          </button>
+        </div>
+      </form>
     </div>
   </div>
 
   <script>
   (function() {
     var sId = '{{ section.id }}';
+    var waNumber = '{{ section.settings.whatsapp_number | strip | remove: '+' | remove: '-' | remove: ' ' }}';
     var sectionEl = document.getElementById('section-' + sId);
-    var modal = document.getElementById('pf-modal-' + sId);
+    var modal = document.getElementById('pf-quote-modal-' + sId);
+    var productLabel = document.getElementById('pf-quote-product-' + sId);
+    var form = document.getElementById('pf-quote-form-' + sId);
     if (!sectionEl || !modal) return;
 
-    function openModal(blockId) {
-      modal.querySelectorAll('.fg-modal__content').forEach(function(c) { c.hidden = true; });
-      var content = document.getElementById('pf-modal-content-' + blockId);
-      if (content) content.hidden = false;
+    function openModal(productName) {
+      if (productLabel) productLabel.textContent = productName;
       modal.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
+      var firstInput = form && form.querySelector('input');
+      if (firstInput) setTimeout(function() { firstInput.focus(); }, 50);
     }
 
     function closeModal() {
       modal.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
+      if (form) form.reset();
     }
 
-    sectionEl.querySelectorAll('[data-pf-open]').forEach(function(btn) {
+    sectionEl.querySelectorAll('[data-pf-quote]').forEach(function(btn) {
       btn.addEventListener('click', function() {
-        openModal(this.getAttribute('data-pf-open'));
+        openModal(this.getAttribute('data-product-name') || '');
       });
     });
 
-    modal.querySelectorAll('[data-pf-close]').forEach(function(el) {
+    modal.querySelectorAll('[data-pf-quote-close]').forEach(function(el) {
       el.addEventListener('click', closeModal);
     });
 
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') closeModal();
     });
+
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var name = form.querySelector('[name="name"]').value.trim();
+        var dni = form.querySelector('[name="dni"]').value.trim();
+        var email = form.querySelector('[name="email"]').value.trim();
+        var product = productLabel ? productLabel.textContent : '';
+        if (!name || !dni || !email) return;
+        var msg = '\u00a1Hola! Quisiera informaci\u00f3n sobre: *' + product + '*\n\n'
+          + '\ud83d\udccb *Mis datos:*\n'
+          + '\u2022 Nombre: ' + name + '\n'
+          + '\u2022 DNI: ' + dni + '\n'
+          + '\u2022 Correo: ' + email;
+        var url = 'https://wa.me/' + waNumber + '?text=' + encodeURIComponent(msg);
+        window.open(url, '_blank', 'noopener,noreferrer');
+        closeModal();
+      });
+    }
   })();
   </script>
 
@@ -211,6 +188,12 @@
   "tag": "section",
   "class": "section-product-family",
   "settings": [
+    {
+      "type": "text",
+      "id": "whatsapp_number",
+      "label": "Número de WhatsApp",
+      "info": "Incluye el código de país sin +. Ej: 5491122334455"
+    },
     {
       "type": "select",
       "id": "card_shape",
