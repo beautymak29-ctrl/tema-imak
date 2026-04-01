@@ -1092,3 +1092,47 @@ body { padding-top: 4.4rem; }
 @media (max-width: 749px) {
   .ptb-list { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
 }
+
+/* =====================================================
+   PÁGINA DE PRODUCTO — pp-*
+   ===================================================== */
+.pp-section { padding: 6rem 0 4rem; background: #fff; }
+.pp-grid { display: grid; grid-template-columns: 55% 1fr; gap: 6rem; align-items: start; }
+/* Media */
+.pp-media__viewer { position: relative; background: #f5f5f7; border-radius: 2rem; overflow: hidden; aspect-ratio: 1/1; }
+.pp-media__img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.pp-media__img--placeholder { width: 100%; height: 100%; }
+.pp-media__strip { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.6rem; }
+.pp-thumb { width: 7.2rem; height: 7.2rem; border-radius: 1.2rem; overflow: hidden; border: 2px solid transparent; background: #f5f5f7; padding: 0; cursor: pointer; transition: border-color .2s; flex-shrink: 0; }
+.pp-thumb--active { border-color: #0071e3; }
+.pp-thumb:hover:not(.pp-thumb--active) { border-color: #c7c7cc; }
+.pp-thumb__img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* Info */
+.pp-info { position: sticky; top: 2rem; }
+.pp-info__vendor { font-size: 1.4rem; color: #6e6e73; text-transform: uppercase; letter-spacing: .06em; margin: 0 0 .8rem; }
+.pp-info__title { font-size: clamp(2.8rem, 4vw, 4.8rem); font-weight: 700; letter-spacing: -.02em; color: #1d1d1f; margin: 0 0 2.4rem; line-height: 1.1; }
+/* Options */
+.pp-options { display: flex; flex-direction: column; gap: 2rem; margin-bottom: 2.8rem; }
+.pp-opt__label { font-size: 1.5rem; color: #6e6e73; display: block; margin-bottom: .8rem; }
+.pp-opt__label strong { color: #1d1d1f; font-weight: 600; }
+.pp-opt__values { display: flex; flex-wrap: wrap; gap: .8rem; }
+.pp-opt__btn { padding: .8rem 1.8rem; font-size: 1.4rem; font-weight: 500; color: #1d1d1f; background: #f5f5f7; border: 2px solid transparent; border-radius: 98rem; cursor: pointer; transition: background .15s, border-color .15s, color .15s; font-family: inherit; white-space: nowrap; }
+.pp-opt__btn--active { background: #1d1d1f; color: #fff; border-color: #1d1d1f; }
+.pp-opt__btn:hover:not(.pp-opt__btn--active) { background: #e8e8ed; }
+/* Description */
+.pp-info__desc { font-size: 1.6rem; line-height: 1.7; color: #424245; margin-bottom: 2.8rem; }
+.pp-info__desc p { margin: 0 0 1.2rem; }
+.pp-info__desc p:last-child { margin-bottom: 0; }
+/* CTA */
+.pp-cta__whatsapp { display: inline-flex; align-items: center; gap: .8rem; padding: 1.4rem 2.8rem; font-size: 1.6rem; font-weight: 600; color: #fff; background: #25d366; border-radius: 98rem; text-decoration: none; transition: background .2s, transform .15s; }
+.pp-cta__whatsapp:hover { background: #1ebe5d; transform: scale(1.02); color: #fff; }
+@media (max-width: 989px) {
+  .pp-grid { grid-template-columns: 1fr; gap: 3.2rem; }
+  .pp-info { position: static; }
+}
+@media (max-width: 749px) {
+  .pp-section { padding: 3.2rem 0 2rem; }
+  .pp-media__viewer { border-radius: 1.2rem; }
+  .pp-thumb { width: 6rem; height: 6rem; }
+  .pp-info__title { font-size: 2.8rem; }
+}

@@ -70,8 +70,12 @@
             {%- endif -%}
 
             <div class="pf-tile__ctas">
-              {%- if block.settings.info_page_link != blank -%}
-                <a href="{{ block.settings.info_page_link }}" class="pf-tile__btn-learn">
+              {%- assign pf_info_url = block.settings.info_page_link -%}
+              {%- if pf_info_url == blank and pf_product != blank -%}
+                {%- assign pf_info_url = pf_product.url -%}
+              {%- endif -%}
+              {%- if pf_info_url != blank -%}
+                <a href="{{ pf_info_url }}" class="pf-tile__btn-learn">
                   {{ section.settings.button_label }}
                 </a>
               {%- else -%}
