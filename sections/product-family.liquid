@@ -70,12 +70,8 @@
             {%- endif -%}
 
             <div class="pf-tile__ctas">
-              {%- assign pf_info_url = block.settings.info_page_link -%}
-              {%- if pf_info_url == blank and pf_product != blank -%}
-                {%- assign pf_info_url = pf_product.url -%}
-              {%- endif -%}
-              {%- if pf_info_url != blank -%}
-                <a href="{{ pf_info_url }}" class="pf-tile__btn-learn">
+              {%- if pf_product != blank -%}
+                <a href="{{ pf_product.url }}" class="pf-tile__btn-learn">
                   {{ section.settings.button_label }}
                 </a>
               {%- else -%}
@@ -282,12 +278,8 @@
           "id": "card_description",
           "label": "Descripción corta (tarjeta)"
         },
-        {          "type": "url",
-          "id": "info_page_link",
-          "label": "Enlace 'M\u00e1s informaci\u00f3n'",
-          "info": "Apunta a la p\u00e1gina informativa del producto (template page.product-info)"
-        },
-        {          "type": "header",
+        {
+          "type": "header",
           "content": "Modal — General"
         },
         {
