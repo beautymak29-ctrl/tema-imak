@@ -66,6 +66,56 @@
       </div>
     {%- endif -%}
 
+    {%- comment -%} BLOQUES PERSONALIZADOS (imagen + descripción) {%- endcomment -%}
+    {%- if section.blocks.size > 0 -%}
+      <div class="pp-features">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+
+            {%- when 'feature' -%}
+              <div class="pp-feature{% if block.settings.reverse %} pp-feature--reverse{% endif %}" {{ block.shopify_attributes }}>
+                {%- if block.settings.image != blank -%}
+                  <div class="pp-feature__media">
+                    {{ block.settings.image | image_url: width: 900 | image_tag:
+                      loading: 'lazy',
+                      widths: '400, 600, 900',
+                      sizes: '(max-width: 749px) 100vw, 50vw',
+                      class: 'pp-feature__img',
+                      alt: block.settings.image.alt | default: block.settings.heading
+                    }}
+                  </div>
+                {%- endif -%}
+                <div class="pp-feature__body">
+                  {%- if block.settings.heading != blank -%}
+                    <h2 class="pp-feature__heading">{{ block.settings.heading }}</h2>
+                  {%- endif -%}
+                  {%- if block.settings.text != blank -%}
+                    <div class="pp-feature__text rte">{{ block.settings.text }}</div>
+                  {%- endif -%}
+                </div>
+              </div>
+
+            {%- when 'image_full' -%}
+              <div class="pp-feature pp-feature--full" {{ block.shopify_attributes }}>
+                {%- if block.settings.image != blank -%}
+                  {{ block.settings.image | image_url: width: 1400 | image_tag:
+                    loading: 'lazy',
+                    widths: '600, 900, 1200, 1400',
+                    sizes: '100vw',
+                    class: 'pp-feature__img-full',
+                    alt: block.settings.image.alt | default: ''
+                  }}
+                {%- endif -%}
+                {%- if block.settings.caption != blank -%}
+                  <p class="pp-feature__caption">{{ block.settings.caption }}</p>
+                {%- endif -%}
+              </div>
+
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
   </div>
 </section>
 
@@ -93,6 +143,34 @@
       "label": "Etiqueta de precio",
       "default": "Precio desde"
     }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Imagen + descripci\u00f3n",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Imagen" },
+        { "type": "text",         "id": "heading", "label": "T\u00edtulo" },
+        { "type": "richtext",     "id": "text",    "label": "Descripci\u00f3n" },
+        {
+          "type": "checkbox",
+          "id": "reverse",
+          "label": "Invertir orden (texto a la izquierda)",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "image_full",
+      "name": "Imagen completa",
+      "settings": [
+        { "type": "image_picker", "id": "image",   "label": "Imagen" },
+        { "type": "text",         "id": "caption", "label": "Pie de imagen (opcional)" }
+      ]
+    }
+  ],
+  "presets": [
+    { "name": "Producto principal" }
   ]
 }
 {% endschema %}
