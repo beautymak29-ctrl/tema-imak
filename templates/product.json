@@ -13,7 +13,8 @@
       "type": "main-product",
       "settings": {
         "show_vendor": true,
-        "show_quantity_selector": true
+        "whatsapp_number": "+51961905778",
+        "whatsapp_label": "Cotizar por WhatsApp"
       }
     },
     "product-info": {
@@ -49,7 +50,12 @@
           }
         }
       },
-      "block_order": ["pi_text_1", "pi_it_1", "pi_video_1", "pi_gallery_1"],
+      "block_order": [
+        "pi_text_1",
+        "pi_it_1",
+        "pi_video_1",
+        "pi_gallery_1"
+      ],
       "settings": {
         "title": "",
         "subtitle": ""
@@ -63,7 +69,7 @@
           "settings": {
             "icon": "card",
             "title": "Convenios con efectiva",
-            "description": "Pag\u00e1 con tu tarjeta efectiva"
+            "description": "Pagá con tu tarjeta efectiva"
           }
         },
         "ptb_2": {
@@ -79,23 +85,32 @@
           "settings": {
             "icon": "savings",
             "title": "Plan Ahorro",
-            "description": "Ahorr\u00e1 y llev\u00e1te tu equipo"
+            "description": "Ahorrá y lleváte tu equipo"
           }
         },
         "ptb_4": {
           "type": "benefit",
           "settings": {
             "icon": "pin",
-            "title": "Visit\u00e1nos",
-            "description": "Atenci\u00f3n personalizada en tienda"
+            "title": "Visitános",
+            "description": "Atención personalizada en tienda"
           }
         }
       },
-      "block_order": ["ptb_1", "ptb_2", "ptb_3", "ptb_4"],
+      "block_order": [
+        "ptb_1",
+        "ptb_2",
+        "ptb_3",
+        "ptb_4"
+      ],
       "settings": {
         "title": ""
       }
     }
   },
-  "order": ["main", "product-info", "product-trust-bar"]
+  "order": [
+    "main",
+    "product-info",
+    "product-trust-bar"
+  ]
 }
