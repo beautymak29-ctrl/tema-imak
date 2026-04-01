@@ -14,12 +14,22 @@
 
     {%- comment -%} VARIANTES {%- endcomment -%}
     {%- if product.variants.size > 0 -%}
+      {%- assign pp_count = product.variants.size -%}
+      {%- if pp_count <= 2 -%}
+        {%- assign pp_list_mod = 'pp-variants__list--xl' -%}
+      {%- elsif pp_count <= 4 -%}
+        {%- assign pp_list_mod = 'pp-variants__list--lg' -%}
+      {%- elsif pp_count <= 6 -%}
+        {%- assign pp_list_mod = 'pp-variants__list--md' -%}
+      {%- else -%}
+        {%- assign pp_list_mod = 'pp-variants__list--sm' -%}
+      {%- endif -%}
       <div class="pp-variants">
         {%- if section.settings.variants_title != blank -%}
           <h2 class="pp-variants__title">{{ section.settings.variants_title | escape }}</h2>
         {%- endif -%}
 
-        <ul class="pp-variants__list" role="list">
+        <ul class="pp-variants__list {{ pp_list_mod }}" role="list">
           {%- for variant in product.variants -%}
             <li class="pp-var-card">
               <div class="pp-var-card__media">

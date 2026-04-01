@@ -1106,7 +1106,12 @@ body { padding-top: 4.4rem; }
 .pp-header__desc p:last-child { margin-bottom: 0; }
 /* Variants section */
 .pp-variants__title { font-size: clamp(2rem, 3vw, 2.8rem); font-weight: 700; color: #1d1d1f; text-align: center; letter-spacing: -.01em; margin: 0 0 3.2rem; }
-.pp-variants__list { display: grid; grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr)); gap: 2.4rem; list-style: none; margin: 0; padding: 0; }
+.pp-variants__list { display: flex; flex-wrap: wrap; justify-content: center; gap: 2.4rem; list-style: none; margin: 0; padding: 0; }
+/* Card width by variant count */
+.pp-variants__list--xl .pp-var-card { flex: 0 1 38rem; }
+.pp-variants__list--lg .pp-var-card { flex: 0 1 28rem; }
+.pp-variants__list--md .pp-var-card { flex: 0 1 22rem; }
+.pp-variants__list--sm .pp-var-card { flex: 0 1 18rem; }
 /* Variant card */
 .pp-var-card { background: #fff; border-radius: 2rem; overflow: hidden; text-align: center; padding-bottom: 2.4rem; }
 .pp-var-card__media { background: #f5f5f7; padding: 2.4rem; }
