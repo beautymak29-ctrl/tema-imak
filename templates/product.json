@@ -13,8 +13,8 @@
       "type": "main-product",
       "settings": {
         "show_vendor": true,
-        "whatsapp_number": "+51961905778",
-        "whatsapp_label": "Cotizar por WhatsApp"
+        "variants_title": "Nuestras versiones",
+        "price_label": "Precio desde"
       }
     },
     "product-info": {
@@ -30,6 +30,7 @@
         "pi_it_1": {
           "type": "image_text",
           "settings": {
+            "image": "shopify://shop_images/D_NQ_NP_2X_884559-MLA78902603220_092024-F.webp",
             "heading": "",
             "content": "",
             "reverse": false
@@ -57,7 +58,7 @@
         "pi_gallery_1"
       ],
       "settings": {
-        "title": "",
+        "title": "Lo más destacado",
         "subtitle": ""
       }
     },
