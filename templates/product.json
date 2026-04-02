@@ -1,71 +1,18 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "main-product",
       "settings": {
         "show_vendor": false,
-        "variants_title": "Nuestras versiones",
-        "price_label": "Precio desde"
-      }
-    },
-    "product-info": {
-      "type": "product-info",
-      "blocks": {},
-      "block_order": [],
-      "settings": {
-        "title": "",
-        "subtitle": ""
-      }
-    },
-    "product-trust-bar": {
-      "type": "product-trust-bar",
-      "blocks": {
-        "ptb_1": {
-          "type": "benefit",
-          "settings": {
-            "icon": "card",
-            "title": "Convenios con efectiva",
-            "description": "Pag\u00e1 con tu tarjeta efectiva"
-          }
-        },
-        "ptb_2": {
-          "type": "benefit",
-          "settings": {
-            "icon": "percent",
-            "title": "Sin intereses",
-            "description": "Cuotas sin recargo"
-          }
-        },
-        "ptb_3": {
-          "type": "benefit",
-          "settings": {
-            "icon": "savings",
-            "title": "Plan Ahorro",
-            "description": "Ahorr\u00e1 y llev\u00e1te tu equipo"
-          }
-        },
-        "ptb_4": {
-          "type": "benefit",
-          "settings": {
-            "icon": "pin",
-            "title": "Visit\u00e1nos",
-            "description": "Atenci\u00f3n personalizada en tienda"
-          }
-        }
-      },
-      "block_order": ["ptb_1", "ptb_2", "ptb_3", "ptb_4"],
-      "settings": {
-        "title": ""
-      }
-    }
-  },
-  "order": ["main", "product-info", "product-trust-bar"]
-}
-  "sections": {
-    "main": {
-      "type": "main-product",
-      "settings": {
-        "show_vendor": true,
         "variants_title": "Nuestras versiones",
         "price_label": "Precio desde"
       }
@@ -83,7 +30,7 @@
         "pi_it_1": {
           "type": "image_text",
           "settings": {
-            "image": "shopify://shop_images/1.webp",
+            "image": "shopify://shop_images/1_de2926a2-7deb-41ca-b8e2-b58011ad1623.jpg",
             "heading": "Este zoom va a llegar muy lejos.",
             "content": "<p>El sistema de cámaras del iPhone 17 Pro es innovador por donde lo mires. La cámara teleobjetivo viene con la última generación de nuestro diseño de tetraprisma y un sensor un 56% más grande. El zoom de 8x de calidad óptica con una distancia focal equivalente a 200 mm logra un rango total de zoom óptico de 16x,el teleobjetivo de mayor alcance en un iPhone.Así, podrás explorar una gama mucho más amplia de opciones creativas y llevar tus composiciones a otro nivel.</p>",
             "reverse": false
