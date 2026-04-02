@@ -1,18 +1,71 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "main": {
       "type": "main-product",
       "settings": {
         "show_vendor": false,
+        "variants_title": "Nuestras versiones",
+        "price_label": "Precio desde"
+      }
+    },
+    "product-info": {
+      "type": "product-info",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "title": "",
+        "subtitle": ""
+      }
+    },
+    "product-trust-bar": {
+      "type": "product-trust-bar",
+      "blocks": {
+        "ptb_1": {
+          "type": "benefit",
+          "settings": {
+            "icon": "card",
+            "title": "Convenios con efectiva",
+            "description": "Pag\u00e1 con tu tarjeta efectiva"
+          }
+        },
+        "ptb_2": {
+          "type": "benefit",
+          "settings": {
+            "icon": "percent",
+            "title": "Sin intereses",
+            "description": "Cuotas sin recargo"
+          }
+        },
+        "ptb_3": {
+          "type": "benefit",
+          "settings": {
+            "icon": "savings",
+            "title": "Plan Ahorro",
+            "description": "Ahorr\u00e1 y llev\u00e1te tu equipo"
+          }
+        },
+        "ptb_4": {
+          "type": "benefit",
+          "settings": {
+            "icon": "pin",
+            "title": "Visit\u00e1nos",
+            "description": "Atenci\u00f3n personalizada en tienda"
+          }
+        }
+      },
+      "block_order": ["ptb_1", "ptb_2", "ptb_3", "ptb_4"],
+      "settings": {
+        "title": ""
+      }
+    }
+  },
+  "order": ["main", "product-info", "product-trust-bar"]
+}
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "settings": {
+        "show_vendor": true,
         "variants_title": "Nuestras versiones",
         "price_label": "Precio desde"
       }

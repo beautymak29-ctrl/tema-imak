@@ -5,7 +5,12 @@
     {%- endif -%}
     <ul class="ptb-list" role="list">
       {%- for block in section.blocks -%}
-        <li class="ptb-item" {{ block.shopify_attributes }}>
+        {%- assign has_detail = block.settings.detail_content != blank -%}
+        <li class="ptb-item{% if has_detail %} ptb-item--expandable{% endif %}" {{ block.shopify_attributes }}>
+          {%- if has_detail -%}
+            <button type="button" class="ptb-item__trigger" aria-expanded="false" data-ptb-trigger>
+          {%- endif -%}
+
           <div class="ptb-item__icon-wrap" aria-hidden="true">
             {%- case block.settings.icon -%}
               {%- when 'card' -%}
@@ -28,11 +33,42 @@
           {%- if block.settings.description != blank -%}
             <p class="ptb-item__desc">{{ block.settings.description | escape }}</p>
           {%- endif -%}
+          {%- if has_detail -%}
+            <span class="ptb-item__chevron" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </span>
+          {%- endif -%}
+
+          {%- if has_detail -%}
+            </button>
+            <div class="ptb-item__panel" hidden>
+              <div class="ptb-item__panel-inner rte">
+                {{ block.settings.detail_content }}
+              </div>
+            </div>
+          {%- endif -%}
         </li>
       {%- endfor -%}
     </ul>
   </div>
 </section>
+
+<script>
+(function () {
+  document.querySelectorAll('[data-ptb-trigger]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      var panel = btn.nextElementSibling;
+      btn.setAttribute('aria-expanded', String(!expanded));
+      if (expanded) {
+        panel.hidden = true;
+      } else {
+        panel.hidden = false;
+      }
+    });
+  });
+})();
+</script>
 
 {% schema %}
 {
@@ -74,7 +110,13 @@
         {
           "type": "text",
           "id": "description",
-          "label": "Descripci\u00f3n (opcional)"
+          "label": "Descripci\u00f3n corta"
+        },
+        {
+          "type": "richtext",
+          "id": "detail_content",
+          "label": "Contenido expandido (opcional)",
+          "info": "Si se completa, el beneficio se podr\u00e1 expandir al hacer clic"
         }
       ]
     }

@@ -1089,6 +1089,17 @@ body { padding-top: 4.4rem; }
 .ptb-item__icon-wrap { width: 6.4rem; height: 6.4rem; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #0071e3; box-shadow: 0 2px 12px rgba(0,0,0,.08); margin-bottom: .4rem; flex-shrink: 0; }
 .ptb-item__title { font-size: 1.5rem; font-weight: 700; color: #1d1d1f; margin: 0; line-height: 1.3; }
 .ptb-item__desc { font-size: 1.3rem; color: #6e6e73; margin: 0; line-height: 1.5; }
+/* Expandable benefit */
+.ptb-item--expandable { align-items: stretch; }
+.ptb-item__trigger { all: unset; display: flex; flex-direction: column; align-items: center; text-align: center; gap: .8rem; cursor: pointer; width: 100%; box-sizing: border-box; padding: 1.6rem 1.2rem; border-radius: 1.6rem; transition: background .15s; position: relative; }
+.ptb-item__trigger:hover { background: rgba(0,0,0,.04); }
+.ptb-item__trigger[aria-expanded="true"] { background: rgba(0,113,227,.06); }
+.ptb-item__chevron { display: block; color: #6e6e73; transition: transform .25s; margin-top: -.2rem; }
+.ptb-item__trigger[aria-expanded="true"] .ptb-item__chevron { transform: rotate(180deg); }
+.ptb-item__panel { padding: 0 1.2rem 1.6rem; }
+.ptb-item__panel-inner { font-size: 1.4rem; line-height: 1.7; color: #424245; text-align: left; background: #fff; border-radius: 1.2rem; padding: 1.6rem; }
+.ptb-item__panel-inner p { margin: 0 0 .8rem; }
+.ptb-item__panel-inner p:last-child { margin-bottom: 0; }
 @media (max-width: 749px) {
   .ptb-list { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
 }
