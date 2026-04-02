@@ -918,7 +918,7 @@ body { padding-top: 4.4rem; }
 .cmp-col-header__swatch { width: 2rem; height: 2rem; border-radius: 50%; border: none; box-shadow: 0 0 0 1px #d2d2d7; display: inline-block; cursor: pointer; padding: 0; transition: box-shadow .15s; flex-shrink: 0; }
 .cmp-col-header__swatch.is-active { box-shadow: 0 0 0 1.5px #fff, 0 0 0 3px #0071e3; }
 .cmp-col-header__swatch:hover:not(.is-active) { box-shadow: 0 0 0 1.5px #fff, 0 0 0 3px #86868b; }
-.cmp-col-header__color-label { font-size: 1.2rem; color: #6e6e73; margin: .4rem 0 1.4rem; text-align: center; }
+.cmp-col-header__color-label { font-size: 1.2rem; color: #000; margin: .4rem 0 1.4rem; text-align: center; }
 
 /* Category */
 .cmp-cat { border-top: 1px solid #d2d2d7; padding: 2.4rem 0; }
