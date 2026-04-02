@@ -45,14 +45,6 @@
             "reverse": true
           }
         },
-        "pi_video_1": {
-          "type": "video",
-          "settings": {
-            "heading": "",
-            "video_url": "",
-            "caption": ""
-          }
-        },
         "pi_gallery_1": {
           "type": "gallery",
           "settings": {
@@ -64,7 +56,6 @@
         "pi_text_1",
         "pi_it_1",
         "image_text_3nrwmK",
-        "pi_video_1",
         "pi_gallery_1"
       ],
       "settings": {
