@@ -83,7 +83,7 @@ ul.list-unstyled {
    ===================================================== */
 .hd {
   position: fixed; top: 0; left: 0; right: 0; z-index: 9999;
-  background: rgba(29,29,31,.92);
+  background: rgba(0,0,0,.92);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   backdrop-filter: saturate(180%) blur(20px);
   height: 4.4rem;

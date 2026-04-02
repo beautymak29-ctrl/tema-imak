@@ -13,10 +13,10 @@
   "sections": {
     "announcement-bar": {
       "type": "announcement-bar",
-      "disabled": true,
+      "disabled": false,
       "settings": {
         "text": "¡Bienvenidos a nuestra tienda!",
-        "color_background": "#121212",
+        "color_background": "#000000",
         "color_text": "#ffffff"
       }
     },
