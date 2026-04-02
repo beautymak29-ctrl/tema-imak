@@ -98,7 +98,7 @@ ul.list-unstyled {
 
 /* Logo */
 .hd__logo { display: flex; align-items: center; color: #f5f5f7; text-decoration: none; flex-shrink: 0; }
-.hd__logo-img { height: 3.2rem; width: auto; }
+.hd__logo-img { height: 5.6rem; width: auto; }
 .hd__apple-icon { color: #f5f5f7; }
 
 /* Nav */
