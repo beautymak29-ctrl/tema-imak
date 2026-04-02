@@ -12,7 +12,7 @@
     "main": {
       "type": "main-product",
       "settings": {
-        "show_vendor": true,
+        "show_vendor": false,
         "variants_title": "Nuestras versiones",
         "price_label": "Precio desde"
       }
