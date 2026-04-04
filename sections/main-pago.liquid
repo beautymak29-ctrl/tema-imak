@@ -21,7 +21,13 @@
   .chk-nav__secure { display: flex; align-items: center; gap: 6px; font-size: 13px; color: #86868b; }
   .chk-nav__secure svg { width: 14px; height: 14px; fill: #30d158; }
 
-  .chk-wrap { max-width: 480px; margin: 0 auto; padding: 40px 20px 60px; }
+  .chk-wrap { max-width: 1000px; margin: 0 auto; padding: 40px 24px 60px; }
+  .chk-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+  .chk-col-left { position: sticky; top: 80px; }
+  @media (max-width: 749px) {
+    .chk-layout { grid-template-columns: 1fr; }
+    .chk-col-left { position: static; }
+  }
 
   .chk-product {
     background: #1d1d1f;
@@ -115,39 +121,48 @@
 </nav>
 
 <div class="chk-wrap">
+  <div class="chk-layout">
 
-  {%- comment -%} PRODUCTO {%- endcomment -%}
-  <div class="chk-product">
-    {%- if section.settings.product_image != blank -%}
-      {{ section.settings.product_image | image_url: width: 160 | image_tag:
-        loading: 'eager',
-        class: 'chk-product__img',
-        alt: section.settings.product_name
-      }}
-    {%- else -%}
-      <div class="chk-product__img"></div>
-    {%- endif -%}
-    <div class="chk-product__info">
-      <div class="chk-product__name">{{ section.settings.product_name | default: 'Producto' | escape }}</div>
-      <div class="chk-product__desc">{{ section.settings.product_desc | default: 'Sellado con garantía IMAK' | escape }}</div>
-      <div class="chk-product__price">{{ section.settings.product_price | default: '' | escape }}</div>
-    </div>
-  </div>
+    {%- comment -%} COLUMNA IZQUIERDA: producto + resumen {%- endcomment -%}
+    <div class="chk-col-left">
 
-  {%- comment -%} RESUMEN {%- endcomment -%}
-  <div class="chk-summary">
-    <div class="chk-summary__row">
-      <span>Producto</span>
-      <span>{{ section.settings.product_price | default: '' | escape }}</span>
-    </div>
-    <div class="chk-summary__row chk-summary__row--total">
-      <span>Total a pagar</span>
-      <span>{{ section.settings.product_price | default: '' | escape }}</span>
-    </div>
-  </div>
+      {%- comment -%} PRODUCTO {%- endcomment -%}
+      <div class="chk-product">
+        {%- if section.settings.product_image != blank -%}
+          {{ section.settings.product_image | image_url: width: 160 | image_tag:
+            loading: 'eager',
+            class: 'chk-product__img',
+            alt: section.settings.product_name
+          }}
+        {%- else -%}
+          <div class="chk-product__img"></div>
+        {%- endif -%}
+        <div class="chk-product__info">
+          <div class="chk-product__name">{{ section.settings.product_name | default: 'Producto' | escape }}</div>
+          <div class="chk-product__desc">{{ section.settings.product_desc | default: 'Sellado con garantía IMAK' | escape }}</div>
+          <div class="chk-product__price">{{ section.settings.product_price | default: '' | escape }}</div>
+        </div>
+      </div>
 
-  {%- comment -%} FORMULARIO PAGO {%- endcomment -%}
-  <div class="chk-label">Método de pago</div>
+      {%- comment -%} RESUMEN {%- endcomment -%}
+      <div class="chk-summary">
+        <div class="chk-summary__row">
+          <span>Producto</span>
+          <span>{{ section.settings.product_price | default: '' | escape }}</span>
+        </div>
+        <div class="chk-summary__row chk-summary__row--total">
+          <span>Total a pagar</span>
+          <span>{{ section.settings.product_price | default: '' | escape }}</span>
+        </div>
+      </div>
+
+    </div>{%- comment -%} /col-left {%- endcomment -%}
+
+    {%- comment -%} COLUMNA DERECHA: formulario + botón {%- endcomment -%}
+    <div class="chk-col-right">
+
+      {%- comment -%} FORMULARIO PAGO {%- endcomment -%}
+      <div class="chk-label">Método de pago</div>
 
   <div class="chk-form">
     <div class="chk-field">
@@ -201,8 +216,9 @@
   <div class="chk-powered">
     Procesado por
     <img src="https://http2.mlstatic.com/frontend-assets/mp-web-navigation/ui-navigation/6.8.26/mercadopago/logo__large.png" alt="Mercado Pago" loading="lazy">
-  </div>
+    </div>{%- comment -%} /col-right {%- endcomment -%}
 
+  </div>{%- comment -%} /layout {%- endcomment -%}
 </div>
 
 <div class="chk-footer">
