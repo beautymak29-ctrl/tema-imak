@@ -106,6 +106,24 @@
   .chk-footer a { color: #86868b; text-decoration: none; }
 </style>
 
+{%- comment -%} ACCESO RESTRINGIDO {%- endcomment -%}
+{%- assign chk_tag = section.settings.access_tag | default: 'acceso-pagos' -%}
+{%- assign chk_allowed = false -%}
+{%- if customer -%}
+  {%- for tag in customer.tags -%}
+    {%- if tag == chk_tag -%}
+      {%- assign chk_allowed = true -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+
+{%- unless chk_allowed -%}
+  <script>
+    window.location.href = {{ routes.account_login_url | append: '?return_url=' | append: request.path | json }};
+  </script>
+  <noscript><meta http-equiv="refresh" content="0;url={{ routes.account_login_url }}"></noscript>
+{%- endunless -%}
+
 <nav class="chk-nav">
   <a href="{{ routes.root_url }}" class="chk-nav__logo">
     {%- if section.settings.logo != blank -%}
@@ -226,11 +244,39 @@
   <a href="{{ routes.root_url }}">imak.pe</a> &middot; Pago procesado de forma segura por Mercado Pago
 </div>
 
+<script>
+(function () {
+  var expiry = document.getElementById('chk-expiry');
+  if (!expiry) return;
+  expiry.addEventListener('input', function (e) {
+    var val = expiry.value.replace(/\D/g, '').slice(0, 4);
+    if (val.length >= 3) {
+      expiry.value = val.slice(0, 2) + '/' + val.slice(2);
+    } else {
+      expiry.value = val;
+    }
+  });
+  expiry.addEventListener('keydown', function (e) {
+    if (e.key === 'Backspace' && expiry.value.endsWith('/')) {
+      e.preventDefault();
+      expiry.value = expiry.value.slice(0, -1);
+    }
+  });
+})();
+</script>
+
 {% schema %}
 {
   "name": "P\u00e1gina de pago",
   "tag": "div",
   "settings": [
+    {
+      "type": "text",
+      "id": "access_tag",
+      "label": "Etiqueta de acceso",
+      "default": "acceso-pagos",
+      "info": "Solo los clientes con esta etiqueta pueden ver esta p\u00e1gina"
+    },
     {
       "type": "image_picker",
       "id": "logo",
