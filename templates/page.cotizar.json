@@ -1,0 +1,13 @@
+{
+  "layout": "pago",
+  "sections": {
+    "main": {
+      "type": "main-cotizar",
+      "settings": {
+        "title": "Solicitar cotización",
+        "subtitle": "Completá tus datos y te respondemos a la brevedad."
+      }
+    }
+  },
+  "order": ["main"]
+}
