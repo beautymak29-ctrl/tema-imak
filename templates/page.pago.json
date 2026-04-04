@@ -1,0 +1,14 @@
+{
+  "layout": "pago",
+  "sections": {
+    "main": {
+      "type": "main-pago",
+      "settings": {
+        "product_name": "iPhone 16 Pro Max 256GB",
+        "product_desc": "Sellado con garantía IMAK",
+        "product_price": "S/ 4,299.00"
+      }
+    }
+  },
+  "order": ["main"]
+}
