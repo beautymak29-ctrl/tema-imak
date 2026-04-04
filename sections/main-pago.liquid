@@ -150,13 +150,6 @@
   <div class="chk-label">Método de pago</div>
 
   <div class="chk-form">
-    <div class="chk-card-icons">
-      <span class="chk-card-icon">VISA</span>
-      <span class="chk-card-icon">MASTERCARD</span>
-      <span class="chk-card-icon">AMEX</span>
-      <span class="chk-card-icon">DINERS</span>
-    </div>
-
     <div class="chk-field">
       <label class="chk-field__label" for="chk-card-num">Número de tarjeta</label>
       <input class="chk-field__input" id="chk-card-num" type="text" placeholder="1234 5678 9012 3456" maxlength="19" autocomplete="cc-number" inputmode="numeric">
@@ -178,16 +171,6 @@
     <div class="chk-field">
       <label class="chk-field__label" for="chk-dni">DNI del titular</label>
       <input class="chk-field__input" id="chk-dni" type="text" placeholder="12345678" maxlength="8" inputmode="numeric">
-    </div>
-    <div class="chk-field">
-      <label class="chk-field__label" for="chk-cuotas">Cuotas</label>
-      <select class="chk-field__select" id="chk-cuotas">
-        {%- assign price = section.settings.product_price | default: '' -%}
-        <option>1 cuota de {{ price }} (sin interés)</option>
-        <option>3 cuotas sin interés</option>
-        <option>6 cuotas</option>
-        <option>12 cuotas</option>
-      </select>
     </div>
 
     <div class="chk-installments">
