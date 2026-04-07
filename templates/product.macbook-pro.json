@@ -1,0 +1,118 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "settings": {
+        "show_vendor": false,
+        "variants_title": "Nuestras versiones",
+        "price_label": "Precio desde"
+      }
+    },
+    "product-info": {
+      "type": "product-info",
+      "blocks": {
+        "pi_text_1": {
+          "type": "text",
+          "settings": {
+            "heading": "",
+            "content": ""
+          }
+        },
+        "pi_it_1": {
+          "type": "image_text",
+          "settings": {
+            "image": "shopify://shop_images/imac.jpg",
+            "heading": "El poder de lo imposible en un diseño ultrafino",
+            "content": "<p>La nueva MacBook Neo llega para redefinir lo que un portátil de entrada puede hacer. Con el chip <strong>A18 Pro</strong>, una pantalla Liquid Retina de 13 pulgadas y un diseño de aluminio ultra resistente, es la Mac perfecta para quienes buscan movilidad, inteligencia artificial y batería para todo el día sin comprometer el presupuesto.</p>",
+            "reverse": false
+          }
+        },
+        "image_text_3nrwmK": {
+          "type": "image_text",
+          "settings": {
+            "image": "shopify://shop_images/neo.jpg",
+            "heading": "",
+            "content": "<h3><strong>Características Principales </strong></h3><ul><li><strong>Chip A18 Pro:</strong> Rendimiento optimizado para tareas diarias, edición de fotos y <strong>Apple Intelligence</strong> (IA integrada).</li><li><strong>Pantalla Liquid Retina de 13\":</strong> Resolución nítida de 2408 x 1506 con 500 nits de brillo y soporte para mil millones de colores.</li><li><strong>Autonomía Extrema:</strong> Hasta <strong>16 horas</strong> de reproducción de video con una sola carga.</li><li><strong>Diseño Ultraportátil:</strong> Construcción premium en aluminio disponible en cuatro colores irresistibles: <strong>Plata, Indigo, Blush (Rosa) y Citrus (Amarillo).</strong></li><li><strong>Integración Total con iPhone:</strong> Copia en tu iPhone y pega en tu Mac, o usa <strong>iPhone Mirroring</strong> para controlar tu teléfono desde la pantalla del Neo.</li></ul>",
+            "reverse": true
+          }
+        },
+        "pi_gallery_1": {
+          "type": "gallery",
+          "settings": {
+            "heading": ""
+          }
+        }
+      },
+      "block_order": [
+        "pi_text_1",
+        "pi_it_1",
+        "image_text_3nrwmK",
+        "pi_gallery_1"
+      ],
+      "settings": {
+        "title": "Lo más destacado",
+        "subtitle": ""
+      }
+    },
+    "product-trust-bar": {
+      "type": "product-trust-bar",
+      "blocks": {
+        "ptb_1": {
+          "type": "benefit",
+          "settings": {
+            "icon": "card",
+            "title": "Convenios con efectiva",
+            "description": "Pagá con tu tarjeta efectiva"
+          }
+        },
+        "ptb_2": {
+          "type": "benefit",
+          "settings": {
+            "icon": "percent",
+            "title": "Sin intereses",
+            "description": "Cuotas sin recargo"
+          }
+        },
+        "ptb_3": {
+          "type": "benefit",
+          "settings": {
+            "icon": "savings",
+            "title": "Plan Ahorro",
+            "description": "Ahorrá y lleváte tu equipo"
+          }
+        },
+        "ptb_4": {
+          "type": "benefit",
+          "settings": {
+            "icon": "pin",
+            "title": "Visitános",
+            "description": "Atención personalizada en tienda"
+          }
+        }
+      },
+      "block_order": [
+        "ptb_1",
+        "ptb_2",
+        "ptb_3",
+        "ptb_4"
+      ],
+      "settings": {
+        "title": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product-info",
+    "product-trust-bar"
+  ]
+}
