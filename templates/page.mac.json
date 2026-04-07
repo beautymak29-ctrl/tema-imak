@@ -12,11 +12,11 @@
     "product-family": {
       "type": "product-family",
       "blocks": {
-        "mac_card_1": {
+        "mac_card_3": {
           "type": "product_card",
           "settings": {
-            "product": "macbook-air",
-            "card_title": "MacBook Air",
+            "product": "macbook-neo",
+            "card_title": "MacBook Neo",
             "card_description": "",
             "modal_heading": "",
             "modal_title_1": "",
@@ -46,11 +46,11 @@
             "modal_link_label": "Ver producto"
           }
         },
-        "mac_card_3": {
+        "mac_card_1": {
           "type": "product_card",
           "settings": {
-            "product": "macbook-neo",
-            "card_title": "MacBook Neo",
+            "product": "macbook-air",
+            "card_title": "MacBook Air",
             "card_description": "",
             "modal_heading": "",
             "modal_title_1": "",
@@ -82,12 +82,14 @@
         }
       },
       "block_order": [
-        "mac_card_1",
-        "mac_card_2",
         "mac_card_3",
+        "mac_card_2",
+        "mac_card_1",
         "mac_card_4"
       ],
       "settings": {
+        "whatsapp_number": "",
+        "quote_label": "Cotizar",
         "card_shape": "landscape",
         "title": "Lo más destacado.",
         "button_label": "Más información",
