@@ -30,7 +30,7 @@
         "pi_it_1": {
           "type": "image_text",
           "settings": {
-            "image": "shopify://shop_images/imac.jpg",
+            "image": "shopify://shop_images/m_air.jpg",
             "heading": "El futuro es M5",
             "content": "<p>La laptop más delgada del mundo ahora es una supercomputadora de bolsillo. Gracias al nuevo <strong>chip M5</strong>, la MacBook Air de 13 pulgadas alcanza niveles de inteligencia y velocidad nunca antes vistos en un diseño sin ventiladores. Es la herramienta definitiva para quienes exigen máxima potencia en un formato ultraportátil.</p>",
             "reverse": false
@@ -39,8 +39,8 @@
         "image_text_3nrwmK": {
           "type": "image_text",
           "settings": {
-            "image": "shopify://shop_images/neo.jpg",
-            "heading": "",
+            "image": "shopify://shop_images/m5_2.jpg",
+            "heading": "M5. Es una bala.",
             "content": "<h3><strong>Características Principales </strong></h3><ul><li><strong>Chip M5 Ultra-Eficiente:</strong> Arquitectura de 2 nanómetros para un rendimiento un <strong>30% más rápido</strong> en tareas de Inteligencia Artificial y gráficos.</li><li><strong>Apple Intelligence Pro:</strong> Procesamiento de lenguaje y generación de imágenes en tiempo real, totalmente integrado en macOS.</li><li><strong>Pantalla Liquid Retina de 13.6\":</strong> Con tecnología <strong>Tandem OLED</strong> opcional para contrastes infinitos y un brillo de hasta 1000 nits.</li><li><strong>Batería de \"Dos Días\":</strong> Hasta <strong>24 horas</strong> de autonomía real gracias a la eficiencia energética del silicio de quinta generación.</li><li><strong>Cámara de 12MP Center Stage:</strong> Te mantiene siempre en el centro del encuadre durante tus llamadas, con corrección de luz por IA.</li></ul>",
             "reverse": true
           }
