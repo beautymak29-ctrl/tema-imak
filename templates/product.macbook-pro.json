@@ -32,7 +32,7 @@
           "settings": {
             "image": "shopify://shop_images/imac.jpg",
             "heading": "Potencia extrema para mentes brillantes",
-            "content": "<h3><strong>Características Principales </strong></h3><ul><li><strong>Chips M4 Pro y M4 Max:</strong> CPU de hasta 16 núcleos y GPU de hasta 40 núcleos para un renderizado 3D y edición de video 8K al instante.</li><li><strong>Pantalla Liquid Retina XDR:</strong> Brillo sostenido de 1,000 nits y tecnología ProMotion de <strong>120 Hz</strong> para un movimiento ultra fluido.</li><li><strong>Memoria Unificada de hasta 128 GB:</strong> Ejecuta múltiples apps profesionales pesadas simultáneamente sin una sola gota de sudor.</li><li><strong>Conectividad Profesional:</strong> Tres puertos Thunderbolt 4 (USB-C), ranura para tarjeta SDXC, puerto HDMI y MagSafe 3.</li><li><strong>Batería de larga duración:</strong> Hasta <strong>22 horas</strong> de autonomía, la mayor duración en la historia de una Mac.</li></ul>",
+            "content": "<p>Diseñada para quienes no aceptan límites. La nueva MacBook Pro con chips de la serie M5 ofrece un rendimiento gráfico revolucionario y una eficiencia térmica sin precedentes. Con la pantalla Liquid Retina XDR más avanzada del mundo, es la estación de trabajo definitiva para llevar tus proyectos del concepto a la realidad.</p>",
             "reverse": false
           }
         },
@@ -41,7 +41,7 @@
           "settings": {
             "image": "shopify://shop_images/neo.jpg",
             "heading": "",
-            "content": "<h3><strong>Características Principales </strong></h3><ul><li><strong>Chip A18 Pro:</strong> Rendimiento optimizado para tareas diarias, edición de fotos y <strong>Apple Intelligence</strong> (IA integrada).</li><li><strong>Pantalla Liquid Retina de 13\":</strong> Resolución nítida de 2408 x 1506 con 500 nits de brillo y soporte para mil millones de colores.</li><li><strong>Autonomía Extrema:</strong> Hasta <strong>16 horas</strong> de reproducción de video con una sola carga.</li><li><strong>Diseño Ultraportátil:</strong> Construcción premium en aluminio disponible en cuatro colores irresistibles: <strong>Plata, Indigo, Blush (Rosa) y Citrus (Amarillo).</strong></li><li><strong>Integración Total con iPhone:</strong> Copia en tu iPhone y pega en tu Mac, o usa <strong>iPhone Mirroring</strong> para controlar tu teléfono desde la pantalla del Neo.</li></ul>",
+            "content": "<h3><strong>Características Principales (Bullet Points)</strong></h3><ul><li><strong>Chips M4 Pro y M4 Max:</strong> CPU de hasta 16 núcleos y GPU de hasta 40 núcleos para un renderizado 3D y edición de video 8K al instante.</li><li><strong>Pantalla Liquid Retina XDR:</strong> Brillo sostenido de 1,000 nits y tecnología ProMotion de <strong>120 Hz</strong> para un movimiento ultra fluido.</li><li><strong>Memoria Unificada de hasta 128 GB:</strong> Ejecuta múltiples apps profesionales pesadas simultáneamente sin una sola gota de sudor.</li><li><strong>Conectividad Profesional:</strong> Tres puertos Thunderbolt 4 (USB-C), ranura para tarjeta SDXC, puerto HDMI y MagSafe 3.</li><li><strong>Batería de larga duración:</strong> Hasta <strong>22 horas</strong> de autonomía, la mayor duración en la historia de una Mac.</li></ul>",
             "reverse": true
           }
         },
