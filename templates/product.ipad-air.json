@@ -30,7 +30,7 @@
         "pi_it_1": {
           "type": "image_text",
           "settings": {
-            "image": "shopify://shop_images/ipadpeor_12.jpg",
+            "image": "shopify://shop_images/air_colora.jpg",
             "heading": "Potencia de sobra. Colores de envidia.",
             "content": "<p>El nuevo iPad Air es una fuerza de la naturaleza. Ahora disponible en dos tamaños, de 11 y 13 pulgadas, y equipado con el increíble <strong>chip de la serie M</strong>, ofrece un rendimiento asombroso en un diseño ultradelgado. Es la herramienta ideal para estudiar, crear y jugar con una velocidad que te dejará sin palabras.</p>",
             "reverse": false
@@ -39,7 +39,7 @@
         "image_text_3nrwmK": {
           "type": "image_text",
           "settings": {
-            "image": "shopify://shop_images/pro1.webp",
+            "image": "shopify://shop_images/air_chevere.jpg",
             "heading": "",
             "content": "<h3><strong>Características Principales </strong></h3><ul><li><strong>Chip de Serie M de Apple:</strong> Velocidad de CPU y gráficos de nivel profesional para multitarea intensa y juegos de alta gama.</li><li><strong>Pantalla Liquid Retina:</strong> Colores vibrantes, tecnología True Tone y una capa antirreflejo para una visión perfecta en cualquier lugar.</li><li><strong>Cámara Frontal Ultra Gran Angular en Horizontal:</strong> Perfecta para videollamadas naturales con la función de <strong>Encuadre Centrado</strong>.</li><li><strong>Compatibilidad Pro:</strong> Funciona con el <strong>Apple Pencil Pro</strong> y el Magic Keyboard para transformar tu tablet en una laptop en segundos.</li><li><strong>Colores Irresistibles:</strong> Acabados premium en <strong>Azul, Púrpura, Blanco Estelar y Gris Espacial.</strong></li></ul>",
             "reverse": true
