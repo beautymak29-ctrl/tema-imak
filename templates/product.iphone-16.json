@@ -30,9 +30,9 @@
         "pi_it_1": {
           "type": "image_text",
           "settings": {
-            "image": "shopify://shop_images/1_de2926a2-7deb-41ca-b8e2-b58011ad1623.jpg",
-            "heading": "Este zoom va a llegar muy lejos.",
-            "content": "<p>El sistema de cámaras del iPhone 17 Pro es innovador por donde lo mires. La cámara teleobjetivo viene con la última generación de nuestro diseño de tetraprisma y un sensor un 56% más grande. El zoom de 8x de calidad óptica con una distancia focal equivalente a 200 mm logra un rango total de zoom óptico de 16x,el teleobjetivo de mayor alcance en un iPhone.Así, podrás explorar una gama mucho más amplia de opciones creativas y llevar tus composiciones a otro nivel.</p>",
+            "image": "shopify://shop_images/D_NQ_NP_2X_793157-MLA79140551665_092024-F.webp",
+            "heading": "Innovación al alcance de todos",
+            "content": "<p>El iPhone 16 redefine lo esencial. Con la incorporación del <strong>Control de Cámara</strong> y el potente chip A18, este modelo ofrece una experiencia fluida, cámaras de nivel profesional y una batería que te acompaña durante toda la jornada. Diseño refinado y rendimiento de vanguardia en un solo lugar.</p>",
             "reverse": false
           }
         },
@@ -41,7 +41,7 @@
           "settings": {
             "image": "shopify://shop_images/1_7117eec7-cf81-4a2c-afd4-03490cd38e20.jpg",
             "heading": "",
-            "content": "<h3><strong>Cámara Fusion principal de 48 MP</strong></h3><ul><li>Distancia focal de 24/48 mm (1x/2x)</li><li>Apertura de ƒ/1.78</li><li>Sensor quad pixel de 2.44 μm<br/>(pixel individual de 1.22 μm)</li></ul><h3><strong>Cámara Fusion ultra gran angular de 48 MP</strong></h3><ul><li>Distancia focal de 13 mm (0.5x/macro)</li><li>Apertura de ƒ/2.2</li><li>Sensor quad pixel de 1.4 μm<br/>(pixel individual de 0.7 μm)</li></ul><h3><strong>Cámara Fusion teleobjetivo de 48 MP</strong></h3><ul><li>Distancia focal de 100/200 mm (4x/8x)</li><li>Apertura de ƒ/2.8</li><li>Sensor quad pixel de 1.4 μm<br/>(pixel individual de 0.7 μm)</li></ul>",
+            "content": "<h3><strong>Características Principales </strong></h3><ul><li><strong>Control de Cámara:</strong> Un botón dedicado para acceder a las herramientas de fotografía de forma instantánea y precisa.</li><li><strong>Chip A18:</strong> Optimizado para la inteligencia avanzada y juegos de alta exigencia gráfica con una eficiencia increíble.</li><li><strong>Sistema de Cámara Dual:</strong> Sensor principal de <strong>48 MP Fusion</strong> que funciona como dos cámaras en una (Gran angular y Teleobjetivo de 2x).</li><li><strong>Botón de Acción Personalizable:</strong> Accede a tu linterna, cámara o atajos favoritos con un solo toque.</li><li><strong>Carga USB-C:</strong> Compatibilidad universal para carga rápida y transferencia de datos eficiente.</li></ul>",
             "reverse": true
           }
         },
