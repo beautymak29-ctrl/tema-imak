@@ -30,18 +30,18 @@
         "pi_it_1": {
           "type": "image_text",
           "settings": {
-            "image": "shopify://shop_images/imac.jpg",
-            "heading": "El poder de lo imposible en un diseño ultrafino",
-            "content": "<p>La nueva MacBook Neo llega para redefinir lo que un portátil de entrada puede hacer. Con el chip <strong>A18 Pro</strong>, una pantalla Liquid Retina de 13 pulgadas y un diseño de aluminio ultra resistente, es la Mac perfecta para quienes buscan movilidad, inteligencia artificial y batería para todo el día sin comprometer el presupuesto.</p>",
+            "image": "shopify://shop_images/air_m4.png",
+            "heading": "Increíblemente delgada. Increíblemente M4.",
+            "content": "<p>La laptop más querida del mundo ahora es más potente que nunca. Con el nuevo <strong>chip M4</strong>, la MacBook Air de 13 pulgadas combina un diseño icónico sin ventiladores con una velocidad asombrosa. Perfecta para trabajar, crear y jugar en cualquier lugar con el silencio más absoluto.</p>",
             "reverse": false
           }
         },
         "image_text_3nrwmK": {
           "type": "image_text",
           "settings": {
-            "image": "shopify://shop_images/neo.jpg",
+            "image": "shopify://shop_images/m4_2laps.avif",
             "heading": "",
-            "content": "<h3><strong>Características Principales </strong></h3><ul><li><strong>Chip A18 Pro:</strong> Rendimiento optimizado para tareas diarias, edición de fotos y <strong>Apple Intelligence</strong> (IA integrada).</li><li><strong>Pantalla Liquid Retina de 13\":</strong> Resolución nítida de 2408 x 1506 con 500 nits de brillo y soporte para mil millones de colores.</li><li><strong>Autonomía Extrema:</strong> Hasta <strong>16 horas</strong> de reproducción de video con una sola carga.</li><li><strong>Diseño Ultraportátil:</strong> Construcción premium en aluminio disponible en cuatro colores irresistibles: <strong>Plata, Indigo, Blush (Rosa) y Citrus (Amarillo).</strong></li><li><strong>Integración Total con iPhone:</strong> Copia en tu iPhone y pega en tu Mac, o usa <strong>iPhone Mirroring</strong> para controlar tu teléfono desde la pantalla del Neo.</li></ul>",
+            "content": "<h3><strong>Características Principales</strong></h3><ul><li><strong>Chip M4 de Apple:</strong> Salto generacional en rendimiento con un motor neuronal (Neural Engine) mejorado para <strong>Apple Intelligence</strong>.</li><li><strong>Diseño sin ventiladores:</strong> Rendimiento potente en total silencio, sin importar qué tan pesada sea la tarea.</li><li><strong>Pantalla Liquid Retina de 13.6\":</strong> Soporta mil millones de colores para fotos vibrantes y textos increíblemente nítidos.</li><li><strong>Cámara FaceTime HD de 1080p:</strong> Te verás mejor que nunca en tus videollamadas gracias al procesador de imagen del chip M4.</li><li><strong>Sistema de 4 altavoces:</strong> Audio inmersivo con soporte para Audio Espacial que te envuelve por completo.</li></ul>",
             "reverse": true
           }
         },
