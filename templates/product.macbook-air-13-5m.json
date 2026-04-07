@@ -31,8 +31,8 @@
           "type": "image_text",
           "settings": {
             "image": "shopify://shop_images/imac.jpg",
-            "heading": "El poder de lo imposible en un diseño ultrafino",
-            "content": "<p>La nueva MacBook Neo llega para redefinir lo que un portátil de entrada puede hacer. Con el chip <strong>A18 Pro</strong>, una pantalla Liquid Retina de 13 pulgadas y un diseño de aluminio ultra resistente, es la Mac perfecta para quienes buscan movilidad, inteligencia artificial y batería para todo el día sin comprometer el presupuesto.</p>",
+            "heading": "El futuro es M5",
+            "content": "<p>La laptop más delgada del mundo ahora es una supercomputadora de bolsillo. Gracias al nuevo <strong>chip M5</strong>, la MacBook Air de 13 pulgadas alcanza niveles de inteligencia y velocidad nunca antes vistos en un diseño sin ventiladores. Es la herramienta definitiva para quienes exigen máxima potencia en un formato ultraportátil.</p>",
             "reverse": false
           }
         },
@@ -41,7 +41,7 @@
           "settings": {
             "image": "shopify://shop_images/neo.jpg",
             "heading": "",
-            "content": "<h3><strong>Características Principales </strong></h3><ul><li><strong>Chip A18 Pro:</strong> Rendimiento optimizado para tareas diarias, edición de fotos y <strong>Apple Intelligence</strong> (IA integrada).</li><li><strong>Pantalla Liquid Retina de 13\":</strong> Resolución nítida de 2408 x 1506 con 500 nits de brillo y soporte para mil millones de colores.</li><li><strong>Autonomía Extrema:</strong> Hasta <strong>16 horas</strong> de reproducción de video con una sola carga.</li><li><strong>Diseño Ultraportátil:</strong> Construcción premium en aluminio disponible en cuatro colores irresistibles: <strong>Plata, Indigo, Blush (Rosa) y Citrus (Amarillo).</strong></li><li><strong>Integración Total con iPhone:</strong> Copia en tu iPhone y pega en tu Mac, o usa <strong>iPhone Mirroring</strong> para controlar tu teléfono desde la pantalla del Neo.</li></ul>",
+            "content": "<h3><strong>Características Principales </strong></h3><ul><li><strong>Chip M5 Ultra-Eficiente:</strong> Arquitectura de 2 nanómetros para un rendimiento un <strong>30% más rápido</strong> en tareas de Inteligencia Artificial y gráficos.</li><li><strong>Apple Intelligence Pro:</strong> Procesamiento de lenguaje y generación de imágenes en tiempo real, totalmente integrado en macOS.</li><li><strong>Pantalla Liquid Retina de 13.6\":</strong> Con tecnología <strong>Tandem OLED</strong> opcional para contrastes infinitos y un brillo de hasta 1000 nits.</li><li><strong>Batería de \"Dos Días\":</strong> Hasta <strong>24 horas</strong> de autonomía real gracias a la eficiencia energética del silicio de quinta generación.</li><li><strong>Cámara de 12MP Center Stage:</strong> Te mantiene siempre en el centro del encuadre durante tus llamadas, con corrección de luz por IA.</li></ul>",
             "reverse": true
           }
         },
