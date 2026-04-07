@@ -15,20 +15,16 @@
         "ipad_card_1": {
           "type": "product_card",
           "settings": {
-            "product": "",
-            "card_image": "",
+            "product": "ipad-pro",
             "card_title": "iPad Pro",
             "card_description": "",
             "modal_heading": "",
             "modal_title_1": "",
             "modal_desc_1": "",
-            "modal_img_1": "",
             "modal_title_2": "",
             "modal_desc_2": "",
-            "modal_img_2": "",
             "modal_title_3": "",
             "modal_desc_3": "",
-            "modal_img_3": "",
             "modal_link": "",
             "modal_link_label": "Ver producto"
           }
@@ -37,19 +33,15 @@
           "type": "product_card",
           "settings": {
             "product": "",
-            "card_image": "",
             "card_title": "iPad Air",
             "card_description": "",
             "modal_heading": "",
             "modal_title_1": "",
             "modal_desc_1": "",
-            "modal_img_1": "",
             "modal_title_2": "",
             "modal_desc_2": "",
-            "modal_img_2": "",
             "modal_title_3": "",
             "modal_desc_3": "",
-            "modal_img_3": "",
             "modal_link": "",
             "modal_link_label": "Ver producto"
           }
@@ -58,19 +50,15 @@
           "type": "product_card",
           "settings": {
             "product": "",
-            "card_image": "",
             "card_title": "iPad",
             "card_description": "",
             "modal_heading": "",
             "modal_title_1": "",
             "modal_desc_1": "",
-            "modal_img_1": "",
             "modal_title_2": "",
             "modal_desc_2": "",
-            "modal_img_2": "",
             "modal_title_3": "",
             "modal_desc_3": "",
-            "modal_img_3": "",
             "modal_link": "",
             "modal_link_label": "Ver producto"
           }
@@ -79,19 +67,15 @@
           "type": "product_card",
           "settings": {
             "product": "",
-            "card_image": "",
             "card_title": "iPad mini",
             "card_description": "",
             "modal_heading": "",
             "modal_title_1": "",
             "modal_desc_1": "",
-            "modal_img_1": "",
             "modal_title_2": "",
             "modal_desc_2": "",
-            "modal_img_2": "",
             "modal_title_3": "",
             "modal_desc_3": "",
-            "modal_img_3": "",
             "modal_link": "",
             "modal_link_label": "Ver producto"
           }
@@ -104,6 +88,9 @@
         "ipad_card_4"
       ],
       "settings": {
+        "whatsapp_number": "",
+        "quote_label": "Cotizar",
+        "card_shape": "portrait",
         "title": "Lo más destacado.",
         "button_label": "Más información",
         "compare_label": "",
@@ -118,14 +105,10 @@
           "settings": {
             "category": "Diseño",
             "heading": "Beautifully thin. Incredibly capable.",
-            "image": "",
             "modal_heading": "",
             "modal_description": "",
-            "modal_image_1": "",
             "modal_description_2": "",
-            "modal_image_2": "",
             "modal_description_3": "",
-            "modal_image_3": "",
             "link": "",
             "link_label": "Más información"
           }
@@ -135,14 +118,10 @@
           "settings": {
             "category": "Pantalla",
             "heading": "Una pantalla que lo dice todo.",
-            "image": "",
             "modal_heading": "",
             "modal_description": "",
-            "modal_image_1": "",
             "modal_description_2": "",
-            "modal_image_2": "",
             "modal_description_3": "",
-            "modal_image_3": "",
             "link": "",
             "link_label": "Más información"
           }
@@ -152,14 +131,10 @@
           "settings": {
             "category": "Chip y rendimiento",
             "heading": "Potencia de Mac. En un iPad.",
-            "image": "",
             "modal_heading": "",
             "modal_description": "",
-            "modal_image_1": "",
             "modal_description_2": "",
-            "modal_image_2": "",
             "modal_description_3": "",
-            "modal_image_3": "",
             "link": "",
             "link_label": "Más información"
           }
@@ -169,14 +144,10 @@
           "settings": {
             "category": "iPadOS y Apple Intelligence",
             "heading": "El sistema que lo hace todo posible.",
-            "image": "",
             "modal_heading": "",
             "modal_description": "",
-            "modal_image_1": "",
             "modal_description_2": "",
-            "modal_image_2": "",
             "modal_description_3": "",
-            "modal_image_3": "",
             "link": "",
             "link_label": "Más información"
           }
