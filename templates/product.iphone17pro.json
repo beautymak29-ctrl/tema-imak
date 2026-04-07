@@ -1,0 +1,109 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "settings": {
+        "show_vendor": false,
+        "variants_title": "Nuestras versiones",
+        "price_label": "Precio desde"
+      }
+    },
+    "product-info": {
+      "type": "product-info",
+      "blocks": {
+        "pi_text_1": {
+          "type": "text",
+          "settings": {
+            "heading": "",
+            "content": ""
+          }
+        },
+        "pi_it_1": {
+          "type": "image_text",
+          "settings": {
+            "image": "shopify://shop_images/1_de2926a2-7deb-41ca-b8e2-b58011ad1623.jpg",
+            "heading": "Este zoom va a llegar muy lejos.",
+            "content": "<p>El sistema de cámaras del iPhone 17 Pro es innovador por donde lo mires. La cámara teleobjetivo viene con la última generación de nuestro diseño de tetraprisma y un sensor un 56% más grande. El zoom de 8x de calidad óptica con una distancia focal equivalente a 200 mm logra un rango total de zoom óptico de 16x,el teleobjetivo de mayor alcance en un iPhone.Así, podrás explorar una gama mucho más amplia de opciones creativas y llevar tus composiciones a otro nivel.</p>",
+            "reverse": false
+          }
+        },
+        "image_text_3nrwmK": {
+          "type": "image_text",
+          "settings": {
+            "image": "shopify://shop_images/1_7117eec7-cf81-4a2c-afd4-03490cd38e20.jpg",
+            "heading": "",
+            "content": "<h3><strong>Cámara Fusion principal de 48 MP</strong></h3><ul><li>Distancia focal de 24/48 mm (1x/2x)</li><li>Apertura de ƒ/1.78</li><li>Sensor quad pixel de 2.44 μm<br/>(pixel individual de 1.22 μm)</li></ul><h3><strong>Cámara Fusion ultra gran angular de 48 MP</strong></h3><ul><li>Distancia focal de 13 mm (0.5x/macro)</li><li>Apertura de ƒ/2.2</li><li>Sensor quad pixel de 1.4 μm<br/>(pixel individual de 0.7 μm)</li></ul><h3><strong>Cámara Fusion teleobjetivo de 48 MP</strong></h3><ul><li>Distancia focal de 100/200 mm (4x/8x)</li><li>Apertura de ƒ/2.8</li><li>Sensor quad pixel de 1.4 μm<br/>(pixel individual de 0.7 μm)</li></ul>",
+            "reverse": true
+          }
+        },
+        "pi_gallery_1": {
+          "type": "gallery",
+          "settings": {
+            "heading": ""
+          }
+        }
+      },
+      "block_order": [
+        "pi_text_1",
+        "pi_it_1",
+        "image_text_3nrwmK",
+        "pi_gallery_1"
+      ],
+      "settings": {
+        "title": "Lo más destacado",
+        "subtitle": ""
+      }
+    },
+    "product-trust-bar": {
+      "type": "product-trust-bar",
+      "blocks": {
+        "ptb_1": {
+          "type": "benefit",
+          "settings": {
+            "icon": "card",
+            "title": "Convenios con efectiva",
+            "description": "Pagá con tu tarjeta efectiva"
+          }
+        },
+        "ptb_2": {
+          "type": "benefit",
+          "settings": {
+            "icon": "percent",
+            "title": "Sin intereses",
+            "description": "Cuotas sin recargo"
+          }
+        },
+        "ptb_3": {
+          "type": "benefit",
+          "settings": {
+            "icon": "savings",
+            "title": "Plan Ahorro",
+            "description": "Ahorrá y lleváte tu equipo"
+          }
+        },
+        "ptb_4": {
+          "type": "benefit",
+          "settings": {
+            "icon": "pin",
+            "title": "Visitános",
+            "description": "Atención personalizada en tienda"
+          }
+        }
+      },
+      "block_order": [
+        "ptb_1",
+        "ptb_2",
+        "ptb_3",
+        "ptb_4"
+      ],
+      "settings": {
+        "title": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product-info",
+    "product-trust-bar"
+  ]
+}
