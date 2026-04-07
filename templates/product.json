@@ -30,7 +30,7 @@
         "pi_it_1": {
           "type": "image_text",
           "settings": {
-            "image": "shopify://shop_images/imac.jpg",
+            "image": "shopify://shop_images/ipadpeor_12.jpg",
             "heading": "Delgadez imposible. Potencia escandalosa.",
             "content": "<p>El nuevo iPad Pro es la expresión máxima de la tecnología Apple. Con el chip más potente de la industria y la revolucionaria pantalla <strong>Ultra Retina XDR</strong>, este dispositivo rompe las barreras entre una tablet y una estación de trabajo profesional. El dispositivo más delgado que Apple ha creado jamás, sin sacrificar ni un ápice de potencia.</p>",
             "reverse": false
@@ -39,7 +39,7 @@
         "image_text_3nrwmK": {
           "type": "image_text",
           "settings": {
-            "image": "shopify://shop_images/neo.jpg",
+            "image": "shopify://shop_images/pro1.webp",
             "heading": "",
             "content": "<h3><strong>Características Principales </strong></h3><ul><li><strong>Pantalla Ultra Retina XDR:</strong> Tecnología <strong>Tandem OLED</strong> para un brillo increíble y una precisión de color de nivel referencia.</li><li><strong>Chip de Serie M (Última Gen):</strong> Rendimiento de CPU y GPU que supera a la mayoría de las laptops PC del mercado.</li><li><strong>Diseño Ultra Estilizado:</strong> Un perfil asombrosamente delgado que redefine la portabilidad extrema.</li><li><strong>Compatible con Apple Pencil Pro:</strong> Sensibilidad a la presión, rotación y gestos táctiles para una creatividad sin límites.</li><li><strong>Conectividad Thunderbolt / USB 4:</strong> Conecta monitores externos de hasta 6K y unidades de almacenamiento de alta velocidad.</li></ul>",
             "reverse": true
