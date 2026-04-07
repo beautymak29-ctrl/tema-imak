@@ -32,7 +32,7 @@
         "ipad_card_2": {
           "type": "product_card",
           "settings": {
-            "product": "",
+            "product": "ipad-air",
             "card_title": "iPad Air",
             "card_description": "",
             "modal_heading": "",
@@ -49,7 +49,7 @@
         "ipad_card_3": {
           "type": "product_card",
           "settings": {
-            "product": "",
+            "product": "ipad",
             "card_title": "iPad",
             "card_description": "",
             "modal_heading": "",
@@ -66,7 +66,7 @@
         "ipad_card_4": {
           "type": "product_card",
           "settings": {
-            "product": "",
+            "product": "ipad-mini",
             "card_title": "iPad mini",
             "card_description": "",
             "modal_heading": "",
