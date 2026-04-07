@@ -30,18 +30,18 @@
         "pi_it_1": {
           "type": "image_text",
           "settings": {
-            "image": "shopify://shop_images/1_de2926a2-7deb-41ca-b8e2-b58011ad1623.jpg",
-            "heading": "Este zoom va a llegar muy lejos.",
-            "content": "<p>El sistema de cámaras del iPhone 17 Pro es innovador por donde lo mires. La cámara teleobjetivo viene con la última generación de nuestro diseño de tetraprisma y un sensor un 56% más grande. El zoom de 8x de calidad óptica con una distancia focal equivalente a 200 mm logra un rango total de zoom óptico de 16x,el teleobjetivo de mayor alcance en un iPhone.Así, podrás explorar una gama mucho más amplia de opciones creativas y llevar tus composiciones a otro nivel.</p>",
+            "image": "shopify://shop_images/17.png",
+            "heading": "Potencia y color en tus manos",
+            "content": "<p>El iPhone 17 combina un diseño espectacular con un rendimiento increíble. Equipado con la nueva pantalla Super Retina XDR y el chip A19, es el compañero perfecto para quienes buscan velocidad, estilo y las mejores fotos en un formato ligero.</p>",
             "reverse": false
           }
         },
         "image_text_3nrwmK": {
           "type": "image_text",
           "settings": {
-            "image": "shopify://shop_images/1_7117eec7-cf81-4a2c-afd4-03490cd38e20.jpg",
+            "image": "shopify://shop_images/2_fe10d761-102e-498d-8f18-98867cc50a42.jpg",
             "heading": "",
-            "content": "<h3><strong>Cámara Fusion principal de 48 MP</strong></h3><ul><li>Distancia focal de 24/48 mm (1x/2x)</li><li>Apertura de ƒ/1.78</li><li>Sensor quad pixel de 2.44 μm<br/>(pixel individual de 1.22 μm)</li></ul><h3><strong>Cámara Fusion ultra gran angular de 48 MP</strong></h3><ul><li>Distancia focal de 13 mm (0.5x/macro)</li><li>Apertura de ƒ/2.2</li><li>Sensor quad pixel de 1.4 μm<br/>(pixel individual de 0.7 μm)</li></ul><h3><strong>Cámara Fusion teleobjetivo de 48 MP</strong></h3><ul><li>Distancia focal de 100/200 mm (4x/8x)</li><li>Apertura de ƒ/2.8</li><li>Sensor quad pixel de 1.4 μm<br/>(pixel individual de 0.7 μm)</li></ul>",
+            "content": "<h3><strong>Características Principales </strong></h3><ul><li><strong>Pantalla Super Retina XDR:</strong> Colores más brillantes y negros más profundos para una experiencia visual inmersiva.</li><li><strong>Cámara Dual Avanzada:</strong> Sensor principal de <strong>48 MP</strong> para fotos de superalta resolución y retratos perfectos.</li><li><strong>Chip A19:</strong> Eficiencia energética superior que permite una duración de batería de todo el día, incluso con apps exigentes.</li><li><strong>Conexión USB-C Ultra Rápida:</strong> Carga y transfiere datos a velocidades profesionales.</li><li><strong>Diseño Resistente:</strong> Vidrio Ceramic Shield y resistencia al agua de grado aeroespacial.</li></ul>",
             "reverse": true
           }
         },
