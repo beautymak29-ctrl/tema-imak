@@ -30,7 +30,7 @@
         "pi_it_1": {
           "type": "image_text",
           "settings": {
-            "image": "shopify://shop_images/1_de2926a2-7deb-41ca-b8e2-b58011ad1623.jpg",
+            "image": "shopify://shop_images/model.jpg",
             "heading": "El futuro de la fotografía móvil",
             "content": "<p>Redefine tus límites con el nuevo sistema de cámaras del iPhone 17 Pro. Con un diseño de tetraprisma de última generación y un zoom óptico de hasta 16x, tendrás la potencia de un estudio profesional en la palma de tu mano.</p>",
             "reverse": false
@@ -39,9 +39,9 @@
         "image_text_3nrwmK": {
           "type": "image_text",
           "settings": {
-            "image": "shopify://shop_images/1_7117eec7-cf81-4a2c-afd4-03490cd38e20.jpg",
+            "image": "shopify://shop_images/12.webp",
             "heading": "",
-            "content": "<h3><strong>Cámara Fusion principal de 48 MP</strong></h3><ul><li>Distancia focal de 24/48 mm (1x/2x)</li><li>Apertura de ƒ/1.78</li><li>Sensor quad pixel de 2.44 μm<br/>(pixel individual de 1.22 μm)</li></ul><h3><strong>Cámara Fusion ultra gran angular de 48 MP</strong></h3><ul><li>Distancia focal de 13 mm (0.5x/macro)</li><li>Apertura de ƒ/2.2</li><li>Sensor quad pixel de 1.4 μm<br/>(pixel individual de 0.7 μm)</li></ul><h3><strong>Cámara Fusion teleobjetivo de 48 MP</strong></h3><ul><li>Distancia focal de 100/200 mm (4x/8x)</li><li>Apertura de ƒ/2.8</li><li>Sensor quad pixel de 1.4 μm<br/>(pixel individual de 0.7 μm)</li></ul>",
+            "content": "<h3><strong>Características Principales</strong></h3><ul><li><strong>Sistema de Cámaras Revolucionario:</strong> Cámara teleobjetivo con sensor un <strong>56% más grande</strong> para capturas nítidas incluso en condiciones de poca luz.</li><li><strong>Zoom de Alcance Total:</strong> Distancia focal equivalente a <strong>200 mm</strong> que permite un rango de zoom óptico de <strong>16x</strong>, el mayor visto en un iPhone.</li><li><strong>Cámara Fusion de 48 MP:</strong> Máxima resolución y detalle en cada toma para ediciones de nivel profesional.</li><li><strong>Rendimiento Extremo:</strong> Equipado con el chip más avanzado de Apple para gaming, edición de video y multitarea sin interrupciones.</li></ul>",
             "reverse": true
           }
         },
