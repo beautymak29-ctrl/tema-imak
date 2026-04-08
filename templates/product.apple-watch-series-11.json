@@ -30,18 +30,18 @@
         "pi_it_1": {
           "type": "image_text",
           "settings": {
-            "image": "shopify://shop_images/ipadpeor_12.jpg",
-            "heading": "Delgadez imposible. Potencia escandalosa.",
-            "content": "<p>El nuevo iPad Pro es la expresión máxima de la tecnología Apple. Con el chip más potente de la industria y la revolucionaria pantalla <strong>Ultra Retina XDR</strong>, este dispositivo rompe las barreras entre una tablet y una estación de trabajo profesional. El dispositivo más delgado que Apple ha creado jamás, sin sacrificar ni un ápice de potencia.</p>",
+            "image": "shopify://shop_images/watch_11_1_bar.jpg",
+            "heading": "Tu salud, en el centro de todo",
+            "content": "<p>Más inteligente, más delgado y más capaz. El Apple Watch Series 11 introduce el nuevo chip <strong>S11 con Neural Engine</strong>, permitiendo una integración profunda con Apple Intelligence directamente en tu muñeca. Con una pantalla más brillante y sensores de salud de próxima generación, es el compañero perfecto para una vida activa y conectada.</p>",
             "reverse": false
           }
         },
         "image_text_3nrwmK": {
           "type": "image_text",
           "settings": {
-            "image": "shopify://shop_images/pro1.webp",
+            "image": "shopify://shop_images/watch_11_1.jpg",
             "heading": "",
-            "content": "<h3><strong>Características Principales </strong></h3><ul><li><strong>Pantalla Ultra Retina XDR:</strong> Tecnología <strong>Tandem OLED</strong> para un brillo increíble y una precisión de color de nivel referencia.</li><li><strong>Chip de Serie M (Última Gen):</strong> Rendimiento de CPU y GPU que supera a la mayoría de las laptops PC del mercado.</li><li><strong>Diseño Ultra Estilizado:</strong> Un perfil asombrosamente delgado que redefine la portabilidad extrema.</li><li><strong>Compatible con Apple Pencil Pro:</strong> Sensibilidad a la presión, rotación y gestos táctiles para una creatividad sin límites.</li><li><strong>Conectividad Thunderbolt / USB 4:</strong> Conecta monitores externos de hasta 6K y unidades de almacenamiento de alta velocidad.</li></ul>",
+            "content": "<h3><strong>Características Principales </strong></h3><ul><li><strong>Chip S11 con IA:</strong> Procesamiento local para dictado más rápido, Siri mejorada y gestos inteligentes sin tocar la pantalla.</li><li><strong>Pantalla OLED de Bajo Consumo:</strong> Bordes mínimos y un brillo de hasta <strong>3,000 nits</strong> para una visibilidad perfecta bajo el sol directo.</li><li><strong>Sensores de Salud Avanzados:</strong> Monitoreo de frecuencia cardíaca, ECG, niveles de oxígeno en sangre y ahora con detección mejorada de hidratación.</li><li><strong>Carga Ultra Rápida:</strong> Obtén hasta el <strong>80% de batería en solo 30 minutos</strong>, ideal para quienes no quieren perderse ni un minuto de seguimiento de sueño.</li><li><strong>Diseño Sostenible:</strong> Fabricado con aluminio 100% reciclado y disponible en nuevos acabados premium.</li></ul>",
             "reverse": true
           }
         },
