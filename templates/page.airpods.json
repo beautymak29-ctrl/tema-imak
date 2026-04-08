@@ -1,25 +1,47 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "product-family": {
       "type": "product-family",
       "blocks": {
+        "product_card_4cjLcB": {
+          "type": "product_card",
+          "settings": {
+            "product": "macbook-air",
+            "card_title": "",
+            "card_description": "",
+            "modal_heading": "",
+            "modal_title_1": "",
+            "modal_desc_1": "",
+            "modal_title_2": "",
+            "modal_desc_2": "",
+            "modal_title_3": "",
+            "modal_desc_3": "",
+            "modal_link": "",
+            "modal_link_label": "Ver producto"
+          }
+        },
         "airpods_card_1": {
           "type": "product_card",
           "settings": {
-            "product": "",
-            "card_image": "",
+            "product": "macbook-pro",
             "card_title": "AirPods 4",
             "card_description": "",
             "modal_heading": "",
             "modal_title_1": "",
             "modal_desc_1": "",
-            "modal_img_1": "",
             "modal_title_2": "",
             "modal_desc_2": "",
-            "modal_img_2": "",
             "modal_title_3": "",
             "modal_desc_3": "",
-            "modal_img_3": "",
             "modal_link": "",
             "modal_link_label": "Ver producto"
           }
@@ -27,20 +49,16 @@
         "airpods_card_2": {
           "type": "product_card",
           "settings": {
-            "product": "",
-            "card_image": "",
+            "product": "macbook-neo",
             "card_title": "AirPods Pro 2",
             "card_description": "",
             "modal_heading": "",
             "modal_title_1": "",
             "modal_desc_1": "",
-            "modal_img_1": "",
             "modal_title_2": "",
             "modal_desc_2": "",
-            "modal_img_2": "",
             "modal_title_3": "",
             "modal_desc_3": "",
-            "modal_img_3": "",
             "modal_link": "",
             "modal_link_label": "Ver producto"
           }
@@ -48,34 +66,33 @@
         "airpods_card_3": {
           "type": "product_card",
           "settings": {
-            "product": "",
-            "card_image": "",
+            "product": "imac",
             "card_title": "AirPods Max",
             "card_description": "",
             "modal_heading": "",
             "modal_title_1": "",
             "modal_desc_1": "",
-            "modal_img_1": "",
             "modal_title_2": "",
             "modal_desc_2": "",
-            "modal_img_2": "",
             "modal_title_3": "",
             "modal_desc_3": "",
-            "modal_img_3": "",
             "modal_link": "",
             "modal_link_label": "Ver producto"
           }
         }
       },
       "block_order": [
+        "product_card_4cjLcB",
         "airpods_card_1",
         "airpods_card_2",
         "airpods_card_3"
       ],
       "settings": {
+        "whatsapp_number": "",
+        "quote_label": "Cotizar",
+        "card_shape": "landscape",
         "title": "Lo más destacado.",
         "button_label": "Más información",
-        "card_shape": "landscape",
         "compare_label": "",
         "compare_link": ""
       }
@@ -88,14 +105,10 @@
           "settings": {
             "category": "Audio",
             "heading": "Sonido envolvente con Audio Espacial.",
-            "image": "",
             "modal_heading": "",
             "modal_description": "",
-            "modal_image_1": "",
             "modal_description_2": "",
-            "modal_image_2": "",
             "modal_description_3": "",
-            "modal_image_3": "",
             "link": "",
             "link_label": "Más información"
           }
@@ -105,14 +118,10 @@
           "settings": {
             "category": "Cancelación de ruido",
             "heading": "Silencio total, cuando lo necesites.",
-            "image": "",
             "modal_heading": "",
             "modal_description": "",
-            "modal_image_1": "",
             "modal_description_2": "",
-            "modal_image_2": "",
             "modal_description_3": "",
-            "modal_image_3": "",
             "link": "",
             "link_label": "Más información"
           }
@@ -122,14 +131,10 @@
           "settings": {
             "category": "Chip H2",
             "heading": "Inteligencia que se escucha.",
-            "image": "",
             "modal_heading": "",
             "modal_description": "",
-            "modal_image_1": "",
             "modal_description_2": "",
-            "modal_image_2": "",
             "modal_description_3": "",
-            "modal_image_3": "",
             "link": "",
             "link_label": "Más información"
           }
@@ -139,14 +144,10 @@
           "settings": {
             "category": "Batería",
             "heading": "Horas y horas de escucha.",
-            "image": "",
             "modal_heading": "",
             "modal_description": "",
-            "modal_image_1": "",
             "modal_description_2": "",
-            "modal_image_2": "",
             "modal_description_3": "",
-            "modal_image_3": "",
             "link": "",
             "link_label": "Más información"
           }
