@@ -15,7 +15,7 @@
         "product_card_4cjLcB": {
           "type": "product_card",
           "settings": {
-            "product": "macbook-air",
+            "product": "airpods-pro-3",
             "card_title": "",
             "card_description": "",
             "modal_heading": "",
@@ -32,7 +32,7 @@
         "airpods_card_1": {
           "type": "product_card",
           "settings": {
-            "product": "macbook-pro",
+            "product": "airpods-max-2",
             "card_title": "AirPods 4",
             "card_description": "",
             "modal_heading": "",
@@ -49,25 +49,8 @@
         "airpods_card_2": {
           "type": "product_card",
           "settings": {
-            "product": "macbook-neo",
+            "product": "airpods-4",
             "card_title": "AirPods Pro 2",
-            "card_description": "",
-            "modal_heading": "",
-            "modal_title_1": "",
-            "modal_desc_1": "",
-            "modal_title_2": "",
-            "modal_desc_2": "",
-            "modal_title_3": "",
-            "modal_desc_3": "",
-            "modal_link": "",
-            "modal_link_label": "Ver producto"
-          }
-        },
-        "airpods_card_3": {
-          "type": "product_card",
-          "settings": {
-            "product": "imac",
-            "card_title": "AirPods Max",
             "card_description": "",
             "modal_heading": "",
             "modal_title_1": "",
@@ -84,8 +67,7 @@
       "block_order": [
         "product_card_4cjLcB",
         "airpods_card_1",
-        "airpods_card_2",
-        "airpods_card_3"
+        "airpods_card_2"
       ],
       "settings": {
         "whatsapp_number": "",
