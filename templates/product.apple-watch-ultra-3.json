@@ -30,7 +30,7 @@
         "pi_it_1": {
           "type": "image_text",
           "settings": {
-            "image": "shopify://shop_images/ipadpeor_12.jpg",
+            "image": "shopify://shop_images/banenr_ultra.jpg",
             "heading": "El límite no existe",
             "content": "<p>Diseñado para lo extremo. El Apple Watch Ultra 3 es el reloj deportivo más capaz de Apple, ahora con el nuevo chip <strong>S11 Pro</strong> y una carcasa de titanio aeroespacial aún más resistente. Con el GPS de doble frecuencia más preciso del mercado y una batería épica, está listo para acompañarte desde las cimas más altas hasta las profundidades del océano.</p>",
             "reverse": false
@@ -39,7 +39,7 @@
         "image_text_3nrwmK": {
           "type": "image_text",
           "settings": {
-            "image": "shopify://shop_images/pro1.webp",
+            "image": "shopify://shop_images/ultra_camp.jpg",
             "heading": "",
             "content": "<h3><strong>Características Principales </strong></h3><ul><li><strong>Carcasa de Titanio de 49 mm:</strong> Máxima durabilidad con bordes elevados para proteger la pantalla de cristal de zafiro contra impactos.</li><li><strong>Pantalla de 3,200 nits:</strong> La pantalla más brillante jamás vista en un Apple Watch, legible incluso bajo el sol más intenso del desierto.</li><li><strong>Batería para Expediciones:</strong> Hasta <strong>36 horas</strong> de uso normal y hasta <strong>72 horas</strong> en modo de bajo consumo para tus aventuras de varios días.</li><li><strong>Botón de Acción Personalizable:</strong> Configura accesos rápidos para iniciar entrenamientos, marcar puntos de referencia o activar la sirena de emergencia.</li><li><strong>Tecnología de Buceo Avanzada:</strong> Funciona como un computador de buceo profesional con certificación EN13319 para profundidades de hasta 40 metros.</li></ul>",
             "reverse": true
