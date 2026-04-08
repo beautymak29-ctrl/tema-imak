@@ -31,8 +31,8 @@
           "type": "image_text",
           "settings": {
             "image": "shopify://shop_images/Apple_Watch_SE_3_bar_1.png",
-            "heading": "Delgadez imposible. Potencia escandalosa.",
-            "content": "<p>El nuevo iPad Pro es la expresión máxima de la tecnología Apple. Con el chip más potente de la industria y la revolucionaria pantalla <strong>Ultra Retina XDR</strong>, este dispositivo rompe las barreras entre una tablet y una estación de trabajo profesional. El dispositivo más delgado que Apple ha creado jamás, sin sacrificar ni un ápice de potencia.</p>",
+            "heading": "Mucho más de lo que esperas por mucho menos",
+            "content": "<p>El Apple Watch SE 3 combina el diseño icónico de Apple con las funciones esenciales de salud, seguridad y conectividad. Ahora con el chip <strong>S9</strong>, es más rápido y eficiente que nunca, convirtiéndose en la opción inteligente para mantenerte conectado, activo y seguro todos los días.</p>",
             "reverse": false
           }
         },
@@ -41,7 +41,7 @@
           "settings": {
             "image": "shopify://shop_images/Apple_Watch_SE_3_bar.png",
             "heading": "",
-            "content": "<h3><strong>Características Principales </strong></h3><ul><li><strong>Pantalla Ultra Retina XDR:</strong> Tecnología <strong>Tandem OLED</strong> para un brillo increíble y una precisión de color de nivel referencia.</li><li><strong>Chip de Serie M (Última Gen):</strong> Rendimiento de CPU y GPU que supera a la mayoría de las laptops PC del mercado.</li><li><strong>Diseño Ultra Estilizado:</strong> Un perfil asombrosamente delgado que redefine la portabilidad extrema.</li><li><strong>Compatible con Apple Pencil Pro:</strong> Sensibilidad a la presión, rotación y gestos táctiles para una creatividad sin límites.</li><li><strong>Conectividad Thunderbolt / USB 4:</strong> Conecta monitores externos de hasta 6K y unidades de almacenamiento de alta velocidad.</li></ul>",
+            "content": "<h3><strong>Características Principales </strong></h3><ul><li><strong>Chip S9 SiP:</strong> El mismo procesador potente que traía el Series 9, ahora en el modelo SE para un rendimiento fluido y respuestas rápidas.</li><li><strong>Seguridad Avanzada:</strong> Detección de Caídas, Detección de Choques y Emergencia SOS para tu total tranquilidad.</li><li><strong>Seguimiento de Salud:</strong> Monitoreo de frecuencia cardíaca con notificaciones de ritmo irregular y seguimiento detallado del sueño.</li><li><strong>Resistente al Agua:</strong> Perfecto para nadar en piscina o en el mar (resistencia hasta 50 metros).</li><li><strong>Caja 100% Reciclada:</strong> Un diseño amigable con el medio ambiente disponible en colores clásicos: <strong>Medianoche, Blanco Estelar y Plata.</strong></li></ul>",
             "reverse": true
           }
         },
