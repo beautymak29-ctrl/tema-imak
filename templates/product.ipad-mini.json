@@ -30,18 +30,18 @@
         "pi_it_1": {
           "type": "image_text",
           "settings": {
-            "image": "shopify://shop_images/ipadpeor_12.jpg",
-            "heading": "Delgadez imposible. Potencia escandalosa.",
-            "content": "<p>El nuevo iPad Pro es la expresión máxima de la tecnología Apple. Con el chip más potente de la industria y la revolucionaria pantalla <strong>Ultra Retina XDR</strong>, este dispositivo rompe las barreras entre una tablet y una estación de trabajo profesional. El dispositivo más delgado que Apple ha creado jamás, sin sacrificar ni un ápice de potencia.</p>",
+            "image": "shopify://shop_images/ipad_mini_banner.jpg",
+            "heading": "Grande en potencia. Pequeño en todo lo demás.",
+            "content": "<p>El iPad mini ha sido diseñado para ser amado. Con su espectacular pantalla Liquid Retina de 8.3 pulgadas y el nuevo chip de la serie A/M, este dispositivo concentra una potencia descomunal en la palma de tu mano. Es el compañero perfecto para llevar tus ideas, juegos y trabajo a cualquier lugar, sin que ocupe espacio.</p>",
             "reverse": false
           }
         },
         "image_text_3nrwmK": {
           "type": "image_text",
           "settings": {
-            "image": "shopify://shop_images/pro1.webp",
+            "image": "shopify://shop_images/ipad_mini_2.jpg",
             "heading": "",
-            "content": "<h3><strong>Características Principales </strong></h3><ul><li><strong>Pantalla Ultra Retina XDR:</strong> Tecnología <strong>Tandem OLED</strong> para un brillo increíble y una precisión de color de nivel referencia.</li><li><strong>Chip de Serie M (Última Gen):</strong> Rendimiento de CPU y GPU que supera a la mayoría de las laptops PC del mercado.</li><li><strong>Diseño Ultra Estilizado:</strong> Un perfil asombrosamente delgado que redefine la portabilidad extrema.</li><li><strong>Compatible con Apple Pencil Pro:</strong> Sensibilidad a la presión, rotación y gestos táctiles para una creatividad sin límites.</li><li><strong>Conectividad Thunderbolt / USB 4:</strong> Conecta monitores externos de hasta 6K y unidades de almacenamiento de alta velocidad.</li></ul>",
+            "content": "<h3><strong>Características Principales </strong></h3><ul><li><strong>Diseño Ultraportátil de 8.3\":</strong> Pantalla Liquid Retina con tecnología True Tone, amplia gama de colores P3 y un brillo excepcional.</li><li><strong>Chip de Alto Rendimiento:</strong> Optimizado para <strong>Apple Intelligence</strong>, edición de video 4K y los juegos con los gráficos más exigentes.</li><li><strong>Compatibilidad con Apple Pencil Pro:</strong> Se acopla magnéticamente para cargar y escribir, dibujar o anotar sobre la marcha.</li><li><strong>Conectividad 5G y Wi-Fi 6E:</strong> Descargas ultrarrápidas y streaming fluido incluso cuando estás lejos de casa.</li><li><strong>Cámara Ultra Gran Angular de 12 MP:</strong> Con <strong>Encuadre Centrado</strong> para que siempre seas el protagonista de tus videollamadas.</li></ul>",
             "reverse": true
           }
         },
