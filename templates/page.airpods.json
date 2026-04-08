@@ -32,7 +32,7 @@
         "airpods_card_1": {
           "type": "product_card",
           "settings": {
-            "product": "airpods-max-2",
+            "product": "airpods-4",
             "card_title": "AirPods 4",
             "card_description": "",
             "modal_heading": "",
@@ -49,7 +49,7 @@
         "airpods_card_2": {
           "type": "product_card",
           "settings": {
-            "product": "airpods-4",
+            "product": "airpods-max-2",
             "card_title": "AirPods Pro 2",
             "card_description": "",
             "modal_heading": "",
