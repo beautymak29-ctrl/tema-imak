@@ -1,0 +1,240 @@
+{
+  "sections": {
+    "product-family": {
+      "type": "product-family",
+      "blocks": {
+        "airpods_card_1": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "card_image": "",
+            "card_title": "AirPods 4",
+            "card_description": "",
+            "modal_heading": "",
+            "modal_title_1": "",
+            "modal_desc_1": "",
+            "modal_img_1": "",
+            "modal_title_2": "",
+            "modal_desc_2": "",
+            "modal_img_2": "",
+            "modal_title_3": "",
+            "modal_desc_3": "",
+            "modal_img_3": "",
+            "modal_link": "",
+            "modal_link_label": "Ver producto"
+          }
+        },
+        "airpods_card_2": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "card_image": "",
+            "card_title": "AirPods Pro 2",
+            "card_description": "",
+            "modal_heading": "",
+            "modal_title_1": "",
+            "modal_desc_1": "",
+            "modal_img_1": "",
+            "modal_title_2": "",
+            "modal_desc_2": "",
+            "modal_img_2": "",
+            "modal_title_3": "",
+            "modal_desc_3": "",
+            "modal_img_3": "",
+            "modal_link": "",
+            "modal_link_label": "Ver producto"
+          }
+        },
+        "airpods_card_3": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "card_image": "",
+            "card_title": "AirPods Max",
+            "card_description": "",
+            "modal_heading": "",
+            "modal_title_1": "",
+            "modal_desc_1": "",
+            "modal_img_1": "",
+            "modal_title_2": "",
+            "modal_desc_2": "",
+            "modal_img_2": "",
+            "modal_title_3": "",
+            "modal_desc_3": "",
+            "modal_img_3": "",
+            "modal_link": "",
+            "modal_link_label": "Ver producto"
+          }
+        }
+      },
+      "block_order": [
+        "airpods_card_1",
+        "airpods_card_2",
+        "airpods_card_3"
+      ],
+      "settings": {
+        "title": "Lo más destacado.",
+        "button_label": "Más información",
+        "card_shape": "landscape",
+        "compare_label": "",
+        "compare_link": ""
+      }
+    },
+    "features-grid": {
+      "type": "features-grid",
+      "blocks": {
+        "airpods_fg_1": {
+          "type": "feature",
+          "settings": {
+            "category": "Audio",
+            "heading": "Sonido envolvente con Audio Espacial.",
+            "image": "",
+            "modal_heading": "",
+            "modal_description": "",
+            "modal_image_1": "",
+            "modal_description_2": "",
+            "modal_image_2": "",
+            "modal_description_3": "",
+            "modal_image_3": "",
+            "link": "",
+            "link_label": "Más información"
+          }
+        },
+        "airpods_fg_2": {
+          "type": "feature",
+          "settings": {
+            "category": "Cancelación de ruido",
+            "heading": "Silencio total, cuando lo necesites.",
+            "image": "",
+            "modal_heading": "",
+            "modal_description": "",
+            "modal_image_1": "",
+            "modal_description_2": "",
+            "modal_image_2": "",
+            "modal_description_3": "",
+            "modal_image_3": "",
+            "link": "",
+            "link_label": "Más información"
+          }
+        },
+        "airpods_fg_3": {
+          "type": "feature",
+          "settings": {
+            "category": "Chip H2",
+            "heading": "Inteligencia que se escucha.",
+            "image": "",
+            "modal_heading": "",
+            "modal_description": "",
+            "modal_image_1": "",
+            "modal_description_2": "",
+            "modal_image_2": "",
+            "modal_description_3": "",
+            "modal_image_3": "",
+            "link": "",
+            "link_label": "Más información"
+          }
+        },
+        "airpods_fg_4": {
+          "type": "feature",
+          "settings": {
+            "category": "Batería",
+            "heading": "Horas y horas de escucha.",
+            "image": "",
+            "modal_heading": "",
+            "modal_description": "",
+            "modal_image_1": "",
+            "modal_description_2": "",
+            "modal_image_2": "",
+            "modal_description_3": "",
+            "modal_image_3": "",
+            "link": "",
+            "link_label": "Más información"
+          }
+        }
+      },
+      "block_order": [
+        "airpods_fg_1",
+        "airpods_fg_2",
+        "airpods_fg_3",
+        "airpods_fg_4"
+      ],
+      "settings": {
+        "title": "Descubre los AirPods."
+      }
+    },
+    "accessories-showcase": {
+      "type": "accessories-showcase",
+      "blocks": {
+        "airpods_ac_1": {
+          "type": "accessory",
+          "settings": {
+            "show_badge": false,
+            "badge_text": "Nuevo",
+            "name": "Estuche de carga MagSafe",
+            "description": "Carga inalámbrica y protección premium para tus AirPods.",
+            "link": "",
+            "link_label": "Más información"
+          }
+        },
+        "airpods_ac_2": {
+          "type": "accessory",
+          "settings": {
+            "show_badge": false,
+            "badge_text": "Nuevo",
+            "name": "Grabado gratis",
+            "description": "Personaliza tus AirPods con un grabado único y gratuito.",
+            "link": "",
+            "link_label": "Más información"
+          }
+        }
+      },
+      "block_order": [
+        "airpods_ac_1",
+        "airpods_ac_2"
+      ],
+      "settings": {
+        "title": "Accesorios para tus AirPods."
+      }
+    },
+    "ecosystem-tabs": {
+      "type": "ecosystem-tabs",
+      "blocks": {
+        "airpods_et_1": {
+          "type": "tab",
+          "settings": {
+            "tab_label": "AirPods e iPhone",
+            "text": "Los AirPods se conectan automáticamente a tu iPhone. Cambian de dispositivo sin que hagas nada gracias al chip H2."
+          }
+        },
+        "airpods_et_2": {
+          "type": "tab",
+          "settings": {
+            "tab_label": "AirPods y Apple Watch",
+            "text": "Controla la música y las llamadas directamente desde tu muñeca. Conexión instantánea y sin complicaciones."
+          }
+        },
+        "airpods_et_3": {
+          "type": "tab",
+          "settings": {
+            "tab_label": "AirPods y Mac",
+            "text": "Audio espacial personalizado en tu Mac. Los AirPods cambian automáticamente cuando empiezas a reproducir contenido."
+          }
+        }
+      },
+      "block_order": [
+        "airpods_et_1",
+        "airpods_et_2",
+        "airpods_et_3"
+      ],
+      "settings": {
+        "title": "Se llevan bien con todo."
+      }
+    }
+  },
+  "order": [
+    "product-family",
+    "features-grid",
+    "accessories-showcase",
+    "ecosystem-tabs"
+  ]
+}
