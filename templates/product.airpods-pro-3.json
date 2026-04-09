@@ -39,7 +39,7 @@
         "image_text_3nrwmK": {
           "type": "image_text",
           "settings": {
-            "image": "shopify://shop_images/airpodspro31.webp",
+            "image": "shopify://shop_images/air_3_pro.jpg",
             "heading": "",
             "content": "<h3><strong>Características Principales </strong></h3><ul><li><strong>Chip H3 de Apple:</strong> Audio computacional avanzado para una ecualización adaptativa que ajusta la música a la forma de tus oídos.</li><li><strong>Cancelación Activa de Ruido 2.0:</strong> Elimina hasta el doble de ruido ambiental que la generación anterior.</li><li><strong>Audio Espacial Personalizado:</strong> Con seguimiento dinámico de la cabeza para un sonido de cine que te rodea por completo.</li><li><strong>Estuche MagSafe con USB-C:</strong> Carga rápida, altavoz integrado para búsqueda con la app \"Encontrar\" y resistencia al sudor y al agua.</li><li><strong>Reconocimiento de Conversación:</strong> Baja el volumen automáticamente cuando empiezas a hablar con alguien y lo sube cuando terminas.</li></ul>",
             "reverse": true
