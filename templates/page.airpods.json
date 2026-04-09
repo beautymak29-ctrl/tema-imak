@@ -48,8 +48,9 @@
         },
         "airpods_card_2": {
           "type": "product_card",
+          "disabled": true,
           "settings": {
-            "product": "airpods-max-2",
+            "product": "",
             "card_title": "AirPods Pro 2",
             "card_description": "",
             "modal_heading": "",
