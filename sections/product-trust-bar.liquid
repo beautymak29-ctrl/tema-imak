@@ -5,49 +5,77 @@
     {%- endif -%}
     <ul class="ptb-list" role="list">
       {%- for block in section.blocks -%}
-        {%- assign has_detail = block.settings.detail_content != blank -%}
-        <li class="ptb-item{% if has_detail %} ptb-item--expandable{% endif %}" {{ block.shopify_attributes }}>
-          {%- if has_detail -%}
-            <button type="button" class="ptb-item__trigger" aria-expanded="false" data-ptb-trigger>
-          {%- endif -%}
-
-          <div class="ptb-item__icon-wrap" aria-hidden="true">
-            {%- case block.settings.icon -%}
-              {%- when 'card' -%}
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-              {%- when 'percent' -%}
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
-              {%- when 'savings' -%}
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-              {%- when 'pin' -%}
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              {%- when 'star' -%}
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              {%- when 'shield' -%}
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              {%- else -%}
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 8 12 12 14 14"/></svg>
-            {%- endcase -%}
-          </div>
-          <strong class="ptb-item__title">{{ block.settings.title | escape }}</strong>
-          {%- if block.settings.description != blank -%}
-            <p class="ptb-item__desc">{{ block.settings.description | escape }}</p>
-          {%- endif -%}
-          {%- if has_detail -%}
-            <span class="ptb-item__chevron" aria-hidden="true">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-            </span>
-          {%- endif -%}
-
-          {%- if has_detail -%}
-            </button>
-            <div class="ptb-item__panel" hidden>
-              <div class="ptb-item__panel-inner rte">
-                {{ block.settings.detail_content }}
-              </div>
+        <li class="ptb-item" {{ block.shopify_attributes }}>
+          <button type="button" class="ptb-item__trigger" aria-haspopup="dialog" data-ptb-open="{{ block.id }}">
+            <div class="ptb-item__icon-wrap" aria-hidden="true">
+              {%- case block.settings.icon -%}
+                {%- when 'card' -%}
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                {%- when 'percent' -%}
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+                {%- when 'savings' -%}
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                {%- when 'pin' -%}
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                {%- when 'star' -%}
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                {%- when 'shield' -%}
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                {%- else -%}
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 8 12 12 14 14"/></svg>
+              {%- endcase -%}
             </div>
-          {%- endif -%}
+            <strong class="ptb-item__title">{{ block.settings.title | escape }}</strong>
+            {%- if block.settings.description != blank -%}
+              <p class="ptb-item__desc">{{ block.settings.description | escape }}</p>
+            {%- endif -%}
+          </button>
         </li>
+
+        {%- comment -%} Modal for this benefit {%- endcomment -%}
+        <div class="ptb-modal" id="ptb-modal-{{ block.id }}" role="dialog" aria-modal="true" aria-labelledby="ptb-modal-title-{{ block.id }}" hidden>
+          <div class="ptb-modal__overlay" data-ptb-close="{{ block.id }}"></div>
+          <div class="ptb-modal__container">
+            <div class="ptb-modal__header">
+              <div class="ptb-modal__icon-wrap" aria-hidden="true">
+                {%- case block.settings.icon -%}
+                  {%- when 'card' -%}
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                  {%- when 'percent' -%}
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+                  {%- when 'savings' -%}
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                  {%- when 'pin' -%}
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  {%- when 'star' -%}
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  {%- when 'shield' -%}
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  {%- else -%}
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 8 12 12 14 14"/></svg>
+                {%- endcase -%}
+              </div>
+              <h3 class="ptb-modal__title" id="ptb-modal-title-{{ block.id }}">{{ block.settings.title | escape }}</h3>
+              <button type="button" class="ptb-modal__close" data-ptb-close="{{ block.id }}" aria-label="Cerrar">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </button>
+            </div>
+            <div class="ptb-modal__body rte">
+              {%- if block.settings.detail_content != blank -%}
+                {{ block.settings.detail_content }}
+              {%- endif -%}
+            </div>
+            <div class="ptb-modal__footer">
+              <p class="ptb-modal__evaluate">Evalúa</p>
+              {%- if block.settings.whatsapp_url != blank -%}
+                <a href="{{ block.settings.whatsapp_url }}" target="_blank" rel="noopener noreferrer" class="ptb-modal__whatsapp-btn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.555 4.126 1.528 5.86L.057 23.64l5.933-1.442A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.82a9.78 9.78 0 0 1-5.09-1.42l-.365-.217-3.782.919.956-3.654-.238-.379A9.78 9.78 0 0 1 2.18 12c0-5.423 4.397-9.82 9.82-9.82 5.423 0 9.82 4.397 9.82 9.82 0 5.423-4.397 9.82-9.82 9.82z"/></svg>
+                  Escríbenos por WhatsApp
+                </a>
+              {%- endif -%}
+            </div>
+          </div>
+        </div>
       {%- endfor -%}
     </ul>
   </div>
@@ -55,17 +83,37 @@
 
 <script>
 (function () {
-  document.querySelectorAll('[data-ptb-trigger]').forEach(function (btn) {
+  /* Open modal */
+  document.querySelectorAll('[data-ptb-open]').forEach(function (btn) {
     btn.addEventListener('click', function () {
-      var expanded = btn.getAttribute('aria-expanded') === 'true';
-      var panel = btn.nextElementSibling;
-      btn.setAttribute('aria-expanded', String(!expanded));
-      if (expanded) {
-        panel.hidden = true;
-      } else {
-        panel.hidden = false;
+      var id = btn.getAttribute('data-ptb-open');
+      var modal = document.getElementById('ptb-modal-' + id);
+      if (modal) {
+        modal.hidden = false;
+        document.body.style.overflow = 'hidden';
+        modal.querySelector('.ptb-modal__close').focus();
       }
     });
+  });
+  /* Close modal */
+  document.querySelectorAll('[data-ptb-close]').forEach(function (el) {
+    el.addEventListener('click', function () {
+      var id = el.getAttribute('data-ptb-close');
+      var modal = document.getElementById('ptb-modal-' + id);
+      if (modal) {
+        modal.hidden = true;
+        document.body.style.overflow = '';
+      }
+    });
+  });
+  /* Close on Escape */
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.ptb-modal:not([hidden])').forEach(function (m) {
+        m.hidden = true;
+        document.body.style.overflow = '';
+      });
+    }
   });
 })();
 </script>
@@ -115,8 +163,13 @@
         {
           "type": "richtext",
           "id": "detail_content",
-          "label": "Contenido expandido (opcional)",
-          "info": "Si se completa, el beneficio se podr\u00e1 expandir al hacer clic"
+          "label": "Contenido del modal",
+          "info": "Informaci\u00f3n que se mostrar\u00e1 al hacer clic en el beneficio"
+        },
+        {
+          "type": "url",
+          "id": "whatsapp_url",
+          "label": "Enlace de WhatsApp (opcional)"
         }
       ]
     }
@@ -126,10 +179,10 @@
     {
       "name": "Barra de beneficios",
       "blocks": [
-        { "type": "benefit", "settings": { "icon": "card",    "title": "Convenios con efectiva", "description": "Pag\u00e1 con tu tarjeta efectiva" } },
-        { "type": "benefit", "settings": { "icon": "percent", "title": "Sin intereses",           "description": "Cuotas sin recargo" } },
-        { "type": "benefit", "settings": { "icon": "savings", "title": "Plan Ahorro",              "description": "Ahorr\u00e1 y llev\u00e1te tu equipo" } },
-        { "type": "benefit", "settings": { "icon": "pin",     "title": "Visit\u00e1nos",             "description": "Atenci\u00f3n personalizada en tienda" } }
+        { "type": "benefit", "settings": { "icon": "card", "title": "Convenios con efectiva", "description": "Pag\u00e1 con tu tarjeta efectiva", "detail_content": "<p>Tu instituci\u00f3n o empresa pagar\u00e1 el precio del equipo directamente. Nosotros nos encargamos de gestionar el cobro por separado, sin necesidad de que est\u00e9s afiliado a ning\u00fan banco.</p><p><strong>\u00bfC\u00f3mo funciona?</strong></p><p>1. Tu instituci\u00f3n autoriza la compra.<br>2. Nosotros entregamos el equipo.<br>3. El cobro se realiza directamente a la instituci\u00f3n.</p><p>Sin tr\u00e1mites bancarios, sin complicaciones.</p>" } },
+        { "type": "benefit", "settings": { "icon": "percent", "title": "Sin intereses", "description": "Cuotas sin recargo", "detail_content": "<p>Obt\u00e9n tu equipo Apple con facilidad de pago de hasta <strong>6 meses sin intereses</strong>.</p><p>Paga en cuotas c\u00f3modas sin ning\u00fan recargo adicional. El precio final es el mismo que al contado.</p><p><strong>Requisitos:</strong></p><p>\u2022 Documento de identidad vigente.<br>\u2022 Evaluaci\u00f3n crediticia r\u00e1pida en tienda.</p>" } },
+        { "type": "benefit", "settings": { "icon": "savings", "title": "Plan Ahorro", "description": "Ahorr\u00e1 y llev\u00e1te tu equipo", "detail_content": "<p><strong>Plan Ahorro (Pandero)</strong></p><p>Ahorra mes a mes con un grupo de personas y, al completar el plan, llev\u00e1te tu equipo Apple.</p><p><strong>\u00bfC\u00f3mo funciona?</strong></p><p>1. Te inscribes en un grupo de ahorro.<br>2. Realizas pagos mensuales c\u00f3modos.<br>3. Al completar el plan, recibes tu equipo.</p><p>Es la forma m\u00e1s inteligente de planificar tu compra sin endeudarte.</p>" } },
+        { "type": "benefit", "settings": { "icon": "pin", "title": "Visit\u00e1nos", "description": "Atenci\u00f3n personalizada en tienda", "detail_content": "<p>Te esperamos en nuestra tienda con atenci\u00f3n personalizada para asesorarte en tu pr\u00f3xima compra.</p><p><strong>Direcci\u00f3n:</strong><br>Jr. Atahualpa 183, Pucallpa</p><p><strong>Horario:</strong><br>Lunes a S\u00e1bado: 9:00 AM \u2013 8:00 PM<br>Domingo: 10:00 AM \u2013 2:00 PM</p><p>Tambi\u00e9n puedes escribirnos por WhatsApp para consultas r\u00e1pidas.</p>", "whatsapp_url": "https://wa.me/51999999999" } }
       ]
     }
   ]
