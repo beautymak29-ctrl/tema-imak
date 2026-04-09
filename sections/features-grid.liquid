@@ -14,7 +14,7 @@
       <ul class="fg-gallery__list" role="list">
         {%- for block in section.blocks -%}
           <li class="fg-card{% if forloop.first %} fg-card--current{% endif %}" role="listitem" {{ block.shopify_attributes }}>
-            <div class="fg-card__inner">
+            <button type="button" class="fg-card__inner fg-card__inner--clickable" aria-label="{{ block.settings.heading | default: block.settings.category }}, más información" data-fg-open="{{ block.id }}">
               <div class="fg-card__text">
                 {%- if block.settings.category != blank -%}
                   <h3 class="fg-card__cat">{{ block.settings.category }}</h3>
@@ -35,14 +35,14 @@
                   {{ 'lifestyle-1' | placeholder_svg_tag: 'fg-card__img' }}
                 {%- endif -%}
               </figure>
-              <button class="fg-card__plus" type="button" aria-label="{{ block.settings.link_label | default: 'Más información' }}, {{ block.settings.category }}" data-fg-open="{{ block.id }}">
-                <span class="fg-card__plus-icon" aria-hidden="true">
+              <span class="fg-card__plus" aria-hidden="true">
+                <span class="fg-card__plus-icon">
                   <svg viewBox="0 0 36 36">
                     <path d="m24 16.5h-4.5v-4.5c0-.8286-.6719-1.5-1.5-1.5s-1.5.6714-1.5 1.5v4.5h-4.5c-.8281 0-1.5.6714-1.5 1.5s.6719 1.5 1.5 1.5h4.5v4.5c0 .8286.6719 1.5 1.5 1.5s1.5-.6714 1.5-1.5v-4.5h4.5c.8281 0 1.5-.6714 1.5-1.5s-.6719-1.5-1.5-1.5z"/>
                   </svg>
                 </span>
-              </button>
-            </div>
+              </span>
+            </button>
           </li>
         {%- endfor -%}
       </ul>
