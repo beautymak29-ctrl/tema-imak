@@ -24,8 +24,8 @@
             "image": "shopify://shop_images/Captura_de_pantalla_2026-04-10_a_la_s_6.39.47_p._m..png",
             "link_1": "/pages/iphone",
             "link_1_label": "Más información",
-            "link_2": "/collections/iphone",
-            "link_2_label": "Comprar el iPhone"
+            "link_2": "shopify://pages/comparar",
+            "link_2_label": "Comparar"
           }
         },
         "card_macbook_pro": {
@@ -53,6 +53,7 @@
             "heading": "iPad Air",
             "subheading": "Ahora con los superpoderes del chip M4.",
             "availability": "Consulta la disponibilidad más adelante.",
+            "image": "shopify://shop_images/11.jpg",
             "link_1": "/pages/ipad",
             "link_1_label": "Más información",
             "link_2": "",
@@ -71,7 +72,7 @@
             "link_1": "/pages/watch",
             "link_1_label": "Más información",
             "link_2": "/collections/apple-watch",
-            "link_2_label": "Comprar"
+            "link_2_label": ""
           }
         },
         "card_macbook_air": {
@@ -101,7 +102,7 @@
             "link_1": "/pages/airpods",
             "link_1_label": "Más información",
             "link_2": "/collections/airpods",
-            "link_2_label": "Comprar"
+            "link_2_label": ""
           }
         },
         "card_ipad_pro": {
