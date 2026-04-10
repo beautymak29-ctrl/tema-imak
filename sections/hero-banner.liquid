@@ -5,20 +5,36 @@
 {%- endif -%}
 <section class="hero{% if is_dark %} hero--dark{% endif %}" style="background-color: {{ section.settings.background_color }}; color: {% if is_dark %}#f5f5f7{% else %}#1d1d1f{% endif %};">
   {%- if section.settings.image != blank -%}
+    {%- assign mobile_img = section.settings.mobile_image | default: section.settings.image -%}
     <div class="hero__media">
       <img
         srcset="{{ section.settings.image | image_url: width: 750 }} 750w,
                 {{ section.settings.image | image_url: width: 1100 }} 1100w,
                 {{ section.settings.image | image_url: width: 1500 }} 1500w,
-                {{ section.settings.image | image_url: width: 1800 }} 1800w"
+                {{ section.settings.image | image_url: width: 2400 }} 2400w,
+                {{ section.settings.image | image_url: width: 3200 }} 3200w"
         sizes="100vw"
-        src="{{ section.settings.image | image_url: width: 1500 }}"
+        src="{{ section.settings.image | image_url: width: 2400 }}"
         alt="{{ section.settings.image.alt | escape }}"
         width="{{ section.settings.image.width }}"
         height="{{ section.settings.image.height }}"
         loading="eager"
         fetchpriority="high"
-        class="hero__image"
+        class="hero__image hero__image--desktop"
+      >
+      <img
+        srcset="{{ mobile_img | image_url: width: 400 }} 400w,
+                {{ mobile_img | image_url: width: 600 }} 600w,
+                {{ mobile_img | image_url: width: 750 }} 750w,
+                {{ mobile_img | image_url: width: 900 }} 900w"
+        sizes="100vw"
+        src="{{ mobile_img | image_url: width: 750 }}"
+        alt="{{ mobile_img.alt | escape }}"
+        width="{{ mobile_img.width }}"
+        height="{{ mobile_img.height }}"
+        loading="eager"
+        fetchpriority="high"
+        class="hero__image hero__image--mobile"
       >
     </div>
   {%- endif -%}
@@ -50,7 +66,14 @@
     {
       "type": "image_picker",
       "id": "image",
-      "label": "Imagen de fondo"
+      "label": "Imagen de fondo (escritorio)",
+      "info": "Sube una imagen de al menos 2400\u00d71200 px para evitar pixelado"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Imagen de fondo (celular)",
+      "info": "Sube una imagen vertical de 750\u00d71200 px. Si se deja vac\u00edo se usa la de escritorio"
     },
     {
       "type": "color",
