@@ -15,20 +15,16 @@
         "watch_card_1": {
           "type": "product_card",
           "settings": {
-            "product": "",
-            "card_image": "",
+            "product": "apple-watch-ultra-3",
             "card_title": "Apple Watch Ultra 2",
             "card_description": "",
             "modal_heading": "",
             "modal_title_1": "",
             "modal_desc_1": "",
-            "modal_img_1": "",
             "modal_title_2": "",
             "modal_desc_2": "",
-            "modal_img_2": "",
             "modal_title_3": "",
             "modal_desc_3": "",
-            "modal_img_3": "",
             "modal_link": "",
             "modal_link_label": "Ver producto"
           }
@@ -36,20 +32,16 @@
         "watch_card_2": {
           "type": "product_card",
           "settings": {
-            "product": "",
-            "card_image": "",
+            "product": "apple-watch-series-11",
             "card_title": "Apple Watch Series 10",
             "card_description": "",
             "modal_heading": "",
             "modal_title_1": "",
             "modal_desc_1": "",
-            "modal_img_1": "",
             "modal_title_2": "",
             "modal_desc_2": "",
-            "modal_img_2": "",
             "modal_title_3": "",
             "modal_desc_3": "",
-            "modal_img_3": "",
             "modal_link": "",
             "modal_link_label": "Ver producto"
           }
@@ -57,20 +49,16 @@
         "watch_card_3": {
           "type": "product_card",
           "settings": {
-            "product": "",
-            "card_image": "",
+            "product": "apple-watch-se-3",
             "card_title": "Apple Watch SE",
             "card_description": "",
             "modal_heading": "",
             "modal_title_1": "",
             "modal_desc_1": "",
-            "modal_img_1": "",
             "modal_title_2": "",
             "modal_desc_2": "",
-            "modal_img_2": "",
             "modal_title_3": "",
             "modal_desc_3": "",
-            "modal_img_3": "",
             "modal_link": "",
             "modal_link_label": "Ver producto"
           }
@@ -82,6 +70,9 @@
         "watch_card_3"
       ],
       "settings": {
+        "whatsapp_number": "",
+        "quote_label": "Cotizar",
+        "card_shape": "portrait",
         "title": "Lo más destacado.",
         "button_label": "Más información",
         "compare_label": "",
@@ -96,14 +87,10 @@
           "settings": {
             "category": "Salud",
             "heading": "Tu salud, en tu muñeca.",
-            "image": "",
             "modal_heading": "",
             "modal_description": "",
-            "modal_image_1": "",
             "modal_description_2": "",
-            "modal_image_2": "",
             "modal_description_3": "",
-            "modal_image_3": "",
             "link": "",
             "link_label": "Más información"
           }
@@ -113,14 +100,10 @@
           "settings": {
             "category": "Actividad física",
             "heading": "Entrena más. Descansa mejor.",
-            "image": "",
             "modal_heading": "",
             "modal_description": "",
-            "modal_image_1": "",
             "modal_description_2": "",
-            "modal_image_2": "",
             "modal_description_3": "",
-            "modal_image_3": "",
             "link": "",
             "link_label": "Más información"
           }
@@ -130,14 +113,10 @@
           "settings": {
             "category": "Seguridad",
             "heading": "Siempre contigo cuando más importa.",
-            "image": "",
             "modal_heading": "",
             "modal_description": "",
-            "modal_image_1": "",
             "modal_description_2": "",
-            "modal_image_2": "",
             "modal_description_3": "",
-            "modal_image_3": "",
             "link": "",
             "link_label": "Más información"
           }
@@ -147,14 +126,10 @@
           "settings": {
             "category": "Diseño",
             "heading": "Un reloj tan único como tú.",
-            "image": "",
             "modal_heading": "",
             "modal_description": "",
-            "modal_image_1": "",
             "modal_description_2": "",
-            "modal_image_2": "",
             "modal_description_3": "",
-            "modal_image_3": "",
             "link": "",
             "link_label": "Más información"
           }
