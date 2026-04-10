@@ -12,15 +12,123 @@
     "product-family": {
       "type": "home-cards",
       "blocks": {
-        "card_iphone": { "type": "promo_card", "settings": { "card_size": "full", "theme": "dark", "heading": "iPhone", "subheading": "Dile hola a la nueva generación de iPhone.", "link_1": "/pages/iphone", "link_1_label": "Más información", "link_2": "/collections/iphone", "link_2_label": "Comprar el iPhone" } },
-        "card_macbook_pro": { "type": "promo_card", "settings": { "card_size": "full", "theme": "dark", "heading": "MacBook Pro", "subheading": "Ahora con los chips M5, M5 Pro y M5 Max.", "availability": "Consulta la disponibilidad más adelante.", "link_1": "/pages/mac", "link_1_label": "Más información" } },
-        "card_ipad_air": { "type": "promo_card", "settings": { "card_size": "full", "theme": "light", "heading": "iPad Air", "subheading": "Ahora con los superpoderes del chip M4.", "availability": "Consulta la disponibilidad más adelante.", "link_1": "/pages/ipad", "link_1_label": "Más información" } },
-        "card_watch": { "type": "promo_card", "settings": { "card_size": "half", "theme": "light", "heading": "Apple Watch Series 11", "subheading": "Una gran forma de cuidar tu salud.", "link_1": "/pages/watch", "link_1_label": "Más información", "link_2": "/collections/apple-watch", "link_2_label": "Comprar" } },
-        "card_macbook_air": { "type": "promo_card", "settings": { "card_size": "half", "theme": "dark", "heading": "MacBook Air", "subheading": "Ahora con los superpoderes del chip M5.", "availability": "Consulta la disponibilidad más adelante.", "link_1": "/pages/mac", "link_1_label": "Más información" } },
-        "card_airpods": { "type": "promo_card", "settings": { "card_size": "half", "theme": "dark", "heading": "AirPods Pro 3", "subheading": "La mejor Cancelación Activa de Ruido del mundo dentro del oído.", "link_1": "/pages/airpods", "link_1_label": "Más información", "link_2": "/collections/airpods", "link_2_label": "Comprar" } },
-        "card_ipad_pro": { "type": "promo_card", "settings": { "card_size": "half", "theme": "light", "heading": "iPad Pro", "subheading": "Avanzado rendimiento para la IA y funcionalidades revolucionarias.", "link_1": "/pages/ipad", "link_1_label": "Más información", "link_2": "/collections/ipad", "link_2_label": "Comprar" } }
+        "card_iphone": {
+          "type": "promo_card",
+          "settings": {
+            "card_size": "full",
+            "theme": "light",
+            "badge": "",
+            "heading": "iPhone",
+            "subheading": "Dile hola a la nueva generación de iPhone.",
+            "availability": "",
+            "image": "shopify://shop_images/Captura_de_pantalla_2026-04-10_a_la_s_6.39.47_p._m..png",
+            "link_1": "/pages/iphone",
+            "link_1_label": "Más información",
+            "link_2": "/collections/iphone",
+            "link_2_label": "Comprar el iPhone"
+          }
+        },
+        "card_macbook_pro": {
+          "type": "promo_card",
+          "settings": {
+            "card_size": "full",
+            "theme": "light",
+            "badge": "",
+            "heading": "MacBook Pro",
+            "subheading": "Ahora con los chips M5, M5 Pro y M5 Max.",
+            "availability": "Consulta la disponibilidad más adelante.",
+            "image": "shopify://shop_images/Captura_de_pantalla_2026-04-10_a_la_s_6.44.05_p._m..png",
+            "link_1": "/pages/mac",
+            "link_1_label": "Más información",
+            "link_2": "",
+            "link_2_label": "Comprar"
+          }
+        },
+        "card_ipad_air": {
+          "type": "promo_card",
+          "settings": {
+            "card_size": "full",
+            "theme": "light",
+            "badge": "",
+            "heading": "iPad Air",
+            "subheading": "Ahora con los superpoderes del chip M4.",
+            "availability": "Consulta la disponibilidad más adelante.",
+            "link_1": "/pages/ipad",
+            "link_1_label": "Más información",
+            "link_2": "",
+            "link_2_label": "Comprar"
+          }
+        },
+        "card_watch": {
+          "type": "promo_card",
+          "settings": {
+            "card_size": "half",
+            "theme": "light",
+            "badge": "",
+            "heading": "Apple Watch Series 11",
+            "subheading": "Una gran forma de cuidar tu salud.",
+            "availability": "",
+            "link_1": "/pages/watch",
+            "link_1_label": "Más información",
+            "link_2": "/collections/apple-watch",
+            "link_2_label": "Comprar"
+          }
+        },
+        "card_macbook_air": {
+          "type": "promo_card",
+          "settings": {
+            "card_size": "half",
+            "theme": "dark",
+            "badge": "",
+            "heading": "MacBook Air",
+            "subheading": "Ahora con los superpoderes del chip M5.",
+            "availability": "Consulta la disponibilidad más adelante.",
+            "link_1": "/pages/mac",
+            "link_1_label": "Más información",
+            "link_2": "",
+            "link_2_label": "Comprar"
+          }
+        },
+        "card_airpods": {
+          "type": "promo_card",
+          "settings": {
+            "card_size": "half",
+            "theme": "dark",
+            "badge": "",
+            "heading": "AirPods Pro 3",
+            "subheading": "La mejor Cancelación Activa de Ruido del mundo dentro del oído.",
+            "availability": "",
+            "link_1": "/pages/airpods",
+            "link_1_label": "Más información",
+            "link_2": "/collections/airpods",
+            "link_2_label": "Comprar"
+          }
+        },
+        "card_ipad_pro": {
+          "type": "promo_card",
+          "settings": {
+            "card_size": "half",
+            "theme": "light",
+            "badge": "",
+            "heading": "iPad Pro",
+            "subheading": "Avanzado rendimiento para la IA y funcionalidades revolucionarias.",
+            "availability": "",
+            "link_1": "/pages/ipad",
+            "link_1_label": "Más información",
+            "link_2": "/collections/ipad",
+            "link_2_label": "Comprar"
+          }
+        }
       },
-      "block_order": ["card_iphone", "card_macbook_pro", "card_ipad_air", "card_watch", "card_macbook_air", "card_airpods", "card_ipad_pro"],
+      "block_order": [
+        "card_iphone",
+        "card_macbook_pro",
+        "card_ipad_air",
+        "card_watch",
+        "card_macbook_air",
+        "card_airpods",
+        "card_ipad_pro"
+      ],
       "settings": {}
     }
   },
