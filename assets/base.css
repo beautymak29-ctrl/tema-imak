@@ -106,7 +106,7 @@ ul.list-unstyled {
 .hd__nav-list { display: flex; gap: 0; list-style: none; margin: 0; padding: 0; }
 .hd__nav-item { }
 .hd__nav-link {
-  display: block; padding: 0 1.2rem; font-size: 1.2rem; font-weight: 400;
+  display: block; padding: 0 1.4rem; font-size: 1.4rem; font-weight: 400;
   letter-spacing: .01em; line-height: 4.4rem; color: #f5f5f7; opacity: .8;
   text-decoration: none; white-space: nowrap; transition: opacity .2s;
 }
@@ -1238,4 +1238,205 @@ button.fg-card__inner--clickable:hover .fg-card__plus { background: rgba(255,255
   .product-grid--4-col,
   .product-grid--5-col { grid-template-columns: repeat(3, 1fr); }
   .product-page__grid { grid-template-columns: 1fr 1fr; gap: 3.2rem; }
+}
+
+/* ==============================
+   Home Cards – Apple-style grid
+   ============================== */
+.hc-section {
+  max-width: 108rem;
+  margin: 0 auto;
+  padding: 1.2rem;
+}
+
+.hc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+}
+
+/* Card base */
+.hc-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 58rem;
+}
+
+.hc-card--full {
+  grid-column: 1 / -1;
+}
+
+/* Themes */
+.hc-card--dark {
+  background-color: #000;
+  color: #f5f5f7;
+}
+
+.hc-card--light {
+  background-color: #f5f5f7;
+  color: #1d1d1f;
+}
+
+/* Content */
+.hc-card__content {
+  position: relative;
+  z-index: 2;
+  padding: 4.8rem 2.4rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.hc-card__badge {
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: #bf4800;
+}
+
+.hc-card--dark .hc-card__badge {
+  color: #ffa040;
+}
+
+.hc-card__heading {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+
+.hc-card--full .hc-card__heading {
+  font-size: 5.6rem;
+}
+
+.hc-card__subheading {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.hc-card--full .hc-card__subheading {
+  font-size: 2.4rem;
+}
+
+.hc-card__availability {
+  font-size: 1.4rem;
+  margin: 0.4rem 0 0;
+  opacity: 0.7;
+}
+
+/* Links */
+.hc-card__links {
+  display: flex;
+  gap: 2.4rem;
+  margin-top: 1.2rem;
+}
+
+.hc-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.hc-card__link:hover {
+  opacity: 0.72;
+}
+
+.hc-card__link--primary {
+  color: #2997ff;
+}
+
+.hc-card__link--secondary {
+  color: #2997ff;
+}
+
+.hc-card--light .hc-card__link--primary {
+  color: #0066cc;
+}
+
+.hc-card--light .hc-card__link--secondary {
+  color: #0066cc;
+}
+
+/* Media */
+.hc-card__media {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  margin-top: 1.6rem;
+}
+
+.hc-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.hc-card__img--placeholder {
+  max-width: 60%;
+  height: auto;
+  opacity: 0.3;
+}
+
+/* Full-width card media can overflow bottom */
+.hc-card--full .hc-card__media {
+  margin-top: 2.4rem;
+}
+
+/* ---- Home Cards Responsive ---- */
+@media (max-width: 749px) {
+  .hc-section {
+    padding: 0.8rem;
+  }
+
+  .hc-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .hc-card {
+    min-height: 46rem;
+    border-radius: 1.4rem;
+  }
+
+  .hc-card--full .hc-card__heading,
+  .hc-card__heading {
+    font-size: 3.2rem;
+  }
+
+  .hc-card--full .hc-card__subheading,
+  .hc-card__subheading {
+    font-size: 1.7rem;
+  }
+
+  .hc-card__content {
+    padding: 3.2rem 1.6rem 0;
+  }
+
+  .hc-card__link {
+    font-size: 1.6rem;
+  }
+
+  .hc-card__links {
+    gap: 1.6rem;
+  }
 }

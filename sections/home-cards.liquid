@@ -1,0 +1,238 @@
+{%- comment -%}
+  Apple-style promo cards grid for homepage.
+  Blocks can be "full" (100% width) or "half" (50% width, paired automatically).
+{%- endcomment -%}
+
+{%- if section.blocks.size > 0 -%}
+<section class="hc-section section-{{ section.id }}">
+  <div class="hc-grid">
+    {%- for block in section.blocks -%}
+      {%- assign is_full = block.settings.card_size -%}
+      {%- assign is_dark = false -%}
+      {%- if block.settings.theme == 'dark' -%}{%- assign is_dark = true -%}{%- endif -%}
+
+      <article class="hc-card {% if is_full == 'full' %}hc-card--full{% else %}hc-card--half{% endif %} {% if is_dark %}hc-card--dark{% else %}hc-card--light{% endif %}" {{ block.shopify_attributes }}>
+
+        <div class="hc-card__content">
+          {%- if block.settings.badge != blank -%}
+            <span class="hc-card__badge">{{ block.settings.badge | escape }}</span>
+          {%- endif -%}
+
+          <h2 class="hc-card__heading">{{ block.settings.heading | escape }}</h2>
+
+          {%- if block.settings.subheading != blank -%}
+            <p class="hc-card__subheading">{{ block.settings.subheading }}</p>
+          {%- endif -%}
+
+          {%- if block.settings.availability != blank -%}
+            <p class="hc-card__availability">{{ block.settings.availability | escape }}</p>
+          {%- endif -%}
+
+          <div class="hc-card__links">
+            {%- if block.settings.link_1 != blank and block.settings.link_1_label != blank -%}
+              <a href="{{ block.settings.link_1 }}" class="hc-card__link hc-card__link--primary">
+                {{ block.settings.link_1_label | escape }}
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M4.5 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            {%- endif -%}
+            {%- if block.settings.link_2 != blank and block.settings.link_2_label != blank -%}
+              <a href="{{ block.settings.link_2 }}" class="hc-card__link hc-card__link--secondary">
+                {{ block.settings.link_2_label | escape }}
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M4.5 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            {%- endif -%}
+          </div>
+        </div>
+
+        <div class="hc-card__media">
+          {%- if block.settings.image != blank -%}
+            {{ block.settings.image | image_url: width: 1600 | image_tag:
+              loading: 'lazy',
+              widths: '400, 600, 800, 1100, 1400, 1600',
+              sizes: '(max-width: 749px) 100vw, (max-width: 989px) 100vw, 50vw',
+              class: 'hc-card__img',
+              alt: block.settings.image.alt | default: block.settings.heading
+            }}
+          {%- else -%}
+            {{ 'lifestyle-1' | placeholder_svg_tag: 'hc-card__img hc-card__img--placeholder' }}
+          {%- endif -%}
+        </div>
+      </article>
+    {%- endfor -%}
+  </div>
+</section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Tarjetas inicio (Apple)",
+  "tag": "section",
+  "class": "section-home-cards",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "promo_card",
+      "name": "Tarjeta promo",
+      "settings": [
+        {
+          "type": "select",
+          "id": "card_size",
+          "label": "Tama\u00f1o de tarjeta",
+          "options": [
+            { "value": "full", "label": "Ancho completo" },
+            { "value": "half", "label": "Mitad (se empareja)" }
+          ],
+          "default": "full"
+        },
+        {
+          "type": "select",
+          "id": "theme",
+          "label": "Tema",
+          "options": [
+            { "value": "light", "label": "Claro" },
+            { "value": "dark", "label": "Oscuro" }
+          ],
+          "default": "light"
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Etiqueta (opcional)",
+          "info": "Ejemplo: Nuevo"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "T\u00edtulo del producto",
+          "default": "iPhone"
+        },
+        {
+          "type": "textarea",
+          "id": "subheading",
+          "label": "Descripci\u00f3n / Subt\u00edtulo",
+          "default": "Dile hola a la nueva generaci\u00f3n."
+        },
+        {
+          "type": "text",
+          "id": "availability",
+          "label": "Nota de disponibilidad (opcional)",
+          "info": "Ejemplo: Consulta la disponibilidad m\u00e1s adelante."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Imagen del producto"
+        },
+        {
+          "type": "header",
+          "content": "Enlaces"
+        },
+        {
+          "type": "url",
+          "id": "link_1",
+          "label": "Enlace principal"
+        },
+        {
+          "type": "text",
+          "id": "link_1_label",
+          "label": "Texto enlace principal",
+          "default": "M\u00e1s informaci\u00f3n"
+        },
+        {
+          "type": "url",
+          "id": "link_2",
+          "label": "Enlace secundario (opcional)"
+        },
+        {
+          "type": "text",
+          "id": "link_2_label",
+          "label": "Texto enlace secundario",
+          "default": "Comprar"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 16,
+  "presets": [
+    {
+      "name": "Tarjetas inicio (Apple)",
+      "blocks": [
+        {
+          "type": "promo_card",
+          "settings": {
+            "card_size": "full",
+            "theme": "light",
+            "heading": "iPhone",
+            "subheading": "Dile hola a la nueva generaci\u00f3n de iPhone.",
+            "link_1_label": "M\u00e1s informaci\u00f3n",
+            "link_2_label": "Comprar el iPhone"
+          }
+        },
+        {
+          "type": "promo_card",
+          "settings": {
+            "card_size": "full",
+            "theme": "dark",
+            "heading": "MacBook Pro",
+            "subheading": "Ahora con los chips M5, M5 Pro y M5 Max.",
+            "link_1_label": "M\u00e1s informaci\u00f3n"
+          }
+        },
+        {
+          "type": "promo_card",
+          "settings": {
+            "card_size": "full",
+            "theme": "light",
+            "heading": "iPad Air",
+            "subheading": "Ahora con los superpoderes del chip M4.",
+            "link_1_label": "M\u00e1s informaci\u00f3n"
+          }
+        },
+        {
+          "type": "promo_card",
+          "settings": {
+            "card_size": "half",
+            "theme": "light",
+            "heading": "Apple Watch",
+            "subheading": "Una gran forma de cuidar tu salud.",
+            "link_1_label": "M\u00e1s informaci\u00f3n",
+            "link_2_label": "Comprar"
+          }
+        },
+        {
+          "type": "promo_card",
+          "settings": {
+            "card_size": "half",
+            "theme": "dark",
+            "heading": "MacBook Air",
+            "subheading": "Ahora con los superpoderes del chip M5.",
+            "link_1_label": "M\u00e1s informaci\u00f3n"
+          }
+        },
+        {
+          "type": "promo_card",
+          "settings": {
+            "card_size": "half",
+            "theme": "dark",
+            "heading": "AirPods Pro",
+            "subheading": "La mejor Cancelaci\u00f3n Activa de Ruido.",
+            "link_1_label": "M\u00e1s informaci\u00f3n",
+            "link_2_label": "Comprar"
+          }
+        },
+        {
+          "type": "promo_card",
+          "settings": {
+            "card_size": "half",
+            "theme": "light",
+            "heading": "iPad Pro",
+            "subheading": "Avanzado rendimiento para la IA.",
+            "link_1_label": "M\u00e1s informaci\u00f3n",
+            "link_2_label": "Comprar"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
