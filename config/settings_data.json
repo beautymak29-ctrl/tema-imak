@@ -28,6 +28,7 @@
       "hero-banner": {
         "type": "hero-banner",
         "settings": {
+          "show_banner": false,
           "image": "shopify://shop_images/PORTADA_PAGINA_WEB.png",
           "background_color": "#f3f3f3",
           "subheading": "",
