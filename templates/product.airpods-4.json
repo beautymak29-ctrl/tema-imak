@@ -71,7 +71,9 @@
           "settings": {
             "icon": "card",
             "title": "Convenios con efectiva",
-            "description": "Pagá con tu tarjeta efectiva"
+            "description": "Pagá con tu tarjeta efectiva",
+            "detail_content": "",
+            "whatsapp_url": ""
           }
         },
         "ptb_2": {
@@ -79,7 +81,9 @@
           "settings": {
             "icon": "percent",
             "title": "Sin intereses",
-            "description": "Cuotas sin recargo"
+            "description": "Cuotas sin recargo",
+            "detail_content": "",
+            "whatsapp_url": ""
           }
         },
         "ptb_3": {
@@ -87,7 +91,9 @@
           "settings": {
             "icon": "savings",
             "title": "Plan Ahorro",
-            "description": "Ahorrá y lleváte tu equipo"
+            "description": "Ahorrá y lleváte tu equipo",
+            "detail_content": "",
+            "whatsapp_url": ""
           }
         },
         "ptb_4": {
@@ -95,7 +101,9 @@
           "settings": {
             "icon": "pin",
             "title": "Visitános",
-            "description": "Atención personalizada en tienda"
+            "description": "Atención personalizada en tienda",
+            "detail_content": "",
+            "whatsapp_url": ""
           }
         }
       },
@@ -112,7 +120,7 @@
   },
   "order": [
     "main",
-    "product-info",
-    "product-trust-bar"
+    "product-trust-bar",
+    "product-info"
   ]
 }
