@@ -44,9 +44,6 @@
         "one": "Carrito ({{ count }} artículo)",
         "other": "Carrito ({{ count }} artículos)"
       }
-    },
-    "whatsapp": {
-      "aria_label": "Chatea con nosotros por WhatsApp"
     }
   },
   "blogs": {

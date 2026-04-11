@@ -44,9 +44,6 @@
         "one": "Cart ({{ count }} item)",
         "other": "Cart ({{ count }} items)"
       }
-    },
-    "whatsapp": {
-      "aria_label": "Chat with us on WhatsApp"
     }
   },
   "customer": {
