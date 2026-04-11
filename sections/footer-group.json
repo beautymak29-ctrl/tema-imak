@@ -18,7 +18,20 @@
         "newsletter_enable": false,
         "show_social": true
       }
+    },
+    "whatsapp-button": {
+      "type": "whatsapp-button",
+      "settings": {
+        "enable": true,
+        "phone_number": "",
+        "default_message": "¡Hola! Me interesa obtener más información.",
+        "tooltip_text": "¿Necesitas ayuda?",
+        "show_desktop": true,
+        "show_mobile": true,
+        "position": "right",
+        "button_color": "#25D366"
+      }
     }
   },
-  "order": ["footer"]
+  "order": ["footer", "whatsapp-button"]
 }
