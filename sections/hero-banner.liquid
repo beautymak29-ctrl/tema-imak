@@ -1,4 +1,7 @@
 {% comment %} Sección Hero / Banner principal {% endcomment %}
+{%- unless section.settings.show_banner -%}
+  {%- style -%}.section-hero { display: none !important; }{%- endstyle -%}
+{%- endunless -%}
 {%- assign is_dark = false -%}
 {%- if section.settings.background_color == '#000000' or section.settings.background_color == '#000' or section.settings.background_color == '#1d1d1f' or section.settings.background_color == '#111111' -%}
   {%- assign is_dark = true -%}
@@ -63,6 +66,12 @@
   "tag": "section",
   "class": "section-hero",
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_banner",
+      "label": "Mostrar banner",
+      "default": true
+    },
     {
       "type": "image_picker",
       "id": "image",
