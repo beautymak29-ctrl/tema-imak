@@ -153,6 +153,58 @@
                 </div>
               {%- endif -%}
 
+              {%- if block.settings.show_location -%}
+                <div class="ptb-location">
+                  <div class="ptb-location__map-wrap">
+                    <iframe
+                      class="ptb-location__map"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d987.5!2d-74.5393!3d-8.3791!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91a1b5b5b5b5b5b5%3A0x0!2sJr.+Atahualpa+183%2C+Pucallpa!5e0!3m2!1ses!2spe!4v1"
+                      width="100%"
+                      height="180"
+                      style="border:0;"
+                      allowfullscreen=""
+                      loading="lazy"
+                      referrerpolicy="no-referrer-when-downgrade"
+                      title="Ubicación de IMAK"
+                    ></iframe>
+                  </div>
+
+                  <div class="ptb-location__info">
+                    <div class="ptb-location__address">
+                      <div class="ptb-location__pin">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                      </div>
+                      <div>
+                        <strong class="ptb-location__street">Jr. Atahualpa 183</strong>
+                        <span class="ptb-location__city">Pucallpa, Ucayali – Perú</span>
+                      </div>
+                    </div>
+
+                    <div class="ptb-location__details">
+                      <div class="ptb-location__detail">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        <div>
+                          <strong>Horario</strong>
+                          <p>Lun–Dom: 10:00 AM – 8:00 PM</p>
+                        </div>
+                      </div>
+                      <div class="ptb-location__detail">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <div>
+                          <strong>Teléfono</strong>
+                          <p>990 802 163</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <a href="https://maps.google.com/?q=Jr.+Atahualpa+183,+Pucallpa,+Per%C3%BA" target="_blank" rel="noopener noreferrer" class="ptb-location__cta">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+                      Cómo llegar
+                    </a>
+                  </div>
+                </div>
+              {%- endif -%}
+
               {%- if block.settings.show_card_logos -%}
                 <div class="ptb-cards">
                   <p class="ptb-cards__headline">
@@ -195,7 +247,7 @@
               {%- endif -%}
             </div>
             <div class="ptb-modal__footer">
-              <a href="{{ block.settings.whatsapp_url | default: 'https://wa.me/51999999999' }}" target="_blank" rel="noopener noreferrer" class="ptb-modal__whatsapp-btn">
+              <a href="{{ block.settings.whatsapp_url | default: 'https://wa.me/51990802163' }}" target="_blank" rel="noopener noreferrer" class="ptb-modal__whatsapp-btn">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.555 4.126 1.528 5.86L.057 23.64l5.933-1.442A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.82a9.78 9.78 0 0 1-5.09-1.42l-.365-.217-3.782.919.956-3.654-.238-.379A9.78 9.78 0 0 1 2.18 12c0-5.423 4.397-9.82 9.82-9.82 5.423 0 9.82 4.397 9.82 9.82 0 5.423-4.397 9.82-9.82 9.82z"/></svg>
                 Evalúa por WhatsApp
               </a>
@@ -313,6 +365,12 @@
           "type": "checkbox",
           "id": "show_pandero",
           "label": "Mostrar bloque de Plan Ahorro (Pandero)",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "show_location",
+          "label": "Mostrar bloque de ubicación / mapa",
           "default": false
         }
       ]

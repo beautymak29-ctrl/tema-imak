@@ -98,7 +98,8 @@
           "settings": {
             "icon": "pin",
             "title": "Visitános",
-            "description": "Atención personalizada en tienda"
+            "description": "Atención personalizada en tienda",
+            "show_location": true
           }
         }
       },

@@ -106,7 +106,8 @@
             "title": "Visitános",
             "description": "Atención personalizada en tienda",
             "detail_content": "",
-            "whatsapp_url": "tel:961905778"
+            "whatsapp_url": "tel:961905778",
+            "show_location": true
           }
         }
       },

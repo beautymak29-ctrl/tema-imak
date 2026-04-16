@@ -60,7 +60,8 @@
             "title": "Visitános",
             "description": "Atención personalizada en tienda",
             "detail_content": "",
-            "whatsapp_url": ""
+            "whatsapp_url": "",
+            "show_location": true
           }
         }
       },
