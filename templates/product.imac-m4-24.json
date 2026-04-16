@@ -120,7 +120,7 @@
   },
   "order": [
     "main",
-    "product-info",
-    "product-trust-bar"
+    "product-trust-bar",
+    "product-info"
   ]
 }
