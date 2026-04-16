@@ -17,6 +17,60 @@
         "price_label": "Precio desde"
       }
     },
+    "product-trust-bar": {
+      "type": "product-trust-bar",
+      "blocks": {
+        "ptb_1": {
+          "type": "benefit",
+          "settings": {
+            "icon": "card",
+            "title": "Convenios con efectiva",
+            "description": "Pagá con tu tarjeta efectiva",
+            "detail_content": "",
+            "whatsapp_url": ""
+          }
+        },
+        "ptb_2": {
+          "type": "benefit",
+          "settings": {
+            "icon": "percent",
+            "title": "Sin intereses",
+            "description": "Cuotas sin recargo",
+            "detail_content": "",
+            "whatsapp_url": ""
+          }
+        },
+        "ptb_3": {
+          "type": "benefit",
+          "settings": {
+            "icon": "savings",
+            "title": "Plan Ahorro",
+            "description": "Ahorrá y lleváte tu equipo",
+            "detail_content": "",
+            "whatsapp_url": ""
+          }
+        },
+        "ptb_4": {
+          "type": "benefit",
+          "settings": {
+            "icon": "pin",
+            "title": "Visitános",
+            "description": "Atención personalizada en tienda",
+            "detail_content": "",
+            "whatsapp_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "ptb_1",
+        "ptb_2",
+        "ptb_3",
+        "ptb_4"
+      ],
+      "settings": {
+        "title": ""
+      }
+    },
     "product-info": {
       "type": "product-info",
       "blocks": {
@@ -62,57 +116,11 @@
         "title": "Lo más destacado",
         "subtitle": ""
       }
-    },
-    "product-trust-bar": {
-      "type": "product-trust-bar",
-      "blocks": {
-        "ptb_1": {
-          "type": "benefit",
-          "settings": {
-            "icon": "card",
-            "title": "Convenios con efectiva",
-            "description": "Pagá con tu tarjeta efectiva"
-          }
-        },
-        "ptb_2": {
-          "type": "benefit",
-          "settings": {
-            "icon": "percent",
-            "title": "Sin intereses",
-            "description": "Cuotas sin recargo"
-          }
-        },
-        "ptb_3": {
-          "type": "benefit",
-          "settings": {
-            "icon": "savings",
-            "title": "Plan Ahorro",
-            "description": "Ahorrá y lleváte tu equipo"
-          }
-        },
-        "ptb_4": {
-          "type": "benefit",
-          "settings": {
-            "icon": "pin",
-            "title": "Visitános",
-            "description": "Atención personalizada en tienda"
-          }
-        }
-      },
-      "block_order": [
-        "ptb_1",
-        "ptb_2",
-        "ptb_3",
-        "ptb_4"
-      ],
-      "settings": {
-        "title": ""
-      }
     }
   },
   "order": [
     "main",
-    "product-info",
-    "product-trust-bar"
+    "product-trust-bar",
+    "product-info"
   ]
 }
