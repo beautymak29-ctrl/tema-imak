@@ -72,7 +72,8 @@
             "icon": "card",
             "title": "Convenios con efectiva",
             "description": "Pagá con tu tarjeta efectiva",
-            "show_card_logos": true
+            "show_card_logos": true,
+            "show_efectiva": true
           }
         },
         "ptb_2": {

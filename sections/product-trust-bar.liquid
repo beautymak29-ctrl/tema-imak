@@ -65,6 +65,47 @@
                 {{ block.settings.detail_content }}
               {%- endif -%}
 
+              {%- if block.settings.show_efectiva -%}
+                <div class="ptb-efectiva">
+                  <div class="ptb-efectiva__header">
+                    <span class="ptb-efectiva__logo" aria-label="Efectiva">
+                      <span class="ptb-efectiva__logo-e">E</span>fectiva
+                    </span>
+                    <span class="ptb-efectiva__badge">Financiamiento aprobado</span>
+                  </div>
+                  <p class="ptb-efectiva__intro">
+                    Si cumples los requisitos y tu crédito es aprobado, <strong>Efectiva te financia</strong> para que estrenes tu equipo Apple completamente nuevo. Sin bancos, sin complicaciones.
+                  </p>
+                  <div class="ptb-efectiva__steps">
+                    <div class="ptb-efectiva__step">
+                      <span class="ptb-efectiva__step-num">1</span>
+                      <div>
+                        <strong>Evalúa tu crédito</strong>
+                        <p>Tráenos tu DNI y en minutos sabrás si calificas.</p>
+                      </div>
+                    </div>
+                    <div class="ptb-efectiva__step">
+                      <span class="ptb-efectiva__step-num">2</span>
+                      <div>
+                        <strong>Elige tu equipo</strong>
+                        <p>Selecciona el producto Apple que quieras de nuestra tienda.</p>
+                      </div>
+                    </div>
+                    <div class="ptb-efectiva__step">
+                      <span class="ptb-efectiva__step-num">3</span>
+                      <div>
+                        <strong>Llévatelo hoy</strong>
+                        <p>Efectiva se encarga del financiamiento y tú disfrutas tu equipo desde el día uno.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="ptb-efectiva__note">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    Sujeto a evaluación crediticia. Consulta condiciones en tienda.
+                  </p>
+                </div>
+              {%- endif -%}
+
               {%- if block.settings.show_card_logos -%}
                 <div class="ptb-cards">
                   <p class="ptb-cards__headline">
@@ -212,6 +253,12 @@
           "type": "checkbox",
           "id": "show_card_logos",
           "label": "Mostrar logos de tarjetas en el modal",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "show_efectiva",
+          "label": "Mostrar bloque de Efectiva en el modal",
           "default": false
         }
       ]

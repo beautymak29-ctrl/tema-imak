@@ -1122,6 +1122,23 @@ button.fg-card__inner--clickable:hover .fg-card__plus { background: rgba(255,255
 .ptb-cards__item { background: #fff; border-radius: 1rem; padding: .8rem 1.2rem; box-shadow: 0 1px 4px rgba(0,0,0,.06); display: flex; align-items: center; justify-content: center; transition: transform .2s ease, box-shadow .2s ease; }
 .ptb-cards__item:hover { transform: translateY(-3px) scale(1.04); box-shadow: 0 6px 20px rgba(0,113,227,.15); }
 .ptb-cards__item svg { display: block; }
+/* Efectiva block inside modal */
+.ptb-efectiva { margin-top: 2rem; padding: 2rem; background: linear-gradient(135deg, #f0f4ff 0%, #e8eeff 100%); border-radius: 1.4rem; border: 1px solid #c7d4ff; }
+.ptb-efectiva__header { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.4rem; }
+.ptb-efectiva__logo { font-family: Arial, Helvetica, sans-serif; font-size: 2.4rem; font-weight: 900; color: #1a6aff; letter-spacing: -.02em; line-height: 1; }
+.ptb-efectiva__logo-e { font-style: italic; }
+.ptb-efectiva__badge { display: inline-flex; align-items: center; gap: .4rem; padding: .3rem .9rem; background: #d4edda; color: #155724; font-size: 1.15rem; font-weight: 700; border-radius: 10rem; letter-spacing: .02em; }
+.ptb-efectiva__badge::before { content: '\2713'; font-size: 1.2rem; }
+.ptb-efectiva__intro { font-size: 1.4rem; line-height: 1.65; color: #333; margin: 0 0 1.6rem; }
+.ptb-efectiva__steps { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.4rem; }
+.ptb-efectiva__step { display: flex; align-items: flex-start; gap: 1.2rem; background: #fff; border-radius: 1.2rem; padding: 1.2rem 1.4rem; box-shadow: 0 1px 4px rgba(0,0,0,.05); transition: transform .2s ease, box-shadow .2s ease; }
+.ptb-efectiva__step:hover { transform: translateX(4px); box-shadow: 0 4px 16px rgba(26,106,255,.12); }
+.ptb-efectiva__step-num { width: 3.2rem; height: 3.2rem; background: linear-gradient(135deg, #1a6aff, #4d8bff); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 800; flex-shrink: 0; }
+.ptb-efectiva__step div { flex: 1; }
+.ptb-efectiva__step strong { font-size: 1.4rem; color: #1d1d1f; display: block; margin-bottom: .2rem; }
+.ptb-efectiva__step p { font-size: 1.3rem; color: #6e6e73; margin: 0; line-height: 1.5; }
+.ptb-efectiva__note { display: flex; align-items: center; gap: .5rem; font-size: 1.2rem; color: #86868b; margin: 0; padding-top: .4rem; border-top: 1px solid #d6dfff; }
+.ptb-efectiva__note svg { flex-shrink: 0; color: #86868b; }
 .ptb-modal__footer { padding: 1.6rem 2.4rem; border-top: 1px solid #e5e5e5; display: flex; align-items: center; justify-content: space-between; gap: 1.2rem; }
 .ptb-modal__evaluate { font-size: 1.3rem; color: #6e6e73; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; margin: 0; }
 .ptb-modal__whatsapp-btn { display: inline-flex; align-items: center; gap: .6rem; padding: .8rem 1.6rem; background: #25d366; color: #fff; font-size: 1.4rem; font-weight: 600; border-radius: 10rem; text-decoration: none; transition: background .15s; }
