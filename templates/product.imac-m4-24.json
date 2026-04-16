@@ -74,7 +74,6 @@
             "description": "Pagá con tu tarjeta efectiva",
             "detail_content": "",
             "whatsapp_url": "",
-            "show_card_logos": true,
             "show_efectiva": true
           }
         },
