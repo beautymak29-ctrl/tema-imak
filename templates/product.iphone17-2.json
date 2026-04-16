@@ -90,7 +90,8 @@
           "settings": {
             "icon": "savings",
             "title": "Plan Ahorro",
-            "description": "Ahorrá y lleváte tu equipo"
+            "description": "Ahorrá y lleváte tu equipo",
+            "show_pandero": true
           }
         },
         "ptb_4": {

@@ -1139,6 +1139,26 @@ button.fg-card__inner--clickable:hover .fg-card__plus { background: rgba(255,255
 .ptb-efectiva__step p { font-size: 1.3rem; color: #6e6e73; margin: 0; line-height: 1.5; }
 .ptb-efectiva__note { display: flex; align-items: center; gap: .5rem; font-size: 1.2rem; color: #86868b; margin: 0; padding-top: .4rem; border-top: 1px solid #d6dfff; }
 .ptb-efectiva__note svg { flex-shrink: 0; color: #86868b; }
+/* Pandero / Plan Ahorro block */
+.ptb-pandero { margin-top: 2rem; padding: 2rem; background: linear-gradient(135deg, #fdf8f0 0%, #fef3e2 100%); border-radius: 1.4rem; border: 1px solid #f5deb3; }
+.ptb-pandero__header { display: flex; align-items: center; gap: 1.2rem; margin-bottom: 1.4rem; }
+.ptb-pandero__icon-circle { width: 4.8rem; height: 4.8rem; background: linear-gradient(135deg, #f59e0b, #d97706); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 4px 14px rgba(245,158,11,.3); }
+.ptb-pandero__title { font-size: 1.8rem; font-weight: 800; color: #92400e; display: block; line-height: 1.2; }
+.ptb-pandero__aka { font-weight: 600; color: #b45309; font-size: 1.4rem; }
+.ptb-pandero__tagline { font-size: 1.25rem; color: #b45309; font-weight: 600; letter-spacing: .01em; }
+.ptb-pandero__intro { font-size: 1.4rem; line-height: 1.65; color: #44403c; margin: 0 0 1.8rem; }
+/* Timeline */
+.ptb-pandero__timeline { position: relative; padding-left: 2.4rem; margin-bottom: 1.6rem; }
+.ptb-pandero__timeline::before { content: ''; position: absolute; left: .9rem; top: .6rem; bottom: .6rem; width: 2px; background: linear-gradient(to bottom, #f59e0b, #d97706); border-radius: 2px; }
+.ptb-pandero__tl-item { position: relative; padding-bottom: 1.4rem; }
+.ptb-pandero__tl-item:last-child { padding-bottom: 0; }
+.ptb-pandero__tl-dot { position: absolute; left: -2.4rem; top: .2rem; width: 2rem; height: 2rem; background: #fff; border: 3px solid #f59e0b; border-radius: 50%; z-index: 1; transition: transform .2s ease, background .2s ease; }
+.ptb-pandero__tl-item:hover .ptb-pandero__tl-dot { background: #f59e0b; transform: scale(1.2); }
+.ptb-pandero__tl-content strong { font-size: 1.4rem; color: #1d1d1f; display: block; margin-bottom: .2rem; }
+.ptb-pandero__tl-content p { font-size: 1.3rem; color: #6e6e73; margin: 0; line-height: 1.5; }
+.ptb-pandero__highlight { display: flex; align-items: center; gap: .8rem; padding: 1.2rem 1.4rem; background: #fff; border-radius: 1.2rem; border: 1px solid #fde68a; box-shadow: 0 2px 8px rgba(245,158,11,.1); }
+.ptb-pandero__highlight svg { color: #16a34a; flex-shrink: 0; }
+.ptb-pandero__highlight span { font-size: 1.35rem; color: #1d1d1f; line-height: 1.5; }
 .ptb-modal__footer { padding: 1.6rem 2.4rem; border-top: 1px solid #e5e5e5; display: flex; align-items: center; justify-content: space-between; gap: 1.2rem; }
 .ptb-modal__evaluate { font-size: 1.3rem; color: #6e6e73; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; margin: 0; }
 .ptb-modal__whatsapp-btn { display: inline-flex; align-items: center; gap: .6rem; padding: .8rem 1.6rem; background: #25d366; color: #fff; font-size: 1.4rem; font-weight: 600; border-radius: 10rem; text-decoration: none; transition: background .15s; }

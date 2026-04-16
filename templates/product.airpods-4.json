@@ -96,7 +96,8 @@
             "title": "Plan Ahorro",
             "description": "Ahorrá y lleváte tu equipo",
             "detail_content": "",
-            "whatsapp_url": ""
+            "whatsapp_url": "",
+            "show_pandero": true
           }
         },
         "ptb_4": {
