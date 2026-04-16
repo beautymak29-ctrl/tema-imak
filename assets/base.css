@@ -1114,6 +1114,14 @@ button.fg-card__inner--clickable:hover .fg-card__plus { background: rgba(255,255
 .ptb-modal__body { padding: 2rem 2.4rem; overflow-y: auto; flex: 1; font-size: 1.5rem; line-height: 1.7; color: #424245; }
 .ptb-modal__body p { margin: 0 0 1rem; }
 .ptb-modal__body p:last-child { margin-bottom: 0; }
+/* Card logos inside modal */
+.ptb-cards { margin-top: 2rem; padding: 2rem; background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%); border-radius: 1.4rem; border: 1px solid #e0e7ff; }
+.ptb-cards__headline { display: flex; align-items: center; gap: .6rem; font-size: 1.4rem; color: #1d1d1f; margin: 0 0 1.4rem; line-height: 1.5; }
+.ptb-cards__lock { color: #0071e3; flex-shrink: 0; }
+.ptb-cards__grid { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+.ptb-cards__item { background: #fff; border-radius: 1rem; padding: .8rem 1.2rem; box-shadow: 0 1px 4px rgba(0,0,0,.06); display: flex; align-items: center; justify-content: center; transition: transform .2s ease, box-shadow .2s ease; }
+.ptb-cards__item:hover { transform: translateY(-3px) scale(1.04); box-shadow: 0 6px 20px rgba(0,113,227,.15); }
+.ptb-cards__item svg { display: block; }
 .ptb-modal__footer { padding: 1.6rem 2.4rem; border-top: 1px solid #e5e5e5; display: flex; align-items: center; justify-content: space-between; gap: 1.2rem; }
 .ptb-modal__evaluate { font-size: 1.3rem; color: #6e6e73; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; margin: 0; }
 .ptb-modal__whatsapp-btn { display: inline-flex; align-items: center; gap: .6rem; padding: .8rem 1.6rem; background: #25d366; color: #fff; font-size: 1.4rem; font-weight: 600; border-radius: 10rem; text-decoration: none; transition: background .15s; }

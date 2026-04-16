@@ -27,7 +27,8 @@
             "title": "Convenios con efectiva",
             "description": "Pagá con tu tarjeta efectiva",
             "detail_content": "",
-            "whatsapp_url": ""
+            "whatsapp_url": "",
+            "show_card_logos": true
           }
         },
         "ptb_2": {
@@ -37,7 +38,8 @@
             "title": "Sin intereses",
             "description": "Cuotas sin recargo",
             "detail_content": "",
-            "whatsapp_url": ""
+            "whatsapp_url": "",
+            "show_card_logos": true
           }
         },
         "ptb_3": {

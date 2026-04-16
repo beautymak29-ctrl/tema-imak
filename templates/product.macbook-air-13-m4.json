@@ -71,7 +71,8 @@
           "settings": {
             "icon": "card",
             "title": "Convenios con efectiva",
-            "description": "Pagá con tu tarjeta efectiva"
+            "description": "Pagá con tu tarjeta efectiva",
+            "show_card_logos": true
           }
         },
         "ptb_2": {
@@ -79,7 +80,8 @@
           "settings": {
             "icon": "percent",
             "title": "Sin intereses",
-            "description": "Cuotas sin recargo"
+            "description": "Cuotas sin recargo",
+            "show_card_logos": true
           }
         },
         "ptb_3": {
