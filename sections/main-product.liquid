@@ -55,6 +55,23 @@
               </div>
               <div class="pp-var-card__info">
                 <p class="pp-var-card__name">{{ variant.title | escape }}</p>
+                {%- assign _vt = variant.title | downcase -%}
+                {%- assign _storage = '' -%}
+                {%- if _vt contains 'tb' -%}
+                  {%- assign _parts = _vt | split: 'tb' -%}
+                  {%- assign _num = _parts[0] | split: ' ' | last | strip -%}
+                  {%- assign _storage = _num | append: ' TB' -%}
+                {%- elsif _vt contains 'gb' -%}
+                  {%- assign _parts = _vt | split: 'gb' -%}
+                  {%- assign _num = _parts[0] | split: ' ' | last | strip -%}
+                  {%- assign _storage = _num | append: ' GB' -%}
+                {%- endif -%}
+                {%- if _storage != '' -%}
+                  <span class="pp-var-card__storage">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                    {{ _storage }}
+                  </span>
+                {%- endif -%}
                 {%- if variant.price > 0 -%}
                   <p class="pp-var-card__price-label">{{ section.settings.price_label | default: 'Precio desde' | upcase }}</p>
                   <p class="pp-var-card__price">{{ variant.price | money }}</p>
