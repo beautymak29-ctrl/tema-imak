@@ -62,6 +62,16 @@
               <p class="pf-tile__desc">{{ pf_desc }}</p>
             {%- endif -%}
 
+            {%- if block.settings.storage_options != blank -%}
+              <div class="pf-tile__storage">
+                <svg class="pf-tile__storage-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                {%- assign _storage_parts = block.settings.storage_options | split: '|' -%}
+                {%- for _sp in _storage_parts -%}
+                  <span class="pf-tile__storage-chip">{{ _sp | strip }}</span>
+                {%- endfor -%}
+              </div>
+            {%- endif -%}
+
             {%- assign pf_product_name = '' -%}
             {%- if block.settings.card_title != blank -%}
               {%- assign pf_product_name = block.settings.card_title -%}
@@ -277,6 +287,12 @@
           "type": "text",
           "id": "card_description",
           "label": "Descripción corta (tarjeta)"
+        },
+        {
+          "type": "text",
+          "id": "storage_options",
+          "label": "Opciones de almacenamiento",
+          "info": "Separa con | (barra vertical). Ej: 128GB | 256GB | 512GB"
         },
         {
           "type": "header",
