@@ -14,7 +14,8 @@
       "settings": {
         "show_vendor": false,
         "variants_title": "Nuestras versiones",
-        "price_label": "Precio desde"
+        "price_label": "Precio desde",
+        "storage_options": "64GB"
       }
     },
     "product-info": {

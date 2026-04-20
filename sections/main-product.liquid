@@ -10,6 +10,14 @@
       {%- if product.description != blank -%}
         <div class="pp-header__desc rte">{{ product.description }}</div>
       {%- endif -%}
+      {%- if section.settings.storage_options != blank -%}
+        <div class="pp-header__storage" aria-label="Opciones de almacenamiento">
+          {%- assign header_storage = section.settings.storage_options | split: '|' -%}
+          {%- for storage_item in header_storage -%}
+            <span class="pp-header__storage-chip">{{ storage_item | strip }}</span>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
     </header>
 
     {%- comment -%} VARIANTES {%- endcomment -%}
@@ -55,21 +63,21 @@
               </div>
               <div class="pp-var-card__info">
                 <p class="pp-var-card__name">{{ variant.title | escape }}</p>
-                {%- assign _vt = variant.title | downcase -%}
-                {%- assign _storage = '' -%}
-                {%- if _vt contains 'tb' -%}
-                  {%- assign _parts = _vt | split: 'tb' -%}
-                  {%- assign _num = _parts[0] | split: ' ' | last | strip -%}
-                  {%- assign _storage = _num | append: ' TB' -%}
-                {%- elsif _vt contains 'gb' -%}
-                  {%- assign _parts = _vt | split: 'gb' -%}
-                  {%- assign _num = _parts[0] | split: ' ' | last | strip -%}
-                  {%- assign _storage = _num | append: ' GB' -%}
+                {%- assign variant_title_down = variant.title | downcase -%}
+                {%- assign variant_storage = '' -%}
+                {%- if variant_title_down contains 'tb' -%}
+                  {%- assign storage_parts = variant_title_down | split: 'tb' -%}
+                  {%- assign storage_number = storage_parts[0] | split: ' ' | last | strip -%}
+                  {%- assign variant_storage = storage_number | append: ' TB' -%}
+                {%- elsif variant_title_down contains 'gb' -%}
+                  {%- assign storage_parts = variant_title_down | split: 'gb' -%}
+                  {%- assign storage_number = storage_parts[0] | split: ' ' | last | strip -%}
+                  {%- assign variant_storage = storage_number | append: ' GB' -%}
                 {%- endif -%}
-                {%- if _storage != '' -%}
+                {%- if variant_storage != '' -%}
                   <span class="pp-var-card__storage">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
-                    {{ _storage }}
+                    {{ variant_storage }}
                   </span>
                 {%- endif -%}
                 {%- if variant.price > 0 -%}
@@ -159,6 +167,12 @@
       "id": "price_label",
       "label": "Etiqueta de precio",
       "default": "Precio desde"
+    },
+    {
+      "type": "text",
+      "id": "storage_options",
+      "label": "Opciones de almacenamiento",
+      "info": "Separar con |. Ej: 128GB | 256GB | 512GB"
     }
   ],
   "blocks": [
