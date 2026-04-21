@@ -15,7 +15,77 @@
         "show_vendor": false,
         "variants_title": "Nuestras versiones",
         "price_label": "Precio desde",
-        "storage_options": "128GB | 256GB | 512GB"
+        "storage_options": "256GB | 521GB"
+      }
+    },
+    "product-trust-bar": {
+      "type": "product-trust-bar",
+      "blocks": {
+        "ptb_1": {
+          "type": "benefit",
+          "settings": {
+            "icon": "card",
+            "title": "Convenios con efectiva",
+            "description": "Pagá con tu tarjeta efectiva",
+            "detail_content": "",
+            "whatsapp_url": "",
+            "show_card_logos": false,
+            "show_efectiva": true,
+            "show_pandero": false,
+            "show_location": false
+          }
+        },
+        "ptb_2": {
+          "type": "benefit",
+          "settings": {
+            "icon": "percent",
+            "title": "Sin intereses",
+            "description": "Cuotas sin recargo",
+            "detail_content": "",
+            "whatsapp_url": "",
+            "show_card_logos": true,
+            "show_efectiva": false,
+            "show_pandero": false,
+            "show_location": false
+          }
+        },
+        "ptb_3": {
+          "type": "benefit",
+          "settings": {
+            "icon": "savings",
+            "title": "Plan Ahorro",
+            "description": "Ahorrá y lleváte tu equipo",
+            "detail_content": "",
+            "whatsapp_url": "",
+            "show_card_logos": false,
+            "show_efectiva": false,
+            "show_pandero": true,
+            "show_location": false
+          }
+        },
+        "ptb_4": {
+          "type": "benefit",
+          "settings": {
+            "icon": "pin",
+            "title": "Visitános",
+            "description": "Atención personalizada en tienda",
+            "detail_content": "",
+            "whatsapp_url": "",
+            "show_card_logos": false,
+            "show_efectiva": false,
+            "show_pandero": false,
+            "show_location": true
+          }
+        }
+      },
+      "block_order": [
+        "ptb_1",
+        "ptb_2",
+        "ptb_3",
+        "ptb_4"
+      ],
+      "settings": {
+        "title": ""
       }
     },
     "product-info": {
@@ -62,56 +132,6 @@
       "settings": {
         "title": "Lo más destacado",
         "subtitle": ""
-      }
-    },
-    "product-trust-bar": {
-      "type": "product-trust-bar",
-      "blocks": {
-        "ptb_1": {
-          "type": "benefit",
-          "settings": {
-            "icon": "card",
-            "title": "Convenios con efectiva",
-            "description": "Pagá con tu tarjeta efectiva",
-            "show_efectiva": true
-          }
-        },
-        "ptb_2": {
-          "type": "benefit",
-          "settings": {
-            "icon": "percent",
-            "title": "Sin intereses",
-            "description": "Cuotas sin recargo",
-            "show_card_logos": true
-          }
-        },
-        "ptb_3": {
-          "type": "benefit",
-          "settings": {
-            "icon": "savings",
-            "title": "Plan Ahorro",
-            "description": "Ahorrá y lleváte tu equipo",
-            "show_pandero": true
-          }
-        },
-        "ptb_4": {
-          "type": "benefit",
-          "settings": {
-            "icon": "pin",
-            "title": "Visitános",
-            "description": "Atención personalizada en tienda",
-            "show_location": true
-          }
-        }
-      },
-      "block_order": [
-        "ptb_1",
-        "ptb_2",
-        "ptb_3",
-        "ptb_4"
-      ],
-      "settings": {
-        "title": ""
       }
     }
   },
