@@ -18,6 +18,7 @@
             "product": "apple-watch-ultra-3",
             "card_title": "Apple Watch Ultra 2",
             "card_description": "",
+            "storage_options": "",
             "modal_heading": "",
             "modal_title_1": "",
             "modal_desc_1": "",
@@ -35,6 +36,7 @@
             "product": "apple-watch-series-11",
             "card_title": "Apple Watch Series 10",
             "card_description": "",
+            "storage_options": "",
             "modal_heading": "",
             "modal_title_1": "",
             "modal_desc_1": "",
@@ -52,6 +54,7 @@
             "product": "apple-watch-se-3",
             "card_title": "Apple Watch SE",
             "card_description": "",
+            "storage_options": "",
             "modal_heading": "",
             "modal_title_1": "",
             "modal_desc_1": "",
@@ -87,6 +90,7 @@
           "settings": {
             "category": "Salud",
             "heading": "Tu salud, en tu muñeca.",
+            "image": "shopify://shop_images/Watch_Salud.png",
             "modal_heading": "",
             "modal_description": "",
             "modal_description_2": "",
@@ -100,6 +104,7 @@
           "settings": {
             "category": "Actividad física",
             "heading": "Entrena más. Descansa mejor.",
+            "image": "shopify://shop_images/Watch_Actividad.png",
             "modal_heading": "",
             "modal_description": "",
             "modal_description_2": "",
@@ -113,6 +118,7 @@
           "settings": {
             "category": "Seguridad",
             "heading": "Siempre contigo cuando más importa.",
+            "image": "shopify://shop_images/Watch_Seguridad.png",
             "modal_heading": "",
             "modal_description": "",
             "modal_description_2": "",
@@ -126,6 +132,7 @@
           "settings": {
             "category": "Diseño",
             "heading": "Un reloj tan único como tú.",
+            "image": "shopify://shop_images/Watch_Diseno.png",
             "modal_heading": "",
             "modal_description": "",
             "modal_description_2": "",
