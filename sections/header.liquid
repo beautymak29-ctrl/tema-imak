@@ -22,7 +22,7 @@
       <ul class="hd__nav-list" role="list">
         {%- for link in linklists[section.settings.menu].links -%}
           <li class="hd__nav-item">
-            <a
+            
               href="{{ link.url }}"
               class="hd__nav-link{% if link.active %} hd__nav-link--active{% endif %}"
               {% if link.current %}aria-current="page"{% endif %}
@@ -35,14 +35,29 @@
     </nav>
 
     {%- comment -%} Iconos derecha {%- endcomment -%}
-    <div class="hd__actions">{%- comment -%} Lupa de búsqueda {%- endcomment -%}
-<button class="hd__search-btn" ...
+    <div class="hd__actions">
+      {%- comment -%} Lupa de búsqueda {%- endcomment -%}
+      <button class="hd__search-btn" aria-label="Buscar productos" aria-expanded="false" aria-controls="hd-search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>
+      </button>
+
       {%- comment -%} Hamburguesa mobile {%- endcomment -%}
       <button class="hd__burger" aria-label="Menú" aria-expanded="false" aria-controls="hd-mobile-nav">
         <span class="hd__burger-line"></span>
         <span class="hd__burger-line"></span>
       </button>
     </div>
+  </div>
+
+  {%- comment -%} Barra de búsqueda desplegable {%- endcomment -%}
+  <div class="hd__search" id="hd-search" aria-hidden="true">
+    <form class="hd__search-form page-width" action="{{ routes.search_url }}" method="get" role="search">
+      <input type="hidden" name="type" value="product">
+      <input type="hidden" name="options[prefix]" value="last">
+      <svg class="hd__search-form-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg>
+      <input type="search" name="q" class="hd__search-input" placeholder="Buscar en toda la tienda" autocomplete="off" enterkeyhint="search">
+      <button type="button" class="hd__search-close" aria-label="Cerrar búsqueda">&times;</button>
+    </form>
   </div>
 
   {%- comment -%} Mobile nav panel {%- endcomment -%}
@@ -61,6 +76,19 @@
   </div>
 </header>
 
+<style>
+.hd__search-btn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;background:none;border:none;color:inherit;cursor:pointer;padding:0;margin-right:2px;}
+.hd__search-btn:hover{opacity:.7;}
+.hd__search{overflow:hidden;max-height:0;transition:max-height .28s ease;background:inherit;}
+.hd--search-open .hd__search{max-height:96px;}
+.hd__search-form{display:flex;align-items:center;gap:12px;padding:14px 0;}
+.hd__search-form-icon{flex:0 0 auto;opacity:.7;}
+.hd__search-input{flex:1;min-width:0;background:transparent;border:none;border-bottom:1px solid rgba(128,128,128,.35);color:inherit;font-size:17px;padding:8px 0;outline:none;}
+.hd__search-input::placeholder{color:inherit;opacity:.5;}
+.hd__search-close{flex:0 0 auto;background:none;border:none;color:inherit;font-size:26px;line-height:1;cursor:pointer;padding:0 4px;}
+.hd__search-close:hover{opacity:.7;}
+</style>
+
 <script>
 (function(){
   var hdr = document.querySelector('.hd');
@@ -73,6 +101,23 @@
     burger.classList.toggle('hd__burger--open');
     hdr.classList.toggle('hd--mobile-open');
   });
+
+  /* Búsqueda desplegable */
+  var searchBtn = hdr.querySelector('.hd__search-btn');
+  var searchPanel = hdr.querySelector('.hd__search');
+  var searchInput = hdr.querySelector('.hd__search-input');
+  var searchClose = hdr.querySelector('.hd__search-close');
+  function toggleSearch(force){
+    var open = hdr.classList.contains('hd--search-open');
+    var next = (force === undefined) ? !open : force;
+    hdr.classList.toggle('hd--search-open', next);
+    if (searchBtn) searchBtn.setAttribute('aria-expanded', String(next));
+    if (searchPanel) searchPanel.setAttribute('aria-hidden', String(!next));
+    if (next && searchInput) setTimeout(function(){ searchInput.focus(); }, 120);
+  }
+  if (searchBtn) searchBtn.addEventListener('click', function(){ toggleSearch(); });
+  if (searchClose) searchClose.addEventListener('click', function(){ toggleSearch(false); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') toggleSearch(false); });
 
   /* Sticky on scroll up */
   var sticky = hdr.dataset.sticky;
