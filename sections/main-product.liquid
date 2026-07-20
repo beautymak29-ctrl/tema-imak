@@ -1,18 +1,6 @@
-
-Nube
-
-
-
-
-
-
-
-
-
-Main product copia · LIQUID
 <section class="pp-section pp-x pp-x-{{ section.id }}">
   <div class="page-width">
- 
+
     {%- comment -%} CABECERA {%- endcomment -%}
     <header class="pp-header">
       {%- if section.settings.show_vendor and product.vendor != blank -%}
@@ -23,13 +11,13 @@ Main product copia · LIQUID
         <div class="pp-header__desc rte">{{ product.description }}</div>
       {%- endif -%}
     </header>
- 
+
     {%- comment -%} CONFIGURADOR INTERACTIVO {%- endcomment -%}
     {%- if product.variants.size > 0 -%}
       {%- assign opt1_name = product.options[0] -%}
       {%- assign opt2_name = product.options[1] -%}
       {%- assign opt1_down = opt1_name | downcase -%}
- 
+
       <div class="ppx" id="ppx-{{ section.id }}">
         <div class="ppx__media">
           {%- if product.featured_image != blank -%}
@@ -40,7 +28,7 @@ Main product copia · LIQUID
             {{ 'product-1' | placeholder_svg_tag: 'ppx__img' }}
           {%- endif -%}
         </div>
- 
+
         <div class="ppx__panel">
           {%- comment -%} Opcion 1 (color u otra) {%- endcomment -%}
           {%- if opt1_name != blank -%}
@@ -49,7 +37,7 @@ Main product copia · LIQUID
               <div class="ppx__opts {% if opt1_down contains 'color' %}ppx__opts--sw{% endif %}" id="ppx-o1-{{ section.id }}"></div>
             </div>
           {%- endif -%}
- 
+
           {%- comment -%} Opcion 2 (capacidad u otra) {%- endcomment -%}
           {%- if opt2_name != blank -%}
             <div class="ppx__group">
@@ -57,12 +45,12 @@ Main product copia · LIQUID
               <div class="ppx__opts" id="ppx-o2-{{ section.id }}"></div>
             </div>
           {%- endif -%}
- 
+
           <div class="ppx__pricebox">
             <p class="ppx__price-label">{{ section.settings.price_label | default: 'Precio desde' }}</p>
             <p class="ppx__price" id="ppx-price-{{ section.id }}"></p>
           </div>
- 
+
           {%- if section.settings.whatsapp_number != blank -%}
             <a class="ppx__cta" id="ppx-cta-{{ section.id }}" href="#" target="_blank" rel="noopener">
               {{ section.settings.cta_label | default: 'Consultar por WhatsApp' }}
@@ -75,35 +63,35 @@ Main product copia · LIQUID
           {%- endif -%}
         </div>
       </div>
- 
+
       <script>
       (function(){
         var SID = "{{ section.id }}";
         var O1NAME = {{ opt1_name | default: '' | json }};
         var O2NAME = {{ opt2_name | default: '' | json }};
         var O1COLOR = O1NAME.toLowerCase().indexOf("color") !== -1;
-        var FEATURED = {{ product.featured_image | image_url: width: 1100 | json }};
+        var FEATURED = {% if product.featured_image %}{{ product.featured_image | image_url: width: 1100 | json }}{% else %}""{% endif %};
         var WA = {{ section.settings.whatsapp_number | default: '' | json }};
         var TITLE = {{ product.title | json }};
         var VARIANTS = [
           {%- for v in product.variants -%}
-          {id:{{ v.id }}, o1:{{ v.option1 | json }}, o2:{{ v.option2 | json }}, avail:{{ v.available }}, price:{{ v.price }}, priceStr:{{ v.price | money | json }}, img:{{ v.image | image_url: width: 1100 | json }}},
+          {id:{{ v.id }}, o1:{{ v.option1 | json }}, o2:{{ v.option2 | json }}, avail:{{ v.available }}, price:{{ v.price }}, priceStr:{{ v.price | money | json }}, img:{% if v.image %}{{ v.image | image_url: width: 1100 | json }}{% else %}""{% endif %}},
           {%- endfor -%}
         ];
-        var HEX = {"naranja cósmico":"#D0743F","naranja":"#E8730C","azul profundo":"#2C3E52","azul":"#2E5AAC","plata":"#D9DBDD","gris espacial":"#4B4E52","negro":"#1D1D1F","medianoche":"#2E3641","blanco estelar":"#EDE9E3","blanco":"#F2F2F5","oro":"#F4E2C0","titanio natural":"#C9C3BA","titanio azul":"#3E4C63","titanio blanco":"#E3E1DC","titanio negro":"#39373B","verde":"#3C6E47","rosa":"#F2C9D3","rosado":"#F2C9D3","morado":"#B7A6D8","amarillo":"#F2D24E","rojo":"#C0362C","coral":"#E8734F","cielo":"#AFC7E0","lavanda":"#C6B6E2"};
- 
+        var HEX = {"naranja cósmico":"#D0743F","naranja":"#E8730C","azul profundo":"#2C3E52","azul":"#2E5AAC","plata":"#D9DBDD","gris espacial":"#4B4E52","negro":"#1D1D1F","negro espacial":"#2A2A2C","medianoche":"#2E3641","blanco estelar":"#EDE9E3","blanco":"#F2F2F5","blanco nube":"#EDEBE6","oro":"#E8CE93","oro claro":"#E7D9B8","oro rosa":"#E7C3B0","titanio natural":"#C9C3BA","natural titanium":"#C9C3BA","natural":"#C9C3BA","titanio azul":"#3E4C63","titanio blanco":"#E3E1DC","titanio negro":"#39373B","black titanium":"#39373B","verde":"#3C6E47","verde azulado":"#3E8E8A","verde bosque":"#3D5A45","verde gris":"#8C978A","rosa":"#F2C9D3","rosa suave":"#F1D5DA","rosa claro":"#F3DCDD","rosado":"#F2C9D3","morado":"#8E7CC3","morado niebla":"#B6A9C9","amarillo":"#F2D24E","amarillo neón":"#E7F04A","rojo":"#C0362C","coral":"#E8734F","cielo":"#AFC7E0","azul cielo":"#AEC6DE","sky blue":"#AEC6DE","azul niebla":"#AFC7E0","azul neblina":"#AFC7E0","azul ancla":"#3A4A63","lavanda":"#C6B6E2","salvia":"#B7C4A8","ultramarino":"#4653C7","ultramar":"#4653C7","gris piedra":"#8A8B86","gris oscuro":"#4A4B4D","clementina":"#E8732C","guayaba":"#EA6A78","melón":"#F0A868","cúrcuma":"#D9A03A","pizarra":"#5B5E63","midnight":"#2E3641","índigo":"#3F4A8C","cítrico":"#E4CF3E"};
+
         var o1vals=[], o2vals=[], imgByO1={};
         VARIANTS.forEach(function(v){
           if(v.o1 && o1vals.indexOf(v.o1)===-1) o1vals.push(v.o1);
           if(v.o2 && o2vals.indexOf(v.o2)===-1) o2vals.push(v.o2);
           if(v.o1 && !imgByO1[v.o1] && v.img) imgByO1[v.o1]=v.img;
         });
- 
+
         var cur1 = VARIANTS[0].o1, cur2 = VARIANTS[0].o2;
         var $=function(id){return document.getElementById(id);};
         var img=$("ppx-img-"+SID), price=$("ppx-price-"+SID);
         var o1box=$("ppx-o1-"+SID), o2box=$("ppx-o2-"+SID);
- 
+
         function findVar(){
           for(var i=0;i<VARIANTS.length;i++){
             var v=VARIANTS[i];
@@ -129,8 +117,7 @@ Main product copia · LIQUID
         }
         function makeSwatch(val){
           var b=document.createElement("button"); b.type="button"; b.className="ppx-sw"; b.setAttribute("data-v",val); b.setAttribute("aria-label",val);
-          var hex=HEX[val.toLowerCase()];
-          if(hex){ b.style.background=hex; } else if(imgByO1[val]){ b.style.backgroundImage="url("+imgByO1[val]+")"; b.style.backgroundSize="cover"; }
+          b.style.background = HEX[val.toLowerCase()] || "#C7C7CC";
           b.onclick=function(){ cur1=val; render(); };
           return b;
         }
@@ -145,7 +132,7 @@ Main product copia · LIQUID
       })();
       </script>
     {%- endif -%}
- 
+
     {%- comment -%} BLOQUES PERSONALIZADOS (imagen + descripción) {%- endcomment -%}
     {%- if section.blocks.size > 0 -%}
       <div class="pp-features">
@@ -174,10 +161,10 @@ Main product copia · LIQUID
         {%- endfor -%}
       </div>
     {%- endif -%}
- 
+
   </div>
 </section>
- 
+
 <style>
 .ppx{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin:32px 0 8px;}
 .ppx__media{background:#f5f5f7;border-radius:24px;padding:24px;display:flex;align-items:center;justify-content:center;aspect-ratio:1/1;}
@@ -198,7 +185,7 @@ Main product copia · LIQUID
 .ppx__cta:hover{background:#0077ed;}
 @media (max-width:749px){.ppx{grid-template-columns:1fr;gap:24px;}.ppx__panel{max-width:none;}}
 </style>
- 
+
 {% schema %}
 {
   "name": "Producto principal",
@@ -235,6 +222,3 @@ Main product copia · LIQUID
   "presets": [ { "name": "Producto principal" } ]
 }
 {% endschema %}
- 
-
-Missing files
