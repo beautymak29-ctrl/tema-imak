@@ -123,10 +123,20 @@
         "title": "Lo más destacado",
         "subtitle": ""
       }
+    },
+    "product-compare": {
+      "type": "product-compare",
+      "settings": {
+        "eyebrow": "La mejora definitiva",
+        "title": "Lo más deseado.",
+        "text": "<p>El iPhone 18 Pro está <strong>creado para un rendimiento sin precedentes</strong>. Hasta 6 horas más de reproducción de video en el iPhone 18 Pro Max frente al iPhone 17 Pro Max. Carga por cable más rápida. Chip A20 Pro con refrigeración por vapor para <strong>las cargas de trabajo de IA más exigentes</strong>. Nueva cámara principal Fusion de 48 MP con apertura variable para mejores fotos y videos con poca luz y mayor profundidad de campo. Todo en un unibody resistente con Ceramic Shield al frente y atrás: todo lo que un pro quiere.</p>",
+        "video_url": "https://www.apple.com/105/media/us/iphone-18-pro/2026/591df885-5ee2-4173-86e6-401021249f7c/films/product/iphone-18-pro-product-tpl-us-2026_16x9.m3u8"
+      }
     }
   },
   "order": [
     "main",
+    "product-compare",
     "product-trust-bar",
     "product-info"
   ]

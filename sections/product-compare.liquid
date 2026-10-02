@@ -1,0 +1,93 @@
+<section class="pcmp">
+  <div class="pcmp__in">
+    <p class="pcmp__eyebrow">{{ section.settings.eyebrow }}</p>
+    <h2 class="pcmp__title">{{ section.settings.title }}</h2>
+    <div class="pcmp__text rte">{{ section.settings.text }}</div>
+    {%- if section.settings.video_url != blank -%}
+      <button type="button" class="pcmp__film" id="pcmp-film-btn">&#9654;&nbsp; Ver el video de presentación</button>
+    {%- endif -%}
+    <div class="pcmp__sel">
+      <label for="pcmp-sel">Compara con</label>
+      <select id="pcmp-sel" class="pcmp__select"></select>
+    </div>
+    <div class="pcmp__stats">
+      <div class="pcmp__stat"><span class="pcmp__k">Hasta</span><span class="pcmp__v" data-i="0"></span><span class="pcmp__d">de reproducción de video en el iPhone 18 Pro Max</span></div>
+      <div class="pcmp__stat"><span class="pcmp__k">Hasta</span><span class="pcmp__v" data-i="1"></span><span class="pcmp__d">en la CPU de 6 núcleos</span></div>
+      <div class="pcmp__stat"><span class="pcmp__k">Hasta</span><span class="pcmp__v" data-i="2"></span><span class="pcmp__d">en la GPU de 7 núcleos</span></div>
+    </div>
+    <p class="pcmp__foot">Comparación con datos de Apple. Los resultados pueden variar según el uso y la configuración.</p>
+  </div>
+</section>
+<div class="pcmp-modal" id="pcmp-modal" hidden>
+  <div class="pcmp-modal__bg" data-close></div>
+  <div class="pcmp-modal__box">
+    <button type="button" class="pcmp-modal__x" data-close aria-label="Cerrar">&times;</button>
+    <video id="pcmp-video" controls playsinline preload="none"></video>
+    <p class="pcmp-modal__err" id="pcmp-err" hidden>No pudimos reproducir el video aquí. <a href="https://www.apple.com/iphone-18-pro/" target="_blank" rel="noopener">Míralo en la página de Apple</a>.</p>
+  </div>
+</div>
+<style>
+.pcmp{background:#000;color:#f5f5f7;border-radius:28px;margin:24px 16px;padding:72px 24px;}
+.pcmp__in{max-width:900px;margin:0 auto;text-align:center;}
+.pcmp__eyebrow{margin:0 0 12px;font-size:clamp(18px,2.2vw,24px);color:#86868b;font-weight:500;}
+.pcmp__title{margin:0 0 28px;font-size:clamp(40px,7vw,80px);line-height:1.02;font-weight:700;letter-spacing:-.02em;color:#f5f5f7;}
+.pcmp__text{font-size:clamp(17px,2vw,24px);line-height:1.4;color:#a1a1a6;font-weight:600;max-width:820px;margin:0 auto;}
+.pcmp__text strong{color:#f5f5f7;}
+.pcmp__film{margin:34px auto 0;display:inline-flex;align-items:center;background:#0071e3;color:#fff;border:0;border-radius:999px;padding:14px 26px;font-size:17px;cursor:pointer;transition:background .15s;}
+.pcmp__film:hover{background:#0077ed;}
+.pcmp__sel{margin:48px auto 8px;display:flex;flex-direction:column;align-items:center;gap:10px;}
+.pcmp__sel label{font-size:14px;color:#86868b;letter-spacing:.02em;}
+.pcmp__select{appearance:none;-webkit-appearance:none;background:#1d1d1f url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23f5f5f7' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 18px center;color:#f5f5f7;border:1px solid #424245;border-radius:999px;padding:12px 46px 12px 22px;font-size:17px;min-width:240px;cursor:pointer;}
+.pcmp__select:focus{outline:2px solid #2997ff;}
+.pcmp__stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:44px 0 0;border-top:1px solid #2a2a2d;padding-top:40px;}
+.pcmp__stat{display:flex;flex-direction:column;gap:6px;align-items:center;}
+.pcmp__k{font-size:14px;color:#86868b;}
+.pcmp__v{font-size:clamp(28px,4.4vw,48px);font-weight:700;letter-spacing:-.01em;color:#f5f5f7;transition:opacity .2s;}
+.pcmp__d{font-size:14px;color:#86868b;max-width:220px;}
+.pcmp__foot{margin:40px 0 0;font-size:12px;color:#6e6e73;}
+.pcmp-modal{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;}
+.pcmp-modal[hidden]{display:none;}
+.pcmp-modal__bg{position:absolute;inset:0;background:rgba(0,0,0,.82);}
+.pcmp-modal__box{position:relative;width:min(1000px,92vw);}
+.pcmp-modal__box video{width:100%;border-radius:18px;background:#000;display:block;}
+.pcmp-modal__x{position:absolute;top:-44px;right:0;background:transparent;border:0;color:#fff;font-size:34px;line-height:1;cursor:pointer;}
+.pcmp-modal__err{color:#f5f5f7;text-align:center;margin-top:14px;}
+.pcmp-modal__err a{color:#2997ff;}
+@media (max-width:749px){.pcmp{padding:48px 16px;margin:16px 12px;}.pcmp__stats{grid-template-columns:1fr;gap:28px;}}
+</style>
+<script>
+(function(){
+  var D = {"iPhone 14": ["25 horas más", "80% más rápida", "4x más rápida"], "iPhone 14 Pro": ["22 horas más", "60% más rápida", "2,8x más rápida"], "iPhone 14 Pro Max": ["16 horas más", "60% más rápida", "2,8x más rápida"], "iPhone 15": ["25 horas más", "60% más rápida", "2,8x más rápida"], "iPhone 15 Pro": ["22 horas más", "50% más rápida", "2,1x más rápida"], "iPhone 15 Pro Max": ["16 horas más", "50% más rápida", "2,1x más rápida"], "iPhone 16": ["23 horas más", "30% más rápida", "2x más rápida"], "iPhone 16 Pro": ["18 horas más", "30% más rápida", "80% más rápida"], "iPhone 16 Pro Max": ["12 horas más", "30% más rápida", "80% más rápida"], "iPhone 17": ["15 horas más", "20% más rápida", "60% más rápida"], "iPhone 17 Pro": ["12 horas más", "20% más rápida", "40% más rápida"], "iPhone 17 Pro Max": ["6 horas más", "20% más rápida", "40% más rápida"]};
+  var VID = {{ section.settings.video_url | json }};
+  var sec=document.querySelector(".pcmp"); if(!sec) return;
+  var sel=sec.querySelector(".pcmp__select"), vs=sec.querySelectorAll(".pcmp__v");
+  Object.keys(D).forEach(function(n){ var o=document.createElement("option"); o.value=n; o.textContent=n; if(n==="iPhone 17 Pro Max") o.selected=true; sel.appendChild(o); });
+  function show(){ var v=D[sel.value]||[]; [].forEach.call(vs,function(el,i){ el.style.opacity=0; setTimeout(function(){ el.textContent=v[i]||""; el.style.opacity=1; },120); }); }
+  sel.addEventListener("change",show); show();
+  var btn=document.getElementById("pcmp-film-btn"), modal=document.getElementById("pcmp-modal"), video=document.getElementById("pcmp-video"), err=document.getElementById("pcmp-err"), hls=null, loaded=false;
+  function fail(){ err.hidden=false; }
+  function start(){
+    if(loaded){ video.play(); return; } loaded=true;
+    if(video.canPlayType("application/vnd.apple.mpegurl")){ video.src=VID; video.play().catch(function(){}); video.onerror=fail; return; }
+    var s=document.createElement("script"); s.src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.5.13/hls.min.js";
+    s.onload=function(){ if(window.Hls&&Hls.isSupported()){ hls=new Hls(); hls.on(Hls.Events.ERROR,function(e,d){ if(d.fatal) fail(); }); hls.loadSource(VID); hls.attachMedia(video); hls.on(Hls.Events.MANIFEST_PARSED,function(){ video.play().catch(function(){}); }); } else fail(); };
+    s.onerror=fail; document.head.appendChild(s);
+  }
+  function close(){ modal.hidden=true; video.pause(); }
+  if(btn) btn.onclick=function(){ modal.hidden=false; err.hidden=true; start(); };
+  modal.addEventListener("click",function(e){ if(e.target.hasAttribute("data-close")) close(); });
+  document.addEventListener("keydown",function(e){ if(e.key==="Escape"&&!modal.hidden) close(); });
+})();
+</script>
+{% schema %}
+{
+  "name": "Intro y comparación",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Antetítulo", "default": "La mejora definitiva" },
+    { "type": "text", "id": "title", "label": "Título", "default": "Lo más deseado." },
+    { "type": "richtext", "id": "text", "label": "Texto", "default": "<p>Descripción del equipo.</p>" },
+    { "type": "text", "id": "video_url", "label": "Video de presentación (enlace .m3u8 o .mp4)" }
+  ],
+  "presets": [ { "name": "Intro y comparación" } ]
+}
+{% endschema %}
