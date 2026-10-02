@@ -33,13 +33,15 @@
         </div>
 
         <div class="ppx__panel">
+          <div class="ppx-hello"><h2 class="ppx-hello__t">Arma tu {{ product.title }} a tu medida</h2><p class="ppx-hello__s">Elige paso a paso. Lo que escojas se actualiza al instante y no hay compromiso.</p></div>
           <ol class="ppx-steps" id="ppx-steps-{{ section.id }}" aria-label="Progreso de tu configuración"></ol>
           <div id="ppx-cards-{{ section.id }}"></div>
           <div class="ppx-sum" id="ppx-sum-{{ section.id }}"></div>
 
-          <div class="ppx__pricebox">
-            <p class="ppx__price-label">Total</p>
-            <p class="ppx__price" id="ppx-price-{{ section.id }}"></p>
+          <div class="ppx-pricing" id="ppx-pricing-{{ section.id }}">
+            <p class="ppx-pricing__h">Tu precio</p>
+            <div class="ppx-pricing__rows" id="ppx-rows-{{ section.id }}"></div>
+            <div class="ppx-pricing__tot"><span>Total</span><span class="ppx__price" id="ppx-price-{{ section.id }}"></span></div>
           </div>
           {%- if section.settings.whatsapp_number != blank -%}
             <a class="ppx__cta" id="ppx-cta-{{ section.id }}" href="#" target="_blank" rel="noopener">{{ section.settings.cta_label | default: 'Consultar por WhatsApp' }}</a>
@@ -79,7 +81,8 @@
         var RANK={size:0,color:1,cfg:2};
         var ORDER=[]; for(var i=0;i<N;i++) ORDER.push(i);
         ORDER.sort(function(a,b){ return (RANK[kind(a)]-RANK[kind(b)]) || (a-b); });
-        var HELP={size:"Elige tu tamaño.",color:"Elige tu favorito.",cfg:"Elige la tuya."};
+        var ASK={size:"¿Qué tamaño prefieres?",color:"¿Qué color te gusta más?",cfg:"¿Qué potencia necesitas?"};
+        var WHO={"M5":"Ideal para el día a día, estudiar y trabajar.","M5 Pro":"Para crear, programar y editar video con fluidez.","M5 Max":"Para edición profesional, 3D e inteligencia artificial."};
         function $(id){ return document.getElementById(id+"-"+SID); }
         function base(u){ return (u||"").split("?")[0]; }
         function money(c){ return "S/ "+Number(c/100).toLocaleString("es-PE",{maximumFractionDigits:0}); }
@@ -124,7 +127,7 @@
           var parts=(s||"").split(" · "), chip=parts[0]||"", m=chip.match(/^(M\d(?: Pro| Max| Ultra)?)/), cores=chip.match(/(\d+)C\/(\d+)G/);
           return {chip:m?m[1]:chip, cpu:cores?cores[1]:"", gpu:cores?cores[2]:"", mem:parts[1]||"", ssd:parts[2]||""};
         }
-        function stepTitle(idx){ var k=kind(idx); return '<b>'+NAMES[idx]+'.</b> <i>'+HELP[k]+'</i>'; }
+        function stepTitle(idx,isDone){ var k=kind(idx); return isDone ? ('<small>'+NAMES[idx]+'</small>') : ('<b>'+(ASK[k]||("Elige tu "+NAMES[idx].toLowerCase()))+'</b>'); }
         function optionsHTML(idx){
           var k=kind(idx), vals=allowed(idx,cur), el=document.createElement("div");
           if(k==="color"){
@@ -137,22 +140,22 @@
               var chips=[]; V.forEach(function(v){ if(v.o[idx]===val&&v.o[2]){ var c=cfgParse(v.o[2]).chip; if(chips.indexOf(c)===-1) chips.push(c); } });
               var minV=null; V.forEach(function(v){ if(v.o[idx]===val&&(minV===null||v.price<minV)) minV=v.price; });
               var b=document.createElement("button"); b.type="button"; b.className="ppx-size"+(val===cur[idx]?" is-sel":"");
-              b.innerHTML='<span class="ppx-size__t"></span><span class="ppx-size__s"></span><span class="ppx-size__p"></span>';
+              b.innerHTML='<span class="ppx-size__t"></span><span class="ppx-size__s"></span>';
               b.children[0].textContent=val;
               b.children[1].textContent=chips.length?("Disponible con chip "+chips.join(", ").replace(/, ([^,]*)$/," o $1")+"."):"";
-              b.children[2].textContent="Desde "+money(minV); b.onclick=function(){ pick(idx,val); }; el.appendChild(b);
+              b.onclick=function(){ pick(idx,val); }; el.appendChild(b);
             });
           } else {
             el.className="ppx-list";
             var min=null; vals.forEach(function(val){ var v=priceIf(idx,val); if(min===null||v.price<min) min=v.price; });
             vals.forEach(function(val){
               var v=priceIf(idx,val), p=cfgParse(val), b=document.createElement("button"); b.type="button"; b.className="ppx-cfg"+(val===cur[idx]?" is-sel":"");
-              b.innerHTML='<span class="ppx-cfg__l"><span class="ppx-cfg__chip"></span><span class="ppx-cfg__spec"></span></span><span class="ppx-cfg__r"><span class="ppx-cfg__p"></span><span class="ppx-cfg__d"></span></span>';
+              b.innerHTML='<span class="ppx-cfg__l"><span class="ppx-cfg__chip"></span><span class="ppx-cfg__spec"></span></span><span class="ppx-cfg__r"><span class="ppx-cfg__who"></span></span>';
               var parts=val.split(" · ");
               b.querySelector(".ppx-cfg__chip").textContent=parts[0]+(/^M\d/.test(parts[0])?" chip":"");
               b.querySelector(".ppx-cfg__spec").textContent=parts.slice(1).join(" · ")+(parts[1]&&/GB/.test(parts[1])?" de memoria":"");
-              b.querySelector(".ppx-cfg__p").textContent=money(v.price);
-              b.querySelector(".ppx-cfg__d").textContent=v.price>min?("+ "+money(v.price-min)):"Precio base";
+              var who=(function(){ var m=parts[0].match(/^(M\d(?: Pro| Max| Ultra)?)/); return m?(WHO[m[1]]||""):""; })();
+              b.querySelector(".ppx-cfg__who").textContent=who;
               b.onclick=function(){ pick(idx,val); }; el.appendChild(b);
             });
           }
@@ -164,7 +167,7 @@
             var isA=(p===active), isD=done[idx]&&!isA;
             var c=document.createElement("section"); c.className="ppx-card"+(isA?" is-active":"")+(isD?" is-done":"");
             var h=document.createElement("button"); h.type="button"; h.className="ppx-card__h";
-            h.innerHTML='<span class="ppx-card__n">'+(done[idx]&&!isA?"&#10003;":(p+1))+'</span><span class="ppx-card__t">'+stepTitle(idx)+'</span>'+(isD?'<span class="ppx-card__v"></span><span class="ppx-card__c">Cambiar</span>':'');
+            h.innerHTML='<span class="ppx-card__n">'+(done[idx]&&!isA?"&#10003;":(p+1))+'</span><span class="ppx-card__t">'+stepTitle(idx,isD)+'</span>'+(isD?'<span class="ppx-card__v"></span><span class="ppx-card__c">Cambiar</span>':'');
             if(isD) h.querySelector(".ppx-card__v").textContent=cur[idx];
             h.onclick=function(){ active=(active===p?-1:p); renderSteps(); };
             c.appendChild(h);
@@ -195,10 +198,22 @@
           sum.innerHTML=h; sum.querySelector(".ppx-sum__l").textContent=lines.join(" · ");
           [].forEach.call(sum.querySelectorAll(".ppx-tile"),function(el,i){ el.children[0].textContent=tiles[i][0]; el.children[1].textContent=tiles[i][1]; });
         }
+        function pricing(v){
+          var rows=$("ppx-rows"); if(!rows) return;
+          var gmin=null; V.forEach(function(x){ if(gmin===null||x.price<gmin) gmin=x.price; });
+          var si=-1, ci=-1; for(var i=0;i<N;i++){ if(kind(i)==="size") si=i; if(kind(i)==="cfg") ci=i; }
+          var out=[]; out.push(["Desde ("+(function(){ for(var k=0;k<V.length;k++){ if(V[k].price===gmin) return V[k].o.filter(Boolean).slice(1).join(" · ")||V[k].o[0]; } return ""; })()+")",money(gmin)]);
+          var sizeMin=gmin;
+          if(si>-1){ var m=null; V.forEach(function(x){ if(x.o[si]===cur[si]&&(m===null||x.price<m)) m=x.price; }); sizeMin=m===null?gmin:m; if(sizeMin>gmin) out.push([NAMES[si]+": "+cur[si],"+ "+money(sizeMin-gmin)]); }
+          if(v.price>sizeMin) out.push([(ci>-1?"Configuración elegida":"Mejoras elegidas"),"+ "+money(v.price-sizeMin)]);
+          rows.innerHTML=out.map(function(r){ return '<div class="ppx-pricing__r"><span></span><span></span></div>'; }).join("");
+          [].forEach.call(rows.children,function(el,i){ el.children[0].textContent=out[i][0]; el.children[1].textContent=out[i][1]; });
+        }
         function update(animate){
           var v=find(cur);
           renderSteps(); summary(v);
           updateImage(v);
+          pricing(v);
           tween($("ppx-price"),v.price); tween($("ppx-bar-price"),v.price); shownPrice=v.price;
           var sel=$("ppx-bar-sel"); if(sel) sel.textContent=cur.filter(Boolean).join(" · ");
           var vid=$("ppx-vid"); if(vid) vid.value=v.id;
@@ -308,6 +323,18 @@
 .ppx-tile{background:#fff;border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:4px;}
 .ppx-tile__k{font-size:12px;color:#86868b;letter-spacing:.02em;}
 .ppx-tile__v{font-size:18px;font-weight:600;color:#1d1d1f;}
+.ppx-hello{margin:0 0 18px;}
+.ppx-hello__t{margin:0 0 6px;font-size:26px;font-weight:600;color:#1d1d1f;line-height:1.2;}
+.ppx-hello__s{margin:0;font-size:15px;color:#6e6e73;}
+.ppx-card__t small{font-size:15px;font-weight:500;color:#6e6e73;}
+.ppx-cfg__who{font-size:12px;color:#0058b0;background:#e8f2fd;border-radius:999px;padding:5px 11px;text-align:center;white-space:normal;max-width:190px;}
+.ppx-cfg{align-items:flex-start;}
+.ppx-pricing{margin:18px 0 16px;padding:22px;border-radius:20px;background:#fff;border:1px solid #e0e0e5;}
+.ppx-pricing__h{margin:0 0 12px;font-size:18px;font-weight:600;color:#1d1d1f;}
+.ppx-pricing__r{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid #f0f0f3;font-size:14.5px;color:#424245;}
+.ppx-pricing__r span:last-child{font-variant-numeric:tabular-nums;white-space:nowrap;}
+.ppx-pricing__tot{display:flex;justify-content:space-between;align-items:baseline;margin-top:14px;font-size:16px;font-weight:600;color:#1d1d1f;}
+.ppx-pricing__tot .ppx__price{font-size:30px;}
 .ppx__pricebox{margin:20px 0 14px;}
 .ppx__price-label{font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:#6e6e73;margin:0 0 2px;}
 .ppx__price{font-size:36px;font-weight:600;color:#1d1d1f;margin:0;font-variant-numeric:tabular-nums;}
