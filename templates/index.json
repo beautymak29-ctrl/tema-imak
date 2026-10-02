@@ -38,9 +38,9 @@
             "subheading": "Ahora con los chips M5, M5 Pro y M5 Max.",
             "availability": "Consulta la disponibilidad más adelante.",
             "image": "shopify://shop_images/Captura_de_pantalla_2026-04-10_a_la_s_6.44.05_p._m..png",
-            "link_1": "/pages/mac",
+            "link_1": "/products/macbook-pro",
             "link_1_label": "Más información",
-            "link_2": "",
+            "link_2": "/products/macbook-pro",
             "link_2_label": "Comprar"
           }
         },
@@ -54,9 +54,9 @@
             "subheading": "Ahora con los superpoderes del chip M4.",
             "availability": "Consulta la disponibilidad más adelante.",
             "image": "shopify://shop_images/11.jpg",
-            "link_1": "/pages/ipad",
+            "link_1": "/products/ipad-air",
             "link_1_label": "Más información",
-            "link_2": "",
+            "link_2": "/products/ipad-air",
             "link_2_label": "Comprar"
           }
         },
@@ -70,10 +70,10 @@
             "subheading": "Una gran forma de cuidar tu salud.",
             "availability": "",
             "image": "shopify://shop_images/4763753_tradeon_panel_SV-12550c24-7975-462a-b4d5-3d8807e52d54.webp",
-            "link_1": "/pages/watch",
+            "link_1": "/products/apple-watch-series-11",
             "link_1_label": "Más información",
-            "link_2": "/collections/apple-watch",
-            "link_2_label": ""
+            "link_2": "/products/apple-watch-series-11",
+            "link_2_label": "Comprar"
           }
         },
         "card_macbook_air": {
@@ -86,9 +86,9 @@
             "subheading": "Ahora con los superpoderes del chip M5.",
             "availability": "Consulta la disponibilidad más adelante.",
             "image": "shopify://shop_images/hero_endframe__fwev9ebh42mq_xlarge.jpg",
-            "link_1": "/pages/mac",
+            "link_1": "/products/macbook-air-13-5m",
             "link_1_label": "Más información",
-            "link_2": "",
+            "link_2": "/products/macbook-air-13-5m",
             "link_2_label": "Comprar"
           }
         },
@@ -102,10 +102,10 @@
             "subheading": "La mejor Cancelación Activa de Ruido del mundo dentro del oído.",
             "availability": "",
             "image": "shopify://shop_images/istanbul-turkey-june-1-2022-600nw-2202194247.webp",
-            "link_1": "/pages/airpods",
+            "link_1": "/products/airpods-pro-3",
             "link_1_label": "Más información",
-            "link_2": "/collections/airpods",
-            "link_2_label": ""
+            "link_2": "/products/airpods-pro-3",
+            "link_2_label": "Comprar"
           }
         },
         "card_ipad_pro": {
@@ -118,14 +118,48 @@
             "subheading": "Avanzado rendimiento para la IA y funcionalidades revolucionarias.",
             "availability": "",
             "image": "shopify://shop_images/ipadpro.webp",
-            "link_1": "/pages/ipad",
+            "link_1": "/products/ipad-pro",
             "link_1_label": "Más información",
-            "link_2": "/collections/ipad",
+            "link_2": "/products/ipad-pro",
             "link_2_label": "Comprar"
+          }
+        },
+        "card_iphone_18_pro": {
+          "type": "promo_card",
+          "settings": {
+            "card_size": "full",
+            "theme": "dark",
+            "badge": "Nuevo",
+            "heading": "iPhone 18 Pro",
+            "subheading": "Pro, un paso más allá.",
+            "availability": "Disponible en Negro, Burdeos, Glaciar y Plata.",
+            "image": "shopify://shop_images/hero_iphone_18_pro__fqe1motd0ymy_large_2x_3df05089-d8b3-4bb3-9984-7818810fd278.jpg",
+            "link_1": "/products/iphone-18-pro",
+            "link_1_label": "Más información",
+            "link_2": "/products/iphone-18-pro-max",
+            "link_2_label": "Ver Pro Max"
+          }
+        },
+        "card_iphone_duo": {
+          "type": "promo_card",
+          "settings": {
+            "card_size": "full",
+            "theme": "light",
+            "badge": "Nuevo",
+            "heading": "iPhone Duo",
+            "subheading": "Hola, hola.",
+            "availability": "El iPhone plegable. Consulta disponibilidad y entrega en Lima.",
+            "image": "shopify://shop_images/hero_iphone_duo_announce__fh4u8yzndpe2_large_2x_03548ab5-fdbb-4c56-95be-ff5ada0cdd2a.jpg",
+            "link_1": "/products/iphone-duo",
+            "link_1_label": "Más información",
+            "link_2": "/products/iphone-duo",
+            "link_2_label": "Ver colores"
           }
         }
       },
       "block_order": [
+        "card_iphone_18_pro",
+        "card_iphone_duo",
         "card_iphone",
         "card_macbook_pro",
         "card_ipad_air",
