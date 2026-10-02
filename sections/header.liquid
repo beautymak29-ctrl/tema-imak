@@ -20,10 +20,10 @@
     {%- comment -%} Nav principal {%- endcomment -%}
     <nav class="hd__nav" role="navigation" aria-label="Principal">
       <ul class="hd__nav-list" role="list">
-        {%- for link in linklists[section.settings.menu].links -%}
-          <li class="hd__nav-item"><a href="{{ link.url }}" class="hd__nav-link{% if link.active %} hd__nav-link--active{% endif %}"{% if link.current %} aria-current="page"{% endif %}>{{ link.title | escape }}</a></li>
-        {%- endfor -%}
         {%- assign acc = collections['accesorios'] -%}
+        {%- assign acc_done = false -%}
+        {%- for link in linklists[section.settings.menu].links -%}
+          {%- if link.title == 'Contacto' and acc_done == false -%}
         {%- if acc != blank -%}
         <li class="hd__nav-item hd__nav-item--drop">
           <a href="{{ acc.url }}" class="hd__nav-link{% if request.path contains '/collections/accesorios' or request.path contains '/collections/correas' %} hd__nav-link--active{% endif %}" aria-haspopup="true">Accesorios</a>
@@ -35,6 +35,10 @@
           </ul>
         </li>
         {%- endif -%}
+          {%- assign acc_done = true -%}
+          {%- endif -%}
+          <li class="hd__nav-item"><a href="{{ link.url }}" class="hd__nav-link{% if link.active %} hd__nav-link--active{% endif %}"{% if link.current %} aria-current="page"{% endif %}>{{ link.title | escape }}</a></li>
+        {%- endfor -%}
       </ul>
     </nav>
 
@@ -68,19 +72,23 @@
   <div class="hd__mobile" id="hd-mobile-nav" aria-hidden="true">
     <nav class="hd__mobile-inner page-width">
       <ul class="hd__mobile-list" role="list">
+        {%- assign acc_done_m = false -%}
         {%- for link in linklists[section.settings.menu].links -%}
-          <li class="hd__mobile-item">
-            <a href="{{ link.url }}" class="hd__mobile-link{% if link.active %} hd__mobile-link--active{% endif %}">
-              {{ link.title | escape }}
-            </a>
-          </li>
-        {%- endfor -%}
+          {%- if link.title == 'Contacto' and acc_done_m == false -%}
         {%- if acc != blank -%}
         <li class="hd__mobile-item"><a href="{{ acc.url }}" class="hd__mobile-link">Accesorios</a></li>
         {%- if collections['accesorios-para-mac'].products_count > 0 -%}<li class="hd__mobile-item hd__mobile-item--sub"><a href="{{ collections['accesorios-para-mac'].url }}" class="hd__mobile-link">Para Mac</a></li>{%- endif -%}
         {%- if collections['accesorios-para-ipad'].products_count > 0 -%}<li class="hd__mobile-item hd__mobile-item--sub"><a href="{{ collections['accesorios-para-ipad'].url }}" class="hd__mobile-link">Para iPad</a></li>{%- endif -%}
         {%- if collections['correas-apple-watch'].products_count > 0 -%}<li class="hd__mobile-item hd__mobile-item--sub"><a href="{{ collections['correas-apple-watch'].url }}" class="hd__mobile-link">Correas Apple Watch</a></li>{%- endif -%}
         {%- endif -%}
+          {%- assign acc_done_m = true -%}
+          {%- endif -%}
+          <li class="hd__mobile-item">
+            <a href="{{ link.url }}" class="hd__mobile-link{% if link.active %} hd__mobile-link--active{% endif %}">
+              {{ link.title | escape }}
+            </a>
+          </li>
+        {%- endfor -%}
       </ul>
     </nav>
   </div>
