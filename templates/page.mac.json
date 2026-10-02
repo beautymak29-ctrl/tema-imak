@@ -17,7 +17,7 @@
           "settings": {
             "product": "macbook-neo",
             "card_title": "MacBook Neo",
-            "card_description": "",
+            "card_description": "Una Mac para todos, en cuatro colores.",
             "modal_heading": "",
             "modal_title_1": "",
             "modal_desc_1": "",
@@ -35,7 +35,6 @@
             "product": "macbook-pro",
             "card_title": "MacBook Pro",
             "card_description": "",
-            "storage_options": "512GB | 1TB | 2TB | 4TB",
             "modal_heading": "",
             "modal_title_1": "",
             "modal_desc_1": "",
@@ -50,10 +49,9 @@
         "mac_card_1": {
           "type": "product_card",
           "settings": {
-            "product": "macbook-air",
+            "product": "macbook-air-13-5m",
             "card_title": "MacBook Air",
-            "card_description": "",
-            "storage_options": "256GB | 512GB | 1TB | 2TB",
+            "card_description": "Ahora con los superpoderes del chip M5.",
             "modal_heading": "",
             "modal_title_1": "",
             "modal_desc_1": "",
@@ -71,7 +69,6 @@
             "product": "imac",
             "card_title": "iMac",
             "card_description": "",
-            "storage_options": "256GB | 512GB | 1TB | 2TB",
             "modal_heading": "",
             "modal_title_1": "",
             "modal_desc_1": "",
@@ -192,8 +189,9 @@
             "badge_text": "Nuevo",
             "name": "Magic Keyboard",
             "description": "El teclado perfecto para tu Mac. Con Touch ID integrado.",
-            "link": "",
-            "link_label": "Más información"
+            "link": "/products/magic-keyboard-con-touch-id",
+            "link_label": "Más información",
+            "image": "shopify://shop_images/acc_keyboard.png"
           }
         },
         "mac_ac_2": {
@@ -203,8 +201,9 @@
             "badge_text": "Nuevo",
             "name": "Magic Mouse",
             "description": "Diseño elegante y superficie Multi-Touch para navegar con fluidez.",
-            "link": "",
-            "link_label": "Más información"
+            "link": "/products/magic-mouse",
+            "link_label": "Más información",
+            "image": "shopify://shop_images/acc_mouse.png"
           }
         }
       },
@@ -223,21 +222,24 @@
           "type": "tab",
           "settings": {
             "tab_label": "Mac e iPhone",
-            "text": "Con Duplicación del iPhone puedes ver y controlar tu iPhone desde la Mac. Continuidad te permite copiar en un dispositivo y pegar en el otro al instante."
+            "text": "Con Duplicación del iPhone puedes ver y controlar tu iPhone desde la Mac. Continuidad te permite copiar en un dispositivo y pegar en el otro al instante.",
+            "image": "shopify://shop_images/eco_iphone.png"
           }
         },
         "mac_et_2": {
           "type": "tab",
           "settings": {
             "tab_label": "Mac e iPad",
-            "text": "Con Sidecar convierte tu iPad en una segunda pantalla para tu Mac, de forma inalámbrica o con cable."
+            "text": "Con Sidecar convierte tu iPad en una segunda pantalla para tu Mac, de forma inalámbrica o con cable.",
+            "image": "shopify://shop_images/eco_ipad.png"
           }
         },
         "mac_et_3": {
           "type": "tab",
           "settings": {
             "tab_label": "Mac y AirPods",
-            "text": "Los AirPods se conectan automáticamente a tu Mac cuando los necesitas. Audio espacial y cancelación de ruido incluidos."
+            "text": "Los AirPods se conectan automáticamente a tu Mac cuando los necesitas. Audio espacial y cancelación de ruido incluidos.",
+            "image": "shopify://shop_images/eco_airpods.png"
           }
         }
       },
