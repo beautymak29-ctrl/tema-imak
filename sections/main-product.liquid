@@ -114,7 +114,7 @@
         /* ---------- carrusel ---------- */
         var track=$("ppx-track"), slides=[], sIdx=0;
         function buildTrack(){ if(!track) return; track.innerHTML=slides.map(function(u,i){ return '<div class="ppx__slide"><img class="ppx__img" src="'+u+'" alt="'+TITLE.replace(/"/g,"&quot;")+'" '+(i===0?'loading="eager"':'loading="lazy"')+' draggable="false"></div>'; }).join(""); track.scrollLeft=0; }
-        function showSlide(smooth){ if(track){ track.scrollTo({left:sIdx*track.clientWidth,behavior:smooth===false?"auto":"smooth"}); } var d=$("ppx-dots"); if(d) [].forEach.call(d.children,function(x,i){ x.classList.toggle("is-sel",i===sIdx); }); }
+        function showSlide(smooth){ if(track){ var to=sIdx*track.clientWidth; if(smooth===false||Math.abs(track.scrollLeft-to)<2){ track.scrollLeft=to; } else { track.style.transition="opacity .16s"; track.style.opacity="0"; setTimeout(function(){ track.scrollLeft=to; track.style.opacity="1"; },130); } } var d=$("ppx-dots"); if(d) [].forEach.call(d.children,function(x,i){ x.classList.toggle("is-sel",i===sIdx); }); }
         function buildDots(){ var nav=$("ppx-nav"), d=$("ppx-dots"); if(!nav||!d) return; d.innerHTML=""; if(slides.length<2){ nav.hidden=true; return; } nav.hidden=false;
           slides.forEach(function(u,i){ var b=document.createElement("button"); b.type="button"; b.className="ppx__dot"+(i===sIdx?" is-sel":""); b.setAttribute("aria-label","Foto "+(i+1)); b.onclick=function(){ sIdx=i; showSlide(); }; d.appendChild(b); }); }
         function step(d){ if(slides.length<2) return; sIdx=(sIdx+d+slides.length)%slides.length; showSlide(); }
@@ -167,8 +167,9 @@
               b.querySelector(".ppx-cfg__spec").textContent=(parts[1]?(/GB/.test(parts[1])?parts[1]+" de memoria":parts[1]):"")+(parts[2]?" · "+parts[2]+" de SSD":"");
               var who=(function(){ var m=parts[0].match(/^(M\d(?: Pro| Max| Ultra)?)/); return m?(WHO[m[1]]||""):""; })();
               b.querySelector(".ppx-cfg__who").textContent=who;
-              b.onclick=function(){ pick(idx,val); }; el.appendChild(b);
+              b.onclick=function(){ cur[idx]=val; normalize(cur); update(true); }; el.appendChild(b);
             });
+            var goC=document.createElement("button"); goC.type="button"; goC.className="ppx-go"; goC.textContent="Continuar"; goC.onclick=function(){ pick(idx,cur[idx]); }; el.appendChild(goC);
           }
           return el;
         }
