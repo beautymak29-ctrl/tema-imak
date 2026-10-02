@@ -4,7 +4,7 @@
   var q=new URLSearchParams(location.search).get("q")||"";
   function n(s){return (s||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]/g,"");}
   var P=[{%- for p in collections.all.products limit: 250 -%}[{{ p.title | json }},{{ p.url | json }}]{% unless forloop.last %},{% endunless %}{%- endfor -%}];
-  var ALIAS={"plegable":"/products/iphone-duo","iphoneplegable":"/products/iphone-duo","duo":"/products/iphone-duo","iphone18":"/collections/nuevos-iphone","iphonenuevo":"/collections/nuevos-iphone","accesorios":"/collections/accesorios-para-mac","accesoriosmac":"/collections/accesorios-para-mac"};
+  var ALIAS={"plegable":"/products/iphone-duo","iphone18promax":"/products/iphone-18-pro","iphone18pro":"/products/iphone-18-pro","18promax":"/products/iphone-18-pro","18pro":"/products/iphone-18-pro","iphoneplegable":"/products/iphone-duo","duo":"/products/iphone-duo","iphone18":"/collections/nuevos-iphone","iphonenuevo":"/collections/nuevos-iphone","accesorios":"/collections/accesorios-para-mac","accesoriosmac":"/collections/accesorios-para-mac"};
   var nq=n(q); if(!nq) return;
   if(ALIAS[nq]){ location.replace(ALIAS[nq]); return; }
   var exact=P.filter(function(p){ return n(p[0])===nq; });

@@ -150,7 +150,7 @@
               var b=document.createElement("button"); b.type="button"; b.className="ppx-size"+(val===cur[idx]?" is-sel":"");
               b.innerHTML='<span class="ppx-size__t"></span><span class="ppx-size__s"></span>';
               b.children[0].textContent=val;
-              b.children[1].textContent=chips.length?("Disponible con chip "+chips.join(", ").replace(/, ([^,]*)$/," o $1")+"."):"";
+              b.children[1].textContent=chips.length?("Disponible con chip "+chips.join(", ").replace(/, ([^,]*)$/," o $1")+"."):(/Pro Max/.test(val)?"Pantalla de 6,9 pulgadas.":(/iPhone 18 Pro/.test(val)?"Pantalla de 6,3 pulgadas.":""));
               b.onclick=function(){ pick(idx,val); }; el.appendChild(b);
             });
           } else {

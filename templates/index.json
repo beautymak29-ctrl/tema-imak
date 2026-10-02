@@ -132,12 +132,12 @@
             "badge": "Nuevo",
             "heading": "iPhone 18 Pro",
             "subheading": "Pro, un paso más allá.",
-            "availability": "Disponible en Negro, Burdeos, Glaciar y Plata.",
+            "availability": "Pro y Pro Max, en Negro, Burdeos, Glaciar y Plata.",
             "image": "shopify://shop_images/hero18_c.jpg",
             "link_1": "/products/iphone-18-pro",
             "link_1_label": "Más información",
-            "link_2": "/products/iphone-18-pro-max",
-            "link_2_label": "Ver Pro Max"
+            "link_2": "/products/iphone-18-pro",
+            "link_2_label": "Comprar"
           }
         },
         "card_iphone_duo": {
