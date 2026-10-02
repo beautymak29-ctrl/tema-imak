@@ -206,8 +206,13 @@
               be.appendChild(lst);
               if(eng.on){
                 var box=document.createElement("div"); box.className="ppx-eng";
-                box.innerHTML='<label class="ppx-eng__l">Texto del grabado</label><input type="text" class="ppx-eng__i" maxlength="30" placeholder="Ej: Ana ♥ 2026" autocomplete="off"><p class="ppx-eng__n"><strong>Tiempo de entrega:</strong> el grabado personalizado puede demorar alrededor de <strong>30 días hábiles</strong>. Si lo prefieres más rápido, elige «Sin grabado».</p><button type="button" class="ppx-eng__ok">Listo</button>';
-                var inp=box.querySelector("input"); inp.value=eng.txt; inp.oninput=function(){ eng.txt=inp.value; var t=$("ppx-eng-t"); if(t) t.value=eng.txt; update(false,true); };
+                box.innerHTML='<div class="ppx-eng__hd"><span class="ppx-eng__ic">&#10022;</span><div><strong>Grabado personalizado</strong><span>Gratis · Láser de precisión</span></div></div><div class="ppx-eng__plate" aria-live="polite"><span class="ppx-eng__pt"></span></div><label class="ppx-eng__l" for="ppx-eng-in">Tu texto</label><div class="ppx-eng__row"><input id="ppx-eng-in" type="text" class="ppx-eng__i" maxlength="30" placeholder="Ej: Ana ♥ 2026" autocomplete="off" spellcheck="false"><span class="ppx-eng__c">0/30</span></div><div class="ppx-eng__chips" role="group" aria-label="Símbolos"></div><ul class="ppx-eng__n"><li><strong>Plazo:</strong> alrededor de <strong>30 días hábiles</strong>. Si lo prefieres más rápido, elige «Sin grabado».</li><li>Revisa bien la ortografía: un producto grabado <strong>no admite cambios ni devoluciones</strong>.</li></ul><button type="button" class="ppx-eng__ok">Confirmar grabado</button>';
+                var inp=box.querySelector("input"), pt=box.querySelector(".ppx-eng__pt"), cc=box.querySelector(".ppx-eng__c"), plate=box.querySelector(".ppx-eng__plate");
+                function paint(){ var v=inp.value; pt.textContent=v||"Tu texto aquí"; plate.classList.toggle("is-empty",!v); cc.textContent=v.length+"/30"; }
+                inp.value=eng.txt; paint();
+                inp.oninput=function(){ eng.txt=inp.value; paint(); var t=$("ppx-eng-t"); if(t) t.value=eng.txt; update(false,true); };
+                var chips=box.querySelector(".ppx-eng__chips");
+                ["♥","★","✦","☺","∞","✈","☀","♪"].forEach(function(s){ var k=document.createElement("button"); k.type="button"; k.textContent=s; k.setAttribute("aria-label","Insertar "+s); k.onclick=function(){ if(inp.value.length<30){ inp.value+=s; inp.oninput(); } inp.focus(); }; chips.appendChild(k); });
                 box.querySelector(".ppx-eng__ok").onclick=function(){ engDone=true; active=-1; renderSteps(); update(false); };
                 be.appendChild(box);
               }
@@ -377,12 +382,27 @@
 .ppx-card__t small{font-size:15px;font-weight:500;color:#6e6e73;}
 .ppx-cfg__who{font-size:12px;color:#0058b0;background:#e8f2fd;border-radius:999px;padding:5px 11px;text-align:center;white-space:normal;max-width:190px;}
 .ppx-cfg{align-items:flex-start;}
-.ppx-eng{margin-top:14px;padding:16px;border-radius:14px;background:#f5f5f7;}
-.ppx-eng__l{display:block;font-size:13px;color:#6e6e73;margin:0 0 6px;}
-.ppx-eng__i{width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #d2d2d7;border-radius:12px;font-size:16px;background:#fff;}
+.ppx-eng{margin-top:14px;padding:20px;border-radius:18px;background:#f5f5f7;}
+.ppx-eng__hd{display:flex;gap:12px;align-items:center;margin-bottom:14px;}
+.ppx-eng__ic{width:36px;height:36px;border-radius:50%;background:#1d1d1f;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;flex:none;}
+.ppx-eng__hd strong{display:block;font-size:16px;font-weight:600;color:#1d1d1f;}
+.ppx-eng__hd span:not(.ppx-eng__ic){font-size:13px;color:#6e6e73;}
+.ppx-eng__plate{height:84px;margin-bottom:16px;border-radius:14px;display:flex;align-items:center;justify-content:center;padding:0 16px;overflow:hidden;background:linear-gradient(135deg,#e9e9ee 0%,#fbfbfd 45%,#d9d9df 100%);box-shadow:inset 0 1px 0 #fff,inset 0 -1px 2px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.06);}
+.ppx-eng__pt{font-size:24px;letter-spacing:.06em;font-weight:500;color:#8d8d93;text-shadow:0 1px 0 rgba(255,255,255,.9),0 -1px 0 rgba(0,0,0,.18);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;}
+.ppx-eng__plate.is-empty .ppx-eng__pt{font-size:16px;letter-spacing:.02em;color:#b5b5ba;font-weight:400;}
+.ppx-eng__l{display:block;font-size:13px;font-weight:500;color:#424245;margin:0 0 6px;}
+.ppx-eng__row{position:relative;}
+.ppx-eng__i{width:100%;box-sizing:border-box;padding:13px 58px 13px 14px;border:1px solid #d2d2d7;border-radius:12px;font-size:16px;background:#fff;}
 .ppx-eng__i:focus{outline:2px solid #0071e3;border-color:transparent;}
-.ppx-eng__n{margin:12px 0;font-size:13.5px;line-height:1.45;color:#424245;}
-.ppx-eng__ok{background:#1d1d1f;color:#fff;border:0;border-radius:980px;padding:10px 22px;font-size:14px;cursor:pointer;}
+.ppx-eng__c{position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:12px;color:#86868b;font-variant-numeric:tabular-nums;}
+.ppx-eng__chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 4px;}
+.ppx-eng__chips button{width:38px;height:38px;border-radius:10px;border:1px solid #d2d2d7;background:#fff;font-size:16px;color:#1d1d1f;cursor:pointer;transition:background .15s,border-color .15s;}
+.ppx-eng__chips button:hover{background:#f0f0f5;border-color:#a1a1a6;}
+.ppx-eng__n{margin:14px 0;padding:0;list-style:none;font-size:13px;line-height:1.5;color:#515154;}
+.ppx-eng__n li{position:relative;padding-left:16px;margin-bottom:6px;}
+.ppx-eng__n li:before{content:"";position:absolute;left:3px;top:.6em;width:5px;height:5px;border-radius:50%;background:#86868b;}
+.ppx-eng__ok{width:100%;background:#0071e3;color:#fff;border:0;border-radius:980px;padding:13px 22px;font-size:15px;font-weight:500;cursor:pointer;}
+.ppx-eng__ok:hover{background:#0077ed;}
 .ppx-eng__foot{margin:10px 2px 0;font-size:13px;color:#6e6e73;text-align:center;}
 .ppx-pricing{margin:18px 0 16px;padding:22px;border-radius:20px;background:#fff;border:1px solid #e0e0e5;}
 .ppx-pricing__h{margin:0 0 12px;font-size:18px;font-weight:600;color:#1d1d1f;}
