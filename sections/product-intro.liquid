@@ -15,7 +15,7 @@
   {%- endcase -%}
 {%- endif -%}
 {%- assign intro = section.settings.text -%}
-{%- if intro == blank -%}{%- assign intro = product.description | strip_html | truncate: 260 -%}{%- endif -%}
+{%- if intro == blank -%}{%- assign intro = product.description | replace: '</p>', ' </p>' | strip_html | strip_newlines | truncate: 260 -%}{%- endif -%}
 <section class="pint{% if section.settings.dark %} pint--dark{% endif %}">
   <div class="pint__in">
     {%- if product.tags contains 'Nuevo' or section.settings.badge != blank -%}<p class="pint__badge">{{ section.settings.badge | default: 'Nuevo' }}</p>{%- endif -%}
