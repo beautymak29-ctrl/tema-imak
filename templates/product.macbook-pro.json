@@ -97,7 +97,7 @@
         "image_text_3nrwmK": {
           "type": "image_text",
           "settings": {
-            "image": "shopify://shop_images/pro.webp",
+            "image": "shopify://shop_images/mbp16-spaceblack-select-202410_4b7d4e4a-38a7-49f7-a25b-f5102f74c559.png",
             "heading": "",
             "content": "<h3><strong>Características principales</strong></h3><ul><li><strong>Chips M5, M5 Pro y M5 Max:</strong> el M5 con CPU de 10 núcleos y GPU de 10 núcleos; el M5 Pro con CPU de hasta 18 núcleos y GPU de hasta 20 núcleos; y el M5 Max con CPU de 18 núcleos y GPU de hasta 40 núcleos.</li><li><strong>Pantalla Liquid Retina XDR:</strong> brillo XDR de 1000 nits sostenido a pantalla completa y 1600 nits de pico, con ProMotion de hasta <strong>120 Hz</strong>. Opcional: pantalla Nano-texture.</li><li><strong>Memoria unificada de hasta 128 GB</strong> y almacenamiento SSD de hasta 8 TB (según el chip).</li><li><strong>Conectividad profesional:</strong> tres puertos Thunderbolt (USB-C), puerto HDMI, ranura para tarjeta SDXC y MagSafe 3.</li><li><strong>Batería de larga duración:</strong> hasta <strong>24 horas</strong> de reproducción de video, según el modelo.</li><li><strong>Cámara y sonido:</strong> cámara Center Stage de 12 MP con Vista del escritorio y sistema de seis altavoces con audio espacial.</li></ul>",
             "reverse": true
@@ -120,11 +120,20 @@
         "title": "Lo más destacado",
         "subtitle": ""
       }
+    },
+    "product-accessories": {
+      "type": "product-accessories",
+      "settings": {
+        "heading": "Completa tu MacBook Pro",
+        "subtitle": "Accesorios originales que combinan con tu equipo.",
+        "collection": "accesorios-para-mac"
+      }
     }
   },
   "order": [
     "main",
     "product-trust-bar",
-    "product-info"
+    "product-info",
+    "product-accessories"
   ]
 }
