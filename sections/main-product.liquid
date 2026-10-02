@@ -167,7 +167,7 @@
             var isA=(p===active), isD=done[idx]&&!isA;
             var c=document.createElement("section"); c.className="ppx-card"+(isA?" is-active":"")+(isD?" is-done":"");
             var h=document.createElement("button"); h.type="button"; h.className="ppx-card__h";
-            h.innerHTML='<span class="ppx-card__n">'+(done[idx]&&!isA?"&#10003;":(p+1))+'</span><span class="ppx-card__t">'+stepTitle(idx,isD)+'</span>'+(isD?'<span class="ppx-card__v"></span><span class="ppx-card__c">Cambiar</span>':'');
+            h.innerHTML=(isD?'<span class="ppx-card__n">&#10003;</span>':'')+'<span class="ppx-card__t">'+stepTitle(idx,isD)+'</span>'+(isD?'<span class="ppx-card__v"></span><span class="ppx-card__c">Cambiar</span>':'');
             if(isD) h.querySelector(".ppx-card__v").textContent=cur[idx];
             h.onclick=function(){ active=(active===p?-1:p); renderSteps(); };
             c.appendChild(h);
