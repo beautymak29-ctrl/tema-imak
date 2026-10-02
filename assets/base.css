@@ -806,7 +806,7 @@ button.fg-card__inner--clickable:hover .fg-card__plus { background: rgba(255,255
 .ess-cta { font-size: 1.5rem; font-weight: 500; color: #0071e3; text-decoration: none; }
 .ess-cta:hover { text-decoration: underline; }
 .ess-banner__asset { display: flex; align-items: center; justify-content: center; overflow: hidden; }
-.ess-banner__img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ess-banner__img { width: 100%; height: 100%; object-fit: contain; object-position: center; padding: 2.4rem; box-sizing: border-box; display: block; }
 .ess-banner__img--placeholder { width: 100%; height: 22rem; opacity: .3; }
 
 @media (max-width: 749px) {
