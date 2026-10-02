@@ -12,31 +12,13 @@
     "product-family": {
       "type": "product-family",
       "blocks": {
-        "product_card_gVQ3yg": {
-          "type": "product_card",
-          "settings": {
-            "product": "iphone-17-pro-max",
-            "card_image": "",
-            "card_title": "iPhone 17 Pro Max",
-            "card_description": " \"El iPhone más poderoso. Cámara, chip y pantalla al máximo nivel.\"",
-            "modal_heading": "",
-            "modal_title_1": "",
-            "modal_desc_1": "",
-            "modal_title_2": "",
-            "modal_desc_2": "",
-            "modal_title_3": "",
-            "modal_desc_3": "",
-            "modal_link": "",
-            "modal_link_label": "Ver producto"
-          }
-        },
         "product_card_NyDxtM": {
           "type": "product_card",
           "settings": {
             "product": "iphone-17-pro",
             "card_image": "",
-            "card_title": "iPhone 17 Pro",
-            "card_description": "\"Un diseño innovador para una batería y un rendimiento sin precedentes.\"",
+            "card_title": "iPhone 17 Pro y Pro Max",
+            "card_description": "\"Elige entre 6,3 y 6,9 pulgadas. Un diseño innovador para una batería y un rendimiento sin precedentes.\"",
             "modal_heading": "",
             "modal_title_1": "",
             "modal_desc_1": "",
@@ -142,7 +124,6 @@
       "block_order": [
         "nb_duo",
         "nb_18pro",
-        "product_card_gVQ3yg",
         "product_card_NyDxtM",
         "product_card_4fgyTH",
         "product_card_QPCTFN",
