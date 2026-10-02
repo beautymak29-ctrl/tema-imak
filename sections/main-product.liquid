@@ -16,6 +16,7 @@
     {%- if product.variants.size > 0 -%}
       {%- assign opt1_name = product.options[0] -%}
       {%- assign opt2_name = product.options[1] -%}
+      {%- assign opt3_name = product.options[2] -%}
       {%- assign opt1_down = opt1_name | downcase -%}
 
       <div class="ppx" id="ppx-{{ section.id }}">
@@ -53,6 +54,13 @@
             </div>
           {%- endif -%}
 
+          {%- if opt3_name != blank -%}
+            <div class="ppx__group">
+              <p class="ppx__label">{{ opt3_name }}</p>
+              <div class="ppx__opts ppx__opts--cfg" id="ppx-o3-{{ section.id }}"></div>
+            </div>
+          {%- endif -%}
+
           <div class="ppx__pricebox">
             <p class="ppx__price-label">{{ section.settings.price_label | default: 'Precio desde' }}</p>
             <p class="ppx__price" id="ppx-price-{{ section.id }}"></p>
@@ -76,6 +84,7 @@
         var SID = "{{ section.id }}";
         var O1NAME = {{ opt1_name | default: '' | json }};
         var O2NAME = {{ opt2_name | default: '' | json }};
+        var O3NAME = {{ opt3_name | default: '' | json }};
         var O1COLOR = O1NAME.toLowerCase().indexOf("color") !== -1;
         var FEATURED = {% if product.featured_image %}{{ product.featured_image | image_url: width: 1600 | json }}{% else %}""{% endif %};
         var ALL = [{%- for im in product.images -%}{{ im | image_url: width: 1600 | json }}{% unless forloop.last %},{% endunless %}{%- endfor -%}];
@@ -83,7 +92,7 @@
         var TITLE = {{ product.title | json }};
         var VARIANTS = [
           {%- for v in product.variants -%}
-          {id:{{ v.id }}, o1:{{ v.option1 | json }}, o2:{{ v.option2 | json }}, avail:{{ v.available }}, price:{{ v.price }}, priceStr:{{ v.price | money | json }}, img:{% if v.image %}{{ v.image | image_url: width: 1600 | json }}{% else %}""{% endif %}},
+          {id:{{ v.id }}, o1:{{ v.option1 | json }}, o2:{{ v.option2 | json }}, o3:{{ v.option3 | json }}, avail:{{ v.available }}, price:{{ v.price }}, priceStr:{{ v.price | money | json }}, img:{% if v.image %}{{ v.image | image_url: width: 1600 | json }}{% else %}""{% endif %}},
           {%- endfor -%}
         ];
         var HEX = {"naranja cósmico":"#D0743F","naranja":"#E8730C","azul profundo":"#2C3E52","azul":"#2E5AAC","plata":"#D9DBDD","gris espacial":"#4B4E52","negro":"#1D1D1F","negro espacial":"#2A2A2C","medianoche":"#2E3641","blanco estelar":"#EDE9E3","blanco":"#F2F2F5","blanco nube":"#EDEBE6","oro":"#E8CE93","oro claro":"#E7D9B8","oro rosa":"#E7C3B0","titanio natural":"#C9C3BA","natural titanium":"#C9C3BA","natural":"#C9C3BA","titanio azul":"#3E4C63","titanio blanco":"#E3E1DC","titanio negro":"#39373B","black titanium":"#39373B","verde":"#3C6E47","verde azulado":"#3E8E8A","verde bosque":"#3D5A45","verde gris":"#8C978A","rosa":"#F2C9D3","rosa suave":"#F1D5DA","rosa claro":"#F3DCDD","rosado":"#F2C9D3","morado":"#8E7CC3","morado niebla":"#B6A9C9","amarillo":"#F2D24E","amarillo neón":"#E7F04A","rojo":"#C0362C","coral":"#E8734F","cielo":"#AFC7E0","azul cielo":"#AEC6DE","sky blue":"#AEC6DE","azul niebla":"#AFC7E0","azul neblina":"#AFC7E0","azul ancla":"#3A4A63","lavanda":"#C6B6E2","salvia":"#B7C4A8","ultramarino":"#4653C7","ultramar":"#4653C7","gris piedra":"#8A8B86","gris oscuro":"#4A4B4D","clementina":"#E8732C","guayaba":"#EA6A78","melón":"#F0A868","cúrcuma":"#D9A03A","pizarra":"#5B5E63","midnight":"#2E3641","índigo":"#3F4A8C","cítrico":"#E4CF3E"};
@@ -99,15 +108,32 @@
         var VIMGS = VARIANTS.map(function(v){ return base(v.img); }).filter(Boolean);
         var EXTRAS = ALL.filter(function(u){ return VIMGS.indexOf(base(u))===-1; });
         var slides=[], idx=0;
-        var cur1 = VARIANTS[0].o1, cur2 = VARIANTS[0].o2;
+        var cur1 = VARIANTS[0].o1, cur2 = VARIANTS[0].o2, cur3 = VARIANTS[0].o3;
         var $=function(id){return document.getElementById(id);};
         var img=$("ppx-img-"+SID), price=$("ppx-price-"+SID);
-        var o1box=$("ppx-o1-"+SID), o2box=$("ppx-o2-"+SID);
+        var o1box=$("ppx-o1-"+SID), o2box=$("ppx-o2-"+SID), o3box=$("ppx-o3-"+SID);
 
+        function o3for(){
+          var out=[]; VARIANTS.forEach(function(v){ if(v.o3 && v.o1===cur1 && (O2NAME===""||v.o2===cur2) && out.indexOf(v.o3)===-1) out.push(v.o3); }); return out;
+        }
+        function priceOf(o3){
+          for(var i=0;i<VARIANTS.length;i++){ var v=VARIANTS[i]; if(v.o1===cur1 && v.o2===cur2 && v.o3===o3) return v.priceStr; } return "";
+        }
+        function buildO3(){
+          if(!o3box) return; var list=o3for();
+          if(list.indexOf(cur3)===-1) cur3=list[0];
+          o3box.innerHTML="";
+          list.forEach(function(val){
+            var b=document.createElement("button"); b.type="button"; b.className="ppx-cfg"+(val===cur3?" is-sel":""); b.setAttribute("data-v",val);
+            b.innerHTML='<span class="ppx-cfg__n"></span><span class="ppx-cfg__p"></span>';
+            b.firstChild.textContent=val; b.lastChild.textContent=priceOf(val);
+            b.onclick=function(){ cur3=val; render(); }; o3box.appendChild(b);
+          });
+        }
         function findVar(){
           for(var i=0;i<VARIANTS.length;i++){
             var v=VARIANTS[i];
-            if(v.o1===cur1 && (O2NAME==="" ? true : v.o2===cur2)) return v;
+            if(v.o1===cur1 && (O2NAME==="" ? true : v.o2===cur2) && (O3NAME==="" ? true : v.o3===cur3)) return v;
           }
           return VARIANTS[0];
         }
@@ -143,6 +169,7 @@
         function step(d){ if(slides.length<2) return; idx=(idx+d+slides.length)%slides.length; show(); }
         (function(){ var p=$("ppx-prev-"+SID), n=$("ppx-next-"+SID); if(p) p.onclick=function(){ step(-1); }; if(n) n.onclick=function(){ step(1); }; })();
         function render(){
+          buildO3();
           var v=findVar();
           var src = v.img || imgByO1[cur1] || FEATURED;
           var first = (slides.length===0);
@@ -240,6 +267,12 @@
 .ppx-pill{min-width:64px;padding:12px 18px;border:1px solid #d2d2d7;border-radius:12px;background:#fff;cursor:pointer;font-size:15px;font-weight:500;color:#1d1d1f;transition:border-color .15s;}
 .ppx-pill:hover{border-color:#86868b;}
 .ppx-pill.is-sel{border-color:#0071e3;box-shadow:0 0 0 1px #0071e3;}
+.ppx__opts--cfg{flex-direction:column;gap:10px;}
+.ppx-cfg{display:flex;justify-content:space-between;align-items:center;gap:14px;width:100%;text-align:left;padding:14px 16px;border:1px solid #d2d2d7;border-radius:14px;background:#fff;cursor:pointer;font-size:15px;color:#1d1d1f;transition:border-color .15s;}
+.ppx-cfg:hover{border-color:#86868b;}
+.ppx-cfg.is-sel{border-color:#0071e3;box-shadow:0 0 0 1px #0071e3;}
+.ppx-cfg__n{font-weight:600;}
+.ppx-cfg__p{color:#6e6e73;font-size:14px;white-space:nowrap;}
 .ppx__pricebox{margin:8px 0 20px;}
 .ppx__price-label{font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:#6e6e73;margin:0 0 2px;}
 .ppx__price{font-size:28px;font-weight:600;color:#1d1d1f;margin:0;}
