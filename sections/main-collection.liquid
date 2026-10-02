@@ -15,6 +15,7 @@
           <option value="{{ option.value }}"{% if option.value == sort_by %} selected{% endif %}>
             {%- case option.value -%}
               {%- when 'manual' -%}Destacados
+              {%- when 'most-relevant' or 'relevance' -%}Más relevantes
               {%- when 'best-selling' -%}Más vendidos
               {%- when 'title-ascending' -%}Alfabéticamente, A-Z
               {%- when 'title-descending' -%}Alfabéticamente, Z-A
@@ -22,7 +23,6 @@
               {%- when 'price-descending' -%}Precio, de mayor a menor
               {%- when 'created-ascending' -%}Fecha, de antigua a reciente
               {%- when 'created-descending' -%}Fecha, de reciente a antigua
-              {%- when 'relevance' -%}Más relevantes
               {%- else -%}{{ option.name }}
             {%- endcase -%}
           </option>
