@@ -87,6 +87,9 @@
         var RANK={size:0,color:1,cfg:2};
         var ORDER=[]; for(var i=0;i<N;i++) ORDER.push(i);
         ORDER.sort(function(a,b){ return (RANK[kind(a)]-RANK[kind(b)]) || (a-b); });
+        var SINGLE=(V.length===1&&/^default title$/i.test(V[0].o[0]||"")); if(SINGLE) ORDER=[];
+        var LI=-1; for(var q=0;q<N;q++){ if(/idioma/i.test(NAMES[q])) LI=q; }
+        function CL(a){ return a.filter(function(x){ return x&&!/^default title$/i.test(x); }); }
         var ASK={size:"¿Qué tamaño prefieres?",color:"¿Qué color te gusta más?",cfg:"¿Qué potencia necesitas?"};
         var WHO={"M5":"Ideal para el día a día, estudiar y trabajar.","M5 Pro":"Para crear, programar y editar video con fluidez.","M5 Max":"Para edición profesional, 3D e inteligencia artificial."};
         function $(id){ return document.getElementById(id+"-"+SID); }
@@ -136,7 +139,7 @@
           var parts=(s||"").split(" · "), chip=parts[0]||"", m=chip.match(/^(M\d(?: Pro| Max| Ultra)?)/), cores=chip.match(/(\d+)C\/(\d+)G/);
           return {chip:m?m[1]:chip, cpu:cores?cores[1]:"", gpu:cores?cores[2]:"", mem:parts[1]||"", ssd:parts[2]||""};
         }
-        function stepTitle(idx,isDone){ var k=kind(idx); return isDone ? ('<small>'+NAMES[idx]+'</small>') : ('<b>'+(ASK[k]||("Elige tu "+NAMES[idx].toLowerCase()))+'</b>'); }
+        function stepTitle(idx,isDone){ var k=kind(idx), nm=NAMES[idx]||"", q=/idioma/i.test(nm)?"¿En qué idioma quieres tu teclado?":(/capacidad|almacenamiento/i.test(nm)?"¿Cuánta capacidad necesitas?":(ASK[k]||("Elige tu "+nm.toLowerCase()))); return isDone ? ('<small>'+nm+'</small>') : ('<b>'+q+'</b>'); }
         function optionsHTML(idx){
           var k=kind(idx), vals=allowed(idx,cur), el=document.createElement("div");
           if(k==="color"){
@@ -157,6 +160,17 @@
             });
             var goS=document.createElement("button"); goS.type="button"; goS.className="ppx-go"; goS.textContent="Continuar"; goS.onclick=function(){ pick(idx,cur[idx]); }; el.appendChild(goS);
           } else {
+            if(idx===LI){
+              el.className="ppx-lang";
+              var POP=["Español (Latinoamérica)","Español (España)","Inglés (EE. UU.)","Inglés (Reino Unido)","Portugués (Brasil)","Francés","Alemán","Italiano"];
+              var all=vals.slice(); all.sort(function(a,b){ var pa=POP.indexOf(a), pb=POP.indexOf(b); if(pa<0&&pb<0) return a.localeCompare(b,"es"); if(pa<0) return 1; if(pb<0) return -1; return pa-pb; });
+              el.innerHTML='<div class="ppx-lang__tag"><span>&#9201;</span><div><strong>Puede demorar hasta 30 días hábiles</strong><small>Cada teclado se pide con el idioma que elijas.</small></div></div><input type="search" class="ppx-lang__q" placeholder="Buscar idioma (ej. francés, japonés…)" autocomplete="off" aria-label="Buscar idioma"><div class="ppx-lang__g" role="listbox"></div><p class="ppx-lang__none" hidden>No encontramos ese idioma. Escríbenos por WhatsApp y lo consultamos.</p>';
+              var grid=el.querySelector(".ppx-lang__g"), q=el.querySelector(".ppx-lang__q"), none=el.querySelector(".ppx-lang__none"), btns=[];
+              all.forEach(function(val){ var b=document.createElement("button"); b.type="button"; b.setAttribute("role","option"); b.className="ppx-lang__b"+(val===cur[idx]?" is-sel":""); b.textContent=val; b.setAttribute("data-k",val.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"")); b.onclick=function(){ cur[idx]=val; normalize(cur); update(true); }; grid.appendChild(b); btns.push(b); });
+              q.oninput=function(){ var t=q.value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").trim(), n=0; btns.forEach(function(b){ var ok=!t||b.getAttribute("data-k").indexOf(t)>-1; b.hidden=!ok; if(ok) n++; }); none.hidden=n>0; };
+              var goL=document.createElement("button"); goL.type="button"; goL.className="ppx-go"; goL.textContent="Continuar con "+cur[idx]; goL.onclick=function(){ pick(idx,cur[idx]); }; el.appendChild(goL);
+              return el;
+            }
             el.className="ppx-list";
             var min=null; vals.forEach(function(val){ var v=priceIf(idx,val); if(min===null||v.price<min) min=v.price; });
             vals.forEach(function(val){
@@ -166,9 +180,11 @@
               b.querySelector(".ppx-cfg__chip").textContent=parts[0]+(/^M\d/.test(parts[0])?" chip":"");
               b.querySelector(".ppx-cfg__spec").textContent=(parts[1]?(/GB/.test(parts[1])?parts[1]+" de memoria":parts[1]):"")+(parts[2]?" · "+parts[2]+" de SSD":"");
               var who=(function(){ var m=parts[0].match(/^(M\d(?: Pro| Max| Ultra)?)/); return m?(WHO[m[1]]||""):""; })();
+              if(idx===LI){ who="Puede demorar hasta 30 días hábiles"; b.classList.add("ppx-cfg--lead"); }
               b.querySelector(".ppx-cfg__who").textContent=who;
               b.onclick=function(){ cur[idx]=val; normalize(cur); update(true); }; el.appendChild(b);
             });
+            if(idx===LI){ var ln=document.createElement("p"); ln.className="ppx-lead"; ln.innerHTML="<strong>Importante:</strong> el teclado se pide con el idioma que elijas y <strong>puede demorar hasta 30 días hábiles</strong> en llegar."; el.appendChild(ln); }
             var goC=document.createElement("button"); goC.type="button"; goC.className="ppx-go"; goC.textContent="Continuar"; goC.onclick=function(){ pick(idx,cur[idx]); }; el.appendChild(goC);
           }
           return el;
@@ -249,11 +265,12 @@
           var rows=$("ppx-rows"); if(!rows) return;
           var gmin=null; V.forEach(function(x){ if(gmin===null||x.price<gmin) gmin=x.price; });
           var si=-1, ci=-1; for(var i=0;i<N;i++){ if(kind(i)==="size") si=i; if(kind(i)==="cfg") ci=i; }
-          var out=[]; out.push(["Desde ("+(function(){ for(var k=0;k<V.length;k++){ if(V[k].price===gmin) return V[k].o.filter(Boolean).slice(1).join(" · ")||V[k].o[0]; } return ""; })()+")",money(gmin)]);
+          var out=[]; out.push([SINGLE?"Precio":"Desde ("+(function(){ for(var k=0;k<V.length;k++){ if(V[k].price===gmin) return V[k].o.filter(Boolean).slice(1).join(" · ")||V[k].o[0]; } return ""; })()+")",money(gmin)]);
           var sizeMin=gmin;
           if(si>-1){ var m=null; V.forEach(function(x){ if(x.o[si]===cur[si]&&(m===null||x.price<m)) m=x.price; }); sizeMin=m===null?gmin:m; if(sizeMin>gmin) out.push([NAMES[si]+": "+cur[si],"+ "+money(sizeMin-gmin)]); }
           if(v.price>sizeMin) out.push([(ci>-1?"Configuración elegida":"Mejoras elegidas"),"+ "+money(v.price-sizeMin)]);
           if(ENG && eng.on) out.push(["Grabado personalizado","Gratis · hasta 30 días hábiles"]);
+          if(LI>-1) out.push(["Idioma: "+cur[LI],"Hasta 30 días hábiles"]);
           rows.innerHTML=out.map(function(r){ return '<div class="ppx-pricing__r"><span></span><span></span></div>'; }).join("");
           [].forEach.call(rows.children,function(el,i){ el.children[0].textContent=out[i][0]; el.children[1].textContent=out[i][1]; });
         }
@@ -263,12 +280,12 @@
           updateImage(v);
           pricing(v);
           tween($("ppx-price"),v.price); tween($("ppx-bar-price"),v.price); shownPrice=v.price;
-          var sel=$("ppx-bar-sel"); if(sel) sel.textContent=cur.filter(Boolean).join(" · ");
+          var sel=$("ppx-bar-sel"); if(sel) sel.textContent=CL(cur).join(" · ");
           var vid=$("ppx-vid"); if(vid) vid.value=v.id;
           var et=$("ppx-eng-t"), ep=$("ppx-eng-p"); if(et&&ep){ et.disabled=!(ENG&&eng.on); ep.disabled=!(ENG&&eng.on); et.value=eng.txt; }
           var nt=$("ppx-eng-note"); if(nt) nt.hidden=!(ENG&&eng.on);
           var cta=$("ppx-cta");
-          if(cta && WA){ var digits=WA.replace(/[^0-9]/g,""); cta.href="https://wa.me/"+digits+"?text="+encodeURIComponent("Hola, me interesa el "+TITLE+" — "+cur.filter(Boolean).join(" / ")+"."); }
+          if(cta && WA){ var digits=WA.replace(/[^0-9]/g,""); cta.href="https://wa.me/"+digits+"?text="+encodeURIComponent("Hola, me interesa el "+TITLE+" — "+CL(cur).join(" / ")+"."); }
         }
         update(false);
 
@@ -403,6 +420,19 @@
 .ppx-eng__n li:before{content:"";position:absolute;left:3px;top:.6em;width:5px;height:5px;border-radius:50%;background:#86868b;}
 .ppx-eng__ok{width:100%;background:#0071e3;color:#fff;border:0;border-radius:980px;padding:13px 22px;font-size:15px;font-weight:500;cursor:pointer;}
 .ppx-eng__ok:hover{background:#0077ed;}
+.ppx-lang__tag{display:flex;gap:12px;align-items:center;padding:12px 14px;border-radius:12px;background:#fff7e6;border:1px solid #f5d9a0;margin-bottom:12px;}
+.ppx-lang__tag>span{font-size:22px;line-height:1;}
+.ppx-lang__tag strong{display:block;font-size:14px;color:#7a4b00;}
+.ppx-lang__tag small{font-size:12.5px;color:#8a6a2c;}
+.ppx-lang__q{width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #d2d2d7;border-radius:12px;font-size:16px;background:#fff;margin-bottom:12px;}
+.ppx-lang__q:focus{outline:2px solid #0071e3;border-color:transparent;}
+.ppx-lang__g{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;max-height:280px;overflow:auto;padding:2px;}
+.ppx-lang__b{padding:11px 12px;border-radius:12px;border:1px solid #d2d2d7;background:#fff;font-size:14px;color:#1d1d1f;text-align:left;cursor:pointer;transition:border-color .15s,background .15s;}
+.ppx-lang__b[hidden]{display:none;}
+.ppx-lang__b:hover{border-color:#86868b;}
+.ppx-lang__b.is-sel{border-color:#0071e3;background:#eef5ff;box-shadow:0 0 0 1px #0071e3 inset;font-weight:600;}
+.ppx-lang__none{font-size:13px;color:#6e6e73;margin:10px 2px;}
+.ppx-lead{margin:12px 2px;font-size:13px;color:#7a4b00;}
 .ppx-eng__foot{margin:10px 2px 0;font-size:13px;color:#6e6e73;text-align:center;}
 .ppx-pricing{margin:18px 0 16px;padding:22px;border-radius:20px;background:#fff;border:1px solid #e0e0e5;}
 .ppx-pricing__h{margin:0 0 12px;font-size:18px;font-weight:600;color:#1d1d1f;}
