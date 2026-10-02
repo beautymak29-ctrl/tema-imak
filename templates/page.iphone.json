@@ -16,10 +16,9 @@
           "type": "product_card",
           "settings": {
             "product": "iphone-17-pro-max",
-            "card_image": "shopify://shop_images/D_NQ_NP_2X_756377-MLA96435683774_102025-F.webp",
-            "card_title": "IPhone 17 pro max",
+            "card_image": "",
+            "card_title": "iPhone 17 Pro Max",
             "card_description": " \"El iPhone más poderoso. Cámara, chip y pantalla al máximo nivel.\"",
-            "storage_options": "256GB | 512GB | 1TB",
             "modal_heading": "",
             "modal_title_1": "",
             "modal_desc_1": "",
@@ -35,10 +34,9 @@
           "type": "product_card",
           "settings": {
             "product": "iphone-17-pro",
-            "card_image": "shopify://shop_images/D_NQ_NP_2X_829168-MPE109108136525_032026-F-apple-iphone-17-pro-max-256-gb-naranja-cosmico.webp",
-            "card_title": "IPhone 17 Pro",
+            "card_image": "",
+            "card_title": "iPhone 17 Pro",
             "card_description": "\"Un diseño innovador para una batería y un rendimiento sin precedentes.\"",
-            "storage_options": "256GB | 512GB | 1TB",
             "modal_heading": "",
             "modal_title_1": "",
             "modal_desc_1": "",
@@ -54,10 +52,9 @@
           "type": "product_card",
           "settings": {
             "product": "iphone-17",
-            "card_image": "shopify://shop_images/D_NQ_NP_2X_765368-MLA96425288827_102025-F.webp",
-            "card_title": "IPhone 17",
+            "card_image": "",
+            "card_title": "iPhone 17",
             "card_description": "\"Aún más sorprendente. Aún más resistente.\"",
-            "storage_options": "128GB | 256GB | 512GB",
             "modal_heading": "",
             "modal_title_1": "",
             "modal_desc_1": "",
@@ -73,10 +70,81 @@
           "type": "product_card",
           "settings": {
             "product": "iphone-16",
-            "card_image": "shopify://shop_images/D_NQ_NP_2X_800312-MLA96869283817_102025-F.webp",
-            "card_title": "IPhone 16",
+            "card_image": "",
+            "card_title": "iPhone 16",
             "card_description": "\"Rendimiento increíble, Diseñado para durar.\"",
-            "storage_options": "128GB | 256GB | 512GB",
+            "modal_heading": "",
+            "modal_title_1": "",
+            "modal_desc_1": "",
+            "modal_title_2": "",
+            "modal_desc_2": "",
+            "modal_title_3": "",
+            "modal_desc_3": "",
+            "modal_link": "",
+            "modal_link_label": "Ver producto"
+          }
+        },
+        "nb_duo": {
+          "type": "product_card",
+          "settings": {
+            "product": "iphone-duo",
+            "card_image": "",
+            "card_title": "iPhone Duo",
+            "card_description": "\"El iPhone plegable: se abre y se hace grande.\"",
+            "modal_heading": "",
+            "modal_title_1": "",
+            "modal_desc_1": "",
+            "modal_title_2": "",
+            "modal_desc_2": "",
+            "modal_title_3": "",
+            "modal_desc_3": "",
+            "modal_link": "",
+            "modal_link_label": "Ver producto"
+          }
+        },
+        "nb_18pro": {
+          "type": "product_card",
+          "settings": {
+            "product": "iphone-18-pro",
+            "card_image": "",
+            "card_title": "iPhone 18 Pro",
+            "card_description": "\"Pro, un paso más allá.\"",
+            "modal_heading": "",
+            "modal_title_1": "",
+            "modal_desc_1": "",
+            "modal_title_2": "",
+            "modal_desc_2": "",
+            "modal_title_3": "",
+            "modal_desc_3": "",
+            "modal_link": "",
+            "modal_link_label": "Ver producto"
+          }
+        },
+        "nb_18promax": {
+          "type": "product_card",
+          "settings": {
+            "product": "iphone-18-pro-max",
+            "card_image": "",
+            "card_title": "iPhone 18 Pro Max",
+            "card_description": "\"La pantalla más grande en un iPhone Pro.\"",
+            "modal_heading": "",
+            "modal_title_1": "",
+            "modal_desc_1": "",
+            "modal_title_2": "",
+            "modal_desc_2": "",
+            "modal_title_3": "",
+            "modal_desc_3": "",
+            "modal_link": "",
+            "modal_link_label": "Ver producto"
+          }
+        },
+        "nb_15": {
+          "type": "product_card",
+          "settings": {
+            "product": "iphone-15",
+            "card_image": "",
+            "card_title": "iPhone 15",
+            "card_description": "\"Un clásico confiable en cinco colores.\"",
             "modal_heading": "",
             "modal_title_1": "",
             "modal_desc_1": "",
@@ -90,10 +158,14 @@
         }
       },
       "block_order": [
+        "nb_duo",
+        "nb_18pro",
+        "nb_18promax",
         "product_card_gVQ3yg",
         "product_card_NyDxtM",
         "product_card_4fgyTH",
-        "product_card_QPCTFN"
+        "product_card_QPCTFN",
+        "nb_15"
       ],
       "settings": {
         "whatsapp_number": "",
