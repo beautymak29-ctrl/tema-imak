@@ -128,14 +128,9 @@
         "subtitle": "Accesorios originales que combinan con tu equipo.",
         "collection": "accesorios-para-mac"
       }
-    },
-    "product-intro": {
-      "type": "product-intro",
-      "settings": {}
     }
   },
   "order": [
-    "product-intro",
     "main",
     "product-trust-bar",
     "product-info",
