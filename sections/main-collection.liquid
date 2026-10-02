@@ -13,7 +13,18 @@
         {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
         {%- for option in collection.sort_options -%}
           <option value="{{ option.value }}"{% if option.value == sort_by %} selected{% endif %}>
-            {{ option.name }}
+            {%- case option.value -%}
+              {%- when 'manual' -%}Destacados
+              {%- when 'best-selling' -%}Más vendidos
+              {%- when 'title-ascending' -%}Alfabéticamente, A-Z
+              {%- when 'title-descending' -%}Alfabéticamente, Z-A
+              {%- when 'price-ascending' -%}Precio, de menor a mayor
+              {%- when 'price-descending' -%}Precio, de mayor a menor
+              {%- when 'created-ascending' -%}Fecha, de antigua a reciente
+              {%- when 'created-descending' -%}Fecha, de reciente a antigua
+              {%- when 'relevance' -%}Más relevantes
+              {%- else -%}{{ option.name }}
+            {%- endcase -%}
           </option>
         {%- endfor -%}
       </select>
