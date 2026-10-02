@@ -120,11 +120,20 @@
         "title": "Lo más destacado",
         "subtitle": ""
       }
+    },
+    "product-accessories": {
+      "type": "product-accessories",
+      "settings": {
+        "heading": "Completa tu iPad",
+        "subtitle": "Accesorios originales que combinan con tu equipo.",
+        "collection": "accesorios-para-ipad"
+      }
     }
   },
   "order": [
     "main",
     "product-trust-bar",
-    "product-info"
+    "product-info",
+    "product-accessories"
   ]
 }
