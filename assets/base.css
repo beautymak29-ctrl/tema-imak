@@ -1361,6 +1361,8 @@ button.fg-card__inner--clickable:hover .fg-card__plus { background: rgba(255,255
   gap: 0.6rem;
 }
 
+.hc-card--full .hc-card__content { min-height: 25rem; }
+.hc-card--half .hc-card__content { min-height: 21rem; }
 .hc-card__badge {
   font-size: 1.4rem;
   font-weight: 400;
@@ -1499,6 +1501,7 @@ button.fg-card__inner--clickable:hover .fg-card__plus { background: rgba(255,255
   .hc-card__content {
     padding: 3.2rem 1.6rem 0;
   }
+.hc-card--full .hc-card__content, .hc-card--half .hc-card__content { min-height: 19rem; }
 .hc-card--full .hc-card__media, .hc-card--half .hc-card__media { aspect-ratio: 4 / 5; }
 
   .hc-card__link {
