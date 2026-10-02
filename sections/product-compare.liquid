@@ -66,12 +66,16 @@
   sel.addEventListener("change",show); show();
   var btn=document.getElementById("pcmp-film-btn"), modal=document.getElementById("pcmp-modal"), video=document.getElementById("pcmp-video"), err=document.getElementById("pcmp-err"), hls=null, loaded=false;
   function fail(){ err.hidden=false; }
+  function native(){ if(video.canPlayType("application/vnd.apple.mpegurl")){ video.onerror=fail; video.src=VID; video.play().catch(function(){}); } else fail(); }
   function start(){
     if(loaded){ video.play(); return; } loaded=true;
-    if(video.canPlayType("application/vnd.apple.mpegurl")){ video.src=VID; video.play().catch(function(){}); video.onerror=fail; return; }
-    var s=document.createElement("script"); s.src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.5.13/hls.min.js";
-    s.onload=function(){ if(window.Hls&&Hls.isSupported()){ hls=new Hls(); hls.on(Hls.Events.ERROR,function(e,d){ if(d.fatal) fail(); }); hls.loadSource(VID); hls.attachMedia(video); hls.on(Hls.Events.MANIFEST_PARSED,function(){ video.play().catch(function(){}); }); } else fail(); };
-    s.onerror=fail; document.head.appendChild(s);
+    if(/\.mp4(\?|$)/i.test(VID)){ video.onerror=fail; video.src=VID; video.play().catch(function(){}); return; }
+    function viaHls(){
+      if(window.Hls&&Hls.isSupported()){ hls=new Hls({capLevelToPlayerSize:true}); hls.on(Hls.Events.ERROR,function(e,d){ if(d.fatal){ try{hls.destroy();}catch(x){} hls=null; native(); } }); hls.loadSource(VID); hls.attachMedia(video); hls.on(Hls.Events.MANIFEST_PARSED,function(){ video.play().catch(function(){}); }); }
+      else native();
+    }
+    if(window.Hls){ viaHls(); return; }
+    var s=document.createElement("script"); s.src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.5.13/hls.min.js"; s.onload=viaHls; s.onerror=native; document.head.appendChild(s);
   }
   function close(){ modal.hidden=true; video.pause(); }
   if(btn) btn.onclick=function(){ modal.hidden=false; err.hidden=true; start(); };
