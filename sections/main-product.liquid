@@ -20,13 +20,15 @@
 
       <div class="ppx" id="ppx-{{ section.id }}">
         <div class="ppx__media">
-          {%- if product.featured_image != blank -%}
-            <img class="ppx__img" id="ppx-img-{{ section.id }}"
-                 src="{{ product.featured_image | image_url: width: 1100 }}"
-                 alt="{{ product.title }}" width="1100" height="1100" loading="eager">
-          {%- else -%}
-            {{ 'product-1' | placeholder_svg_tag: 'ppx__img' }}
-          {%- endif -%}
+          <div class="ppx__track" id="ppx-track-{{ section.id }}" tabindex="0" aria-label="Fotos del producto">
+            <div class="ppx__slide">
+              {%- if product.featured_image != blank -%}
+                <img class="ppx__img" id="ppx-img-{{ section.id }}" src="{{ product.featured_image | image_url: width: 1600 }}" alt="{{ product.title }}" width="1600" height="1600" loading="eager">
+              {%- else -%}
+                {{ 'product-1' | placeholder_svg_tag: 'ppx__img' }}
+              {%- endif -%}
+            </div>
+          </div>
           <div class="ppx__nav" id="ppx-nav-{{ section.id }}" hidden>
             <button type="button" class="ppx__arrow" id="ppx-prev-{{ section.id }}" aria-label="Foto anterior">&#8249;</button>
             <div class="ppx__dots" id="ppx-dots-{{ section.id }}"></div>
@@ -75,13 +77,13 @@
         var O1NAME = {{ opt1_name | default: '' | json }};
         var O2NAME = {{ opt2_name | default: '' | json }};
         var O1COLOR = O1NAME.toLowerCase().indexOf("color") !== -1;
-        var FEATURED = {% if product.featured_image %}{{ product.featured_image | image_url: width: 1100 | json }}{% else %}""{% endif %};
-        var ALL = [{%- for im in product.images -%}{{ im | image_url: width: 1100 | json }}{% unless forloop.last %},{% endunless %}{%- endfor -%}];
+        var FEATURED = {% if product.featured_image %}{{ product.featured_image | image_url: width: 1600 | json }}{% else %}""{% endif %};
+        var ALL = [{%- for im in product.images -%}{{ im | image_url: width: 1600 | json }}{% unless forloop.last %},{% endunless %}{%- endfor -%}];
         var WA = {{ section.settings.whatsapp_number | default: '' | json }};
         var TITLE = {{ product.title | json }};
         var VARIANTS = [
           {%- for v in product.variants -%}
-          {id:{{ v.id }}, o1:{{ v.option1 | json }}, o2:{{ v.option2 | json }}, avail:{{ v.available }}, price:{{ v.price }}, priceStr:{{ v.price | money | json }}, img:{% if v.image %}{{ v.image | image_url: width: 1100 | json }}{% else %}""{% endif %}},
+          {id:{{ v.id }}, o1:{{ v.option1 | json }}, o2:{{ v.option2 | json }}, avail:{{ v.available }}, price:{{ v.price }}, priceStr:{{ v.price | money | json }}, img:{% if v.image %}{{ v.image | image_url: width: 1600 | json }}{% else %}""{% endif %}},
           {%- endfor -%}
         ];
         var HEX = {"naranja cósmico":"#D0743F","naranja":"#E8730C","azul profundo":"#2C3E52","azul":"#2E5AAC","plata":"#D9DBDD","gris espacial":"#4B4E52","negro":"#1D1D1F","negro espacial":"#2A2A2C","medianoche":"#2E3641","blanco estelar":"#EDE9E3","blanco":"#F2F2F5","blanco nube":"#EDEBE6","oro":"#E8CE93","oro claro":"#E7D9B8","oro rosa":"#E7C3B0","titanio natural":"#C9C3BA","natural titanium":"#C9C3BA","natural":"#C9C3BA","titanio azul":"#3E4C63","titanio blanco":"#E3E1DC","titanio negro":"#39373B","black titanium":"#39373B","verde":"#3C6E47","verde azulado":"#3E8E8A","verde bosque":"#3D5A45","verde gris":"#8C978A","rosa":"#F2C9D3","rosa suave":"#F1D5DA","rosa claro":"#F3DCDD","rosado":"#F2C9D3","morado":"#8E7CC3","morado niebla":"#B6A9C9","amarillo":"#F2D24E","amarillo neón":"#E7F04A","rojo":"#C0362C","coral":"#E8734F","cielo":"#AFC7E0","azul cielo":"#AEC6DE","sky blue":"#AEC6DE","azul niebla":"#AFC7E0","azul neblina":"#AFC7E0","azul ancla":"#3A4A63","lavanda":"#C6B6E2","salvia":"#B7C4A8","ultramarino":"#4653C7","ultramar":"#4653C7","gris piedra":"#8A8B86","gris oscuro":"#4A4B4D","clementina":"#E8732C","guayaba":"#EA6A78","melón":"#F0A868","cúrcuma":"#D9A03A","pizarra":"#5B5E63","midnight":"#2E3641","índigo":"#3F4A8C","cítrico":"#E4CF3E"};
@@ -109,8 +111,16 @@
           }
           return VARIANTS[0];
         }
-        function show(){
-          if(img && slides[idx]){ img.src = slides[idx]; }
+        var track=$("ppx-track-"+SID);
+        function buildTrack(){
+          if(!track) return;
+          track.innerHTML = slides.map(function(u,i){
+            return '<div class="ppx__slide"><img class="ppx__img" src="'+u+'" alt="'+TITLE.replace(/"/g,"&quot;")+'" '+(i===0?'loading="eager"':'loading="lazy"')+' draggable="false"></div>';
+          }).join("");
+          track.scrollLeft = 0;
+        }
+        function show(smooth){
+          if(track){ track.scrollTo({left: idx*track.clientWidth, behavior: smooth===false?"auto":"smooth"}); }
           var dots=$("ppx-dots-"+SID); if(dots) [].forEach.call(dots.children,function(d,i){ d.classList.toggle("is-sel", i===idx); });
         }
         function buildDots(){
@@ -123,13 +133,27 @@
             b.onclick=function(){ idx=i; show(); }; dots.appendChild(b);
           });
         }
+        (function(){
+          if(!track) return; var t;
+          track.addEventListener("scroll",function(){ clearTimeout(t); t=setTimeout(function(){
+            var i=Math.round(track.scrollLeft/Math.max(1,track.clientWidth)); if(i!==idx){ idx=i; var dots=$("ppx-dots-"+SID); if(dots) [].forEach.call(dots.children,function(d,k){ d.classList.toggle("is-sel", k===idx); }); }
+          },80); },{passive:true});
+          track.addEventListener("keydown",function(e){ if(e.key==="ArrowRight"){ e.preventDefault(); step(1); } else if(e.key==="ArrowLeft"){ e.preventDefault(); step(-1); } });
+        })();
         function step(d){ if(slides.length<2) return; idx=(idx+d+slides.length)%slides.length; show(); }
         (function(){ var p=$("ppx-prev-"+SID), n=$("ppx-next-"+SID); if(p) p.onclick=function(){ step(-1); }; if(n) n.onclick=function(){ step(1); }; })();
         function render(){
           var v=findVar();
           var src = v.img || imgByO1[cur1] || FEATURED;
-          slides = [src].concat(EXTRAS.filter(function(u){ return base(u)!==base(src); })); idx = 0;
-          show(); buildDots();
+          var first = (slides.length===0);
+          if(first){
+            slides = ALL.slice(); if(!slides.length && src){ slides=[src]; }
+            idx = 0; buildTrack(); buildDots(); show(false);
+          } else {
+            var bs = slides.map(base), k = bs.indexOf(base(src));
+            if(k<0 && src){ slides.unshift(src); k=0; buildTrack(); buildDots(); }
+            idx = Math.max(0,k); show(true);
+          }
           if(price){ price.textContent = v.price>0 ? v.priceStr : "Consultar"; }
           var o1n=$("ppx-o1name-"+SID); if(o1n) o1n.textContent=cur1;
           if(o1box) [].forEach.call(o1box.children,function(b){ b.classList.toggle("is-sel", b.getAttribute("data-v")===cur1); });
@@ -193,17 +217,20 @@
 </section>
 
 <style>
-.ppx{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin:32px 0 8px;}
-.ppx__media{background:#f5f5f7;border-radius:24px;padding:24px;display:flex;align-items:center;justify-content:center;aspect-ratio:1/1;}
-.ppx__media{position:relative;}
-.ppx__nav{position:absolute;left:0;right:0;bottom:18px;display:flex;align-items:center;justify-content:center;gap:12px;}
+.ppx{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:center;margin:32px 0 8px;}
+.ppx__media{position:relative;background:#f5f5f7;border-radius:28px;overflow:hidden;aspect-ratio:4/3;}
+.ppx__track{display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;outline:none;}
+.ppx__track::-webkit-scrollbar{display:none;}
+.ppx__slide{flex:0 0 100%;scroll-snap-align:center;display:flex;align-items:center;justify-content:center;padding:28px 28px 72px;box-sizing:border-box;}
+.ppx__nav{position:absolute;left:0;right:0;bottom:22px;display:flex;align-items:center;justify-content:center;gap:14px;pointer-events:none;}
 .ppx__nav[hidden]{display:none;}
-.ppx__arrow{width:36px;height:36px;border-radius:50%;border:none;background:rgba(210,210,215,.64);color:#1d1d1f;font-size:22px;line-height:1;cursor:pointer;padding:0 0 3px;}
-.ppx__arrow:hover{background:rgba(190,190,195,.8);}
-.ppx__dots{display:flex;gap:10px;background:rgba(210,210,215,.64);border-radius:999px;padding:10px 16px;}
-.ppx__dot{width:8px;height:8px;border-radius:50%;border:none;background:rgba(0,0,0,.35);padding:0;cursor:pointer;}
-.ppx__dot.is-sel{background:#1d1d1f;}
-.ppx__img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;mix-blend-mode:multiply;transition:opacity .2s;}
+.ppx__nav>*{pointer-events:auto;}
+.ppx__arrow{width:40px;height:40px;border-radius:50%;border:none;background:rgba(210,210,215,.64);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);color:#1d1d1f;font-size:26px;line-height:1;cursor:pointer;padding:0 0 4px;transition:background .15s;}
+.ppx__arrow:hover{background:rgba(190,190,195,.85);}
+.ppx__dots{display:flex;align-items:center;gap:12px;background:rgba(210,210,215,.64);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-radius:999px;padding:14px 20px;}
+.ppx__dot{width:8px;height:8px;border-radius:50%;border:none;background:rgba(0,0,0,.3);padding:0;cursor:pointer;transition:all .25s;}
+.ppx__dot.is-sel{background:#1d1d1f;width:22px;border-radius:999px;}
+.ppx__img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;mix-blend-mode:multiply;user-select:none;}
 .ppx__panel{max-width:420px;}
 .ppx__group{margin:0 0 24px;}
 .ppx__label{font-size:15px;font-weight:600;color:#1d1d1f;margin:0 0 12px;}
