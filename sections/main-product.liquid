@@ -48,7 +48,10 @@
           {%- else -%}
             <form method="post" action="{{ routes.cart_add_url }}" id="ppx-form-{{ section.id }}" accept-charset="UTF-8">
               <input type="hidden" name="id" id="ppx-vid-{{ section.id }}" value="{{ product.selected_or_first_available_variant.id }}">
+              <input type="hidden" name="properties[Grabado]" id="ppx-eng-t-{{ section.id }}" value="" disabled>
+              <input type="hidden" name="properties[Plazo del grabado]" id="ppx-eng-p-{{ section.id }}" value="Alrededor de 30 días hábiles" disabled>
               <button type="submit" class="ppx__cta">{{ section.settings.cta_label | default: 'Agregar al carrito' }}</button>
+              <p class="ppx-eng__foot" id="ppx-eng-note-{{ section.id }}" hidden>Con grabado personalizado, tu pedido puede demorar alrededor de 30 días hábiles.</p>
             </form>
           {%- endif -%}
         </div>
@@ -89,6 +92,9 @@
         function base(u){ return (u||"").split("?")[0]; }
         function money(c){ return "S/ "+Number(c/100).toLocaleString("es-PE",{maximumFractionDigits:0}); }
         var cur=[V[0].o[0],V[0].o[1],V[0].o[2]], done=[false,false,false], active=0; // posicion dentro de ORDER
+        var HANDLE={{ product.handle | json }};
+        var ENG=["airpods-pro-3","airpods-4","airpods-max-2","ipad-pro","ipad-air","ipad","ipad-mini"].indexOf(HANDLE)>-1;
+        var eng={on:false,txt:""}, engDone=false;
         function allowed(idx,sel){
           var out=[]; V.forEach(function(v){
             for(var p=0;p<ORDER.length;p++){ var j=ORDER[p]; if(j===idx) break; if(v.o[j]!==sel[j]) return; }
@@ -177,11 +183,41 @@
             cards.appendChild(c);
             if(stepsEl){ var li=document.createElement("li"); li.className=(done[idx]?"is-done ":"")+(isA?"is-active":""); li.textContent=NAMES[idx]; li.onclick=function(){ active=p; renderSteps(); }; stepsEl.appendChild(li); }
           });
+          if(ENG){
+            var pe=ORDER.length, aE=(active===pe), dE=engDone&&!aE;
+            var ce=document.createElement("section"); ce.className="ppx-card"+(aE?" is-active":"")+(dE?" is-done":"");
+            var he=document.createElement("button"); he.type="button"; he.className="ppx-card__h";
+            he.innerHTML=(dE?'<span class="ppx-card__n">&#10003;</span>':'')+'<span class="ppx-card__t">'+(dE?'<small>Personalización</small>':'<b>¿Quieres personalizarlo?</b>')+'</span>'+(dE?'<span class="ppx-card__v"></span><span class="ppx-card__c">Cambiar</span>':'');
+            if(dE) he.querySelector(".ppx-card__v").textContent=eng.on?('Grabado'+(eng.txt?(': '+eng.txt):'')):'Sin grabado';
+            he.onclick=function(){ active=(active===pe?-1:pe); renderSteps(); };
+            ce.appendChild(he);
+            if(aE){
+              var be=document.createElement("div"); be.className="ppx-card__b"; var lst=document.createElement("div"); lst.className="ppx-list";
+              [["Sin grabado","Lo recibes en el tiempo habitual de entrega.",false],["Añadir grabado","Gratis. Combina emojis, nombres, iniciales y números.",true]].forEach(function(o){
+                var b=document.createElement("button"); b.type="button"; b.className="ppx-size"+(eng.on===o[2]?" is-sel":"");
+                b.innerHTML='<span class="ppx-size__t"></span><span class="ppx-size__s"></span>'; b.children[0].textContent=o[0]; b.children[1].textContent=o[1];
+                b.onclick=function(){ eng.on=o[2]; if(!o[2]){ eng.txt=""; engDone=true; active=-1; } renderSteps(); update(false); };
+                lst.appendChild(b);
+              });
+              be.appendChild(lst);
+              if(eng.on){
+                var box=document.createElement("div"); box.className="ppx-eng";
+                box.innerHTML='<label class="ppx-eng__l">Texto del grabado</label><input type="text" class="ppx-eng__i" maxlength="30" placeholder="Ej: Ana ♥ 2026" autocomplete="off"><p class="ppx-eng__n"><strong>Tiempo de entrega:</strong> el grabado personalizado puede demorar alrededor de <strong>30 días hábiles</strong>. Si lo prefieres más rápido, elige «Sin grabado».</p><button type="button" class="ppx-eng__ok">Listo</button>';
+                var inp=box.querySelector("input"); inp.value=eng.txt; inp.oninput=function(){ eng.txt=inp.value; var t=$("ppx-eng-t"); if(t) t.value=eng.txt; update(false,true); };
+                box.querySelector(".ppx-eng__ok").onclick=function(){ engDone=true; active=-1; renderSteps(); update(false); };
+                be.appendChild(box);
+              }
+              ce.appendChild(be);
+            }
+            cards.appendChild(ce);
+            if(stepsEl){ var le=document.createElement("li"); le.className=(engDone?"is-done ":"")+(aE?"is-active":""); le.textContent="Grabado"; le.onclick=function(){ active=pe; renderSteps(); }; stepsEl.appendChild(le); }
+          }
         }
         function pick(idx,val){
           cur[idx]=val; normalize(cur); done[idx]=true;
           var p=ORDER.indexOf(idx), nxt=-1; for(var q=p+1;q<ORDER.length;q++){ if(!done[ORDER[q]]){ nxt=q; break; } }
           if(nxt===-1){ for(var q2=0;q2<ORDER.length;q2++){ if(!done[ORDER[q2]]){ nxt=q2; break; } } }
+          if(nxt===-1 && ENG && !engDone) nxt=ORDER.length;
           active=nxt; update(true);
         }
 
@@ -208,17 +244,20 @@
           var sizeMin=gmin;
           if(si>-1){ var m=null; V.forEach(function(x){ if(x.o[si]===cur[si]&&(m===null||x.price<m)) m=x.price; }); sizeMin=m===null?gmin:m; if(sizeMin>gmin) out.push([NAMES[si]+": "+cur[si],"+ "+money(sizeMin-gmin)]); }
           if(v.price>sizeMin) out.push([(ci>-1?"Configuración elegida":"Mejoras elegidas"),"+ "+money(v.price-sizeMin)]);
+          if(ENG && eng.on) out.push(["Grabado personalizado","Gratis · hasta 30 días hábiles"]);
           rows.innerHTML=out.map(function(r){ return '<div class="ppx-pricing__r"><span></span><span></span></div>'; }).join("");
           [].forEach.call(rows.children,function(el,i){ el.children[0].textContent=out[i][0]; el.children[1].textContent=out[i][1]; });
         }
-        function update(animate){
+        function update(animate,soft){
           var v=find(cur);
-          renderSteps(); summary(v);
+          if(!soft) renderSteps(); summary(v);
           updateImage(v);
           pricing(v);
           tween($("ppx-price"),v.price); tween($("ppx-bar-price"),v.price); shownPrice=v.price;
           var sel=$("ppx-bar-sel"); if(sel) sel.textContent=cur.filter(Boolean).join(" · ");
           var vid=$("ppx-vid"); if(vid) vid.value=v.id;
+          var et=$("ppx-eng-t"), ep=$("ppx-eng-p"); if(et&&ep){ et.disabled=!(ENG&&eng.on); ep.disabled=!(ENG&&eng.on); et.value=eng.txt; }
+          var nt=$("ppx-eng-note"); if(nt) nt.hidden=!(ENG&&eng.on);
           var cta=$("ppx-cta");
           if(cta && WA){ var digits=WA.replace(/[^0-9]/g,""); cta.href="https://wa.me/"+digits+"?text="+encodeURIComponent("Hola, me interesa el "+TITLE+" — "+cur.filter(Boolean).join(" / ")+"."); }
         }
@@ -332,6 +371,13 @@
 .ppx-card__t small{font-size:15px;font-weight:500;color:#6e6e73;}
 .ppx-cfg__who{font-size:12px;color:#0058b0;background:#e8f2fd;border-radius:999px;padding:5px 11px;text-align:center;white-space:normal;max-width:190px;}
 .ppx-cfg{align-items:flex-start;}
+.ppx-eng{margin-top:14px;padding:16px;border-radius:14px;background:#f5f5f7;}
+.ppx-eng__l{display:block;font-size:13px;color:#6e6e73;margin:0 0 6px;}
+.ppx-eng__i{width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #d2d2d7;border-radius:12px;font-size:16px;background:#fff;}
+.ppx-eng__i:focus{outline:2px solid #0071e3;border-color:transparent;}
+.ppx-eng__n{margin:12px 0;font-size:13.5px;line-height:1.45;color:#424245;}
+.ppx-eng__ok{background:#1d1d1f;color:#fff;border:0;border-radius:980px;padding:10px 22px;font-size:14px;cursor:pointer;}
+.ppx-eng__foot{margin:10px 2px 0;font-size:13px;color:#6e6e73;text-align:center;}
 .ppx-pricing{margin:18px 0 16px;padding:22px;border-radius:20px;background:#fff;border:1px solid #e0e0e5;}
 .ppx-pricing__h{margin:0 0 12px;font-size:18px;font-weight:600;color:#1d1d1f;}
 .ppx-pricing__r{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid #f0f0f3;font-size:14.5px;color:#424245;}
