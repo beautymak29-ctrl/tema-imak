@@ -14,8 +14,7 @@
       "settings": {
         "show_vendor": false,
         "variants_title": "Nuestras versiones",
-        "price_label": "Precio desde",
-        "storage_options": "512GB | 1TB | 2TB | 4TB"
+        "price_label": "Precio desde"
       }
     },
     "product-trust-bar": {
@@ -91,7 +90,7 @@
           "settings": {
             "image": "shopify://shop_images/pro2.webp",
             "heading": "Potencia extrema para mentes brillantes",
-            "content": "<p>Diseñada para quienes no aceptan límites. La nueva MacBook Pro con chips de la serie M4 ofrece un rendimiento gráfico revolucionario y una eficiencia térmica sin precedentes. Con la pantalla Liquid Retina XDR más avanzada del mundo, es la estación de trabajo definitiva para llevar tus proyectos del concepto a la realidad.</p>",
+            "content": "<p>Diseñada para quienes no aceptan límites. La nueva MacBook Pro llega con los chips M5, M5 Pro y M5 Max: más rendimiento para trabajar, crear y programar, con la pantalla Liquid Retina XDR y hasta 24 horas de reproducción de video. Elige 14 o 16 pulgadas y configúrala como la quieres.</p>",
             "reverse": false
           }
         },
@@ -100,7 +99,7 @@
           "settings": {
             "image": "shopify://shop_images/pro.webp",
             "heading": "",
-            "content": "<h3><strong>Características Principales (Bullet Points)</strong></h3><ul><li><strong>Chips M4 Pro y M4 Max:</strong> CPU de hasta 16 núcleos y GPU de hasta 40 núcleos para un renderizado 3D y edición de video 8K al instante.</li><li><strong>Pantalla Liquid Retina XDR:</strong> Brillo sostenido de 1,000 nits y tecnología ProMotion de <strong>120 Hz</strong> para un movimiento ultra fluido.</li><li><strong>Memoria Unificada de hasta 128 GB:</strong> Ejecuta múltiples apps profesionales pesadas simultáneamente sin una sola gota de sudor.</li><li><strong>Conectividad Profesional:</strong> Tres puertos Thunderbolt 4 (USB-C), ranura para tarjeta SDXC, puerto HDMI y MagSafe 3.</li><li><strong>Batería de larga duración:</strong> Hasta <strong>22 horas</strong> de autonomía, la mayor duración en la historia de una Mac.</li></ul>",
+            "content": "<h3><strong>Características principales</strong></h3><ul><li><strong>Chips M5, M5 Pro y M5 Max:</strong> el M5 con CPU de 10 núcleos y GPU de 10 núcleos; el M5 Pro con CPU de hasta 18 núcleos y GPU de hasta 20 núcleos; y el M5 Max con CPU de 18 núcleos y GPU de hasta 40 núcleos.</li><li><strong>Pantalla Liquid Retina XDR:</strong> brillo XDR de 1000 nits sostenido a pantalla completa y 1600 nits de pico, con ProMotion de hasta <strong>120 Hz</strong>. Opcional: pantalla Nano-texture.</li><li><strong>Memoria unificada de hasta 128 GB</strong> y almacenamiento SSD de hasta 8 TB (según el chip).</li><li><strong>Conectividad profesional:</strong> tres puertos Thunderbolt (USB-C), puerto HDMI, ranura para tarjeta SDXC y MagSafe 3.</li><li><strong>Batería de larga duración:</strong> hasta <strong>24 horas</strong> de reproducción de video, según el modelo.</li><li><strong>Cámara y sonido:</strong> cámara Center Stage de 12 MP con Vista del escritorio y sistema de seis altavoces con audio espacial.</li></ul>",
             "reverse": true
           }
         },
