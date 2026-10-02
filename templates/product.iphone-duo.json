@@ -103,10 +103,20 @@
           "settings": {
             "heading": ""
           }
+        },
+        "pi_it_1": {
+          "type": "image_text",
+          "settings": {
+            "image": "shopify://shop_images/iphone-duo-finish-select-night-sky-202609_4640cf30-b8ef-4899-b332-b6ec1d322fb1.png",
+            "heading": "Hola, hola.",
+            "content": "<p>El iPhone plegable de titanio: se abre y se hace grande.</p><ul><li><strong>Pantalla interior plegable</strong> de 7,6 pulgadas y pantalla exterior de 5,4 pulgadas, con ProMotion de hasta 120 Hz.</li><li><strong>Chip A20 Pro</strong> y Apple Intelligence.</li><li><strong>Cámara dual Fusion de 48 MP</strong> (principal y ultra gran angular), con zoom óptico 2x.</li><li><strong>Cámara frontal bajo la pantalla</strong> Center Stage de 12 MP.</li><li>Compatible con <strong>Apple Pencil (USB-C)</strong>.</li><li>Capacidades desde 256 GB hasta 2 TB, en Noche estrellada y Blanco estelar.</li></ul>",
+            "reverse": false
+          }
         }
       },
       "block_order": [
         "pi_text_1",
+        "pi_it_1",
         "pi_gallery_1"
       ],
       "settings": {

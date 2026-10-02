@@ -103,10 +103,20 @@
           "settings": {
             "heading": ""
           }
+        },
+        "pi_it_1": {
+          "type": "image_text",
+          "settings": {
+            "image": "shopify://shop_images/iphone-18-pro-max-finish-select-202609_3e951b52-81fc-453d-aed0-f91586250e42.png",
+            "heading": "Pro, un paso más allá.",
+            "content": "<p>El iPhone Pro con el chip <strong>A20 Pro</strong> y el sistema de cámaras Pro Fusion de 48 MP.</p><ul><li><strong>Pantalla Super Retina XDR</strong> de 6,3 o 6,9 pulgadas con ProMotion de hasta 120 Hz, Dynamic Island y Always-On. Brillo de hasta 3000 nits en exteriores.</li><li><strong>Cámara Pro Fusion de 48 MP:</strong> principal, ultra gran angular y teleobjetivo con zoom óptico de hasta 8x.</li><li><strong>Cámara frontal Center Stage de 18 MP.</strong></li><li><strong>Ceramic Shield 2</strong> al frente, resistente a salpicaduras, agua y polvo.</li><li><strong>Apple Intelligence</strong> y capacidades desde 256 GB hasta 2 TB.</li></ul>",
+            "reverse": false
+          }
         }
       },
       "block_order": [
         "pi_text_1",
+        "pi_it_1",
         "pi_gallery_1"
       ],
       "settings": {
