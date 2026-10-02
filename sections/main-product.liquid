@@ -139,7 +139,7 @@
           var parts=(s||"").split(" · "), chip=parts[0]||"", m=chip.match(/^(M\d(?: Pro| Max| Ultra)?)/), cores=chip.match(/(\d+)C\/(\d+)G/);
           return {chip:m?m[1]:chip, cpu:cores?cores[1]:"", gpu:cores?cores[2]:"", mem:parts[1]||"", ssd:parts[2]||""};
         }
-        function stepTitle(idx,isDone){ var k=kind(idx), nm=NAMES[idx]||"", q=/idioma/i.test(nm)?"¿En qué idioma quieres tu teclado?":(/capacidad|almacenamiento/i.test(nm)?"¿Cuánta capacidad necesitas?":(ASK[k]||("Elige tu "+nm.toLowerCase()))); return isDone ? ('<small>'+nm+'</small>') : ('<b>'+q+'</b>'); }
+        function stepTitle(idx,isDone){ var k=kind(idx), nm=NAMES[idx]||"", q=/idioma/i.test(nm)?"¿En qué idioma quieres tu teclado?":(/correa/i.test(nm)?"¿Qué correa prefieres?":(/capacidad|almacenamiento/i.test(nm)?"¿Cuánta capacidad necesitas?":(ASK[k]||("Elige tu "+nm.toLowerCase())))); return isDone ? ('<small>'+nm+'</small>') : ('<b>'+q+'</b>'); }
         function optionsHTML(idx){
           var k=kind(idx), vals=allowed(idx,cur), el=document.createElement("div");
           if(k==="color"){
