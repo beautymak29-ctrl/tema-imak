@@ -18,7 +18,6 @@
             "product": "ipad-pro",
             "card_title": "iPad Pro",
             "card_description": "",
-            "storage_options": "256GB | 512GB | 1TB | 2TB",
             "modal_heading": "",
             "modal_title_1": "",
             "modal_desc_1": "",
@@ -26,7 +25,7 @@
             "modal_desc_2": "",
             "modal_title_3": "",
             "modal_desc_3": "",
-            "modal_link": "",
+            "modal_link": "/products/ipad-pro",
             "modal_link_label": "Ver producto"
           }
         },
@@ -36,7 +35,6 @@
             "product": "ipad-air",
             "card_title": "iPad Air",
             "card_description": "",
-            "storage_options": "128GB | 256GB | 512GB | 1TB",
             "modal_heading": "",
             "modal_title_1": "",
             "modal_desc_1": "",
@@ -44,7 +42,7 @@
             "modal_desc_2": "",
             "modal_title_3": "",
             "modal_desc_3": "",
-            "modal_link": "",
+            "modal_link": "/products/ipad-air",
             "modal_link_label": "Ver producto"
           }
         },
@@ -54,7 +52,6 @@
             "product": "ipad",
             "card_title": "iPad",
             "card_description": "",
-            "storage_options": "128GB | 256GB",
             "modal_heading": "",
             "modal_title_1": "",
             "modal_desc_1": "",
@@ -62,7 +59,7 @@
             "modal_desc_2": "",
             "modal_title_3": "",
             "modal_desc_3": "",
-            "modal_link": "",
+            "modal_link": "/products/ipad",
             "modal_link_label": "Ver producto"
           }
         },
@@ -72,7 +69,6 @@
             "product": "ipad-mini",
             "card_title": "iPad mini",
             "card_description": "",
-            "storage_options": "128GB | 256GB | 512GB",
             "modal_heading": "",
             "modal_title_1": "",
             "modal_desc_1": "",
@@ -80,7 +76,7 @@
             "modal_desc_2": "",
             "modal_title_3": "",
             "modal_desc_3": "",
-            "modal_link": "",
+            "modal_link": "/products/ipad-mini",
             "modal_link_label": "Ver producto"
           }
         }
@@ -108,13 +104,17 @@
           "type": "feature",
           "settings": {
             "category": "Diseño",
-            "heading": "Beautifully thin. Incredibly capable.",
-            "modal_heading": "",
-            "modal_description": "",
-            "modal_description_2": "",
-            "modal_description_3": "",
+            "heading": "Delgado. Potente. Sorprendente.",
+            "modal_heading": "Un diseño que lo cambia todo.",
+            "modal_description": "<p><strong>Ultradelgado y ligero.</strong> El iPad Pro es el iPad más delgado jamás creado: cabe en cualquier mochila y se siente increíble en la mano.</p>",
+            "modal_description_2": "<p><strong>Aluminio reciclado.</strong> Una carcasa de aluminio de gran resistencia en acabados Plata y Negro Espacial.</p>",
+            "modal_description_3": "<p><strong>Listo para todo.</strong> Compatible con Apple Pencil y Magic Keyboard para estudiar, crear y trabajar donde quieras.</p>",
             "link": "",
-            "link_label": "Más información"
+            "link_label": "Más información",
+            "image": "shopify://shop_images/ipad-pg-ipad_f1.jpg",
+            "modal_image_1": "shopify://shop_images/ipad-pg-ipad_f1.jpg",
+            "modal_image_2": "shopify://shop_images/ipad-pg-ipad_f1.jpg",
+            "modal_image_3": "shopify://shop_images/ipad-pg-ipad_f1.jpg"
           }
         },
         "ipad_fg_2": {
@@ -122,12 +122,16 @@
           "settings": {
             "category": "Pantalla",
             "heading": "Una pantalla que lo dice todo.",
-            "modal_heading": "",
-            "modal_description": "",
-            "modal_description_2": "",
-            "modal_description_3": "",
+            "modal_heading": "Colores vivos, detalles nítidos.",
+            "modal_description": "<p><strong>Liquid Retina.</strong> Colores precisos y brillantes, ideales para ver series, dibujar o editar fotos.</p>",
+            "modal_description_2": "<p><strong>Tecnología avanzada.</strong> En el iPad Pro, la pantalla Ultra Retina XDR con tecnología OLED lleva el contraste y el brillo a otro nivel.</p>",
+            "modal_description_3": "<p><strong>Perfecta para escribir.</strong> Con la Apple Pencil, cada trazo responde con precisión y casi sin latencia.</p>",
             "link": "",
-            "link_label": "Más información"
+            "link_label": "Más información",
+            "image": "shopify://shop_images/ipad-pg-ipad_f2.jpg",
+            "modal_image_1": "shopify://shop_images/ipad-pg-ipad_f2.jpg",
+            "modal_image_2": "shopify://shop_images/ipad-pg-ipad_f2.jpg",
+            "modal_image_3": "shopify://shop_images/ipad-pg-ipad_f2.jpg"
           }
         },
         "ipad_fg_3": {
@@ -135,12 +139,16 @@
           "settings": {
             "category": "Chip y rendimiento",
             "heading": "Potencia de Mac. En un iPad.",
-            "modal_heading": "",
-            "modal_description": "",
-            "modal_description_2": "",
-            "modal_description_3": "",
+            "modal_heading": "Rendimiento sin concesiones.",
+            "modal_description": "<p><strong>Chips de Apple.</strong> Desde edición de video hasta juegos exigentes, el iPad lo mueve todo con fluidez.</p>",
+            "modal_description_2": "<p><strong>Todo el día con una carga.</strong> Batería de hasta 10 horas para navegar, ver video o trabajar sin enchufes.</p>",
+            "modal_description_3": "<p><strong>Conviértelo en tu estación de trabajo.</strong> Con Magic Keyboard tienes teclado, trackpad y multitarea reales.</p>",
             "link": "",
-            "link_label": "Más información"
+            "link_label": "Más información",
+            "image": "shopify://shop_images/ipad-pg-ipad_f3.jpg",
+            "modal_image_1": "shopify://shop_images/ipad-pg-ipad_f3.jpg",
+            "modal_image_2": "shopify://shop_images/ipad-pg-ipad_f3.jpg",
+            "modal_image_3": "shopify://shop_images/ipad-pg-ipad_f3.jpg"
           }
         },
         "ipad_fg_4": {
@@ -148,12 +156,16 @@
           "settings": {
             "category": "iPadOS y Apple Intelligence",
             "heading": "El sistema que lo hace todo posible.",
-            "modal_heading": "",
-            "modal_description": "",
-            "modal_description_2": "",
-            "modal_description_3": "",
+            "modal_heading": "iPadOS y Apple Intelligence.",
+            "modal_description": "<p><strong>iPadOS.</strong> Ventanas flotantes, multitarea y una barra de menús pensados para trabajar con el iPad como nunca.</p>",
+            "modal_description_2": "<p><strong>Apple Intelligence.</strong> Herramientas de escritura, imágenes y búsqueda que te ayudan a hacer más en menos tiempo.</p>",
+            "modal_description_3": "<p><strong>Tu ecosistema.</strong> Funciona en conjunto con tu iPhone, Mac y AirPods con Continuidad.</p>",
             "link": "",
-            "link_label": "Más información"
+            "link_label": "Más información",
+            "image": "shopify://shop_images/ipad-pg-ipad_f4.jpg",
+            "modal_image_1": "shopify://shop_images/ipad-pg-ipad_f4.jpg",
+            "modal_image_2": "shopify://shop_images/ipad-pg-ipad_f4.jpg",
+            "modal_image_3": "shopify://shop_images/ipad-pg-ipad_f4.jpg"
           }
         }
       },
@@ -177,8 +189,9 @@
             "badge_text": "Nuevo",
             "name": "Apple Pencil",
             "description": "Escribe, dibuja y anota con precisión pixel a pixel.",
-            "link": "",
-            "link_label": "Más información"
+            "link": "/search?q=Apple+Pencil",
+            "link_label": "Más información",
+            "image": "shopify://shop_images/ipad-pg-ipad_a1.png"
           }
         },
         "ipad_ac_2": {
@@ -188,8 +201,9 @@
             "badge_text": "Nuevo",
             "name": "Magic Keyboard",
             "description": "Convierte tu iPad en una estación de trabajo completa.",
-            "link": "",
-            "link_label": "Más información"
+            "link": "/search?q=Magic+Keyboard",
+            "link_label": "Más información",
+            "image": "shopify://shop_images/ipad-pg-ipad_a2.png"
           }
         }
       },
@@ -208,21 +222,24 @@
           "type": "tab",
           "settings": {
             "tab_label": "iPad y Mac",
-            "text": "Con Sidecar puedes usar tu iPad como segunda pantalla de tu Mac, de forma inalámbrica o con cable."
+            "text": "Con Sidecar puedes usar tu iPad como segunda pantalla de tu Mac, de forma inalámbrica o con cable.",
+            "image": "shopify://shop_images/ipad-pg-ipad_e1.png"
           }
         },
         "ipad_et_2": {
           "type": "tab",
           "settings": {
             "tab_label": "iPad y iPhone",
-            "text": "Continuidad te permite empezar algo en tu iPhone y retomarlo en el iPad sin perder ni un segundo."
+            "text": "Continuidad te permite empezar algo en tu iPhone y retomarlo en el iPad sin perder ni un segundo.",
+            "image": "shopify://shop_images/ipad-pg-ipad_e2.png"
           }
         },
         "ipad_et_3": {
           "type": "tab",
           "settings": {
             "tab_label": "iPad y AirPods",
-            "text": "Los AirPods se conectan al instante con tu iPad para una experiencia de audio inmersiva."
+            "text": "Los AirPods se conectan al instante con tu iPad para una experiencia de audio inmersiva.",
+            "image": "shopify://shop_images/ipad-pg-ipad_e3.png"
           }
         }
       },
