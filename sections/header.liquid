@@ -23,6 +23,18 @@
         {%- for link in linklists[section.settings.menu].links -%}
           <li class="hd__nav-item"><a href="{{ link.url }}" class="hd__nav-link{% if link.active %} hd__nav-link--active{% endif %}"{% if link.current %} aria-current="page"{% endif %}>{{ link.title | escape }}</a></li>
         {%- endfor -%}
+        {%- assign acc = collections['accesorios'] -%}
+        {%- if acc != blank -%}
+        <li class="hd__nav-item hd__nav-item--drop">
+          <a href="{{ acc.url }}" class="hd__nav-link{% if request.path contains '/collections/accesorios' or request.path contains '/collections/correas' %} hd__nav-link--active{% endif %}" aria-haspopup="true">Accesorios</a>
+          <ul class="hd__sub" role="list">
+            <li><a href="{{ acc.url }}">Todos los accesorios</a></li>
+            {%- if collections['accesorios-para-mac'].products_count > 0 -%}<li><a href="{{ collections['accesorios-para-mac'].url }}">Para Mac</a></li>{%- endif -%}
+            {%- if collections['accesorios-para-ipad'].products_count > 0 -%}<li><a href="{{ collections['accesorios-para-ipad'].url }}">Para iPad</a></li>{%- endif -%}
+            {%- if collections['correas-apple-watch'].products_count > 0 -%}<li><a href="{{ collections['correas-apple-watch'].url }}">Correas Apple Watch</a></li>{%- endif -%}
+          </ul>
+        </li>
+        {%- endif -%}
       </ul>
     </nav>
 
@@ -63,6 +75,12 @@
             </a>
           </li>
         {%- endfor -%}
+        {%- if acc != blank -%}
+        <li class="hd__mobile-item"><a href="{{ acc.url }}" class="hd__mobile-link">Accesorios</a></li>
+        {%- if collections['accesorios-para-mac'].products_count > 0 -%}<li class="hd__mobile-item hd__mobile-item--sub"><a href="{{ collections['accesorios-para-mac'].url }}" class="hd__mobile-link">Para Mac</a></li>{%- endif -%}
+        {%- if collections['accesorios-para-ipad'].products_count > 0 -%}<li class="hd__mobile-item hd__mobile-item--sub"><a href="{{ collections['accesorios-para-ipad'].url }}" class="hd__mobile-link">Para iPad</a></li>{%- endif -%}
+        {%- if collections['correas-apple-watch'].products_count > 0 -%}<li class="hd__mobile-item hd__mobile-item--sub"><a href="{{ collections['correas-apple-watch'].url }}" class="hd__mobile-link">Correas Apple Watch</a></li>{%- endif -%}
+        {%- endif -%}
       </ul>
     </nav>
   </div>
@@ -79,6 +97,12 @@
 .hd__search-input::placeholder{color:inherit;opacity:.5;}
 .hd__search-close{flex:0 0 auto;background:none;border:none;color:inherit;font-size:26px;line-height:1;cursor:pointer;padding:0 4px;}
 .hd__search-close:hover{opacity:.7;}
+.hd__nav-item--drop{position:relative;}
+.hd__sub{position:absolute;top:100%;left:50%;transform:translateX(-50%);min-width:210px;margin:0;padding:10px 0;list-style:none;background:rgba(22,22,23,.97);border-radius:14px;box-shadow:0 12px 32px rgba(0,0,0,.35);opacity:0;visibility:hidden;transition:opacity .15s;z-index:60;}
+.hd__nav-item--drop:hover .hd__sub,.hd__nav-item--drop:focus-within .hd__sub{opacity:1;visibility:visible;}
+.hd__sub a{display:block;padding:9px 20px;color:#e8e8ed;text-decoration:none;font-size:14px;white-space:nowrap;}
+.hd__sub a:hover{color:#fff;background:rgba(255,255,255,.08);}
+.hd__mobile-item--sub .hd__mobile-link{padding-left:28px;font-size:.92em;opacity:.85;}
 </style>
 
 <script>
