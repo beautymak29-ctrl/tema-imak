@@ -16,7 +16,7 @@
           "type": "product_card",
           "settings": {
             "product": "apple-watch-ultra-3",
-            "card_title": "Apple Watch Ultra 2",
+            "card_title": "Apple Watch Ultra 3",
             "card_description": "",
             "storage_options": "",
             "modal_heading": "",
@@ -26,7 +26,7 @@
             "modal_desc_2": "",
             "modal_title_3": "",
             "modal_desc_3": "",
-            "modal_link": "",
+            "modal_link": "/products/apple-watch-ultra-3",
             "modal_link_label": "Ver producto"
           }
         },
@@ -34,7 +34,7 @@
           "type": "product_card",
           "settings": {
             "product": "apple-watch-series-11",
-            "card_title": "Apple Watch Series 10",
+            "card_title": "Apple Watch Series 11",
             "card_description": "",
             "storage_options": "",
             "modal_heading": "",
@@ -44,7 +44,7 @@
             "modal_desc_2": "",
             "modal_title_3": "",
             "modal_desc_3": "",
-            "modal_link": "",
+            "modal_link": "/products/apple-watch-series-11",
             "modal_link_label": "Ver producto"
           }
         },
@@ -52,7 +52,7 @@
           "type": "product_card",
           "settings": {
             "product": "apple-watch-se-3",
-            "card_title": "Apple Watch SE",
+            "card_title": "Apple Watch SE 3",
             "card_description": "",
             "storage_options": "",
             "modal_heading": "",
@@ -62,7 +62,7 @@
             "modal_desc_2": "",
             "modal_title_3": "",
             "modal_desc_3": "",
-            "modal_link": "",
+            "modal_link": "/products/apple-watch-se-3",
             "modal_link_label": "Ver producto"
           }
         }
