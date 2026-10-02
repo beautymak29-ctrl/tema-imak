@@ -1,0 +1,76 @@
+{%- assign h = product.handle -%}
+{%- assign tag = section.settings.tagline -%}
+{%- if tag == blank -%}
+  {%- case h -%}
+    {%- when 'iphone-18-pro' -%}{%- assign tag = 'Pro, un paso más allá.' -%}
+    {%- when 'iphone-duo' -%}{%- assign tag = 'Hola, hola.' -%}
+    {%- when 'iphone-17-pro' -%}{%- assign tag = 'Un diseño innovador, un rendimiento sin precedentes.' -%}
+    {%- when 'iphone-17' -%}{%- assign tag = 'Aún más sorprendente. Aún más resistente.' -%}
+    {%- when 'iphone-16' -%}{%- assign tag = 'Rendimiento increíble. Diseñado para durar.' -%}
+    {%- when 'iphone-15' -%}{%- assign tag = 'Un clásico confiable.' -%}
+    {%- when 'macbook-pro' -%}{%- assign tag = 'Ahora con los chips M5, M5 Pro y M5 Max.' -%}
+    {%- when 'macbook-air-13-5m', 'macbook-air-15-m5' -%}{%- assign tag = 'Ahora con los superpoderes del chip M5.' -%}
+    {%- when 'airpods-pro-3' -%}{%- assign tag = 'La mejor Cancelación Activa de Ruido del mundo.' -%}
+    {%- else -%}{%- assign tag = product.type -%}
+  {%- endcase -%}
+{%- endif -%}
+{%- assign intro = section.settings.text -%}
+{%- if intro == blank -%}{%- assign intro = product.description | strip_html | truncate: 260 -%}{%- endif -%}
+<section class="pint{% if section.settings.dark %} pint--dark{% endif %}">
+  <div class="pint__in">
+    {%- if product.tags contains 'Nuevo' or section.settings.badge != blank -%}<p class="pint__badge">{{ section.settings.badge | default: 'Nuevo' }}</p>{%- endif -%}
+    <h1 class="pint__title">{{ product.title }}</h1>
+    {%- if tag != blank -%}<p class="pint__tag">{{ tag }}</p>{%- endif -%}
+    {%- if intro != blank -%}<p class="pint__text">{{ intro }}</p>{%- endif -%}
+    <div class="pint__cta">
+      <a class="pint__buy" href="#configurador">{{ section.settings.cta | default: 'Comprar' }}</a>
+      <a class="pint__more" href="#detalles">Ver detalles</a>
+    </div>
+    <div class="pint__media">
+      {%- if section.settings.hero != blank -%}
+        {{ section.settings.hero | image_url: width: 2000 | image_tag: loading: 'eager', class: 'pint__img pint__img--hero', alt: product.title }}
+      {%- elsif product.featured_image != blank -%}
+        {{ product.featured_image | image_url: width: 1400 | image_tag: loading: 'eager', class: 'pint__img', alt: product.title }}
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+<div id="detalles" class="pint__anchor"></div>
+<style>
+html{scroll-behavior:smooth;}
+.pint{background:#f5f5f7;color:#1d1d1f;border-radius:28px;margin:16px 16px 8px;padding:56px 24px 0;overflow:hidden;text-align:center;}
+.pint--dark{background:#000;color:#f5f5f7;}
+.pint__in{max-width:1000px;margin:0 auto;}
+.pint__badge{margin:0 0 10px;font-size:15px;font-weight:600;color:#bf4800;letter-spacing:.02em;}
+.pint--dark .pint__badge{color:#ff9f43;}
+.pint__title{margin:0;font-size:clamp(40px,6.6vw,76px);line-height:1.05;font-weight:700;letter-spacing:-.02em;}
+.pint__tag{margin:12px 0 0;font-size:clamp(20px,2.6vw,30px);font-weight:500;}
+.pint__text{margin:18px auto 0;max-width:680px;font-size:17px;line-height:1.5;color:#6e6e73;}
+.pint--dark .pint__text{color:#a1a1a6;}
+.pint__cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:26px;}
+.pint__buy{background:#0071e3;color:#fff;border-radius:980px;padding:13px 30px;font-size:17px;text-decoration:none;font-weight:500;}
+.pint__buy:hover{background:#0077ed;}
+.pint__more{border:1px solid #0071e3;color:#0071e3;border-radius:980px;padding:12px 28px;font-size:17px;text-decoration:none;}
+.pint--dark .pint__more{color:#2997ff;border-color:#2997ff;}
+.pint__media{margin-top:28px;display:flex;justify-content:center;}
+.pint__img{width:min(560px,86%);height:auto;max-height:520px;object-fit:contain;mix-blend-mode:multiply;}
+.pint--dark .pint__img{mix-blend-mode:normal;}
+.pint__img--hero{width:100%;max-width:none;max-height:none;mix-blend-mode:normal;}
+.pint__anchor{position:relative;top:-70px;}
+.pp-header{display:none;}
+@media (max-width:749px){.pint{padding:40px 16px 0;margin:12px;}}
+</style>
+{% schema %}
+{
+  "name": "Introducción del equipo",
+  "settings": [
+    { "type": "text", "id": "badge", "label": "Etiqueta (ej. Nuevo)" },
+    { "type": "text", "id": "tagline", "label": "Frase principal" },
+    { "type": "textarea", "id": "text", "label": "Texto de introducción (si está vacío usa la descripción)" },
+    { "type": "image_picker", "id": "hero", "label": "Imagen grande (si está vacía usa la foto del producto)" },
+    { "type": "checkbox", "id": "dark", "label": "Fondo oscuro", "default": false },
+    { "type": "text", "id": "cta", "label": "Texto del botón", "default": "Comprar" }
+  ],
+  "presets": [ { "name": "Introducción del equipo" } ]
+}
+{% endschema %}
