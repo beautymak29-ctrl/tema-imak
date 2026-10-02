@@ -16,7 +16,7 @@
           "type": "product_card",
           "settings": {
             "product": "airpods-pro-3",
-            "card_title": "",
+            "card_title": "AirPods Pro 3",
             "card_description": "",
             "modal_heading": "",
             "modal_title_1": "",
@@ -25,7 +25,7 @@
             "modal_desc_2": "",
             "modal_title_3": "",
             "modal_desc_3": "",
-            "modal_link": "",
+            "modal_link": "/products/airpods-pro-3",
             "modal_link_label": "Ver producto"
           }
         },
@@ -42,7 +42,7 @@
             "modal_desc_2": "",
             "modal_title_3": "",
             "modal_desc_3": "",
-            "modal_link": "",
+            "modal_link": "/products/airpods-4",
             "modal_link_label": "Ver producto"
           }
         },
@@ -50,8 +50,8 @@
           "type": "product_card",
           "disabled": true,
           "settings": {
-            "product": "",
-            "card_title": "AirPods Pro 2",
+            "product": "airpods-max-2",
+            "card_title": "AirPods Max",
             "card_description": "",
             "modal_heading": "",
             "modal_title_1": "",
@@ -60,7 +60,7 @@
             "modal_desc_2": "",
             "modal_title_3": "",
             "modal_desc_3": "",
-            "modal_link": "",
+            "modal_link": "/products/airpods-max-2",
             "modal_link_label": "Ver producto"
           }
         }
@@ -87,13 +87,17 @@
           "type": "feature",
           "settings": {
             "category": "Audio",
-            "heading": "Sonido envolvente con Audio Espacial.",
-            "modal_heading": "",
-            "modal_description": "",
-            "modal_description_2": "",
-            "modal_description_3": "",
+            "heading": "Audio Espacial personalizado.",
+            "modal_heading": "Audio Espacial personalizado.",
+            "modal_description": "<p><strong>Sonido que te rodea.</strong> El Audio Espacial con seguimiento dinámico de cabeza hace que la música y las películas suenen a tu alrededor.</p>",
+            "modal_description_2": "<p><strong>Ajuste personalizado.</strong> Calibra el sonido a tu oído con el escaneo de la TrueDepth del iPhone.</p>",
+            "modal_description_3": "<p><strong>Calidad de estudio.</strong> Graves profundos y voces nítidas en cada canción.</p>",
             "link": "",
-            "link_label": "Más información"
+            "link_label": "Más información",
+            "image": "shopify://shop_images/airpods-pg-ap2_f1.jpg",
+            "modal_image_1": "shopify://shop_images/airpods-pg-ap2_f1.jpg",
+            "modal_image_2": "shopify://shop_images/airpods-pg-ap2_f1.jpg",
+            "modal_image_3": "shopify://shop_images/airpods-pg-ap2_f1.jpg"
           }
         },
         "airpods_fg_2": {
@@ -101,12 +105,16 @@
           "settings": {
             "category": "Cancelación de ruido",
             "heading": "Silencio total, cuando lo necesites.",
-            "modal_heading": "",
-            "modal_description": "",
-            "modal_description_2": "",
-            "modal_description_3": "",
+            "modal_heading": "Silencio total, cuando lo necesites.",
+            "modal_description": "<p><strong>Cancelación Activa de Ruido.</strong> Bloquea el ruido del entorno para que te concentres en lo que escuchas.</p>",
+            "modal_description_2": "<p><strong>Modo Ambiente.</strong> Escucha lo que pasa a tu alrededor sin quitarte los AirPods.</p>",
+            "modal_description_3": "<p><strong>Audio Adaptativo.</strong> Combina ambos modos según tu entorno de forma automática.</p>",
             "link": "",
-            "link_label": "Más información"
+            "link_label": "Más información",
+            "image": "shopify://shop_images/airpods-pg-ap2_f2.png",
+            "modal_image_1": "shopify://shop_images/airpods-pg-ap2_f2.png",
+            "modal_image_2": "shopify://shop_images/airpods-pg-ap2_f2.png",
+            "modal_image_3": "shopify://shop_images/airpods-pg-ap2_f2.png"
           }
         },
         "airpods_fg_3": {
@@ -114,12 +122,16 @@
           "settings": {
             "category": "Chip H2",
             "heading": "Inteligencia que se escucha.",
-            "modal_heading": "",
-            "modal_description": "",
-            "modal_description_2": "",
-            "modal_description_3": "",
+            "modal_heading": "Inteligencia que se escucha.",
+            "modal_description": "<p><strong>Chip H2.</strong> Procesa el audio en tiempo real para un sonido más limpio y natural.</p>",
+            "modal_description_2": "<p><strong>Detección de conversación.</strong> Baja el volumen cuando empiezas a hablar y lo restablece al terminar.</p>",
+            "modal_description_3": "<p><strong>Llamadas más claras.</strong> Micrófonos avanzados aíslan tu voz del ruido de fondo.</p>",
             "link": "",
-            "link_label": "Más información"
+            "link_label": "Más información",
+            "image": "shopify://shop_images/airpods-pg-ap2_f3.jpg",
+            "modal_image_1": "shopify://shop_images/airpods-pg-ap2_f3.jpg",
+            "modal_image_2": "shopify://shop_images/airpods-pg-ap2_f3.jpg",
+            "modal_image_3": "shopify://shop_images/airpods-pg-ap2_f3.jpg"
           }
         },
         "airpods_fg_4": {
@@ -127,12 +139,16 @@
           "settings": {
             "category": "Batería",
             "heading": "Horas y horas de escucha.",
-            "modal_heading": "",
-            "modal_description": "",
-            "modal_description_2": "",
-            "modal_description_3": "",
+            "modal_heading": "Horas y horas de escucha.",
+            "modal_description": "<p><strong>Todo el día.</strong> Hasta 8 horas de escucha con una sola carga, con la cancelación de ruido activada.</p>",
+            "modal_description_2": "<p><strong>Estuche de carga.</strong> Varias cargas extra para que la música no pare, con carga USB-C o MagSafe.</p>",
+            "modal_description_3": "<p><strong>Carga rápida.</strong> Unos minutos en el estuche te dan horas de escucha.</p>",
             "link": "",
-            "link_label": "Más información"
+            "link_label": "Más información",
+            "image": "shopify://shop_images/airpods-pg-ap2_f4.jpg",
+            "modal_image_1": "shopify://shop_images/airpods-pg-ap2_f4.jpg",
+            "modal_image_2": "shopify://shop_images/airpods-pg-ap2_f4.jpg",
+            "modal_image_3": "shopify://shop_images/airpods-pg-ap2_f4.jpg"
           }
         }
       },
@@ -156,8 +172,9 @@
             "badge_text": "Nuevo",
             "name": "Estuche de carga MagSafe",
             "description": "Carga inalámbrica y protección premium para tus AirPods.",
-            "link": "",
-            "link_label": "Más información"
+            "link": "/search?q=AirPods+Pro+3",
+            "link_label": "Más información",
+            "image": "shopify://shop_images/airpods-pg-ap2_a1.png"
           }
         },
         "airpods_ac_2": {
@@ -167,8 +184,9 @@
             "badge_text": "Nuevo",
             "name": "Grabado gratis",
             "description": "Personaliza tus AirPods con un grabado único y gratuito.",
-            "link": "",
-            "link_label": "Más información"
+            "link": "/search?q=AirPods+4",
+            "link_label": "Más información",
+            "image": "shopify://shop_images/airpods-pg-ap2_a2.png"
           }
         }
       },
@@ -187,21 +205,24 @@
           "type": "tab",
           "settings": {
             "tab_label": "AirPods e iPhone",
-            "text": "Los AirPods se conectan automáticamente a tu iPhone. Cambian de dispositivo sin que hagas nada gracias al chip H2."
+            "text": "Los AirPods se conectan automáticamente a tu iPhone. Cambian de dispositivo sin que hagas nada gracias al chip H2.",
+            "image": "shopify://shop_images/airpods-pg-ap2_e1.png"
           }
         },
         "airpods_et_2": {
           "type": "tab",
           "settings": {
             "tab_label": "AirPods y Apple Watch",
-            "text": "Controla la música y las llamadas directamente desde tu muñeca. Conexión instantánea y sin complicaciones."
+            "text": "Controla la música y las llamadas directamente desde tu muñeca. Conexión instantánea y sin complicaciones.",
+            "image": "shopify://shop_images/airpods-pg-ap2_e2.png"
           }
         },
         "airpods_et_3": {
           "type": "tab",
           "settings": {
             "tab_label": "AirPods y Mac",
-            "text": "Audio espacial personalizado en tu Mac. Los AirPods cambian automáticamente cuando empiezas a reproducir contenido."
+            "text": "Audio espacial personalizado en tu Mac. Los AirPods cambian automáticamente cuando empiezas a reproducir contenido.",
+            "image": "shopify://shop_images/airpods-pg-ap2_e3.png"
           }
         }
       },
