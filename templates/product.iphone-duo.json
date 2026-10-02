@@ -123,9 +123,16 @@
         "title": "Lo más destacado",
         "subtitle": ""
       }
+    },
+    "product-intro": {
+      "type": "product-intro",
+      "settings": {
+        "hero": "shopify://shop_images/hero_iphone_duo_announce__fh4u8yzndpe2_large_2x_03548ab5-fdbb-4c56-95be-ff5ada0cdd2a.jpg"
+      }
     }
   },
   "order": [
+    "product-intro",
     "main",
     "product-trust-bar",
     "product-info"

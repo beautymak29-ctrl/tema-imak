@@ -14,8 +14,7 @@
       "settings": {
         "show_vendor": false,
         "variants_title": "Nuestras versiones",
-        "price_label": "Precio desde",
-        "storage_options": "No aplica"
+        "price_label": "Precio desde"
       }
     },
     "product-trust-bar": {
@@ -121,9 +120,14 @@
         "title": "Lo más destacado",
         "subtitle": ""
       }
+    },
+    "product-intro": {
+      "type": "product-intro",
+      "settings": {}
     }
   },
   "order": [
+    "product-intro",
     "main",
     "product-trust-bar",
     "product-info"

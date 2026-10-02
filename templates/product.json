@@ -113,9 +113,14 @@
         "title": "Lo más destacado",
         "subtitle": ""
       }
+    },
+    "product-intro": {
+      "type": "product-intro",
+      "settings": {}
     }
   },
   "order": [
+    "product-intro",
     "main",
     "product-trust-bar",
     "product-info"

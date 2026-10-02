@@ -113,9 +113,14 @@
       "settings": {
         "title": ""
       }
+    },
+    "product-intro": {
+      "type": "product-intro",
+      "settings": {}
     }
   },
   "order": [
+    "product-intro",
     "main",
     "product-trust-bar",
     "product-info"
