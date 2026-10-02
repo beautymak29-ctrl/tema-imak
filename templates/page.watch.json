@@ -162,7 +162,7 @@
             "badge_text": "Nuevo",
             "name": "Correas Apple Watch",
             "description": "Personaliza tu Apple Watch con correas de todos los estilos y materiales.",
-            "image": "shopify://shop_images/correa-milanese-loop-natural_046d6bd7-367e-4f7e-bc98-9b72e49c31cc.jpg",
+            "image": "shopify://shop_images/watch-correas-c.jpg",
             "link": "/collections/correas-apple-watch",
             "link_label": "Más información"
           }
@@ -174,8 +174,8 @@
             "badge_text": "Nuevo",
             "name": "Cargador MagSafe",
             "description": "Carga tu Apple Watch de forma rápida y sencilla con el cargador magnético.",
-            "image": "shopify://shop_images/cargador-magsafe_d674da8b-e221-43a0-b63d-ddcfe1a9749e.jpg",
-            "link": "",
+            "image": "shopify://shop_images/watch-cargador-c.jpg",
+            "link": "/search?q=MagSafe",
             "link_label": "Más información"
           }
         }
