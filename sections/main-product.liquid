@@ -153,7 +153,7 @@
               b.innerHTML='<span class="ppx-cfg__l"><span class="ppx-cfg__chip"></span><span class="ppx-cfg__spec"></span></span><span class="ppx-cfg__r"><span class="ppx-cfg__who"></span></span>';
               var parts=val.split(" · ");
               b.querySelector(".ppx-cfg__chip").textContent=parts[0]+(/^M\d/.test(parts[0])?" chip":"");
-              b.querySelector(".ppx-cfg__spec").textContent=parts.slice(1).join(" · ")+(parts[1]&&/GB/.test(parts[1])?" de memoria":"");
+              b.querySelector(".ppx-cfg__spec").textContent=(parts[1]?(/GB/.test(parts[1])?parts[1]+" de memoria":parts[1]):"")+(parts[2]?" · "+parts[2]+" de SSD":"");
               var who=(function(){ var m=parts[0].match(/^(M\d(?: Pro| Max| Ultra)?)/); return m?(WHO[m[1]]||""):""; })();
               b.querySelector(".ppx-cfg__who").textContent=who;
               b.onclick=function(){ pick(idx,val); }; el.appendChild(b);
