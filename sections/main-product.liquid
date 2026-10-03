@@ -136,7 +136,8 @@
           var parts=(s||"").split(" · "), chip=parts[0]||"", m=chip.match(/^(M\d(?: Pro| Max| Ultra)?)/), cores=chip.match(/(\d+)C\/(\d+)G/);
           return {chip:m?m[1]:chip, cpu:cores?cores[1]:"", gpu:cores?cores[2]:"", mem:parts[1]||"", ssd:parts[2]||""};
         }
-        function stepTitle(idx,isDone){ var k=kind(idx); return isDone ? ('<small>'+NAMES[idx]+'</small>') : ('<b>'+(ASK[k]||("Elige tu "+NAMES[idx].toLowerCase()))+'</b>'); }
+        function askTxt(idx){ var n=NAMES[idx]||"", k=kind(idx); if(/talla/i.test(n)) return "¿Qué talla de correa necesitas?"; if(/correa/i.test(n)) return "¿Qué correa prefieres?"; if(/caja/i.test(n)) return "¿Qué caja prefieres?"; if(/capacidad/i.test(n)) return "¿Cuánto almacenamiento necesitas?"; if(/pantalla/i.test(n)) return "¿Qué pantalla prefieres?"; return ASK[k]||("Elige tu "+n.toLowerCase()); }
+        function stepTitle(idx,isDone){ var k=kind(idx); return isDone ? ('<small>'+NAMES[idx]+'</small>') : ('<b>'+askTxt(idx)+'</b>'); }
         function optionsHTML(idx){
           var k=kind(idx), vals=allowed(idx,cur), el=document.createElement("div");
           if(k==="color"){
