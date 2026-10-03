@@ -12,22 +12,6 @@
     "product-family": {
       "type": "home-cards",
       "blocks": {
-        "card_iphone": {
-          "type": "promo_card",
-          "settings": {
-            "card_size": "full",
-            "theme": "light",
-            "badge": "",
-            "heading": "iPhone",
-            "subheading": "Dile hola a la nueva generación de iPhone.",
-            "availability": "",
-            "image": "shopify://shop_images/home-iphone-nuevos.png",
-            "link_1": "/pages/iphone",
-            "link_1_label": "Más información",
-            "link_2": "shopify://pages/comparar",
-            "link_2_label": "Comparar"
-          }
-        },
         "card_macbook_pro": {
           "type": "promo_card",
           "settings": {
@@ -53,7 +37,7 @@
             "heading": "iPad Air",
             "subheading": "Ahora con los superpoderes del chip M4.",
             "availability": "Consulta la disponibilidad más adelante.",
-            "image": "shopify://shop_images/home-ipad-air.png",
+            "image": "shopify://shop_images/home-apple-ipad-air-m4.jpg",
             "link_1": "/products/ipad-air",
             "link_1_label": "Más información",
             "link_2": "/products/ipad-air",
@@ -80,12 +64,12 @@
           "type": "promo_card",
           "settings": {
             "card_size": "half",
-            "theme": "dark",
+            "theme": "light",
             "badge": "",
             "heading": "MacBook Air",
             "subheading": "Ahora con los superpoderes del chip M5.",
             "availability": "Consulta la disponibilidad más adelante.",
-            "image": "shopify://shop_images/hero_endframe__fwev9ebh42mq_xlarge.jpg",
+            "image": "shopify://shop_images/home-apple-macbook-air-m5.jpg",
             "link_1": "/products/macbook-air-13-5m",
             "link_1_label": "Más información",
             "link_2": "/products/macbook-air-13-5m",
@@ -96,12 +80,12 @@
           "type": "promo_card",
           "settings": {
             "card_size": "half",
-            "theme": "dark",
+            "theme": "light",
             "badge": "",
             "heading": "AirPods Pro 3",
             "subheading": "La mejor Cancelación Activa de Ruido del mundo dentro del oído.",
             "availability": "",
-            "image": "shopify://shop_images/istanbul-turkey-june-1-2022-600nw-2202194247.webp",
+            "image": "shopify://shop_images/home-apple-airpods-pro-3.jpg",
             "link_1": "/products/airpods-pro-3",
             "link_1_label": "Más información",
             "link_2": "/products/airpods-pro-3",
@@ -155,12 +139,43 @@
             "link_2": "/products/iphone-duo",
             "link_2_label": "Ver colores"
           }
+        },
+        "card_iphone_17_pro": {
+          "type": "promo_card",
+          "settings": {
+            "card_size": "half",
+            "theme": "light",
+            "badge": "",
+            "heading": "iPhone 17 Pro",
+            "subheading": "Pro de principio a fin.",
+            "image": "shopify://shop_images/home-iphone-17-pro.jpg",
+            "link_1": "/products/iphone-17-pro",
+            "link_1_label": "Más información",
+            "link_2": "/products/iphone-17-pro",
+            "link_2_label": "Comprar"
+          }
+        },
+        "card_iphone_17": {
+          "type": "promo_card",
+          "settings": {
+            "card_size": "half",
+            "theme": "light",
+            "badge": "",
+            "heading": "iPhone 17",
+            "subheading": "Todo lo que quieres. Y más.",
+            "image": "shopify://shop_images/home-iphone-17.jpg",
+            "link_1": "/products/iphone-17",
+            "link_1_label": "Más información",
+            "link_2": "/products/iphone-17",
+            "link_2_label": "Comprar"
+          }
         }
       },
       "block_order": [
         "card_iphone_18_pro",
         "card_iphone_duo",
-        "card_iphone",
+        "card_iphone_17_pro",
+        "card_iphone_17",
         "card_macbook_pro",
         "card_ipad_air",
         "card_watch",
