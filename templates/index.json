@@ -48,16 +48,16 @@
           "type": "promo_card",
           "settings": {
             "card_size": "half",
-            "theme": "light",
-            "badge": "",
-            "heading": "Apple Watch Series 11",
-            "subheading": "Una gran forma de cuidar tu salud.",
+            "theme": "dark",
+            "badge": "Nuevo",
+            "heading": "Apple Watch Ultra 4",
+            "subheading": "Una batería que no podrás agotar.",
             "availability": "",
-            "image": "shopify://shop_images/4763753_tradeon_panel_SV-12550c24-7975-462a-b4d5-3d8807e52d54.webp",
-            "link_1": "/products/apple-watch-series-11",
+            "image": "shopify://shop_images/home-apple-ultra4.jpg",
+            "link_1": "/pages/watch",
             "link_1_label": "Más información",
-            "link_2": "/products/apple-watch-series-11",
-            "link_2_label": "Comprar"
+            "link_2": "/pages/watch",
+            "link_2_label": "Consultar"
           }
         },
         "card_macbook_air": {
@@ -117,7 +117,7 @@
             "heading": "iPhone 18 Pro",
             "subheading": "Pro, un paso más allá.",
             "availability": "Pro y Pro Max, en Negro, Burdeos, Glaciar y Plata.",
-            "image": "shopify://shop_images/hero18_c.jpg",
+            "image": "shopify://shop_images/home-apple-iphone18.jpg",
             "link_1": "/products/iphone-18-pro",
             "link_1_label": "Más información",
             "link_2": "/products/iphone-18-pro",
@@ -133,49 +133,34 @@
             "heading": "iPhone Duo",
             "subheading": "Hola, hola.",
             "availability": "El iPhone plegable. Consulta disponibilidad y entrega en Lima.",
-            "image": "shopify://shop_images/heroduo_c.jpg",
+            "image": "shopify://shop_images/home-apple-duo.jpg",
             "link_1": "/products/iphone-duo",
             "link_1_label": "Más información",
             "link_2": "/products/iphone-duo",
             "link_2_label": "Ver colores"
           }
         },
-        "card_iphone_17_pro": {
+        "card_watch_12": {
           "type": "promo_card",
           "settings": {
-            "card_size": "half",
-            "theme": "light",
-            "badge": "",
-            "heading": "iPhone 17 Pro",
-            "subheading": "Pro de principio a fin.",
-            "image": "shopify://shop_images/home-iphone-17-pro.jpg",
-            "link_1": "/products/iphone-17-pro",
+            "card_size": "full",
+            "theme": "dark",
+            "badge": "Nuevo",
+            "heading": "Apple Watch Series 12",
+            "subheading": "La detección de frecuencia cardíaca más precisa en un wearable.",
+            "availability": "Consulta disponibilidad y entrega en Lima.",
+            "image": "shopify://shop_images/home-apple-s12.jpg",
+            "link_1": "/pages/watch",
             "link_1_label": "Más información",
-            "link_2": "/products/iphone-17-pro",
-            "link_2_label": "Comprar"
-          }
-        },
-        "card_iphone_17": {
-          "type": "promo_card",
-          "settings": {
-            "card_size": "half",
-            "theme": "light",
-            "badge": "",
-            "heading": "iPhone 17",
-            "subheading": "Todo lo que quieres. Y más.",
-            "image": "shopify://shop_images/home-iphone-17.jpg",
-            "link_1": "/products/iphone-17",
-            "link_1_label": "Más información",
-            "link_2": "/products/iphone-17",
-            "link_2_label": "Comprar"
+            "link_2": "/pages/watch",
+            "link_2_label": "Consultar"
           }
         }
       },
       "block_order": [
         "card_iphone_18_pro",
         "card_iphone_duo",
-        "card_iphone_17_pro",
-        "card_iphone_17",
+        "card_watch_12",
         "card_macbook_pro",
         "card_ipad_air",
         "card_watch",
