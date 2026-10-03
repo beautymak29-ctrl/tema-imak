@@ -66,7 +66,7 @@
             "card_size": "half",
             "theme": "light",
             "badge": "",
-            "heading": "MacBook Air",
+            "heading": "MacBook Air 13\" M5",
             "subheading": "Ahora con los superpoderes del chip M5.",
             "availability": "Consulta la disponibilidad más adelante.",
             "image": "shopify://shop_images/home-apple-macbook-air-m5.jpg",
@@ -95,7 +95,7 @@
         "card_ipad_pro": {
           "type": "promo_card",
           "settings": {
-            "card_size": "half",
+            "card_size": "full",
             "theme": "light",
             "badge": "",
             "heading": "iPad Pro",
@@ -155,6 +155,22 @@
             "link_2": "/pages/watch",
             "link_2_label": "Consultar"
           }
+        },
+        "card_macbook_air_15": {
+          "type": "promo_card",
+          "settings": {
+            "card_size": "half",
+            "theme": "light",
+            "badge": "",
+            "heading": "MacBook Air 15\" M5",
+            "subheading": "Ahora con los superpoderes del chip M5.",
+            "availability": "Consulta la disponibilidad más adelante.",
+            "image": "shopify://shop_images/home-apple-macbook-air-m5.jpg",
+            "link_1": "/products/macbook-air-15-m5",
+            "link_1_label": "Más información",
+            "link_2": "/products/macbook-air-15-m5",
+            "link_2_label": "Comprar"
+          }
         }
       },
       "block_order": [
@@ -165,6 +181,7 @@
         "card_ipad_air",
         "card_watch",
         "card_macbook_air",
+        "card_macbook_air_15",
         "card_airpods",
         "card_ipad_pro"
       ],
